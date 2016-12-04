@@ -33,5 +33,15 @@ namespace RestaurantSoftware.Properties {
                 return ((string)(this["nhahang_dbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-L65GGB3;Initial Catalog=nhahang_db;Integrated Security=True")]
+        public string nhahang_dbConnectionString1 {
+            get {
+                return ((string)(this["nhahang_dbConnectionString1"]));
+            }
+        }
     }
 }
