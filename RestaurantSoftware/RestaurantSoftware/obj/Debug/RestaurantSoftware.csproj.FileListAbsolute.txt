@@ -1,0 +1,146 @@
+c:\users\truon\documents\visual studio 2013\Projects\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csprojResolveAssemblyReference.cache
+c:\users\truon\documents\visual studio 2013\Projects\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.FormMain.resources
+c:\users\truon\documents\visual studio 2013\Projects\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.Properties.Resources.resources
+c:\users\truon\documents\visual studio 2013\Projects\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csproj.GenerateResource.Cache
+c:\users\truon\documents\visual studio 2013\Projects\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
+c:\users\truon\documents\visual studio 2013\Projects\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe
+c:\users\truon\documents\visual studio 2013\Projects\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.pdb
+c:\users\truon\documents\visual studio 2013\Projects\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
+c:\users\truon\documents\visual studio 2013\Projects\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.pdb
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csprojResolveAssemblyReference.cache
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.FormMain.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.Properties.Resources.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Ban.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DangNhap.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DatBan.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_HoaDon.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_KhachHang.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiMon.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiQuyDinh.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiSuCo.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Mon.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguoiDung.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NhaCungCap.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_QuyDinh.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_SuCo.resources
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csproj.GenerateResource.Cache
+D:\Hocki\NamCuoi\OOAD\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csprojResolveAssemblyReference.cache
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.FormMain.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.Properties.Resources.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Ban.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DangNhap.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DatBan.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_HoaDon.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_KhachHang.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiMon.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiQuyDinh.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiSuCo.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Mon.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguoiDung.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NhaCungCap.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguyenLieu.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_QuyDinh.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_SuCo.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csproj.GenerateResource.Cache
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.pdb
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DanhSachPhieuNhap.resources
+C:\Users\DUY THANH\Desktop\OADD\RestaurantSoftware (1)\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_QuanLyNhapHang.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.pdb
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csprojResolveAssemblyReference.cache
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.FormMain.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.Properties.Resources.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Ban.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DangNhap.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DanhSachPhieuNhap.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DatBan.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_HoaDon.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_KhachHang.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiMon.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiQuyDinh.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiSuCo.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Mon.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguoiDung.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguyenLieuTon.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NhaCungCap.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguyenLieu.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_QuanLyNhapHang.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_QuyDinh.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_SuCo.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csproj.GenerateResource.Cache
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_PhucVu.resources
+D:\HK1-2016-2017\OOAD\GiaoDien\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThanhToan.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe.config
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.pdb
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csprojResolveAssemblyReference.cache
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.FormMain.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.Properties.Resources.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Ban.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DangNhap.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DanhSachPhieuNhap.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DatBan.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_HoaDon.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_KhachHang.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiMon.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiQuyDinh.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiSuCo.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Mon.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguoiDung.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguyenLieuTon.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NhaCungCap.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguyenLieu.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_PhucVu.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_QuanLyNhapHang.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_QuyDinh.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_SuCo.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThanhToan.resources
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csproj.GenerateResource.Cache
+C:\Users\truon\Desktop\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe.config
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.exe
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\bin\Debug\RestaurantSoftware.pdb
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csprojResolveAssemblyReference.cache
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.FormMain.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.Properties.Resources.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Ban.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DangNhap.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DanhSachPhieuNhap.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_DatBan.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_HoaDon.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_KhachHang.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiMon.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiQuyDinh.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_LoaiSuCo.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_Mon.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguoiDung.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguyenLieuTon.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NhaCungCap.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_NguyenLieu.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_PhucVu.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_QuanLyNhapHang.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_QuyDinh.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_SuCo.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThanhToan.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csproj.GenerateResource.Cache
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.ThongKeMonTheoNgay.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThongKeMon.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.PrintRibbonControllerResources.resources
+C:\Users\truon\Desktop\qlynhahang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.DoanhThuTheoThang.resources
