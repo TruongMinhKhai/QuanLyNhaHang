@@ -1120,15 +1120,11 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private System.Nullable<int> _id_mon;
 		
-		private System.Nullable<int> _id_donvi;
-		
 		private System.Nullable<int> _soluong;
 		
 		private System.Nullable<decimal> _thanhtien;
 		
 		private EntityRef<DatBan> _DatBan;
-		
-		private EntityRef<DonVi> _DonVi;
 		
 		private EntityRef<Mon> _Mon;
 		
@@ -1142,8 +1138,6 @@ namespace RestaurantSoftware.DA_Layer
     partial void Onid_datbanChanged();
     partial void Onid_monChanging(System.Nullable<int> value);
     partial void Onid_monChanged();
-    partial void Onid_donviChanging(System.Nullable<int> value);
-    partial void Onid_donviChanged();
     partial void OnsoluongChanging(System.Nullable<int> value);
     partial void OnsoluongChanged();
     partial void OnthanhtienChanging(System.Nullable<decimal> value);
@@ -1153,7 +1147,6 @@ namespace RestaurantSoftware.DA_Layer
 		public Chitiet_DatBan()
 		{
 			this._DatBan = default(EntityRef<DatBan>);
-			this._DonVi = default(EntityRef<DonVi>);
 			this._Mon = default(EntityRef<Mon>);
 			OnCreated();
 		}
@@ -1222,30 +1215,6 @@ namespace RestaurantSoftware.DA_Layer
 					this._id_mon = value;
 					this.SendPropertyChanged("id_mon");
 					this.Onid_monChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_donvi", DbType="Int")]
-		public System.Nullable<int> id_donvi
-		{
-			get
-			{
-				return this._id_donvi;
-			}
-			set
-			{
-				if ((this._id_donvi != value))
-				{
-					if (this._DonVi.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_donviChanging(value);
-					this.SendPropertyChanging();
-					this._id_donvi = value;
-					this.SendPropertyChanged("id_donvi");
-					this.Onid_donviChanged();
 				}
 			}
 		}
@@ -1320,40 +1289,6 @@ namespace RestaurantSoftware.DA_Layer
 						this._id_datban = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("DatBan");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DonVi_Chitiet_DatBan", Storage="_DonVi", ThisKey="id_donvi", OtherKey="id_donvi", IsForeignKey=true)]
-		public DonVi DonVi
-		{
-			get
-			{
-				return this._DonVi.Entity;
-			}
-			set
-			{
-				DonVi previousValue = this._DonVi.Entity;
-				if (((previousValue != value) 
-							|| (this._DonVi.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DonVi.Entity = null;
-						previousValue.Chitiet_DatBans.Remove(this);
-					}
-					this._DonVi.Entity = value;
-					if ((value != null))
-					{
-						value.Chitiet_DatBans.Add(this);
-						this._id_donvi = value.id_donvi;
-					}
-					else
-					{
-						this._id_donvi = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("DonVi");
 				}
 			}
 		}
@@ -1689,13 +1624,9 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private System.Nullable<int> _id_mon;
 		
-		private System.Nullable<int> _id_donvi;
-		
 		private System.Nullable<int> _soluong;
 		
 		private System.Nullable<decimal> _thanhtien;
-		
-		private EntityRef<DonVi> _DonVi;
 		
 		private EntityRef<HoaDonThanhToan> _HoaDonThanhToan;
 		
@@ -1711,8 +1642,6 @@ namespace RestaurantSoftware.DA_Layer
     partial void Onid_hoadonChanged();
     partial void Onid_monChanging(System.Nullable<int> value);
     partial void Onid_monChanged();
-    partial void Onid_donviChanging(System.Nullable<int> value);
-    partial void Onid_donviChanged();
     partial void OnsoluongChanging(System.Nullable<int> value);
     partial void OnsoluongChanged();
     partial void OnthanhtienChanging(System.Nullable<decimal> value);
@@ -1721,7 +1650,6 @@ namespace RestaurantSoftware.DA_Layer
 		
 		public Chitiet_HoaDonThanhToan()
 		{
-			this._DonVi = default(EntityRef<DonVi>);
 			this._HoaDonThanhToan = default(EntityRef<HoaDonThanhToan>);
 			this._Mon = default(EntityRef<Mon>);
 			OnCreated();
@@ -1795,30 +1723,6 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_donvi", DbType="Int")]
-		public System.Nullable<int> id_donvi
-		{
-			get
-			{
-				return this._id_donvi;
-			}
-			set
-			{
-				if ((this._id_donvi != value))
-				{
-					if (this._DonVi.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_donviChanging(value);
-					this.SendPropertyChanging();
-					this._id_donvi = value;
-					this.SendPropertyChanged("id_donvi");
-					this.Onid_donviChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_soluong", DbType="Int")]
 		public System.Nullable<int> soluong
 		{
@@ -1855,40 +1759,6 @@ namespace RestaurantSoftware.DA_Layer
 					this._thanhtien = value;
 					this.SendPropertyChanged("thanhtien");
 					this.OnthanhtienChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DonVi_Chitiet_HoaDonThanhToan", Storage="_DonVi", ThisKey="id_donvi", OtherKey="id_donvi", IsForeignKey=true)]
-		public DonVi DonVi
-		{
-			get
-			{
-				return this._DonVi.Entity;
-			}
-			set
-			{
-				DonVi previousValue = this._DonVi.Entity;
-				if (((previousValue != value) 
-							|| (this._DonVi.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DonVi.Entity = null;
-						previousValue.Chitiet_HoaDonThanhToans.Remove(this);
-					}
-					this._DonVi.Entity = value;
-					if ((value != null))
-					{
-						value.Chitiet_HoaDonThanhToans.Add(this);
-						this._id_donvi = value.id_donvi;
-					}
-					else
-					{
-						this._id_donvi = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("DonVi");
 				}
 			}
 		}
@@ -2325,10 +2195,6 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private string _tendonvi;
 		
-		private EntitySet<Chitiet_DatBan> _Chitiet_DatBans;
-		
-		private EntitySet<Chitiet_HoaDonThanhToan> _Chitiet_HoaDonThanhToans;
-		
 		private EntitySet<HangHoa> _HangHoas;
 		
 		private EntitySet<Mon> _Mons;
@@ -2345,8 +2211,6 @@ namespace RestaurantSoftware.DA_Layer
 		
 		public DonVi()
 		{
-			this._Chitiet_DatBans = new EntitySet<Chitiet_DatBan>(new Action<Chitiet_DatBan>(this.attach_Chitiet_DatBans), new Action<Chitiet_DatBan>(this.detach_Chitiet_DatBans));
-			this._Chitiet_HoaDonThanhToans = new EntitySet<Chitiet_HoaDonThanhToan>(new Action<Chitiet_HoaDonThanhToan>(this.attach_Chitiet_HoaDonThanhToans), new Action<Chitiet_HoaDonThanhToan>(this.detach_Chitiet_HoaDonThanhToans));
 			this._HangHoas = new EntitySet<HangHoa>(new Action<HangHoa>(this.attach_HangHoas), new Action<HangHoa>(this.detach_HangHoas));
 			this._Mons = new EntitySet<Mon>(new Action<Mon>(this.attach_Mons), new Action<Mon>(this.detach_Mons));
 			OnCreated();
@@ -2389,32 +2253,6 @@ namespace RestaurantSoftware.DA_Layer
 					this.SendPropertyChanged("tendonvi");
 					this.OntendonviChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DonVi_Chitiet_DatBan", Storage="_Chitiet_DatBans", ThisKey="id_donvi", OtherKey="id_donvi")]
-		public EntitySet<Chitiet_DatBan> Chitiet_DatBans
-		{
-			get
-			{
-				return this._Chitiet_DatBans;
-			}
-			set
-			{
-				this._Chitiet_DatBans.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DonVi_Chitiet_HoaDonThanhToan", Storage="_Chitiet_HoaDonThanhToans", ThisKey="id_donvi", OtherKey="id_donvi")]
-		public EntitySet<Chitiet_HoaDonThanhToan> Chitiet_HoaDonThanhToans
-		{
-			get
-			{
-				return this._Chitiet_HoaDonThanhToans;
-			}
-			set
-			{
-				this._Chitiet_HoaDonThanhToans.Assign(value);
 			}
 		}
 		
@@ -2462,30 +2300,6 @@ namespace RestaurantSoftware.DA_Layer
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Chitiet_DatBans(Chitiet_DatBan entity)
-		{
-			this.SendPropertyChanging();
-			entity.DonVi = this;
-		}
-		
-		private void detach_Chitiet_DatBans(Chitiet_DatBan entity)
-		{
-			this.SendPropertyChanging();
-			entity.DonVi = null;
-		}
-		
-		private void attach_Chitiet_HoaDonThanhToans(Chitiet_HoaDonThanhToan entity)
-		{
-			this.SendPropertyChanging();
-			entity.DonVi = this;
-		}
-		
-		private void detach_Chitiet_HoaDonThanhToans(Chitiet_HoaDonThanhToan entity)
-		{
-			this.SendPropertyChanging();
-			entity.DonVi = null;
 		}
 		
 		private void attach_HangHoas(HangHoa entity)
@@ -3123,6 +2937,8 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private string _trangthai;
 		
+		private System.Nullable<int> _id_khanhhang;
+		
 		private EntitySet<Chitiet_HoaDonThanhToan> _Chitiet_HoaDonThanhToans;
 		
 		private EntityRef<Ban> _Ban;
@@ -3153,6 +2969,8 @@ namespace RestaurantSoftware.DA_Layer
     partial void OnconlaiChanged();
     partial void OntrangthaiChanging(string value);
     partial void OntrangthaiChanged();
+    partial void Onid_khanhhangChanging(System.Nullable<int> value);
+    partial void Onid_khanhhangChanged();
     #endregion
 		
 		public HoaDonThanhToan()
@@ -3367,6 +3185,26 @@ namespace RestaurantSoftware.DA_Layer
 					this._trangthai = value;
 					this.SendPropertyChanged("trangthai");
 					this.OntrangthaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_khanhhang", DbType="Int")]
+		public System.Nullable<int> id_khanhhang
+		{
+			get
+			{
+				return this._id_khanhhang;
+			}
+			set
+			{
+				if ((this._id_khanhhang != value))
+				{
+					this.Onid_khanhhangChanging(value);
+					this.SendPropertyChanging();
+					this._id_khanhhang = value;
+					this.SendPropertyChanged("id_khanhhang");
+					this.Onid_khanhhangChanged();
 				}
 			}
 		}

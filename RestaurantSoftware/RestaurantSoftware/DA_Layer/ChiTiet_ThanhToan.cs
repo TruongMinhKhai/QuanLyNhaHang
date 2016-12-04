@@ -65,5 +65,28 @@ namespace RestaurantSoftware.DA_Layer
             get { return ngay; }
             set { ngay = value; }
         }
+        int idkhachhang;
+
+        public int Idkhachhang
+        {
+            get { return idkhachhang; }
+            set { idkhachhang = value; }
+        }
+        string tenkhachhang;
+
+        public string Tenkhachhang
+        {
+            get { return tenkhachhang; }
+            set { tenkhachhang = value; }
+        }
+        
+        string sodienthoai;
+
+        public string Sodienthoai
+        {
+            get { return sodienthoai; }
+            set { sodienthoai = value; }
+        }
+        
     }
 }

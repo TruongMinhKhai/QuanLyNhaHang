@@ -15,6 +15,7 @@ namespace RestaurantSoftware.BL_Layer
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
         public IEnumerable<ChiTiet_ThanhToan> LayDanhSachBan(string trangthai)
         {
+
             var query = from db in dbContext.HoaDonThanhToans
                         join bn in dbContext.Bans on db.id_ban equals bn.id_ban
                         join lb in dbContext.LoaiBans on bn.id_loaiban equals lb.id_loaiban
@@ -25,7 +26,9 @@ namespace RestaurantSoftware.BL_Layer
                             Idban = bn.id_ban,
                             Tenban = bn.tenban,
                             Trangthai = bn.trangthai,
-                            Tenloaiban = lb.tenloaiban
+                            Tenloaiban = lb.tenloaiban,
+                            
+
                         };
             return query;
         }
@@ -66,12 +69,13 @@ namespace RestaurantSoftware.BL_Layer
                         };
             grid.DataSource = query;
         }
-        public void loadid(int idban, string trangthai, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay)
+        public void loadid(int idban, string trangthai, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt)
         {
             var query = (from db in dbContext.HoaDonThanhToans
                          join bn in dbContext.Bans on db.id_ban equals bn.id_ban
                          join lb in dbContext.LoaiBans on bn.id_loaiban equals lb.id_loaiban
                          join nv in dbContext.NhanViens on db.id_nhanvien equals nv.id_nhanvien
+                         join kh in dbContext.KhachHangs on db.id_khanhhang equals kh.id_khachhang
                          where db.trangthai == trangthai
                          select new ChiTiet_ThanhToan
                          {
@@ -82,7 +86,10 @@ namespace RestaurantSoftware.BL_Layer
                              Tenloaiban = lb.tenloaiban,
                              Idnhanvien = nv.id_nhanvien,
                              Tennhanvien = nv.tennhanvien,
-                             Ngay = Convert.ToDateTime(db.thoigian)
+                             Ngay = Convert.ToDateTime(db.thoigian),
+                             Idkhachhang = kh.id_khachhang,
+                             Tenkhachhang = kh.tenkh,
+                             Sodienthoai = kh.sdt
                          }).ToList();
             foreach (var id in query)
             {
@@ -91,15 +98,19 @@ namespace RestaurantSoftware.BL_Layer
                     idhoadon.Text = (id.Idhoadon).ToString();
                     nhanvien.EditValue = id.Idnhanvien;
                     ngay.DateTime = id.Ngay;
+                    tenkh.Text = id.Tenkhachhang;
+                    sdt.Text = id.Sodienthoai;
+
                 }
             }
         }
-        public void load(int idban, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay)
+        public void load(int idban, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt)
         {
             var query = (from db in dbContext.HoaDonThanhToans
                          join bn in dbContext.Bans on db.id_ban equals bn.id_ban
                          join lb in dbContext.LoaiBans on bn.id_loaiban equals lb.id_loaiban
                          join nv in dbContext.NhanViens on db.id_nhanvien equals nv.id_nhanvien
+                         join kh in dbContext.KhachHangs on db.id_khanhhang equals kh.id_khachhang
                          select new ChiTiet_ThanhToan
                          {
                              Idhoadon = db.id_hoadon,
@@ -109,7 +120,10 @@ namespace RestaurantSoftware.BL_Layer
                              Tenloaiban = lb.tenloaiban,
                              Idnhanvien = nv.id_nhanvien,
                              Tennhanvien = nv.tennhanvien,
-                             Ngay = Convert.ToDateTime(db.thoigian)
+                             Ngay = Convert.ToDateTime(db.thoigian),
+                             Idkhachhang = kh.id_khachhang,
+                             Tenkhachhang = kh.tenkh,
+                             Sodienthoai = kh.sdt
                          }).ToList();
             foreach (var id in query)
             {
@@ -118,6 +132,8 @@ namespace RestaurantSoftware.BL_Layer
                     idhoadon.Text = (id.Idhoadon).ToString();
                     nhanvien.EditValue = id.Idnhanvien;
                     ngay.DateTime = id.Ngay;
+                    tenkh.Text = id.Tenkhachhang;
+                    sdt.Text = id.Sodienthoai;
                 }
             }
         }
