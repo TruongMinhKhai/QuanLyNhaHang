@@ -93,6 +93,7 @@
     <Compile Include="BL_Layer\ThamSo_BLL.cs" />
     <Compile Include="BL_Layer\ThanhToan_BLL.cs" />
     <Compile Include="BL_Layer\TrangThai_BLL.cs" />
+    <Compile Include="DA_Layer\ChiTiet_DatBan.cs" />
     <Compile Include="DA_Layer\ChiTiet_ThanhToan.cs" />
     <Compile Include="DA_Layer\RestaurantDB.designer.cs">
       <AutoGen>True</AutoGen>

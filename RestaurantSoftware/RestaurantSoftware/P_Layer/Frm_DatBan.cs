@@ -22,7 +22,7 @@ namespace RestaurantSoftware.P_Layer
         public Frm_DatBan()
         {
             InitializeComponent();
-            dtNgayDat.DateTime = DateTime.Now;
+            dt_NgayDat.DateTime = DateTime.Now;
 
         }
         private void Frm_DatBan_Load(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace RestaurantSoftware.P_Layer
         public void LoadDsBanDat()
         {
             lvDsBan.Clear();
-            DataTable ban = Utils.Utils.ConvertToDataTable<Ban>(datban_bll.LayDanhSachBanDat(dtNgayDat.DateTime));
+            DataTable ban = Utils.Utils.ConvertToDataTable<Ban>(datban_bll.LayDanhSachBanDat(dt_NgayDat.DateTime));
 
             lvDsBan.LargeImageList = imageList1;
 
@@ -128,14 +128,49 @@ namespace RestaurantSoftware.P_Layer
         public void LoadDsKhachHang()
         {
             DataTable dt = Utils.Utils.ConvertToDataTable<KhachHang>(datban_bll.LayDsKhachHang());
-            cbxKhachHang.Properties.DataSource = dt;
-            cbxKhachHang.Properties.DisplayMember = "tenkh";
-            cbxKhachHang.Properties.ValueMember = "id_khachhang";
+            txt_TenKH.Properties.DataSource = dt;
+            txt_TenKH.Properties.DisplayMember = "tenkh";
+            txt_TenKH.Properties.ValueMember = "id_khachhang";
         }
 
         private void dtNgayDat_EditValueChanged(object sender, EventArgs e)
         {
             LoadDsBanDat();
+        }
+
+        private void lvDsBan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvDsBan.SelectedItems.Count > 0)
+            {
+                txt_TenBan.Text = lvDsBan.SelectedItems[0].Text;
+            }
+        }
+
+        private void cbxKhachHang_EditValueChanged(object sender, EventArgs e)
+        {
+            DevExpress.XtraEditors.LookUpEdit editor = (sender as DevExpress.XtraEditors.LookUpEdit);
+            DataRowView row = editor.Properties.GetDataSourceRowByKeyValue(editor.EditValue) as DataRowView;
+            txt_SDT.Text = row["sdt"].ToString();
+            txt_DiaChi.Text = row["diachi"].ToString();
+        }
+
+        private void gridView_DsDatBan_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            if (gridView_DsDatBan.GetFocusedRowCellDisplayText(col_TrangThai) == "Đã nhận bàn")
+            {
+                txt_TenKH.Text = "";
+                txt_SDT.Text = "";
+                datban_bll.load(int.Parse(gridView_DsDatBan.GetFocusedRowCellDisplayText(col_MaDatBan)), cmb_NhanVien, dt_NgayDat, txt_TenKH, txt_SDT, txt_TenBan);
+                
+            }
+            else
+                if (gridView_DsDatBan.GetFocusedRowCellDisplayText(col_TrangThai) == "Chưa nhận bàn")
+                {
+                    txt_TenKH.Text = "";
+                    txt_SDT.Text = "";
+                    //txt_Ban.Text = gridView_DsDatBan.GetFocusedRowCellDisplayText(col_TenBan);
+                    datban_bll.loadid(int.Parse(gridView_DsDatBan.GetFocusedRowCellDisplayText(col_MaDatBan)), "Chưa nhận bàn", cmb_NhanVien, dt_NgayDat, txt_TenKH, txt_SDT, txt_TenBan);
+                }
         }
     }
 }

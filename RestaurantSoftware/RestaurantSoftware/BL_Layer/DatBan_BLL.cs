@@ -1,5 +1,7 @@
-﻿using DevExpress.XtraGrid;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using RestaurantSoftware.DA_Layer;
+using RestaurantSoftware.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,7 +30,7 @@ namespace RestaurantSoftware.BL_Layer
             //return query;
 
             var query = from bn in dbContext.Bans
-                        where bn.trangthai == "trống"
+                        where bn.trangthai == "Trống"
                         select bn; 
                        
             return query;
@@ -66,7 +68,8 @@ namespace RestaurantSoftware.BL_Layer
                             tenviettat = m.tenviettat,
                             gia = m.gia,
                             tenloaimon = lm.tenloaimon,
-                            id_mon = m.id_mon
+                            id_mon = m.id_mon,
+                            trangthai = m.trangthai
                         };
 
             grid.DataSource = query;
@@ -114,6 +117,102 @@ namespace RestaurantSoftware.BL_Layer
                             ct.thanhtien
                         };
             grid.DataSource = query;
+        }
+
+        public void loadid(int iddatban, string trangthai, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt, TextEdit tenban)
+        {
+            try
+            {
+                int idkh = -1;
+                var query = (from db in dbContext.DatBans
+                             join bn in dbContext.Bans on db.id_ban equals bn.id_ban
+                             join nv in dbContext.NhanViens on db.id_nhanvien equals nv.id_nhanvien
+                             where db.trangthai == trangthai
+                             select new ChiTiet_DatBan
+                             {
+                                 Iddatban = db.id_datban,
+                                 Idban = bn.id_ban,
+                                 Tenban = bn.tenban,
+                                 Trangthai = bn.trangthai,
+                                 Idnhanvien = nv.id_nhanvien,
+                                 Tennhanvien = nv.tennhanvien,
+                                 Ngay = Convert.ToDateTime(db.thoigian)
+
+                             }).ToList();
+                foreach (var id in query)
+                {
+                    if (id.Iddatban == iddatban)
+                    {
+                        nhanvien.EditValue = id.Idnhanvien;
+                        ngay.DateTime = id.Ngay;
+                        tenban.Text = id.Tenban;
+                        idkh = id.Iddatban;
+                        laykhachhang(idkh, tenkh, sdt);
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                Notifications.Answers("Hóa đơn này chưa có khách hàng.");
+            }
+
+
+        }
+        void laykhachhang(int id, TextEdit tenkh, TextEdit sdt)
+        {
+            var query = (from db in dbContext.DatBans
+                         join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
+                         where db.id_datban == id
+                         select new ChiTiet_ThanhToan
+                         {
+                             Tenkhachhang = kh.tenkh,
+                             Sodienthoai = kh.sdt
+
+                         }).ToList();
+            foreach (var i in query)
+            {
+                tenkh.Text = i.Tenkhachhang;
+                sdt.Text = i.Sodienthoai;
+            }
+        }
+        public void load(int iddatban, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt, TextEdit tenban)
+        {
+            try
+            {
+                int idkh = -1;
+                var query = (from db in dbContext.DatBans
+                             join bn in dbContext.Bans on db.id_ban equals bn.id_ban
+                             join nv in dbContext.NhanViens on db.id_nhanvien equals nv.id_nhanvien
+                             select new ChiTiet_DatBan
+                             {
+                                 Iddatban = db.id_datban,
+                                 Idban = bn.id_ban,
+                                 Tenban = bn.tenban,
+                                 Idnhanvien = nv.id_nhanvien,
+                                 Tennhanvien = nv.tennhanvien,
+                                 Ngay = Convert.ToDateTime(db.thoigian),
+
+                             }).ToList();
+                foreach (var id in query)
+                {
+                    if (id.Iddatban == iddatban)
+                    {
+                        nhanvien.EditValue = id.Idnhanvien;
+                        ngay.DateTime = id.Ngay;
+                        tenban.Text = id.Tenban;
+                        idkh = id.Iddatban;
+                        laykhachhang(idkh, tenkh, sdt);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                Notifications.Answers("Hóa đơn này chưa có khách hàng.");
+
+            }
+
         }
     }
 }

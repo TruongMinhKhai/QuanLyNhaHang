@@ -45,7 +45,7 @@ namespace RestaurantSoftware.P_Layer
         public void LoadDsBan()
         {
             lvDsBan.Clear();
-            DataTable ban = Utils.Utils.ConvertToDataTable<ChiTiet_ThanhToan>(_thanhToanBll.LayDanhSachBan("chưa thanh toán"));
+            DataTable ban = Utils.Utils.ConvertToDataTable<ChiTiet_ThanhToan>(_thanhToanBll.LayDanhSachBan("Chưa thanh toán"));
 
             lvDsBan.LargeImageList = imageList1;
 
@@ -57,13 +57,13 @@ namespace RestaurantSoftware.P_Layer
                 lvItem.Text = dr["tenban"].ToString();
                 switch (dr["trangthai"].ToString())
                 {
-                    case "trống":
+                    case "Trống":
                         lvItem.ImageIndex = 2;
                         break;
-                    case "đặt trước":
+                    case "Đã đặt":
                         lvItem.ImageIndex = 1;
                         break;
-                    case "đầy":
+                    case "Đang sử dụng":
                         lvItem.ImageIndex = 0;
                         break;
                 }
@@ -101,7 +101,7 @@ namespace RestaurantSoftware.P_Layer
                 txt_TenKH.Text = "";
                 txt_SDT.Text = "";
                 txt_Ban.Text = lvDsBan.SelectedItems[0].Text;
-                _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "chưa thanh toán", txt_MaHoaDon, cmb_NhanVien, dt_NgayLap,txt_TenKH,txt_SDT);
+                _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "Chưa thanh toán", txt_MaHoaDon, cmb_NhanVien, dt_NgayLap,txt_TenKH,txt_SDT);
                 LoadChiTietHoaDon();
                 btn_ThanhToan.Enabled = true;
 
@@ -123,7 +123,7 @@ namespace RestaurantSoftware.P_Layer
 
         private void gv_HoaDon_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "đã thanh toán")
+            if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Đã thanh toán")
             {
                 txt_TenKH.Text = "";
                 txt_SDT.Text = "";
@@ -131,12 +131,12 @@ namespace RestaurantSoftware.P_Layer
                 btn_ThanhToan.Enabled = false;
             }
             else
-                if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "chưa thanh toán")
+                if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Chưa thanh toán")
                 {
                     txt_TenKH.Text = "";
                     txt_SDT.Text = "";
                     txt_Ban.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_TenBan);
-                    _thanhToanBll.loadid(int.Parse(gv_HoaDon.GetFocusedRowCellDisplayText(col_MaBan)), "chưa thanh toán", txt_MaHoaDon, cmb_NhanVien, dt_NgayLap,txt_TenKH,txt_SDT);
+                    _thanhToanBll.loadid(int.Parse(gv_HoaDon.GetFocusedRowCellDisplayText(col_MaBan)), "Chưa thanh toán", txt_MaHoaDon, cmb_NhanVien, dt_NgayLap,txt_TenKH,txt_SDT);
                     LoadChiTietHoaDon();
                     btn_ThanhToan.Enabled = true;
                 }
