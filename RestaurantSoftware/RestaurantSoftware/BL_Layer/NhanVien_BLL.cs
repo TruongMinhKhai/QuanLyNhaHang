@@ -9,13 +9,12 @@ namespace RestaurantSoftware.BL_Layer
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
         public IEnumerable<NhanVien> LayDanhSachNhanVien()
         {
-            IEnumerable<NhanVien> query = from nv in dbContext.NhanViens select nv;
+            IEnumerable<NhanVien> query = from nv in dbContext.NhanViens where nv.trangthai != false select nv;
             return query;
         }
 
         public void ThemNhanVien(NhanVien NhanVien)
         {
-
             dbContext.NhanViens.InsertOnSubmit(NhanVien);
             dbContext.SubmitChanges();
         }
@@ -27,6 +26,55 @@ namespace RestaurantSoftware.BL_Layer
             _NhanVien.tendangnhap = nv.tendangnhap;
             _NhanVien.matkhau = nv.matkhau;
             _NhanVien.id_quyen = nv.id_quyen;
+            // update 
+            dbContext.SubmitChanges();
+        }
+
+        public bool KiemTraThongTin(int id_nhanvien)
+        {
+            IEnumerable<QuyDinh> _KiemTraQuyDinh = from qd in dbContext.QuyDinhs
+                                                 where qd.id_nhanvien == id_nhanvien
+                                                 select qd;
+            IEnumerable<HoaDonThanhToan> _KiemTraHoaDon = from hd in dbContext.HoaDonThanhToans
+                                                          where hd.id_nhanvien == id_nhanvien
+                                                          select hd;
+            IEnumerable<HoaDonNhapHang> _KiemTraHoaDonNhap = from hdn in dbContext.HoaDonNhapHangs
+                                                          where hdn.id_nhanvien == id_nhanvien
+                                                          select hdn;
+            IEnumerable<SuCo> _KiemTraSuCo = from sc in dbContext.SuCos
+                                             where sc.id_nhanvien == id_nhanvien
+                                             select sc;
+            if (_KiemTraQuyDinh.Count() > 0 || _KiemTraHoaDon.Count() > 0 || _KiemTraHoaDonNhap.Count() > 0 || _KiemTraSuCo.Count() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool KiemTraThongTinNV(int id_nhanvien)
+        {
+            IEnumerable<HoaDonThanhToan> _KiemTraHoaDon = from hd in dbContext.HoaDonThanhToans
+                                                          where hd.id_nhanvien == id_nhanvien
+                                                          select hd;
+            IEnumerable<SuCo> _KiemTraSuCo = from sc in dbContext.SuCos
+                                             where sc.id_nhanvien == id_nhanvien
+                                             select sc;
+            IEnumerable<HoaDonNhapHang> _KiemTraHoaDonNhap = from hdn in dbContext.HoaDonNhapHangs
+                                                          where hdn.id_nhanvien == id_nhanvien
+                                                          select hdn;
+            IEnumerable<QuyDinh> _KiemTraQuyDinh = from qd in dbContext.QuyDinhs
+                                             where qd.id_nhanvien == id_nhanvien
+                                             select qd;
+            if (_KiemTraHoaDon.Count() > 0 || _KiemTraSuCo.Count() > 0 
+                || _KiemTraHoaDonNhap.Count() > 0 || _KiemTraQuyDinh.Count() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public void XoaTam(int id_nhanvien)
+        {
+            NhanVien _nhanvien = dbContext.NhanViens.Single<NhanVien>(nv => nv.id_nhanvien == id_nhanvien);
+            _nhanvien.trangthai = false;
             // update 
             dbContext.SubmitChanges();
         }

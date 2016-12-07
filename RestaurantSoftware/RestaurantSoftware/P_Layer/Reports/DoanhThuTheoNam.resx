@@ -121,7 +121,7 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select "HoaDonThanhToan"."thoigian",
+    <value>select MONTH("HoaDonThanhToan"."thoigian") as thang,
        Sum("HoaDonThanhToan"."tongtien") as tienthu,
        Sum("HoaDonNhapHang"."tongtien") as tienchi
   from (("dbo"."NhanVien" "NhanVien"
@@ -131,10 +131,10 @@
   inner join "dbo"."HoaDonNhapHang"
        "HoaDonNhapHang"
        on ("HoaDonNhapHang"."id_nhanvien" = "NhanVien"."id_nhanvien"))
-WHERE right(convert(varchar(10),"HoaDonThanhToan"."thoigian",103),7) = right(convert(varchar(10),@NgayBaoCao,103),7)
-GROUP BY "HoaDonThanhToan"."thoigian"</value>
+WHERE YEAR("HoaDonThanhToan"."thoigian") = @NamBaoCao
+GROUP BY MONTH("HoaDonThanhToan"."thoigian")</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0idGhvaWdpYW4iIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJ0aWVudGh1IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJ0aWVuY2hpIiBUeXBlPSJEZWNpbWFsIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0idGhhbmciIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJ0aWVudGh1IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJ0aWVuY2hpIiBUeXBlPSJEZWNpbWFsIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
 </root>

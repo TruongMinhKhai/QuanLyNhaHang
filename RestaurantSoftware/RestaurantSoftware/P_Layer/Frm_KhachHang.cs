@@ -56,6 +56,7 @@ namespace RestaurantSoftware.P_Layer
                         kh.tenkh = gridView1.GetFocusedRowCellValue(col_TenKhachHang).ToString();
                         kh.sdt = gridView1.GetFocusedRowCellValue(col_SDT).ToString();
                         kh.diachi = gridView1.GetFocusedRowCellValue(col_DiaChi).ToString();
+                        kh.trangthai = true;
                         _kh_Bll.ThemKhachHang(kh);
                         Notifications.Success("Thêm khách hàng mới thành công!");
                         LoadDataSource();
@@ -92,7 +93,14 @@ namespace RestaurantSoftware.P_Layer
             for (int i = 0; i < gridView1.SelectedRowsCount; i++)
             {
                 int _ID_KhachHang = int.Parse(gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "id_khachhang").ToString());
-                _kh_Bll.XoaKhachHang(_ID_KhachHang);
+                if (_kh_Bll.KiemTraThongTin(_ID_KhachHang))
+                {
+                    _kh_Bll.XoaTam(_ID_KhachHang);
+                }
+                else
+                {
+                    _kh_Bll.XoaKhachHang(_ID_KhachHang);
+                }
             }
             Notifications.Success("Xóa dữ liệu thành công!");
             LoadDataSource();

@@ -121,20 +121,24 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select "HoaDonThanhToan"."thoigian",
-       Sum("HoaDonThanhToan"."tongtien") as tienthu,
-       Sum("HoaDonNhapHang"."tongtien") as tienchi
-  from (("dbo"."NhanVien" "NhanVien"
+    <value>select "Mon"."tenmon","Mon"."gia",
+       SUM("Chitiet_HoaDonThanhToan"."soluong") AS soluong,
+       "HoaDonThanhToan"."thoigian",
+       "DonVi"."tendonvi"
+  from ((("dbo"."Mon" "Mon"
+  inner join "dbo"."Chitiet_HoaDonThanhToan"
+       "Chitiet_HoaDonThanhToan"
+       on ("Chitiet_HoaDonThanhToan"."id_mon" = "Mon"."id_mon"))
   inner join "dbo"."HoaDonThanhToan"
        "HoaDonThanhToan"
-       on ("HoaDonThanhToan"."id_nhanvien" = "NhanVien"."id_nhanvien"))
-  inner join "dbo"."HoaDonNhapHang"
-       "HoaDonNhapHang"
-       on ("HoaDonNhapHang"."id_nhanvien" = "NhanVien"."id_nhanvien"))
-WHERE right(convert(varchar(10),"HoaDonThanhToan"."thoigian",103),7) = right(convert(varchar(10),@NgayBaoCao,103),7)
-GROUP BY "HoaDonThanhToan"."thoigian"</value>
+       on ("HoaDonThanhToan"."id_hoadon" = "Chitiet_HoaDonThanhToan"."id_hoadon"))
+  inner join "dbo"."DonVi" "DonVi"
+       on ("DonVi"."id_donvi" = "Mon"."id_donvi"))
+WHERE CONVERT(varchar(11),"HoaDonThanhToan"."thoigian",103) = CONVERT(varchar(11),@NgayThongKe ,103)
+Group by "Mon"."tenmon","Mon"."gia","HoaDonThanhToan"."thoigian", "DonVi"."tendonvi"
+ORDER BY soluong DESC;</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0idGhvaWdpYW4iIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJ0aWVudGh1IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJ0aWVuY2hpIiBUeXBlPSJEZWNpbWFsIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0idGVubW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9ImdpYSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0ic29sdW9uZyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9InRob2lnaWFuIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0idGVuZG9udmkiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
   </data>
 </root>

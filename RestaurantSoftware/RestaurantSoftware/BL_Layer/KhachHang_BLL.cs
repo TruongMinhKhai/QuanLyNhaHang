@@ -9,7 +9,7 @@ namespace RestaurantSoftware.BL_Layer
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
         public IEnumerable<KhachHang> LayDanhSachKhachHang()
         {
-            IEnumerable<KhachHang> query = from kh in dbContext.KhachHangs select kh;
+            IEnumerable<KhachHang> query = from kh in dbContext.KhachHangs where kh.trangthai != false select kh;
             return query;
         }
 
@@ -30,6 +30,13 @@ namespace RestaurantSoftware.BL_Layer
             dbContext.SubmitChanges();
         }
 
+        public void XoaTam(int id_khachhang)
+        {
+            KhachHang _khachhang = dbContext.KhachHangs.Single<KhachHang>(x => x.id_khachhang == id_khachhang);
+            _khachhang.trangthai = false;
+            // update 
+            dbContext.SubmitChanges();
+        }
         public void XoaKhachHang(int _KhachHagID)
         {
             KhachHang _khachhang = dbContext.KhachHangs.Single<KhachHang>(x => x.id_khachhang == _KhachHagID);
@@ -52,6 +59,24 @@ namespace RestaurantSoftware.BL_Layer
                         return false;
                     }
                 }
+                return true;
+            }
+            return false;
+        }
+
+        public bool KiemTraThongTin(int id_khachhang)
+        {
+            IEnumerable<DatBan> _KiemTraDatBan = from db in dbContext.DatBans
+                                                 where db.id_khachhang == id_khachhang
+                                                 select db;
+            IEnumerable<HoaDonThanhToan> _KiemTraHoaDon = from hd in dbContext.HoaDonThanhToans
+                                                          where hd.id_khachhang == id_khachhang
+                                                          select hd;
+            IEnumerable<SuCo> _KiemTraSuCo = from sc in dbContext.SuCos
+                                                          where sc.id_khachhang == id_khachhang
+                                                          select sc;
+            if (_KiemTraDatBan.Count() > 0 || _KiemTraHoaDon.Count() > 0 || _KiemTraSuCo.Count() > 0)
+            {
                 return true;
             }
             return false;
