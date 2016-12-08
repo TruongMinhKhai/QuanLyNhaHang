@@ -30,3 +30,4 @@ D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\Rest
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
+D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.csprojResolveAssemblyReference.cache

@@ -385,6 +385,8 @@
             this.txt_KhachDua.StyleController = this.layoutControl1;
             this.txt_KhachDua.TabIndex = 14;
             this.txt_KhachDua.EditValueChanged += new System.EventHandler(this.txt_KhachDua_EditValueChanged);
+            this.txt_KhachDua.Click += new System.EventHandler(this.txt_KhachDua_Click);
+            this.txt_KhachDua.Leave += new System.EventHandler(this.txt_KhachDua_Leave);
             // 
             // txt_TongHoaDon
             // 

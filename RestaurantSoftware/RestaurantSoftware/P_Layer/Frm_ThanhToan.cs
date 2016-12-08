@@ -100,6 +100,9 @@ namespace RestaurantSoftware.P_Layer
             {
                 txt_TenKH.Text = "";
                 txt_SDT.Text = "";
+                txt_KhachDua.Text = "";
+                txt_TraLai.Text = "";
+
                 txt_Ban.Text = lvDsBan.SelectedItems[0].Text;
                 _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "Chưa thanh toán", txt_MaHoaDon, cmb_NhanVien, dt_NgayLap,txt_TenKH,txt_SDT);
                 _thanhToanBll.LayDsThamSo(txt_VAT, txt_KhuyenMai);
@@ -153,7 +156,8 @@ namespace RestaurantSoftware.P_Layer
         {
             txt_TenKH.Text = "";
             txt_SDT.Text = "";
-
+            txt_KhachDua.Text = "";
+            txt_TraLai.Text = "";
             txt_TenKH.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_khachHang);
             txt_MaHoaDon.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_MaHoaDon);
             txt_SDT.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_sdt);
@@ -173,18 +177,42 @@ namespace RestaurantSoftware.P_Layer
                     btn_ThanhToan.Enabled = true;
                 }
         }
+
+        public void TinhToan()
+        {
+            TongTien();
+            TongHoaDon();
+            if (txt_KhachDua.Text != "")
+            {
+                int a = int.Parse(txt_KhachDua.Text) - int.Parse(txt_TongHoaDon.Text);
+                txt_TraLai.Text = a.ToString();
+            }
+            //chuyenvetiente(txt_KhachDua);
+            chuyenvetiente(txt_TraLai);
+            chuyenvetiente(txt_TongTien);
+            chuyenvetiente(txt_TongHoaDon);
+        }
         public void chuyenvetiente(TextEdit txt)
         {
-            if (txt.Text=="0")
+            try
             {
-                int c = int.Parse(txt.Text);
-                txt.Text = c.ToString("0 VNĐ");
+                if (txt.Text == "0")
+                {
+                    int c = int.Parse(txt.Text);
+                    txt.Text = c.ToString("0 VNĐ");
+                }
+                else
+                {
+                    int c = int.Parse(txt.Text);
+                    txt.Text = c.ToString("#,### VNĐ");
+                }
             }
-            else
+            catch (Exception)
             {
-                int c = int.Parse(txt.Text);
-                txt.Text = c.ToString("#,### VNĐ");
+                
+               
             }
+            
             
         }
         public void TongTien()
@@ -253,10 +281,7 @@ namespace RestaurantSoftware.P_Layer
         {
             if(checkBoxKhuyenmai.Checked ==true)
             {
-                TongTien();
-                TongHoaDon();
-                chuyenvetiente(txt_TongTien);
-                chuyenvetiente(txt_TongHoaDon);
+                TinhToan();
             }
            
 
@@ -266,10 +291,7 @@ namespace RestaurantSoftware.P_Layer
         {
             if (checkBoxVat.Checked==true)
             {
-                TongTien();
-                TongHoaDon();
-                chuyenvetiente(txt_TongTien);
-                chuyenvetiente(txt_TongHoaDon);
+                TinhToan();
             }
            
 
@@ -277,7 +299,23 @@ namespace RestaurantSoftware.P_Layer
 
         private void txt_KhachDua_EditValueChanged(object sender, EventArgs e)
         {
-           
+            TinhToan();
         }
+
+        private void txt_KhachDua_Leave(object sender, EventArgs e)
+        {
+            chuyenvetiente(txt_KhachDua);
+            chuyenvetiente(txt_TraLai);
+            chuyenvetiente(txt_TongTien);
+            chuyenvetiente(txt_TongHoaDon);
+        }
+
+        private void txt_KhachDua_Click(object sender, EventArgs e)
+        {
+            txt_KhachDua.Text = "";
+            txt_TraLai.Text = "";
+        }
+
+
     }
 }
