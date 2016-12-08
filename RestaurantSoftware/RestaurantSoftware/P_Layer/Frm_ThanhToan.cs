@@ -102,6 +102,7 @@ namespace RestaurantSoftware.P_Layer
                 txt_SDT.Text = "";
                 txt_Ban.Text = lvDsBan.SelectedItems[0].Text;
                 _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "Chưa thanh toán", txt_MaHoaDon, cmb_NhanVien, dt_NgayLap,txt_TenKH,txt_SDT);
+                _thanhToanBll.LayDsThamSo(txt_VAT, txt_KhuyenMai);
                 LoadChiTietHoaDon();
                 btn_ThanhToan.Enabled = true;
 
@@ -113,33 +114,170 @@ namespace RestaurantSoftware.P_Layer
             {
                 int a = int.Parse(txt_MaHoaDon.Text);
                 _thanhToanBll.LoadChiTietHoaDon(a, grd_DanhSachMon);
+                TongTien();
+                TongHoaDon();
+                chuyenvetiente(txt_TongTien);
+                chuyenvetiente(txt_TongHoaDon);
+
+
             }
             catch (Exception)
             {
-                Notifications.Answers("");
+                Notifications.Answers("Lỗi load chi tiết");
+
+            }
+
+        }
+        public void KiemtraTextBox()
+        {
+            if (txt_TongTien.Text == "")
+            {
+                txt_TongTien.Text = "0";
+            }
+            if (txt_KhuyenMai.Text == "")
+            {
+                txt_KhuyenMai.Text = "0";
+            }
+            if (txt_VAT.Text == "")
+            {
+                txt_VAT.Text = "0";
+            }
+            if (txt_TongHoaDon.Text == "")
+            {
+                txt_TongHoaDon.Text = "0";
             }
 
         }
 
         private void gv_HoaDon_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
+            txt_TenKH.Text = "";
+            txt_SDT.Text = "";
+
+            txt_TenKH.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_khachHang);
+            txt_MaHoaDon.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_MaHoaDon);
+            txt_SDT.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_sdt);
+            dt_NgayLap.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_ThoiGian);
+            txt_VAT.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_Vat);
+            txt_KhuyenMai.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_KhuyenMai);
+            KiemtraTextBox();
+            //_thanhToanBll.load(int.Parse(gv_HoaDon.GetFocusedRowCellDisplayText(col_MaBan)), txt_MaHoaDon, cmb_NhanVien, dt_NgayLap, txt_TenKH, txt_SDT);
+            LoadChiTietHoaDon();
             if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Đã thanh toán")
             {
-                txt_TenKH.Text = "";
-                txt_SDT.Text = "";
-                _thanhToanBll.load(int.Parse(gv_HoaDon.GetFocusedRowCellDisplayText(col_MaBan)), txt_MaHoaDon, cmb_NhanVien, dt_NgayLap, txt_TenKH, txt_SDT);
                 btn_ThanhToan.Enabled = false;
             }
             else
                 if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Chưa thanh toán")
                 {
-                    txt_TenKH.Text = "";
-                    txt_SDT.Text = "";
-                    txt_Ban.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_TenBan);
-                    _thanhToanBll.loadid(int.Parse(gv_HoaDon.GetFocusedRowCellDisplayText(col_MaBan)), "Chưa thanh toán", txt_MaHoaDon, cmb_NhanVien, dt_NgayLap,txt_TenKH,txt_SDT);
-                    LoadChiTietHoaDon();
                     btn_ThanhToan.Enabled = true;
                 }
+        }
+        public void chuyenvetiente(TextEdit txt)
+        {
+            if (txt.Text=="0")
+            {
+                int c = int.Parse(txt.Text);
+                txt.Text = c.ToString("0 VNĐ");
+            }
+            else
+            {
+                int c = int.Parse(txt.Text);
+                txt.Text = c.ToString("#,### VNĐ");
+            }
+            
+        }
+        public void TongTien()
+        {
+            try
+            {
+                var a = gv_DanhSachMon.Columns["thanhtien"].SummaryItem.SummaryValue;
+                txt_TongTien.EditValue = a;   
+
+            }
+            catch (Exception)
+            {
+
+                Notifications.Answers("Lỗi tổng tiền");
+            }
+           
+        }
+
+        private void checkBoxKhuyenmai_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxKhuyenmai.Checked == true)
+            {
+                txt_KhuyenMai.Properties.ReadOnly = false;
+
+            }
+            else
+            {
+                txt_KhuyenMai.Properties.ReadOnly = true;
+                txt_KhuyenMai.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_KhuyenMai);
+            }
+        }
+
+        private void checkBoxVat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxVat.Checked == true)
+            {
+                txt_VAT.Properties.ReadOnly = false;
+            }
+            else
+            {
+                txt_VAT.Properties.ReadOnly = true;
+                txt_VAT.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_Vat);
+            }
+        }
+        public void TongHoaDon()
+        {
+            try
+            {
+                KiemtraTextBox();                         
+                int a = int.Parse(txt_TongTien.Text);
+                int b = ((int.Parse(txt_TongTien.Text)) * (int.Parse(txt_VAT.Text))) / 100;
+                int c = ((int.Parse(txt_TongTien.Text)) * (int.Parse(txt_KhuyenMai.Text))) / 100;
+                txt_TongHoaDon.Text = (a + b - c).ToString();
+                
+                
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+        }
+
+        private void txt_KhuyenMai_EditValueChanged(object sender, EventArgs e)
+        {
+            if(checkBoxKhuyenmai.Checked ==true)
+            {
+                TongTien();
+                TongHoaDon();
+                chuyenvetiente(txt_TongTien);
+                chuyenvetiente(txt_TongHoaDon);
+            }
+           
+
+        }
+
+        private void txt_VAT_EditValueChanged(object sender, EventArgs e)
+        {
+            if (checkBoxVat.Checked==true)
+            {
+                TongTien();
+                TongHoaDon();
+                chuyenvetiente(txt_TongTien);
+                chuyenvetiente(txt_TongHoaDon);
+            }
+           
+
+        }
+
+        private void txt_KhachDua_EditValueChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

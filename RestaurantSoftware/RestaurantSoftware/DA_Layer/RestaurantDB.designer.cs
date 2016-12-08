@@ -1626,7 +1626,7 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private System.Nullable<int> _soluong;
 		
-		private System.Nullable<decimal> _thanhtien;
+		private System.Nullable<int> _thanhtien;
 		
 		private EntityRef<HoaDonThanhToan> _HoaDonThanhToan;
 		
@@ -1644,7 +1644,7 @@ namespace RestaurantSoftware.DA_Layer
     partial void Onid_monChanged();
     partial void OnsoluongChanging(System.Nullable<int> value);
     partial void OnsoluongChanged();
-    partial void OnthanhtienChanging(System.Nullable<decimal> value);
+    partial void OnthanhtienChanging(System.Nullable<int> value);
     partial void OnthanhtienChanged();
     #endregion
 		
@@ -1743,8 +1743,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thanhtien", DbType="Money")]
-		public System.Nullable<decimal> thanhtien
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thanhtien", DbType="Int")]
+		public System.Nullable<int> thanhtien
 		{
 			get
 			{
@@ -1860,11 +1860,13 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private int _id_datban;
 		
-		private System.Nullable<int> _id_ban;
-		
 		private System.Nullable<int> _id_nhanvien;
 		
+		private System.Nullable<int> _id_ban;
+		
 		private System.Nullable<int> _id_khachhang;
+		
+		private System.Nullable<decimal> _coc;
 		
 		private System.Nullable<System.DateTime> _thoigian;
 		
@@ -1884,12 +1886,14 @@ namespace RestaurantSoftware.DA_Layer
     partial void OnCreated();
     partial void Onid_datbanChanging(int value);
     partial void Onid_datbanChanged();
-    partial void Onid_banChanging(System.Nullable<int> value);
-    partial void Onid_banChanged();
     partial void Onid_nhanvienChanging(System.Nullable<int> value);
     partial void Onid_nhanvienChanged();
+    partial void Onid_banChanging(System.Nullable<int> value);
+    partial void Onid_banChanged();
     partial void Onid_khachhangChanging(System.Nullable<int> value);
     partial void Onid_khachhangChanged();
+    partial void OncocChanging(System.Nullable<decimal> value);
+    partial void OncocChanged();
     partial void OnthoigianChanging(System.Nullable<System.DateTime> value);
     partial void OnthoigianChanged();
     partial void OntrangthaiChanging(string value);
@@ -1925,30 +1929,6 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ban", DbType="Int")]
-		public System.Nullable<int> id_ban
-		{
-			get
-			{
-				return this._id_ban;
-			}
-			set
-			{
-				if ((this._id_ban != value))
-				{
-					if (this._Ban.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_banChanging(value);
-					this.SendPropertyChanging();
-					this._id_ban = value;
-					this.SendPropertyChanged("id_ban");
-					this.Onid_banChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_nhanvien", DbType="Int")]
 		public System.Nullable<int> id_nhanvien
 		{
@@ -1973,6 +1953,30 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ban", DbType="Int")]
+		public System.Nullable<int> id_ban
+		{
+			get
+			{
+				return this._id_ban;
+			}
+			set
+			{
+				if ((this._id_ban != value))
+				{
+					if (this._Ban.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_banChanging(value);
+					this.SendPropertyChanging();
+					this._id_ban = value;
+					this.SendPropertyChanged("id_ban");
+					this.Onid_banChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_khachhang", DbType="Int")]
 		public System.Nullable<int> id_khachhang
 		{
@@ -1993,6 +1997,26 @@ namespace RestaurantSoftware.DA_Layer
 					this._id_khachhang = value;
 					this.SendPropertyChanged("id_khachhang");
 					this.Onid_khachhangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_coc", DbType="Money")]
+		public System.Nullable<decimal> coc
+		{
+			get
+			{
+				return this._coc;
+			}
+			set
+			{
+				if ((this._coc != value))
+				{
+					this.OncocChanging(value);
+					this.SendPropertyChanging();
+					this._coc = value;
+					this.SendPropertyChanged("coc");
+					this.OncocChanged();
 				}
 			}
 		}
@@ -2923,25 +2947,27 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private System.Nullable<int> _id_ban;
 		
+		private System.Nullable<int> _id_khanhhang;
+		
 		private System.Nullable<System.DateTime> _thoigian;
 		
-		private System.Nullable<decimal> _tongtien;
+		private System.Nullable<int> _tongtien;
 		
 		private System.Nullable<double> _khuyenmai;
 		
 		private System.Nullable<double> _vat;
 		
-		private System.Nullable<decimal> _datra;
+		private System.Nullable<int> _datra;
 		
-		private System.Nullable<decimal> _conlai;
+		private System.Nullable<int> _conlai;
 		
 		private string _trangthai;
-		
-		private System.Nullable<int> _id_khanhhang;
 		
 		private EntitySet<Chitiet_HoaDonThanhToan> _Chitiet_HoaDonThanhToans;
 		
 		private EntityRef<Ban> _Ban;
+		
+		private EntityRef<KhachHang> _KhachHang;
 		
 		private EntityRef<NhanVien> _NhanVien;
 		
@@ -2955,28 +2981,29 @@ namespace RestaurantSoftware.DA_Layer
     partial void Onid_nhanvienChanged();
     partial void Onid_banChanging(System.Nullable<int> value);
     partial void Onid_banChanged();
+    partial void Onid_khanhhangChanging(System.Nullable<int> value);
+    partial void Onid_khanhhangChanged();
     partial void OnthoigianChanging(System.Nullable<System.DateTime> value);
     partial void OnthoigianChanged();
-    partial void OntongtienChanging(System.Nullable<decimal> value);
+    partial void OntongtienChanging(System.Nullable<int> value);
     partial void OntongtienChanged();
     partial void OnkhuyenmaiChanging(System.Nullable<double> value);
     partial void OnkhuyenmaiChanged();
     partial void OnvatChanging(System.Nullable<double> value);
     partial void OnvatChanged();
-    partial void OndatraChanging(System.Nullable<decimal> value);
+    partial void OndatraChanging(System.Nullable<int> value);
     partial void OndatraChanged();
-    partial void OnconlaiChanging(System.Nullable<decimal> value);
+    partial void OnconlaiChanging(System.Nullable<int> value);
     partial void OnconlaiChanged();
     partial void OntrangthaiChanging(string value);
     partial void OntrangthaiChanged();
-    partial void Onid_khanhhangChanging(System.Nullable<int> value);
-    partial void Onid_khanhhangChanged();
     #endregion
 		
 		public HoaDonThanhToan()
 		{
 			this._Chitiet_HoaDonThanhToans = new EntitySet<Chitiet_HoaDonThanhToan>(new Action<Chitiet_HoaDonThanhToan>(this.attach_Chitiet_HoaDonThanhToans), new Action<Chitiet_HoaDonThanhToan>(this.detach_Chitiet_HoaDonThanhToans));
 			this._Ban = default(EntityRef<Ban>);
+			this._KhachHang = default(EntityRef<KhachHang>);
 			this._NhanVien = default(EntityRef<NhanVien>);
 			OnCreated();
 		}
@@ -3049,6 +3076,30 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_khanhhang", DbType="Int")]
+		public System.Nullable<int> id_khanhhang
+		{
+			get
+			{
+				return this._id_khanhhang;
+			}
+			set
+			{
+				if ((this._id_khanhhang != value))
+				{
+					if (this._KhachHang.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_khanhhangChanging(value);
+					this.SendPropertyChanging();
+					this._id_khanhhang = value;
+					this.SendPropertyChanged("id_khanhhang");
+					this.Onid_khanhhangChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thoigian", DbType="Date")]
 		public System.Nullable<System.DateTime> thoigian
 		{
@@ -3069,8 +3120,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongtien", DbType="Money")]
-		public System.Nullable<decimal> tongtien
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongtien", DbType="Int")]
+		public System.Nullable<int> tongtien
 		{
 			get
 			{
@@ -3129,8 +3180,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datra", DbType="Money")]
-		public System.Nullable<decimal> datra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datra", DbType="Int")]
+		public System.Nullable<int> datra
 		{
 			get
 			{
@@ -3149,8 +3200,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_conlai", DbType="Money")]
-		public System.Nullable<decimal> conlai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_conlai", DbType="Int")]
+		public System.Nullable<int> conlai
 		{
 			get
 			{
@@ -3185,26 +3236,6 @@ namespace RestaurantSoftware.DA_Layer
 					this._trangthai = value;
 					this.SendPropertyChanged("trangthai");
 					this.OntrangthaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_khanhhang", DbType="Int")]
-		public System.Nullable<int> id_khanhhang
-		{
-			get
-			{
-				return this._id_khanhhang;
-			}
-			set
-			{
-				if ((this._id_khanhhang != value))
-				{
-					this.Onid_khanhhangChanging(value);
-					this.SendPropertyChanging();
-					this._id_khanhhang = value;
-					this.SendPropertyChanged("id_khanhhang");
-					this.Onid_khanhhangChanged();
 				}
 			}
 		}
@@ -3252,6 +3283,40 @@ namespace RestaurantSoftware.DA_Layer
 						this._id_ban = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Ban");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_HoaDonThanhToan", Storage="_KhachHang", ThisKey="id_khanhhang", OtherKey="id_khachhang", IsForeignKey=true)]
+		public KhachHang KhachHang
+		{
+			get
+			{
+				return this._KhachHang.Entity;
+			}
+			set
+			{
+				KhachHang previousValue = this._KhachHang.Entity;
+				if (((previousValue != value) 
+							|| (this._KhachHang.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KhachHang.Entity = null;
+						previousValue.HoaDonThanhToans.Remove(this);
+					}
+					this._KhachHang.Entity = value;
+					if ((value != null))
+					{
+						value.HoaDonThanhToans.Add(this);
+						this._id_khanhhang = value.id_khachhang;
+					}
+					else
+					{
+						this._id_khanhhang = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("KhachHang");
 				}
 			}
 		}
@@ -3341,6 +3406,8 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private EntitySet<DatBan> _DatBans;
 		
+		private EntitySet<HoaDonThanhToan> _HoaDonThanhToans;
+		
 		private EntitySet<SuCo> _SuCos;
 		
     #region Extensibility Method Definitions
@@ -3362,6 +3429,7 @@ namespace RestaurantSoftware.DA_Layer
 		public KhachHang()
 		{
 			this._DatBans = new EntitySet<DatBan>(new Action<DatBan>(this.attach_DatBans), new Action<DatBan>(this.detach_DatBans));
+			this._HoaDonThanhToans = new EntitySet<HoaDonThanhToan>(new Action<HoaDonThanhToan>(this.attach_HoaDonThanhToans), new Action<HoaDonThanhToan>(this.detach_HoaDonThanhToans));
 			this._SuCos = new EntitySet<SuCo>(new Action<SuCo>(this.attach_SuCos), new Action<SuCo>(this.detach_SuCos));
 			OnCreated();
 		}
@@ -3406,7 +3474,7 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sdt", DbType="NVarChar(20)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sdt", DbType="NVarChar(30)")]
 		public string sdt
 		{
 			get
@@ -3479,6 +3547,19 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_HoaDonThanhToan", Storage="_HoaDonThanhToans", ThisKey="id_khachhang", OtherKey="id_khanhhang")]
+		public EntitySet<HoaDonThanhToan> HoaDonThanhToans
+		{
+			get
+			{
+				return this._HoaDonThanhToans;
+			}
+			set
+			{
+				this._HoaDonThanhToans.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_SuCo", Storage="_SuCos", ThisKey="id_khachhang", OtherKey="id_khachhang")]
 		public EntitySet<SuCo> SuCos
 		{
@@ -3519,6 +3600,18 @@ namespace RestaurantSoftware.DA_Layer
 		}
 		
 		private void detach_DatBans(DatBan entity)
+		{
+			this.SendPropertyChanging();
+			entity.KhachHang = null;
+		}
+		
+		private void attach_HoaDonThanhToans(HoaDonThanhToan entity)
+		{
+			this.SendPropertyChanging();
+			entity.KhachHang = this;
+		}
+		
+		private void detach_HoaDonThanhToans(HoaDonThanhToan entity)
 		{
 			this.SendPropertyChanging();
 			entity.KhachHang = null;
@@ -4007,11 +4100,11 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private string _tenviettat;
 		
-		private System.Nullable<decimal> _gia;
-		
-		private string _trangthai;
+		private System.Nullable<int> _gia;
 		
 		private System.Nullable<int> _id_donvi;
+		
+		private string _trangthai;
 		
 		private EntitySet<Chitiet_BaoCaoDoanhThu> _Chitiet_BaoCaoDoanhThus;
 		
@@ -4035,12 +4128,12 @@ namespace RestaurantSoftware.DA_Layer
     partial void OntenmonChanged();
     partial void OntenviettatChanging(string value);
     partial void OntenviettatChanged();
-    partial void OngiaChanging(System.Nullable<decimal> value);
+    partial void OngiaChanging(System.Nullable<int> value);
     partial void OngiaChanged();
-    partial void OntrangthaiChanging(string value);
-    partial void OntrangthaiChanged();
     partial void Onid_donviChanging(System.Nullable<int> value);
     partial void Onid_donviChanged();
+    partial void OntrangthaiChanging(string value);
+    partial void OntrangthaiChanged();
     #endregion
 		
 		public Mon()
@@ -4137,8 +4230,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia", DbType="Money")]
-		public System.Nullable<decimal> gia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia", DbType="Int")]
+		public System.Nullable<int> gia
 		{
 			get
 			{
@@ -4153,26 +4246,6 @@ namespace RestaurantSoftware.DA_Layer
 					this._gia = value;
 					this.SendPropertyChanged("gia");
 					this.OngiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trangthai", DbType="NVarChar(50)")]
-		public string trangthai
-		{
-			get
-			{
-				return this._trangthai;
-			}
-			set
-			{
-				if ((this._trangthai != value))
-				{
-					this.OntrangthaiChanging(value);
-					this.SendPropertyChanging();
-					this._trangthai = value;
-					this.SendPropertyChanged("trangthai");
-					this.OntrangthaiChanged();
 				}
 			}
 		}
@@ -4197,6 +4270,26 @@ namespace RestaurantSoftware.DA_Layer
 					this._id_donvi = value;
 					this.SendPropertyChanged("id_donvi");
 					this.Onid_donviChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trangthai", DbType="NVarChar(50)")]
+		public string trangthai
+		{
+			get
+			{
+				return this._trangthai;
+			}
+			set
+			{
+				if ((this._trangthai != value))
+				{
+					this.OntrangthaiChanging(value);
+					this.SendPropertyChanging();
+					this._trangthai = value;
+					this.SendPropertyChanged("trangthai");
+					this.OntrangthaiChanged();
 				}
 			}
 		}

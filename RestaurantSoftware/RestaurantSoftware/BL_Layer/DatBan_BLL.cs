@@ -101,24 +101,33 @@ namespace RestaurantSoftware.BL_Layer
             dbContext.DatBans.InsertOnSubmit(db);
             dbContext.SubmitChanges();
         }
-        public void LoadChiTietDatBan(string TenBan, DateTime ngaydat, GridControl grid)
+       
+        public void LoadChiTietDatBan(int iddatban, GridControl grid)
         {
-            var query = from ct in dbContext.Chitiet_DatBans
-                        where
-                          ct.DatBan.Ban.tenban == TenBan &&
-                          ct.DatBan.thoigian == ngaydat.Date
-                        select new
-                        {
-                            ct.id_datban,
-                            ct.id_mon,
-                            ct.Mon.tenmon,
-                            ct.soluong,
-                            gia = (decimal?)ct.Mon.gia,
-                            ct.thanhtien
-                        };
-            grid.DataSource = query;
-        }
+            try
+            {
+                var query = from ct in dbContext.Chitiet_DatBans
+                            join m in dbContext.Mons on ct.id_mon equals m.id_mon
+                            where
+                              ct.id_datban == iddatban
+                            select new
+                            {
+                                ct.id_datban,
+                                ct.id_mon,
+                                m.tenmon,
+                                ct.soluong,
+                                m.gia,
+                                ct.thanhtien
+                            };
+                grid.DataSource = query;
+            }
+            catch (Exception)
+            {
 
+                Notifications.Answers("Chưa có món ăn");
+            }
+
+        }
         public void loadid(int iddatban, string trangthai, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt, TextEdit tenban)
         {
             try

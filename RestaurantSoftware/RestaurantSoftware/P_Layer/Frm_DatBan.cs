@@ -161,7 +161,7 @@ namespace RestaurantSoftware.P_Layer
                 txt_TenKH.Text = "";
                 txt_SDT.Text = "";
                 datban_bll.load(int.Parse(gridView_DsDatBan.GetFocusedRowCellDisplayText(col_MaDatBan)), cmb_NhanVien, dt_NgayDat, txt_TenKH, txt_SDT, txt_TenBan);
-                
+                datban_bll.LoadChiTietDatBan(int.Parse(gridView_DsDatBan.GetFocusedRowCellDisplayText(col_MaDatBan)), gridControl_ChiTietDatBan);
             }
             else
                 if (gridView_DsDatBan.GetFocusedRowCellDisplayText(col_TrangThai) == "Chưa nhận bàn")
@@ -170,6 +170,8 @@ namespace RestaurantSoftware.P_Layer
                     txt_SDT.Text = "";
                     //txt_Ban.Text = gridView_DsDatBan.GetFocusedRowCellDisplayText(col_TenBan);
                     datban_bll.loadid(int.Parse(gridView_DsDatBan.GetFocusedRowCellDisplayText(col_MaDatBan)), "Chưa nhận bàn", cmb_NhanVien, dt_NgayDat, txt_TenKH, txt_SDT, txt_TenBan);
+                    datban_bll.LoadChiTietDatBan(int.Parse(gridView_DsDatBan.GetFocusedRowCellDisplayText(col_MaDatBan)), gridControl_ChiTietDatBan);
+
                 }
         }
     }

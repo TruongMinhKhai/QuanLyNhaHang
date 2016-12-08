@@ -466,7 +466,7 @@
             this.id_ct_mon});
             this.gridView_ChiTietDatBan.GridControl = this.gridControl_ChiTietDatBan;
             this.gridView_ChiTietDatBan.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "thantien", this.gridColumn4, "(Thành Tiền: SUM={0:0.##})")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "thanhtien", this.gridColumn4, "(Thành Tiền: SUM={0:0.##})")});
             this.gridView_ChiTietDatBan.Name = "gridView_ChiTietDatBan";
             this.gridView_ChiTietDatBan.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridView_ChiTietDatBan.OptionsView.ShowFooter = true;

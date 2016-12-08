@@ -64,7 +64,7 @@ namespace RestaurantSoftware.P_Layer
                         mon.id_loaimon = int.Parse(gridView1.GetFocusedRowCellValue(col_LoaiMon).ToString());
                         mon.tenviettat = gridView1.GetFocusedRowCellValue(col_TenVietTat).ToString();
                         mon.trangthai = gridView1.GetFocusedRowCellValue(col_TrangThai).ToString();
-                        mon.gia = decimal.Parse(gridView1.GetFocusedRowCellValue(col_Gia).ToString());
+                        mon.gia = int.Parse(gridView1.GetFocusedRowCellValue(col_Gia).ToString());
                         _monBll.ThemMonMoi(mon);
                         Notifications.Success("Thêm món mới thành công!");
                         LoadDataSource();
@@ -120,7 +120,7 @@ namespace RestaurantSoftware.P_Layer
                     mon.tenmon = gridView1.GetRowCellValue(id, "tenmon").ToString();
                     mon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
                     mon.tenviettat = gridView1.GetRowCellValue(id, "tenviettat").ToString();
-                    mon.gia = decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
+                    mon.gia = int.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
                     mon.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
                     
                     if (!_monBll.KiemTraTenMonTonTai(mon.tenmon, mon.id_mon))
