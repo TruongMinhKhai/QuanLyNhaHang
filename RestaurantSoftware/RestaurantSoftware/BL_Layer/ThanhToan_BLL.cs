@@ -166,6 +166,17 @@ namespace RestaurantSoftware.BL_Layer
                 sdt.Text = i.Sodienthoai;
             }
         }
+
+        public void ThanhToan(HoaDonThanhToan m)
+        {
+            HoaDonThanhToan _qd = dbContext.HoaDonThanhToans.Single<HoaDonThanhToan>(x => x.id_hoadon == m.id_hoadon);
+            _qd.khuyenmai = m.khuyenmai;
+            _qd.vat = m.vat;
+            _qd.tongtien = m.tongtien;
+            _qd.trangthai = m.trangthai;
+            // update 
+            dbContext.SubmitChanges();
+        }
         //public void load(int idban, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt)
         //{
         //    try

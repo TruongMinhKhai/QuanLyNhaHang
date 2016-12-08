@@ -64,7 +64,6 @@
             this.col_SoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_ThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.tong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txt_MaHoaDon = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -357,6 +356,7 @@
             this.btn_ThanhToan.StyleController = this.layoutControl1;
             this.btn_ThanhToan.TabIndex = 19;
             this.btn_ThanhToan.Text = "Thanh toán";
+            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
             // 
             // btn_in
             // 
@@ -392,6 +392,7 @@
             // 
             this.txt_TongHoaDon.Location = new System.Drawing.Point(284, 472);
             this.txt_TongHoaDon.Name = "txt_TongHoaDon";
+            this.txt_TongHoaDon.Properties.ReadOnly = true;
             this.txt_TongHoaDon.Size = new System.Drawing.Size(330, 20);
             this.txt_TongHoaDon.StyleController = this.layoutControl1;
             this.txt_TongHoaDon.TabIndex = 13;
@@ -421,6 +422,7 @@
             this.txt_TongTien.Location = new System.Drawing.Point(284, 400);
             this.txt_TongTien.Name = "txt_TongTien";
             this.txt_TongTien.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.txt_TongTien.Properties.ReadOnly = true;
             this.txt_TongTien.Size = new System.Drawing.Size(330, 20);
             this.txt_TongTien.StyleController = this.layoutControl1;
             this.txt_TongTien.TabIndex = 10;
@@ -441,11 +443,8 @@
             this.col_TenMon,
             this.col_SoLuong,
             this.col_DonGia,
-            this.col_ThanhTien,
-            this.tong});
+            this.col_ThanhTien});
             this.gv_DanhSachMon.GridControl = this.grd_DanhSachMon;
-            this.gv_DanhSachMon.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "thanhtien", this.tong, "(Thành Tiền: SUM={0:0.##})")});
             this.gv_DanhSachMon.Name = "gv_DanhSachMon";
             // 
             // col_TenMon
@@ -467,6 +466,8 @@
             // col_DonGia
             // 
             this.col_DonGia.Caption = "Đơn Giá";
+            this.col_DonGia.DisplayFormat.FormatString = "#,###";
+            this.col_DonGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.col_DonGia.FieldName = "gia";
             this.col_DonGia.Name = "col_DonGia";
             this.col_DonGia.Visible = true;
@@ -475,19 +476,14 @@
             // col_ThanhTien
             // 
             this.col_ThanhTien.Caption = "Thành Tiền";
+            this.col_ThanhTien.DisplayFormat.FormatString = "#,###";
+            this.col_ThanhTien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.col_ThanhTien.FieldName = "thanhtien";
             this.col_ThanhTien.Name = "col_ThanhTien";
             this.col_ThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "thanhtien", "Tổng Tiền={0:0.##}")});
             this.col_ThanhTien.Visible = true;
             this.col_ThanhTien.VisibleIndex = 3;
-            // 
-            // tong
-            // 
-            this.tong.Caption = "gridColumn1";
-            this.tong.Name = "tong";
-            this.tong.Visible = true;
-            this.tong.VisibleIndex = 4;
             // 
             // txt_MaHoaDon
             // 
@@ -867,7 +863,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
-        private DevExpress.XtraGrid.Columns.GridColumn tong;
         private DevExpress.XtraGrid.Columns.GridColumn col_khachHang;
         private DevExpress.XtraGrid.Columns.GridColumn col_sdt;
         private DevExpress.XtraGrid.Columns.GridColumn col_KhuyenMai;
