@@ -276,6 +276,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="P_Layer\Frm_Ban.resx">
       <DependentUpon>Frm_Ban.cs</DependentUpon>
@@ -356,6 +357,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\table-do.png" />
     <Content Include="Resource\table-do.png" />
     <Content Include="Resource\table-vang.png" />
     <Content Include="Resource\table-xanh.png" />
