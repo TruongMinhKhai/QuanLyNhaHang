@@ -20,7 +20,7 @@ namespace RestaurantSoftware.P_Layer
         private Ban_BLL _banBll = new Ban_BLL();
         private ThanhToan_BLL _thanhToanBll = new ThanhToan_BLL();
         private List<int> _listUpdate = new List<int>();
-
+        public bool kt = false;
 
         public Frm_ThanhToan()
         {
@@ -107,8 +107,8 @@ namespace RestaurantSoftware.P_Layer
                 LoadChiTietHoaDon();
                 btn_ThanhToan.Enabled = true;
                 checkBoxKhuyenmai.Enabled = true;
-                checkBoxVat.Enabled = true;
                 txt_KhachDua.Enabled = true;
+                kt = true;
 
 
             }
@@ -164,7 +164,7 @@ namespace RestaurantSoftware.P_Layer
             txt_MaHoaDon.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_MaHoaDon);
             txt_SDT.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_sdt);
             dt_NgayLap.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_ThoiGian);
-           
+            kt = false;
            
             if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Đã thanh toán")
             {
@@ -172,7 +172,6 @@ namespace RestaurantSoftware.P_Layer
                 txt_KhuyenMai.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_KhuyenMai);
                 btn_ThanhToan.Enabled = false;
                 checkBoxKhuyenmai.Enabled = false;
-                checkBoxVat.Enabled = false;
                 txt_KhachDua.Enabled = false;
 
             }
@@ -182,7 +181,6 @@ namespace RestaurantSoftware.P_Layer
                     _thanhToanBll.LayDsThamSo(txt_VAT, txt_KhuyenMai);
                     btn_ThanhToan.Enabled = true;
                     checkBoxKhuyenmai.Enabled = true;
-                    checkBoxVat.Enabled = true;
                     txt_KhachDua.Enabled = true;
 
                 }
@@ -199,14 +197,13 @@ namespace RestaurantSoftware.P_Layer
                 TongHoaDon();
                 if (txt_KhachDua.Text != "")
                 {
-                    int a = int.Parse(txt_KhachDua.Text) - int.Parse(txt_TongHoaDon.Text);
-                    txt_TraLai.Text = a.ToString();
+                    int a = chuyenvekieuint(txt_KhachDua);
+                    int b = chuyenvekieuint(txt_TongHoaDon);
+                    int c = a-b;
+                    txt_TraLai.Text = c.ToString();
 
                 }
-                //chuyenvetiente(txt_KhachDua);
                 chuyenvetiente(txt_TraLai);
-                chuyenvetiente(txt_TongTien);
-                chuyenvetiente(txt_TongHoaDon);
             }
             catch (Exception)
             {
@@ -232,32 +229,35 @@ namespace RestaurantSoftware.P_Layer
             }
             catch (Exception)
             {
-                
-               
+
+
             }
             
             
         }
-        public void chuyenvekieuint(TextEdit txt)
+        public int chuyenvekieuint(TextEdit txt)
         {
+            int temp = 0;
             try
             {
                 if (txt.Text == "0")
                 {
                     int c = int.Parse(txt.Text);
-                    txt.Text = c.ToString("0");
+                    temp = int.Parse(c.ToString("0"));
+                    return temp;
                 }
                 else
                 {
-                    txt.Text = (txt.Text).Replace(",", "");
+                    temp  = int.Parse((txt.Text).Replace(",", ""));
+                    return temp;
                 }
             }
             catch (Exception)
             {
 
-
+                return temp;
             }
-
+            return temp;
 
         }
         public void TongTien()
@@ -278,6 +278,7 @@ namespace RestaurantSoftware.P_Layer
 
         private void checkBoxKhuyenmai_CheckedChanged(object sender, EventArgs e)
         {
+
             if (checkBoxKhuyenmai.Checked == true)
             {
                 txt_KhuyenMai.Properties.ReadOnly = false;
@@ -285,72 +286,52 @@ namespace RestaurantSoftware.P_Layer
             }
             else
             {
-              
+
                 txt_KhuyenMai.Properties.ReadOnly = true;
-                if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Đã thanh toán")
+                if (kt == false)
                 {
-                    txt_KhuyenMai.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_KhuyenMai);
+                    if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Đã thanh toán")
+                    {
+                        txt_KhuyenMai.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_KhuyenMai);
 
+                    }
+                    else
+                        if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Chưa thanh toán")
+                        {
+                            TextEdit a = new TextEdit();
+                            _thanhToanBll.LayDsThamSo(a, txt_KhuyenMai);
+                        }
+                    TinhToan();
                 }
                 else
-                    if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Chưa thanh toán")
-                    {
-                        TextEdit a = new TextEdit();
-                        _thanhToanBll.LayDsThamSo(a,txt_KhuyenMai);
-                    } 
-                chuyenvekieuint(txt_KhachDua);
-                TinhToan();
-                chuyenvetiente(txt_KhachDua);
-                chuyenvetiente(txt_TraLai);
-                chuyenvetiente(txt_TongTien);
-                chuyenvetiente(txt_TongHoaDon);
-
-            }
-        }
-
-        private void checkBoxVat_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxVat.Checked == true)
-            {
-                txt_VAT.Properties.ReadOnly = false;
-            }
-            else
-            {
-                txt_VAT.Properties.ReadOnly = true;
-                if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Đã thanh toán")
                 {
-                    txt_VAT.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_Vat);
-                   
+                    TextEdit b = new TextEdit();
+                    _thanhToanBll.LayDsThamSo(b, txt_KhuyenMai);
+                    TinhToan();
                 }
-                else
-                    if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Chưa thanh toán")
-                    {
-                        TextEdit a = new TextEdit();
-                        _thanhToanBll.LayDsThamSo(txt_VAT, a);
-                    } 
-                chuyenvekieuint(txt_KhachDua);
-                TinhToan();
-                chuyenvetiente(txt_KhachDua);
-                chuyenvetiente(txt_TraLai);
-                chuyenvetiente(txt_TongTien);
-                chuyenvetiente(txt_TongHoaDon);
             }
+         
+            
         }
+
+       
         public void TongHoaDon()
         {
             try
             {
-                KiemtraTextBox();                         
-                int a = int.Parse(txt_TongTien.Text);
-                int b = ((int.Parse(txt_TongTien.Text)) * (int.Parse(txt_VAT.Text))) / 100;
-                int c = ((int.Parse(txt_TongTien.Text)) * (int.Parse(txt_KhuyenMai.Text))) / 100;
-                txt_TongHoaDon.Text = (a + b - c).ToString();
+                KiemtraTextBox();
+
+                var a = gv_DanhSachMon.Columns["thanhtien"].SummaryItem.SummaryValue;
+                int d = Convert.ToInt32(a);
+                int b = (d * (int.Parse(txt_VAT.Text))) / 100;
+                int c = (d* (int.Parse(txt_KhuyenMai.Text))) / 100;
+                txt_TongHoaDon.Text = (d + b - c).ToString();
+                chuyenvetiente(txt_TongHoaDon);
                 
                 
             }
             catch (Exception)
             {
-
 
             }
 
@@ -360,9 +341,9 @@ namespace RestaurantSoftware.P_Layer
         {
             if(checkBoxKhuyenmai.Checked ==true)
             {
-                chuyenvekieuint(txt_KhachDua);
+                //chuyenvekieuint(txt_KhachDua);
                 TinhToan();
-                chuyenvetiente(txt_KhachDua);
+                //chuyenvetiente(txt_KhachDua);
 
             }
            
@@ -371,12 +352,6 @@ namespace RestaurantSoftware.P_Layer
 
         private void txt_VAT_EditValueChanged(object sender, EventArgs e)
         {
-            if (checkBoxVat.Checked==true)
-            {
-                chuyenvekieuint(txt_KhachDua);
-                TinhToan();
-                chuyenvetiente(txt_KhachDua);
-            }
            
 
         }
@@ -389,8 +364,7 @@ namespace RestaurantSoftware.P_Layer
         private void txt_KhachDua_Leave(object sender, EventArgs e)
         {
             chuyenvetiente(txt_KhachDua);
-            chuyenvetiente(txt_TraLai);
-            chuyenvetiente(txt_TongTien);
+          
             chuyenvetiente(txt_TongHoaDon);
         }
 

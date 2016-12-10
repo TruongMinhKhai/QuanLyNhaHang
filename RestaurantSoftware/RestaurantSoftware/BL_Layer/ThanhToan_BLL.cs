@@ -96,8 +96,9 @@ namespace RestaurantSoftware.BL_Layer
                                 ct.id_mon,
                                 m.tenmon,
                                 ct.soluong,
+                                thanhtien = ct.soluong * m.gia,
                                 m.gia,
-                                ct.thanhtien
+                                
                             };
                 grid.DataSource = query;
             }

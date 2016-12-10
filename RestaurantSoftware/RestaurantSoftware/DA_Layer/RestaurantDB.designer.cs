@@ -1626,7 +1626,7 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private System.Nullable<int> _soluong;
 		
-		private System.Nullable<int> _thanhtien;
+		private System.Nullable<decimal> _thanhtien;
 		
 		private EntityRef<HoaDonThanhToan> _HoaDonThanhToan;
 		
@@ -1644,7 +1644,7 @@ namespace RestaurantSoftware.DA_Layer
     partial void Onid_monChanged();
     partial void OnsoluongChanging(System.Nullable<int> value);
     partial void OnsoluongChanged();
-    partial void OnthanhtienChanging(System.Nullable<int> value);
+    partial void OnthanhtienChanging(System.Nullable<decimal> value);
     partial void OnthanhtienChanged();
     #endregion
 		
@@ -1743,8 +1743,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thanhtien", DbType="Int")]
-		public System.Nullable<int> thanhtien
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thanhtien", DbType="Money")]
+		public System.Nullable<decimal> thanhtien
 		{
 			get
 			{
@@ -2951,15 +2951,15 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private System.Nullable<System.DateTime> _thoigian;
 		
-		private System.Nullable<int> _tongtien;
+		private System.Nullable<decimal> _tongtien;
 		
 		private System.Nullable<double> _khuyenmai;
 		
 		private System.Nullable<double> _vat;
 		
-		private System.Nullable<int> _datra;
+		private System.Nullable<decimal> _datra;
 		
-		private System.Nullable<int> _conlai;
+		private System.Nullable<decimal> _conlai;
 		
 		private string _trangthai;
 		
@@ -2985,15 +2985,15 @@ namespace RestaurantSoftware.DA_Layer
     partial void Onid_khanhhangChanged();
     partial void OnthoigianChanging(System.Nullable<System.DateTime> value);
     partial void OnthoigianChanged();
-    partial void OntongtienChanging(System.Nullable<int> value);
+    partial void OntongtienChanging(System.Nullable<decimal> value);
     partial void OntongtienChanged();
     partial void OnkhuyenmaiChanging(System.Nullable<double> value);
     partial void OnkhuyenmaiChanged();
     partial void OnvatChanging(System.Nullable<double> value);
     partial void OnvatChanged();
-    partial void OndatraChanging(System.Nullable<int> value);
+    partial void OndatraChanging(System.Nullable<decimal> value);
     partial void OndatraChanged();
-    partial void OnconlaiChanging(System.Nullable<int> value);
+    partial void OnconlaiChanging(System.Nullable<decimal> value);
     partial void OnconlaiChanged();
     partial void OntrangthaiChanging(string value);
     partial void OntrangthaiChanged();
@@ -3120,8 +3120,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongtien", DbType="Int")]
-		public System.Nullable<int> tongtien
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongtien", DbType="Money")]
+		public System.Nullable<decimal> tongtien
 		{
 			get
 			{
@@ -3180,8 +3180,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datra", DbType="Int")]
-		public System.Nullable<int> datra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datra", DbType="Money")]
+		public System.Nullable<decimal> datra
 		{
 			get
 			{
@@ -3200,8 +3200,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_conlai", DbType="Int")]
-		public System.Nullable<int> conlai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_conlai", DbType="Money")]
+		public System.Nullable<decimal> conlai
 		{
 			get
 			{
@@ -4100,7 +4100,7 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private string _tenviettat;
 		
-		private System.Nullable<int> _gia;
+		private System.Nullable<decimal> _gia;
 		
 		private System.Nullable<int> _id_donvi;
 		
@@ -4128,7 +4128,7 @@ namespace RestaurantSoftware.DA_Layer
     partial void OntenmonChanged();
     partial void OntenviettatChanging(string value);
     partial void OntenviettatChanged();
-    partial void OngiaChanging(System.Nullable<int> value);
+    partial void OngiaChanging(System.Nullable<decimal> value);
     partial void OngiaChanged();
     partial void Onid_donviChanging(System.Nullable<int> value);
     partial void Onid_donviChanged();
@@ -4230,8 +4230,8 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia", DbType="Int")]
-		public System.Nullable<int> gia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gia", DbType="Money")]
+		public System.Nullable<decimal> gia
 		{
 			get
 			{

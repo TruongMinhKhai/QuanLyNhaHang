@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DatBan));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -38,12 +37,13 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DatBan));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.cmb_NhanVien = new DevExpress.XtraEditors.LookUpEdit();
             this.txt_Tiencoc = new DevExpress.XtraEditors.TextEdit();
             this.btnThemKh = new DevExpress.XtraEditors.SimpleButton();
             this.lvDsBan = new System.Windows.Forms.ListView();
-            this.btnInPhieu = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ChuyenBan = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl_DsDatBan = new DevExpress.XtraGrid.GridControl();
             this.gridView_DsDatBan = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tenban = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,19 +59,21 @@
             this.tenmon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tenviettat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.col_TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.them = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_ThemMon = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.tenloaimon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_mon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnXoaPhieu = new DevExpress.XtraEditors.SimpleButton();
-            this.btnThemMoi = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSuaPhieu = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_XoaPhieu = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ThemMoi = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_SuaPhieu = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl_ChiTietDatBan = new DevExpress.XtraGrid.GridControl();
             this.gridView_ChiTietDatBan = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xoachitiet = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_Xoachitiet = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -105,6 +107,8 @@
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btn_InPhieu = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_NhanVien.Properties)).BeginInit();
@@ -113,9 +117,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView_DsDatBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_DsMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_DsMon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_ThemMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_ChiTietDatBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_ChiTietDatBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Xoachitiet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_NgayDat.Properties.CalendarTimeProperties)).BeginInit();
@@ -145,20 +151,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.btn_InPhieu);
             this.layoutControl1.Controls.Add(this.cmb_NhanVien);
             this.layoutControl1.Controls.Add(this.txt_Tiencoc);
             this.layoutControl1.Controls.Add(this.btnThemKh);
             this.layoutControl1.Controls.Add(this.lvDsBan);
-            this.layoutControl1.Controls.Add(this.btnInPhieu);
+            this.layoutControl1.Controls.Add(this.btn_ChuyenBan);
             this.layoutControl1.Controls.Add(this.gridControl_DsDatBan);
             this.layoutControl1.Controls.Add(this.gridControl_DsMon);
-            this.layoutControl1.Controls.Add(this.btnXoaPhieu);
-            this.layoutControl1.Controls.Add(this.btnThemMoi);
-            this.layoutControl1.Controls.Add(this.btnSuaPhieu);
+            this.layoutControl1.Controls.Add(this.btn_XoaPhieu);
+            this.layoutControl1.Controls.Add(this.btn_ThemMoi);
+            this.layoutControl1.Controls.Add(this.btn_SuaPhieu);
             this.layoutControl1.Controls.Add(this.gridControl_ChiTietDatBan);
             this.layoutControl1.Controls.Add(this.txt_SDT);
             this.layoutControl1.Controls.Add(this.dt_NgayDat);
@@ -186,7 +194,7 @@
             // 
             // txt_Tiencoc
             // 
-            this.txt_Tiencoc.Location = new System.Drawing.Point(341, 411);
+            this.txt_Tiencoc.Location = new System.Drawing.Point(341, 385);
             this.txt_Tiencoc.Name = "txt_Tiencoc";
             this.txt_Tiencoc.Size = new System.Drawing.Size(282, 20);
             this.txt_Tiencoc.StyleController = this.layoutControl1;
@@ -211,15 +219,15 @@
             this.lvDsBan.UseCompatibleStateImageBehavior = false;
             this.lvDsBan.SelectedIndexChanged += new System.EventHandler(this.lvDsBan_SelectedIndexChanged);
             // 
-            // btnInPhieu
+            // btn_ChuyenBan
             // 
-            this.btnInPhieu.Image = ((System.Drawing.Image)(resources.GetObject("btnInPhieu.Image")));
-            this.btnInPhieu.Location = new System.Drawing.Point(555, 447);
-            this.btnInPhieu.Name = "btnInPhieu";
-            this.btnInPhieu.Size = new System.Drawing.Size(80, 22);
-            this.btnInPhieu.StyleController = this.layoutControl1;
-            this.btnInPhieu.TabIndex = 17;
-            this.btnInPhieu.Text = "In phiếu";
+            this.btn_ChuyenBan.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChuyenBan.Image")));
+            this.btn_ChuyenBan.Location = new System.Drawing.Point(549, 421);
+            this.btn_ChuyenBan.Name = "btn_ChuyenBan";
+            this.btn_ChuyenBan.Size = new System.Drawing.Size(86, 22);
+            this.btn_ChuyenBan.StyleController = this.layoutControl1;
+            this.btn_ChuyenBan.TabIndex = 17;
+            this.btn_ChuyenBan.Text = "Chuyển bàn";
             // 
             // gridControl_DsDatBan
             // 
@@ -322,7 +330,8 @@
             this.gridControl_DsMon.MainView = this.gridView_DsMon;
             this.gridControl_DsMon.Name = "gridControl_DsMon";
             this.gridControl_DsMon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btn_ThemMon});
+            this.btn_ThemMon,
+            this.repositoryItemTextEdit2});
             this.gridControl_DsMon.Size = new System.Drawing.Size(306, 220);
             this.gridControl_DsMon.TabIndex = 15;
             this.gridControl_DsMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -364,11 +373,21 @@
             // gia
             // 
             this.gia.Caption = "Giá";
+            this.gia.ColumnEdit = this.repositoryItemTextEdit2;
             this.gia.FieldName = "gia";
             this.gia.Name = "gia";
             this.gia.Visible = true;
             this.gia.VisibleIndex = 1;
             this.gia.Width = 59;
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.DisplayFormat.FormatString = "#,###";
+            this.repositoryItemTextEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemTextEdit2.EditFormat.FormatString = "#,###";
+            this.repositoryItemTextEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
             // col_TrangThai
             // 
@@ -412,35 +431,35 @@
             this.id_mon.FieldName = "id_mon";
             this.id_mon.Name = "id_mon";
             // 
-            // btnXoaPhieu
+            // btn_XoaPhieu
             // 
-            this.btnXoaPhieu.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaPhieu.Image")));
-            this.btnXoaPhieu.Location = new System.Drawing.Point(460, 447);
-            this.btnXoaPhieu.Name = "btnXoaPhieu";
-            this.btnXoaPhieu.Size = new System.Drawing.Size(91, 22);
-            this.btnXoaPhieu.StyleController = this.layoutControl1;
-            this.btnXoaPhieu.TabIndex = 13;
-            this.btnXoaPhieu.Text = "Xóa phiếu";
+            this.btn_XoaPhieu.Image = ((System.Drawing.Image)(resources.GetObject("btn_XoaPhieu.Image")));
+            this.btn_XoaPhieu.Location = new System.Drawing.Point(460, 421);
+            this.btn_XoaPhieu.Name = "btn_XoaPhieu";
+            this.btn_XoaPhieu.Size = new System.Drawing.Size(85, 22);
+            this.btn_XoaPhieu.StyleController = this.layoutControl1;
+            this.btn_XoaPhieu.TabIndex = 13;
+            this.btn_XoaPhieu.Text = "Xóa phiếu";
             // 
-            // btnThemMoi
+            // btn_ThemMoi
             // 
-            this.btnThemMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMoi.Image")));
-            this.btnThemMoi.Location = new System.Drawing.Point(250, 447);
-            this.btnThemMoi.Name = "btnThemMoi";
-            this.btnThemMoi.Size = new System.Drawing.Size(99, 22);
-            this.btnThemMoi.StyleController = this.layoutControl1;
-            this.btnThemMoi.TabIndex = 12;
-            this.btnThemMoi.Text = "Thêm phiếu";
+            this.btn_ThemMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThemMoi.Image")));
+            this.btn_ThemMoi.Location = new System.Drawing.Point(250, 421);
+            this.btn_ThemMoi.Name = "btn_ThemMoi";
+            this.btn_ThemMoi.Size = new System.Drawing.Size(99, 22);
+            this.btn_ThemMoi.StyleController = this.layoutControl1;
+            this.btn_ThemMoi.TabIndex = 12;
+            this.btn_ThemMoi.Text = "Thêm phiếu";
             // 
-            // btnSuaPhieu
+            // btn_SuaPhieu
             // 
-            this.btnSuaPhieu.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaPhieu.Image")));
-            this.btnSuaPhieu.Location = new System.Drawing.Point(353, 447);
-            this.btnSuaPhieu.Name = "btnSuaPhieu";
-            this.btnSuaPhieu.Size = new System.Drawing.Size(103, 22);
-            this.btnSuaPhieu.StyleController = this.layoutControl1;
-            this.btnSuaPhieu.TabIndex = 11;
-            this.btnSuaPhieu.Text = "Lưu sửa Phiếu";
+            this.btn_SuaPhieu.Image = ((System.Drawing.Image)(resources.GetObject("btn_SuaPhieu.Image")));
+            this.btn_SuaPhieu.Location = new System.Drawing.Point(353, 421);
+            this.btn_SuaPhieu.Name = "btn_SuaPhieu";
+            this.btn_SuaPhieu.Size = new System.Drawing.Size(103, 22);
+            this.btn_SuaPhieu.StyleController = this.layoutControl1;
+            this.btn_SuaPhieu.TabIndex = 11;
+            this.btn_SuaPhieu.Text = "Lưu sửa Phiếu";
             // 
             // gridControl_ChiTietDatBan
             // 
@@ -448,8 +467,9 @@
             this.gridControl_ChiTietDatBan.MainView = this.gridView_ChiTietDatBan;
             this.gridControl_ChiTietDatBan.Name = "gridControl_ChiTietDatBan";
             this.gridControl_ChiTietDatBan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btn_Xoachitiet});
-            this.gridControl_ChiTietDatBan.Size = new System.Drawing.Size(361, 237);
+            this.btn_Xoachitiet,
+            this.repositoryItemTextEdit1});
+            this.gridControl_ChiTietDatBan.Size = new System.Drawing.Size(361, 211);
             this.gridControl_ChiTietDatBan.TabIndex = 10;
             this.gridControl_ChiTietDatBan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_ChiTietDatBan});
@@ -465,8 +485,6 @@
             this.id_ct_datban,
             this.id_ct_mon});
             this.gridView_ChiTietDatBan.GridControl = this.gridControl_ChiTietDatBan;
-            this.gridView_ChiTietDatBan.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "thanhtien", this.gridColumn4, "(Thành Tiền: SUM={0:0.##})")});
             this.gridView_ChiTietDatBan.Name = "gridView_ChiTietDatBan";
             this.gridView_ChiTietDatBan.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridView_ChiTietDatBan.OptionsView.ShowFooter = true;
@@ -493,19 +511,30 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Đơn Giá";
+            this.gridColumn3.ColumnEdit = this.repositoryItemTextEdit1;
             this.gridColumn3.FieldName = "gia";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 72;
             // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.DisplayFormat.FormatString = "#,###";
+            this.repositoryItemTextEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemTextEdit1.EditFormat.FormatString = "#,###";
+            this.repositoryItemTextEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Thành Tiền";
+            this.gridColumn4.ColumnEdit = this.repositoryItemTextEdit1;
             this.gridColumn4.FieldName = "thanhtien";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "thanhtien", "Tạm tính={0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "thanhtien", "Tạm tính={0:0,###}")});
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             this.gridColumn4.Width = 96;
@@ -625,7 +654,8 @@
             this.layoutControlItem14,
             this.layoutControlItem10,
             this.layoutControlItem4,
-            this.layoutControlItem16});
+            this.layoutControlItem16,
+            this.layoutControlItem17});
             this.layoutControlGroup3.Location = new System.Drawing.Point(226, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(413, 473);
@@ -647,7 +677,7 @@
             this.layoutControlItem15});
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 98);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            this.layoutControlGroup6.Size = new System.Drawing.Size(389, 307);
+            this.layoutControlGroup6.Size = new System.Drawing.Size(389, 281);
             this.layoutControlGroup6.Text = "Chi tiết đặt bàn";
             // 
             // layoutControlItem7
@@ -655,14 +685,14 @@
             this.layoutControlItem7.Control = this.gridControl_ChiTietDatBan;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(365, 241);
+            this.layoutControlItem7.Size = new System.Drawing.Size(365, 215);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.Control = this.txt_Tiencoc;
-            this.layoutControlItem15.Location = new System.Drawing.Point(0, 241);
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 215);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.Size = new System.Drawing.Size(365, 24);
             this.layoutControlItem15.Text = "Tiền cọc";
@@ -706,8 +736,8 @@
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.btnThemMoi;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 405);
+            this.layoutControlItem9.Control = this.btn_ThemMoi;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 379);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(103, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -715,8 +745,8 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.btnSuaPhieu;
-            this.layoutControlItem8.Location = new System.Drawing.Point(103, 405);
+            this.layoutControlItem8.Control = this.btn_SuaPhieu;
+            this.layoutControlItem8.Location = new System.Drawing.Point(103, 379);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(107, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -724,19 +754,19 @@
             // 
             // layoutControlItem14
             // 
-            this.layoutControlItem14.Control = this.btnInPhieu;
-            this.layoutControlItem14.Location = new System.Drawing.Point(305, 405);
+            this.layoutControlItem14.Control = this.btn_ChuyenBan;
+            this.layoutControlItem14.Location = new System.Drawing.Point(299, 379);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(84, 26);
+            this.layoutControlItem14.Size = new System.Drawing.Size(90, 26);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.btnXoaPhieu;
-            this.layoutControlItem10.Location = new System.Drawing.Point(210, 405);
+            this.layoutControlItem10.Control = this.btn_XoaPhieu;
+            this.layoutControlItem10.Location = new System.Drawing.Point(210, 379);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(95, 26);
+            this.layoutControlItem10.Size = new System.Drawing.Size(89, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
@@ -820,6 +850,25 @@
             this.imageList1.Images.SetKeyName(1, "table-vang.png");
             this.imageList1.Images.SetKeyName(2, "table-xanh.png");
             // 
+            // btn_InPhieu
+            // 
+            this.btn_InPhieu.Image = ((System.Drawing.Image)(resources.GetObject("btn_InPhieu.Image")));
+            this.btn_InPhieu.Location = new System.Drawing.Point(250, 447);
+            this.btn_InPhieu.Name = "btn_InPhieu";
+            this.btn_InPhieu.Size = new System.Drawing.Size(385, 22);
+            this.btn_InPhieu.StyleController = this.layoutControl1;
+            this.btn_InPhieu.TabIndex = 22;
+            this.btn_InPhieu.Text = "In phiếu";
+            // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.btn_InPhieu;
+            this.layoutControlItem17.Location = new System.Drawing.Point(0, 405);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(389, 26);
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextVisible = false;
+            // 
             // Frm_DatBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -837,9 +886,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView_DsDatBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_DsMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_DsMon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_ThemMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_ChiTietDatBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_ChiTietDatBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Xoachitiet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_NgayDat.Properties.CalendarTimeProperties)).EndInit();
@@ -869,6 +920,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -878,7 +930,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SimpleButton btnThemKh;
         private System.Windows.Forms.ListView lvDsBan;
-        private DevExpress.XtraEditors.SimpleButton btnInPhieu;
+        private DevExpress.XtraEditors.SimpleButton btn_ChuyenBan;
         private DevExpress.XtraGrid.GridControl gridControl_DsDatBan;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView_DsDatBan;
         private DevExpress.XtraGrid.Columns.GridColumn tenban;
@@ -897,9 +949,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_ThemMon;
         private DevExpress.XtraGrid.Columns.GridColumn tenloaimon;
         private DevExpress.XtraGrid.Columns.GridColumn id_mon;
-        private DevExpress.XtraEditors.SimpleButton btnXoaPhieu;
-        private DevExpress.XtraEditors.SimpleButton btnThemMoi;
-        private DevExpress.XtraEditors.SimpleButton btnSuaPhieu;
+        private DevExpress.XtraEditors.SimpleButton btn_XoaPhieu;
+        private DevExpress.XtraEditors.SimpleButton btn_ThemMoi;
+        private DevExpress.XtraEditors.SimpleButton btn_SuaPhieu;
         private DevExpress.XtraGrid.GridControl gridControl_ChiTietDatBan;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView_ChiTietDatBan;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -942,6 +994,10 @@
         private DevExpress.XtraEditors.LookUpEdit cmb_NhanVien;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraGrid.Columns.GridColumn col_MaBan;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraEditors.SimpleButton btn_InPhieu;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
 
     }
 }

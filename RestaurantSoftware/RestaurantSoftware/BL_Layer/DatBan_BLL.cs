@@ -90,12 +90,7 @@ namespace RestaurantSoftware.BL_Layer
                         };
             grid.DataSource = query;
         }
-        public IEnumerable<KhachHang> LayDsKhachHang()
-        {
-            var query = from kh in dbContext.KhachHangs select kh;
-            return query;
-        }
-
+       
         public void ThemMoiPhieuDatBan(DatBan db)
         {
             dbContext.DatBans.InsertOnSubmit(db);
@@ -117,7 +112,7 @@ namespace RestaurantSoftware.BL_Layer
                                 m.tenmon,
                                 ct.soluong,
                                 m.gia,
-                                ct.thanhtien
+                                thanhtien = ct.soluong*m.gia
                             };
                 grid.DataSource = query;
             }

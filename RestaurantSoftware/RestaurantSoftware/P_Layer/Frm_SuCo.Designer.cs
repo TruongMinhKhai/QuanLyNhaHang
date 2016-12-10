@@ -169,9 +169,9 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tenkh", "Tên Khách Hàng"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("sdt", "sdt", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("diachi", "diachi", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
-            this.cmb_TenKhachHang.Properties.DisplayMember = "tennhanvien";
+            this.cmb_TenKhachHang.Properties.DisplayMember = "tenkh";
             this.cmb_TenKhachHang.Properties.NullText = "Chọn khách hàng";
-            this.cmb_TenKhachHang.Properties.ValueMember = "id_nhanvien";
+            this.cmb_TenKhachHang.Properties.ValueMember = "id_khachang";
             this.cmb_TenKhachHang.Size = new System.Drawing.Size(173, 20);
             this.cmb_TenKhachHang.StyleController = this.layoutControl1;
             this.cmb_TenKhachHang.TabIndex = 27;

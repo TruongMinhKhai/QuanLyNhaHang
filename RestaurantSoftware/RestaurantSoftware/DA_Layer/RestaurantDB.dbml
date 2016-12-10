@@ -68,7 +68,7 @@
       <Column Name="id_hoadon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_mon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thanhtien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thanhtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="HoaDonThanhToan_Chitiet_HoaDonThanhToan" Member="HoaDonThanhToan" ThisKey="id_hoadon" OtherKey="id_hoadon" Type="HoaDonThanhToan" IsForeignKey="true" />
       <Association Name="Mon_Chitiet_HoaDonThanhToan" Member="Mon" ThisKey="id_mon" OtherKey="id_mon" Type="Mon" IsForeignKey="true" />
     </Type>
@@ -129,11 +129,11 @@
       <Column Name="id_ban" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_khanhhang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="thoigian" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="tongtien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tongtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="khuyenmai" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="vat" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="datra" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="conlai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="datra" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="conlai" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="trangthai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="HoaDonThanhToan_Chitiet_HoaDonThanhToan" Member="Chitiet_HoaDonThanhToans" ThisKey="id_hoadon" OtherKey="id_hoadon" Type="Chitiet_HoaDonThanhToan" />
       <Association Name="Ban_HoaDonThanhToan" Member="Ban" ThisKey="id_ban" OtherKey="id_ban" Type="Ban" IsForeignKey="true" />
@@ -187,7 +187,7 @@
       <Column Name="id_loaimon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tenmon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="tenviettat" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="gia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="id_donvi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="trangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="Mon_Chitiet_BaoCaoDoanhThu" Member="Chitiet_BaoCaoDoanhThus" ThisKey="id_mon" OtherKey="id_mon" Type="Chitiet_BaoCaoDoanhThu" />

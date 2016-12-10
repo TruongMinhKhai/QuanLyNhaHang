@@ -17,6 +17,7 @@ namespace RestaurantSoftware.P_Layer
     public partial class Frm_DatBan : DevExpress.XtraEditors.XtraForm
     {
         DatBan_BLL datban_bll = new DatBan_BLL();
+        KhachHang_BLL kh_bll = new KhachHang_BLL();
         bool checkClickRow = false;
 
         public Frm_DatBan()
@@ -127,7 +128,7 @@ namespace RestaurantSoftware.P_Layer
         }
         public void LoadDsKhachHang()
         {
-            DataTable dt = Utils.Utils.ConvertToDataTable<KhachHang>(datban_bll.LayDsKhachHang());
+            DataTable dt = Utils.Utils.ConvertToDataTable<KhachHang>(kh_bll.LayDanhSachKhachHang());
             txt_TenKH.Properties.DataSource = dt;
             txt_TenKH.Properties.DisplayMember = "tenkh";
             txt_TenKH.Properties.ValueMember = "id_khachhang";
