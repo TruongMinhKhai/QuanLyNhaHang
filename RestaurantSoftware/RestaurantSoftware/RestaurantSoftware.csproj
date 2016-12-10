@@ -78,10 +78,12 @@
   <ItemGroup>
     <Compile Include="BL_Layer\Ban_BLL.cs" />
     <Compile Include="BL_Layer\DatBan_BLL.cs" />
+    <Compile Include="BL_Layer\DonVi_BLL.cs" />
     <Compile Include="BL_Layer\HangHoa_BLL.cs" />
     <Compile Include="BL_Layer\HoaDon_BLL.cs" />
     <Compile Include="BL_Layer\KhachHang_BLL.cs" />
     <Compile Include="BL_Layer\LoaiBan_BLL.cs" />
+    <Compile Include="BL_Layer\LoaiHang_BLL.cs" />
     <Compile Include="BL_Layer\LoaiMon_BLL.cs" />
     <Compile Include="BL_Layer\Mon_BLL.cs" />
     <Compile Include="BL_Layer\NhaCungCap_BLL.cs" />
@@ -134,6 +136,12 @@
     </Compile>
     <Compile Include="P_Layer\Frm_DatBan.Designer.cs">
       <DependentUpon>Frm_DatBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DonVi.Designer.cs">
+      <DependentUpon>Frm_DonVi.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Layer\Frm_HoaDon.cs">
       <SubType>Form</SubType>
@@ -243,11 +251,18 @@
     <Compile Include="P_Layer\Reports\ThongKeMonTheoNgay.Designer.cs">
       <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
     </Compile>
+    <Compile Include="DA_Layer\HangHoaTon.cs" />
     <Compile Include="Utils\Notifications.cs" />
     <Compile Include="Utils\Utils.cs" />
+    <None Include="DA_Layer\RestaurantDB.dbml.layout">
+      <DependentUpon>RestaurantDB.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="PrintRibbonControllerResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_DonVi.resx">
+      <DependentUpon>Frm_DonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_ThongKeMon.resx">
       <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
@@ -259,9 +274,6 @@
       <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="DA_Layer\RestaurantDB.dbml.layout">
-      <DependentUpon>RestaurantDB.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>

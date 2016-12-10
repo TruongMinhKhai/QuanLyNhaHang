@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="nhahang_db" Class="RestaurantDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GP5UIG3\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Security=True" SettingsObjectName="RestaurantSoftware.Properties.Settings" SettingsPropertyName="nhahang_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DUYTHANHTRAN\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Security=True" SettingsObjectName="RestaurantSoftware.Properties.Settings" SettingsPropertyName="nhahang_dbConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Ban" Member="Bans">
     <Type Name="Ban">
       <Column Name="id_ban" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -11,10 +11,19 @@
       <Association Name="LoaiBan_Ban" Member="LoaiBan" ThisKey="id_loaiban" OtherKey="id_loaiban" Type="LoaiBan" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TrangThai" Member="TrangThais">
+    <Type Name="TrangThai">
+      <Column Name="[id-trangthai]" Member="id_trangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tentrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id_loaitrangthai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lienket" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LoaiTrangThai_TrangThai" Member="LoaiTrangThai" ThisKey="id_loaitrangthai" OtherKey="id_loaitrangthai" Type="LoaiTrangThai" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.BaoCaoDoanhThu" Member="BaoCaoDoanhThus">
     <Type Name="BaoCaoDoanhThu">
       <Column Name="id_bcdoanhthu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ngaythang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ngaythang" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="tongthu" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="BaoCaoDoanhThu_Chitiet_BaoCaoDoanhThu" Member="Chitiet_BaoCaoDoanhThus" ThisKey="id_bcdoanhthu" OtherKey="ic_bcdoanhthu" Type="Chitiet_BaoCaoDoanhThu" />
     </Type>
@@ -36,7 +45,6 @@
       <Column Name="id_datban" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_mon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="thanhtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="DatBan_Chitiet_DatBan" Member="DatBan" ThisKey="id_datban" OtherKey="id_datban" Type="DatBan" IsForeignKey="true" />
       <Association Name="Mon_Chitiet_DatBan" Member="Mon" ThisKey="id_mon" OtherKey="id_mon" Type="Mon" IsForeignKey="true" />
@@ -60,8 +68,6 @@
       <Column Name="id_hoadon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_mon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="phuthu" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="thanhtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="HoaDonThanhToan_Chitiet_HoaDonThanhToan" Member="HoaDonThanhToan" ThisKey="id_hoadon" OtherKey="id_hoadon" Type="HoaDonThanhToan" IsForeignKey="true" />
       <Association Name="Mon_Chitiet_HoaDonThanhToan" Member="Mon" ThisKey="id_mon" OtherKey="id_mon" Type="Mon" IsForeignKey="true" />
@@ -73,7 +79,7 @@
       <Column Name="id_ban" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_nhanvien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_khachhang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thoigian" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="thoigian" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="trangthai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="DatBan_Chitiet_DatBan" Member="Chitiet_DatBans" ThisKey="id_datban" OtherKey="id_datban" Type="Chitiet_DatBan" />
       <Association Name="Ban_DatBan" Member="Ban" ThisKey="id_ban" OtherKey="id_ban" Type="Ban" IsForeignKey="true" />
@@ -86,6 +92,7 @@
       <Column Name="id_donvi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tendonvi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Association Name="DonVi_HangHoa" Member="HangHoas" ThisKey="id_donvi" OtherKey="id_donvi" Type="HangHoa" />
+      <Association Name="DonVi_Mon" Member="Mons" ThisKey="id_donvi" OtherKey="id_donvi" Type="Mon" />
     </Type>
   </Table>
   <Table Name="dbo.HangHoa" Member="HangHoas">
@@ -97,6 +104,7 @@
       <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="id_donvi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_nhacungcap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="HangHoa_Chitiet_HoaDonNhapHang" Member="Chitiet_HoaDonNhapHangs" ThisKey="id_hanghoa" OtherKey="id_hanghoa" Type="Chitiet_HoaDonNhapHang" />
       <Association Name="DonVi_HangHoa" Member="DonVi" ThisKey="id_donvi" OtherKey="id_donvi" Type="DonVi" IsForeignKey="true" />
       <Association Name="LoaiHangHoa_HangHoa" Member="LoaiHangHoa" ThisKey="id_loaihang" OtherKey="id_loaihang" Type="LoaiHangHoa" IsForeignKey="true" />
@@ -107,7 +115,7 @@
     <Type Name="HoaDonNhapHang">
       <Column Name="id_nhaphang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_nhanvien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="thoigian" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="thoigian" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="thue" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tongtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="HoaDonNhapHang_Chitiet_HoaDonNhapHang" Member="Chitiet_HoaDonNhapHangs" ThisKey="id_nhaphang" OtherKey="id_nhaphang" Type="Chitiet_HoaDonNhapHang" />
@@ -119,13 +127,14 @@
       <Column Name="id_hoadon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_nhanvien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_ban" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thoigian" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="thoigian" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="tongtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="khuyenmai" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="vat" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="datra" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="conlai" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="trangthai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="id_khanhhang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HoaDonThanhToan_Chitiet_HoaDonThanhToan" Member="Chitiet_HoaDonThanhToans" ThisKey="id_hoadon" OtherKey="id_hoadon" Type="Chitiet_HoaDonThanhToan" />
       <Association Name="Ban_HoaDonThanhToan" Member="Ban" ThisKey="id_ban" OtherKey="id_ban" Type="Ban" IsForeignKey="true" />
       <Association Name="NhanVien_HoaDonThanhToan" Member="NhanVien" ThisKey="id_nhanvien" OtherKey="id_nhanvien" Type="NhanVien" IsForeignKey="true" />
@@ -137,7 +146,9 @@
       <Column Name="tenkh" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="sdt" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="KhachHang_DatBan" Member="DatBans" ThisKey="id_khachhang" OtherKey="id_khachhang" Type="DatBan" />
+      <Association Name="KhachHang_SuCo" Member="SuCos" ThisKey="id_khachhang" OtherKey="id_khachhang" Type="SuCo" />
     </Type>
   </Table>
   <Table Name="dbo.LoaiBan" Member="LoaiBans">
@@ -154,6 +165,20 @@
       <Association Name="LoaiHangHoa_HangHoa" Member="HangHoas" ThisKey="id_loaihang" OtherKey="id_loaihang" Type="HangHoa" />
     </Type>
   </Table>
+  <Table Name="dbo.LoaiMon" Member="LoaiMons">
+    <Type Name="LoaiMon">
+      <Column Name="id_loaimon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenloaimon" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="LoaiMon_Mon" Member="Mons" ThisKey="id_loaimon" OtherKey="id_loaimon" Type="Mon" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiTrangThai" Member="LoaiTrangThais">
+    <Type Name="LoaiTrangThai">
+      <Column Name="id_loaitrangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenloaitrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LoaiTrangThai_TrangThai" Member="TrangThais" ThisKey="id_loaitrangthai" OtherKey="id_loaitrangthai" Type="TrangThai" />
+    </Type>
+  </Table>
   <Table Name="dbo.Mon" Member="Mons">
     <Type Name="Mon">
       <Column Name="id_mon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -162,9 +187,11 @@
       <Column Name="tenviettat" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="gia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="trangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id_donvi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Mon_Chitiet_BaoCaoDoanhThu" Member="Chitiet_BaoCaoDoanhThus" ThisKey="id_mon" OtherKey="id_mon" Type="Chitiet_BaoCaoDoanhThu" />
       <Association Name="Mon_Chitiet_DatBan" Member="Chitiet_DatBans" ThisKey="id_mon" OtherKey="id_mon" Type="Chitiet_DatBan" />
       <Association Name="Mon_Chitiet_HoaDonThanhToan" Member="Chitiet_HoaDonThanhToans" ThisKey="id_mon" OtherKey="id_mon" Type="Chitiet_HoaDonThanhToan" />
+      <Association Name="DonVi_Mon" Member="DonVi" ThisKey="id_donvi" OtherKey="id_donvi" Type="DonVi" IsForeignKey="true" />
       <Association Name="LoaiMon_Mon" Member="LoaiMon" ThisKey="id_loaimon" OtherKey="id_loaimon" Type="LoaiMon" IsForeignKey="true" />
     </Type>
   </Table>
@@ -175,6 +202,7 @@
       <Column Name="sdt" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ghichu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="NhaCungCap_HangHoa" Member="HangHoas" ThisKey="id_nhacungcap" OtherKey="id_nhacungcap" Type="HangHoa" />
     </Type>
   </Table>
@@ -185,6 +213,7 @@
       <Column Name="tendangnhap" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="matkhau" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="id_quyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NhanVien_DatBan" Member="DatBans" ThisKey="id_nhanvien" OtherKey="id_nhanvien" Type="DatBan" />
       <Association Name="NhanVien_HoaDonNhapHang" Member="HoaDonNhapHangs" ThisKey="id_nhanvien" OtherKey="id_nhanvien" Type="HoaDonNhapHang" />
       <Association Name="NhanVien_HoaDonThanhToan" Member="HoaDonThanhToans" ThisKey="id_nhanvien" OtherKey="id_nhanvien" Type="HoaDonThanhToan" />
@@ -206,7 +235,7 @@
       <Column Name="id_quydinh" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tenquydinh" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="id_nhanvien" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ngaylap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ngaylap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="NhanVien_QuyDinh" Member="NhanVien" ThisKey="id_nhanvien" OtherKey="id_nhanvien" Type="NhanVien" IsForeignKey="true" />
     </Type>
@@ -215,9 +244,11 @@
     <Type Name="SuCo">
       <Column Name="id_suco" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_nhanvien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_khachhang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tensuco" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ngaylap" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ngaylap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="KhachHang_SuCo" Member="KhachHang" ThisKey="id_khachhang" OtherKey="id_khachhang" Type="KhachHang" IsForeignKey="true" />
       <Association Name="NhanVien_SuCo" Member="NhanVien" ThisKey="id_nhanvien" OtherKey="id_nhanvien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
@@ -226,20 +257,6 @@
       <Column Name="id_thamso" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="vat" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="khuyenmai" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TrangThai" Member="TrangThais">
-    <Type Name="TrangThai">
-      <Column Name="[id-trangthai]" Member="id_trangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="tentrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="lienket" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LoaiMon" Member="LoaiMons">
-    <Type Name="LoaiMon">
-      <Column Name="id_loaimon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="tenloaimon" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Association Name="LoaiMon_Mon" Member="Mons" ThisKey="id_loaimon" OtherKey="id_loaimon" Type="Mon" />
     </Type>
   </Table>
 </Database>
