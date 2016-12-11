@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace RestaurantSoftware.DA_Layer
 {
-    class ChiTiet_ThanhToan
+    class ChiTiet_DatBan
     {
-        int idhoadon;
+        int iddatban;
 
-        public int Idhoadon
+        public int Iddatban
         {
-            get { return idhoadon; }
-            set { idhoadon = value; }
+            get { return iddatban; }
+            set { iddatban = value; }
         }
         int idban;
 
@@ -79,7 +79,7 @@ namespace RestaurantSoftware.DA_Layer
             get { return tenkhachhang; }
             set { tenkhachhang = value; }
         }
-        
+
         string sodienthoai;
 
         public string Sodienthoai
@@ -87,6 +87,5 @@ namespace RestaurantSoftware.DA_Layer
             get { return sodienthoai; }
             set { sodienthoai = value; }
         }
-        
     }
 }
