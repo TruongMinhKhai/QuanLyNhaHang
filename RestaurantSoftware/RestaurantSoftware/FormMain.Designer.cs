@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonGallery = new DevExpress.XtraBars.RibbonGalleryBarItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_dangnhap = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Backup = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Restore = new DevExpress.XtraBars.BarButtonItem();
@@ -96,7 +96,7 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonGallery,
-            this.barButtonItem1,
+            this.btn_dangnhap,
             this.barButtonItem2,
             this.btn_Backup,
             this.btn_Restore,
@@ -141,12 +141,12 @@
             this.ribbonGallery.Id = 2;
             this.ribbonGallery.Name = "ribbonGallery";
             // 
-            // barButtonItem1
+            // btn_dangnhap
             // 
-            this.barButtonItem1.Caption = "Đăng nhập";
-            this.barButtonItem1.Id = 3;
-            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btn_dangnhap.Caption = "Đăng nhập";
+            this.btn_dangnhap.Id = 3;
+            this.btn_dangnhap.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_dangnhap.LargeGlyph")));
+            this.btn_dangnhap.Name = "btn_dangnhap";
             // 
             // barButtonItem2
             // 
@@ -378,7 +378,7 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_dangnhap);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_Backup);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_Restore);
@@ -544,7 +544,7 @@
             // 
             // navBarItem2
             // 
-            this.navBarItem2.Caption = "Chức vụ";
+            this.navBarItem2.Caption = "Chức vụ:";
             this.navBarItem2.Name = "navBarItem2";
             this.navBarItem2.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.SmallImage")));
             // 
@@ -579,6 +579,7 @@
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "QUẢN LÝ NHÀ HÀNG";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -593,7 +594,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGallery;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btn_dangnhap;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btn_Backup;
         private DevExpress.XtraBars.BarButtonItem btn_Restore;

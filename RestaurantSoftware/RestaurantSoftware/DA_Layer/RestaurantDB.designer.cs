@@ -75,9 +75,6 @@ namespace RestaurantSoftware.DA_Layer
     partial void InsertLoaiHangHoa(LoaiHangHoa instance);
     partial void UpdateLoaiHangHoa(LoaiHangHoa instance);
     partial void DeleteLoaiHangHoa(LoaiHangHoa instance);
-    partial void InsertLoaiMon(LoaiMon instance);
-    partial void UpdateLoaiMon(LoaiMon instance);
-    partial void DeleteLoaiMon(LoaiMon instance);
     partial void InsertLoaiTrangThai(LoaiTrangThai instance);
     partial void UpdateLoaiTrangThai(LoaiTrangThai instance);
     partial void DeleteLoaiTrangThai(LoaiTrangThai instance);
@@ -99,6 +96,9 @@ namespace RestaurantSoftware.DA_Layer
     partial void InsertSuCo(SuCo instance);
     partial void UpdateSuCo(SuCo instance);
     partial void DeleteSuCo(SuCo instance);
+    partial void InsertLoaiMon(LoaiMon instance);
+    partial void UpdateLoaiMon(LoaiMon instance);
+    partial void DeleteLoaiMon(LoaiMon instance);
     #endregion
 		
 		public RestaurantDBDataContext() : 
@@ -251,14 +251,6 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		public System.Data.Linq.Table<LoaiMon> LoaiMons
-		{
-			get
-			{
-				return this.GetTable<LoaiMon>();
-			}
-		}
-		
 		public System.Data.Linq.Table<LoaiTrangThai> LoaiTrangThais
 		{
 			get
@@ -320,6 +312,14 @@ namespace RestaurantSoftware.DA_Layer
 			get
 			{
 				return this.GetTable<ThamSo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LoaiMon> LoaiMons
+		{
+			get
+			{
+				return this.GetTable<LoaiMon>();
 			}
 		}
 	}
@@ -3123,9 +3123,13 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private string _trangthai;
 		
+		private System.Nullable<int> _id_khachhang;
+		
 		private EntitySet<Chitiet_HoaDonThanhToan> _Chitiet_HoaDonThanhToans;
 		
 		private EntityRef<Ban> _Ban;
+		
+		private EntityRef<KhachHang> _KhachHang;
 		
 		private EntityRef<NhanVien> _NhanVien;
 		
@@ -3153,12 +3157,15 @@ namespace RestaurantSoftware.DA_Layer
     partial void OnconlaiChanged();
     partial void OntrangthaiChanging(string value);
     partial void OntrangthaiChanged();
+    partial void Onid_khachhangChanging(System.Nullable<int> value);
+    partial void Onid_khachhangChanged();
     #endregion
 		
 		public HoaDonThanhToan()
 		{
 			this._Chitiet_HoaDonThanhToans = new EntitySet<Chitiet_HoaDonThanhToan>(new Action<Chitiet_HoaDonThanhToan>(this.attach_Chitiet_HoaDonThanhToans), new Action<Chitiet_HoaDonThanhToan>(this.detach_Chitiet_HoaDonThanhToans));
 			this._Ban = default(EntityRef<Ban>);
+			this._KhachHang = default(EntityRef<KhachHang>);
 			this._NhanVien = default(EntityRef<NhanVien>);
 			OnCreated();
 		}
@@ -3371,6 +3378,30 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_khachhang", DbType="Int")]
+		public System.Nullable<int> id_khachhang
+		{
+			get
+			{
+				return this._id_khachhang;
+			}
+			set
+			{
+				if ((this._id_khachhang != value))
+				{
+					if (this._KhachHang.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_khachhangChanging(value);
+					this.SendPropertyChanging();
+					this._id_khachhang = value;
+					this.SendPropertyChanged("id_khachhang");
+					this.Onid_khachhangChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HoaDonThanhToan_Chitiet_HoaDonThanhToan", Storage="_Chitiet_HoaDonThanhToans", ThisKey="id_hoadon", OtherKey="id_hoadon")]
 		public EntitySet<Chitiet_HoaDonThanhToan> Chitiet_HoaDonThanhToans
 		{
@@ -3414,6 +3445,40 @@ namespace RestaurantSoftware.DA_Layer
 						this._id_ban = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Ban");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_HoaDonThanhToan", Storage="_KhachHang", ThisKey="id_khachhang", OtherKey="id_khachhang", IsForeignKey=true)]
+		public KhachHang KhachHang
+		{
+			get
+			{
+				return this._KhachHang.Entity;
+			}
+			set
+			{
+				KhachHang previousValue = this._KhachHang.Entity;
+				if (((previousValue != value) 
+							|| (this._KhachHang.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KhachHang.Entity = null;
+						previousValue.HoaDonThanhToans.Remove(this);
+					}
+					this._KhachHang.Entity = value;
+					if ((value != null))
+					{
+						value.HoaDonThanhToans.Add(this);
+						this._id_khachhang = value.id_khachhang;
+					}
+					else
+					{
+						this._id_khachhang = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("KhachHang");
 				}
 			}
 		}
@@ -3503,6 +3568,8 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private EntitySet<DatBan> _DatBans;
 		
+		private EntitySet<HoaDonThanhToan> _HoaDonThanhToans;
+		
 		private EntitySet<SuCo> _SuCos;
 		
     #region Extensibility Method Definitions
@@ -3524,6 +3591,7 @@ namespace RestaurantSoftware.DA_Layer
 		public KhachHang()
 		{
 			this._DatBans = new EntitySet<DatBan>(new Action<DatBan>(this.attach_DatBans), new Action<DatBan>(this.detach_DatBans));
+			this._HoaDonThanhToans = new EntitySet<HoaDonThanhToan>(new Action<HoaDonThanhToan>(this.attach_HoaDonThanhToans), new Action<HoaDonThanhToan>(this.detach_HoaDonThanhToans));
 			this._SuCos = new EntitySet<SuCo>(new Action<SuCo>(this.attach_SuCos), new Action<SuCo>(this.detach_SuCos));
 			OnCreated();
 		}
@@ -3641,6 +3709,19 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_HoaDonThanhToan", Storage="_HoaDonThanhToans", ThisKey="id_khachhang", OtherKey="id_khachhang")]
+		public EntitySet<HoaDonThanhToan> HoaDonThanhToans
+		{
+			get
+			{
+				return this._HoaDonThanhToans;
+			}
+			set
+			{
+				this._HoaDonThanhToans.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhachHang_SuCo", Storage="_SuCos", ThisKey="id_khachhang", OtherKey="id_khachhang")]
 		public EntitySet<SuCo> SuCos
 		{
@@ -3681,6 +3762,18 @@ namespace RestaurantSoftware.DA_Layer
 		}
 		
 		private void detach_DatBans(DatBan entity)
+		{
+			this.SendPropertyChanging();
+			entity.KhachHang = null;
+		}
+		
+		private void attach_HoaDonThanhToans(HoaDonThanhToan entity)
+		{
+			this.SendPropertyChanging();
+			entity.KhachHang = this;
+		}
+		
+		private void detach_HoaDonThanhToans(HoaDonThanhToan entity)
 		{
 			this.SendPropertyChanging();
 			entity.KhachHang = null;
@@ -3924,120 +4017,6 @@ namespace RestaurantSoftware.DA_Layer
 		{
 			this.SendPropertyChanging();
 			entity.LoaiHangHoa = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiMon")]
-	public partial class LoaiMon : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_loaimon;
-		
-		private string _tenloaimon;
-		
-		private EntitySet<Mon> _Mons;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_loaimonChanging(int value);
-    partial void Onid_loaimonChanged();
-    partial void OntenloaimonChanging(string value);
-    partial void OntenloaimonChanged();
-    #endregion
-		
-		public LoaiMon()
-		{
-			this._Mons = new EntitySet<Mon>(new Action<Mon>(this.attach_Mons), new Action<Mon>(this.detach_Mons));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_loaimon", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_loaimon
-		{
-			get
-			{
-				return this._id_loaimon;
-			}
-			set
-			{
-				if ((this._id_loaimon != value))
-				{
-					this.Onid_loaimonChanging(value);
-					this.SendPropertyChanging();
-					this._id_loaimon = value;
-					this.SendPropertyChanged("id_loaimon");
-					this.Onid_loaimonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenloaimon", DbType="NVarChar(20)")]
-		public string tenloaimon
-		{
-			get
-			{
-				return this._tenloaimon;
-			}
-			set
-			{
-				if ((this._tenloaimon != value))
-				{
-					this.OntenloaimonChanging(value);
-					this.SendPropertyChanging();
-					this._tenloaimon = value;
-					this.SendPropertyChanged("tenloaimon");
-					this.OntenloaimonChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiMon_Mon", Storage="_Mons", ThisKey="id_loaimon", OtherKey="id_loaimon")]
-		public EntitySet<Mon> Mons
-		{
-			get
-			{
-				return this._Mons;
-			}
-			set
-			{
-				this._Mons.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Mons(Mon entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiMon = this;
-		}
-		
-		private void detach_Mons(Mon entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiMon = null;
 		}
 	}
 	
@@ -5737,6 +5716,144 @@ namespace RestaurantSoftware.DA_Layer
 					this._khuyenmai = value;
 				}
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiMon")]
+	public partial class LoaiMon : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_loaimon;
+		
+		private string _tenloaimon;
+		
+		private System.Nullable<bool> _trangthai;
+		
+		private EntitySet<Mon> _Mons;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_loaimonChanging(int value);
+    partial void Onid_loaimonChanged();
+    partial void OntenloaimonChanging(string value);
+    partial void OntenloaimonChanged();
+    partial void OntrangthaiChanging(System.Nullable<bool> value);
+    partial void OntrangthaiChanged();
+    #endregion
+		
+		public LoaiMon()
+		{
+			this._Mons = new EntitySet<Mon>(new Action<Mon>(this.attach_Mons), new Action<Mon>(this.detach_Mons));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_loaimon", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_loaimon
+		{
+			get
+			{
+				return this._id_loaimon;
+			}
+			set
+			{
+				if ((this._id_loaimon != value))
+				{
+					this.Onid_loaimonChanging(value);
+					this.SendPropertyChanging();
+					this._id_loaimon = value;
+					this.SendPropertyChanged("id_loaimon");
+					this.Onid_loaimonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenloaimon", DbType="NVarChar(20)")]
+		public string tenloaimon
+		{
+			get
+			{
+				return this._tenloaimon;
+			}
+			set
+			{
+				if ((this._tenloaimon != value))
+				{
+					this.OntenloaimonChanging(value);
+					this.SendPropertyChanging();
+					this._tenloaimon = value;
+					this.SendPropertyChanged("tenloaimon");
+					this.OntenloaimonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trangthai", DbType="Bit")]
+		public System.Nullable<bool> trangthai
+		{
+			get
+			{
+				return this._trangthai;
+			}
+			set
+			{
+				if ((this._trangthai != value))
+				{
+					this.OntrangthaiChanging(value);
+					this.SendPropertyChanging();
+					this._trangthai = value;
+					this.SendPropertyChanged("trangthai");
+					this.OntrangthaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiMon_Mon", Storage="_Mons", ThisKey="id_loaimon", OtherKey="id_loaimon")]
+		public EntitySet<Mon> Mons
+		{
+			get
+			{
+				return this._Mons;
+			}
+			set
+			{
+				this._Mons.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Mons(Mon entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiMon = this;
+		}
+		
+		private void detach_Mons(Mon entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiMon = null;
 		}
 	}
 }

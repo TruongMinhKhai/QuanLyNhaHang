@@ -27,6 +27,12 @@ namespace RestaurantSoftware
             SkinHelper.InitSkinGallery(ribbonGallery, true);
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            //P_Layer.Frm_DangNhap dangnhap = new P_Layer.Frm_DangNhap();
+            //dangnhap.ShowDialog();
+        }
+
         private void btn_Ban_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.ExistForm(typeof(P_Layer.Frm_Ban));

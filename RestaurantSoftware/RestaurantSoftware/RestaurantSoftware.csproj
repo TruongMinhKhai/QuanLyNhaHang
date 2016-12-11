@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Service References\CustomControls.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v15.2" />
     <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2" />
@@ -77,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL_Layer\Ban_BLL.cs" />
+    <Compile Include="BL_Layer\DangNhap_BLL.cs" />
     <Compile Include="BL_Layer\DatBan_BLL.cs" />
     <Compile Include="BL_Layer\HangHoa_BLL.cs" />
     <Compile Include="BL_Layer\HoaDon_BLL.cs" />
@@ -232,11 +237,29 @@
     <Compile Include="P_Layer\Frm_ThongKeMon.Designer.cs">
       <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_Layer\Reports\Chart_DoanhThuTheoNam.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Reports\Chart_DoanhThuTheoNam.Designer.cs">
+      <DependentUpon>Chart_DoanhThuTheoNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Reports\DoanhThuTheoNam.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Reports\DoanhThuTheoNam.Designer.cs">
+      <DependentUpon>DoanhThuTheoNam.cs</DependentUpon>
+    </Compile>
     <Compile Include="P_Layer\Reports\DoanhThuTheoThang.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="P_Layer\Reports\DoanhThuTheoThang.Designer.cs">
       <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Reports\ThongKeMon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Reports\ThongKeMon.Designer.cs">
+      <DependentUpon>ThongKeMon.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Layer\Reports\ThongKeMonTheoNgay.cs">
       <SubType>Component</SubType>
@@ -253,8 +276,17 @@
     <EmbeddedResource Include="P_Layer\Frm_ThongKeMon.resx">
       <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Reports\Chart_DoanhThuTheoNam.resx">
+      <DependentUpon>Chart_DoanhThuTheoNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Reports\DoanhThuTheoNam.resx">
+      <DependentUpon>DoanhThuTheoNam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\DoanhThuTheoThang.resx">
       <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Reports\ThongKeMon.resx">
+      <DependentUpon>ThongKeMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\ThongKeMonTheoNgay.resx">
       <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
@@ -354,7 +386,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

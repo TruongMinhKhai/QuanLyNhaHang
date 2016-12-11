@@ -139,8 +139,10 @@
       <Column Name="datra" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="conlai" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="trangthai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="id_khachhang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HoaDonThanhToan_Chitiet_HoaDonThanhToan" Member="Chitiet_HoaDonThanhToans" ThisKey="id_hoadon" OtherKey="id_hoadon" Type="Chitiet_HoaDonThanhToan" />
       <Association Name="Ban_HoaDonThanhToan" Member="Ban" ThisKey="id_ban" OtherKey="id_ban" Type="Ban" IsForeignKey="true" />
+      <Association Name="KhachHang_HoaDonThanhToan" Member="KhachHang" ThisKey="id_khachhang" OtherKey="id_khachhang" Type="KhachHang" IsForeignKey="true" />
       <Association Name="NhanVien_HoaDonThanhToan" Member="NhanVien" ThisKey="id_nhanvien" OtherKey="id_nhanvien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
@@ -152,6 +154,7 @@
       <Column Name="diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="trangthai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="KhachHang_DatBan" Member="DatBans" ThisKey="id_khachhang" OtherKey="id_khachhang" Type="DatBan" />
+      <Association Name="KhachHang_HoaDonThanhToan" Member="HoaDonThanhToans" ThisKey="id_khachhang" OtherKey="id_khachhang" Type="HoaDonThanhToan" />
       <Association Name="KhachHang_SuCo" Member="SuCos" ThisKey="id_khachhang" OtherKey="id_khachhang" Type="SuCo" />
     </Type>
   </Table>
@@ -167,13 +170,6 @@
       <Column Name="id_loaihang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tenloaihang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="LoaiHangHoa_HangHoa" Member="HangHoas" ThisKey="id_loaihang" OtherKey="id_loaihang" Type="HangHoa" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LoaiMon" Member="LoaiMons">
-    <Type Name="LoaiMon">
-      <Column Name="id_loaimon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="tenloaimon" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Association Name="LoaiMon_Mon" Member="Mons" ThisKey="id_loaimon" OtherKey="id_loaimon" Type="Mon" />
     </Type>
   </Table>
   <Table Name="dbo.LoaiTrangThai" Member="LoaiTrangThais">
@@ -260,6 +256,14 @@
       <Column Name="id_thamso" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="vat" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="khuyenmai" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoaiMon" Member="LoaiMons">
+    <Type Name="LoaiMon">
+      <Column Name="id_loaimon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenloaimon" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="LoaiMon_Mon" Member="Mons" ThisKey="id_loaimon" OtherKey="id_loaimon" Type="Mon" />
     </Type>
   </Table>
 </Database>

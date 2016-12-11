@@ -94,7 +94,14 @@ namespace RestaurantSoftware.P_Layer
             for (int i = 0; i < gridView1.SelectedRowsCount; i++)
             {
                 int _ID_NhanVien = int.Parse(gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "id_nhanvien").ToString());
-                _Nv_Bll.XoaNhanVien(_ID_NhanVien);
+                if(_Nv_Bll.KiemTraThongTinNV(_ID_NhanVien))
+                {
+                    _Nv_Bll.XoaTam(_ID_NhanVien);
+                }
+                else
+                {
+                    _Nv_Bll.XoaNhanVien(_ID_NhanVien);
+                }  
             }
             Notifications.Success("Xóa dữ liệu thành công!");
             LoadDataSource();

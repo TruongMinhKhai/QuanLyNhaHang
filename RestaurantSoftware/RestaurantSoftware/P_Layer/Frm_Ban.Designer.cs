@@ -204,7 +204,7 @@
             this.gridView1.NewItemRowText = "Thêm dòng mới tại đây...";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
+            this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             // 
             // col_TenBan
             // 
@@ -212,7 +212,7 @@
             this.col_TenBan.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_TenBan.AppearanceHeader.Options.UseTextOptions = true;
             this.col_TenBan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_TenBan.Caption = "Tên Bàn";
+            this.col_TenBan.Caption = "Tên Bàn(*)";
             this.col_TenBan.FieldName = "tenban";
             this.col_TenBan.Name = "col_TenBan";
             this.col_TenBan.Visible = true;
@@ -252,7 +252,7 @@
             this.col_TrangThai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_TrangThai.AppearanceHeader.Options.UseTextOptions = true;
             this.col_TrangThai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_TrangThai.Caption = "Trạng Thái";
+            this.col_TrangThai.Caption = "Trạng Thái(*)";
             this.col_TrangThai.ColumnEdit = this.lue_TrangThai;
             this.col_TrangThai.FieldName = "trangthai";
             this.col_TrangThai.Name = "col_TrangThai";
