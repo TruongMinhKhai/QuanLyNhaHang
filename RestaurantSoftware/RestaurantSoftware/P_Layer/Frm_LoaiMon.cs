@@ -151,8 +151,15 @@ namespace RestaurantSoftware.P_Layer
             for (int i = 0; i < gridView1.SelectedRowsCount; i++)
             {
                 int _ID_LoaiMon = int.Parse(gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "id_loaimon").ToString());
-                _monBll.XoaMons(_ID_LoaiMon);
-                _loaimon_Bll.XoaLoaiMon(_ID_LoaiMon);
+                if(_loaimon_Bll.KiemTraThongTin(_ID_LoaiMon))
+                {
+                    _loaimon_Bll.XoaTam(_ID_LoaiMon);
+                }
+                else
+                {
+                    _monBll.XoaMons(_ID_LoaiMon);
+                    _loaimon_Bll.XoaLoaiMon(_ID_LoaiMon);
+                }
             }
             Notifications.Success("Xóa dữ liệu thành công!");
             LoadDataSource();

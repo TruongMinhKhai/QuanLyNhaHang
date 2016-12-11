@@ -7,9 +7,10 @@ namespace RestaurantSoftware.BL_Layer
     class LoaiMon_BLL
     {
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
+        Mon_BLL _monBll = new Mon_BLL();
         public IEnumerable<LoaiMon> LayDanhSachLoaiMon()
         {
-            IEnumerable<LoaiMon> query = from lm in dbContext.LoaiMons select lm;
+            IEnumerable<LoaiMon> query = from lm in dbContext.LoaiMons where lm.trangthai != false select lm;
             return query;
         }
 
@@ -43,6 +44,29 @@ namespace RestaurantSoftware.BL_Layer
         {
             LoaiMon _loaimon = dbContext.LoaiMons.Single<LoaiMon>(x => x.id_loaimon == lm.id_loaimon);
             _loaimon.tenloaimon = lm.tenloaimon;
+            // update 
+            dbContext.SubmitChanges();
+        }
+
+        public bool KiemTraThongTin(int id_loaimon)
+        {
+            IEnumerable<int> mons = _monBll.getIDMon(id_loaimon);
+            if(mons.Count() > 0)
+            {
+                foreach(int i in mons)
+                {
+                    if (_monBll.KiemTraThongTin(i))
+                        return true;
+                }
+                    
+            }
+            return false;
+        }
+
+        public void XoaTam(int id_loaimon)
+        {
+            LoaiMon _loaimon = dbContext.LoaiMons.Single<LoaiMon>(x => x.id_loaimon == id_loaimon);
+            _loaimon.trangthai = false;
             // update 
             dbContext.SubmitChanges();
         }

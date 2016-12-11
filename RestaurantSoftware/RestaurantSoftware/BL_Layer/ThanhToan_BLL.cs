@@ -34,7 +34,7 @@ namespace RestaurantSoftware.BL_Layer
         public void LoadHoaDon(GridControl gr)
         {
             var query = from db in dbContext.HoaDonThanhToans
-                        join kh in dbContext.KhachHangs on db.id_khanhhang equals kh.id_khachhang
+                        join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
                         join bn in dbContext.Bans on db.id_ban equals bn.id_ban
                         select new
                         {
@@ -43,7 +43,7 @@ namespace RestaurantSoftware.BL_Layer
                             bn.tenban,
                             db.trangthai,
                             db.thoigian,
-                            db.id_khanhhang,
+                            db.id_khachhang,
                             kh.tenkh,
                             kh.sdt,
                             db.vat,
@@ -153,7 +153,7 @@ namespace RestaurantSoftware.BL_Layer
         void laykhachhang(int id, TextEdit tenkh, TextEdit sdt)
         {
             var query = (from db in dbContext.HoaDonThanhToans
-                         join kh in dbContext.KhachHangs on db.id_khanhhang equals kh.id_khachhang
+                         join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
                          where db.id_hoadon == id
                          select new ChiTiet_ThanhToan
                          {

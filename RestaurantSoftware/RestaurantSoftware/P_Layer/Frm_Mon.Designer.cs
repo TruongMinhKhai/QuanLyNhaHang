@@ -53,12 +53,15 @@
             this.lue_TrangThai = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.col_Gia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.col_DonVi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lue_DonVi = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_LoaiMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_TrangThai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_DonVi)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -149,28 +152,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(734, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(784, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 261);
-            this.barDockControlBottom.Size = new System.Drawing.Size(734, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 244);
+            this.barDockControlBottom.Size = new System.Drawing.Size(784, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 237);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 220);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(734, 24);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 237);
+            this.barDockControlRight.Location = new System.Drawing.Point(784, 24);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 220);
             // 
             // barEditItem1
             // 
@@ -201,7 +204,8 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.lue_LoaiMon,
             this.lue_TrangThai,
-            this.repositoryItemTextEdit2});
+            this.repositoryItemTextEdit2,
+            this.lue_DonVi});
             this.gridControl1.Size = new System.Drawing.Size(734, 237);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -216,7 +220,8 @@
             this.col_LoaiMon,
             this.col_TenVietTat,
             this.col_TrangThai,
-            this.col_Gia});
+            this.col_Gia,
+            this.col_DonVi});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -334,11 +339,36 @@
             this.repositoryItemTextEdit2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
+            // col_DonVi
+            // 
+            this.col_DonVi.AppearanceCell.Options.UseTextOptions = true;
+            this.col_DonVi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_DonVi.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_DonVi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_DonVi.Caption = "Đơn vị(*)";
+            this.col_DonVi.ColumnEdit = this.lue_DonVi;
+            this.col_DonVi.FieldName = "id_donvi";
+            this.col_DonVi.Name = "col_DonVi";
+            this.col_DonVi.Visible = true;
+            this.col_DonVi.VisibleIndex = 5;
+            // 
+            // lue_DonVi
+            // 
+            this.lue_DonVi.AutoHeight = false;
+            this.lue_DonVi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_DonVi.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tendonvi", "Đơn vị", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            this.lue_DonVi.DisplayMember = "tendonvi";
+            this.lue_DonVi.Name = "lue_DonVi";
+            this.lue_DonVi.ShowHeader = false;
+            this.lue_DonVi.ValueMember = "id_donvi";
+            // 
             // Frm_Mon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 261);
+            this.ClientSize = new System.Drawing.Size(784, 244);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -353,6 +383,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lue_LoaiMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_TrangThai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_DonVi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +414,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_LoaiMon;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_TrangThai;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn col_DonVi;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_DonVi;
     }
 }

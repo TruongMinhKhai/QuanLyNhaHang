@@ -27,6 +27,12 @@ namespace RestaurantSoftware
             SkinHelper.InitSkinGallery(ribbonGallery, true);
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            //P_Layer.Frm_DangNhap dangnhap = new P_Layer.Frm_DangNhap();
+            //dangnhap.ShowDialog();
+        }
+
         private void btn_Ban_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.ExistForm(typeof(P_Layer.Frm_Ban));
@@ -126,14 +132,14 @@ namespace RestaurantSoftware
 
         private void btn_PhieuNhapHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.ExistForm(typeof(P_Layer.Frm_DanhSachPhieuNhap));
+            Form frm = this.ExistForm(typeof(P_Layer.Frm_NguyenLieu));
             if (frm != null)
             {
                 frm.Activate();
             }
             else
             {
-                P_Layer.Frm_DanhSachPhieuNhap DSPhieuNhap = new P_Layer.Frm_DanhSachPhieuNhap();
+                P_Layer.Frm_NguyenLieu DSPhieuNhap = new P_Layer.Frm_NguyenLieu();
                 DSPhieuNhap.MdiParent = this;
                 DSPhieuNhap.Show();
             }
@@ -291,6 +297,54 @@ namespace RestaurantSoftware
                 P_Layer.Frm_ThongKeMon tkmon = new P_Layer.Frm_ThongKeMon();
                 tkmon.MdiParent = this;
                 tkmon.Show();
+            }
+        }
+
+        private void btn_DonVi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.ExistForm(typeof(P_Layer.Frm_DonVi));
+
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                P_Layer.Frm_DonVi donvi = new P_Layer.Frm_DonVi();
+                donvi.MdiParent = this;
+                donvi.Show();
+            }
+        }
+
+        private void btn_DoanhThuThang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.ExistForm(typeof(P_Layer.Frm_DoanhThuTheoThang));
+
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                P_Layer.Frm_DoanhThuTheoThang dtThang = new P_Layer.Frm_DoanhThuTheoThang();
+                dtThang.MdiParent = this;
+                dtThang.Show();
+            }
+        }
+
+        private void btn_DoanhThuNam_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.ExistForm(typeof(P_Layer.Frm_DoanhThuTheoNam));
+
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                P_Layer.Frm_DoanhThuTheoNam dtnam = new P_Layer.Frm_DoanhThuTheoNam();
+                dtnam.MdiParent = this;
+                dtnam.Show();
             }
         }
     }

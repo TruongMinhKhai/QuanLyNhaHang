@@ -57,6 +57,29 @@ namespace RestaurantSoftware.BL_Layer
             return false;
         }
 
+        public bool KiemTraThongTin(int id_ban)
+        {
+            IEnumerable<DatBan> _KiemTraDatBan = from db in dbContext.DatBans
+                                     where db.id_ban == id_ban
+                                     select db;
+            IEnumerable<HoaDonThanhToan> _KiemTraHoaDon = from hd in dbContext.HoaDonThanhToans
+                                        where hd.id_ban == id_ban
+                                        select hd;
+            if(_KiemTraDatBan.Count() > 0 || _KiemTraHoaDon.Count() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void XoaTam(int id_ban)
+        {
+            Ban _ban = dbContext.Bans.Single<Ban>(b => b.id_ban == id_ban);
+            _ban.trangthai = "Hỏng";
+            // update 
+            dbContext.SubmitChanges();
+        }
+
         public void XoaBan(int _BanID)
         {
             Ban _ban = dbContext.Bans.Single<Ban>(b => b.id_ban == _BanID);

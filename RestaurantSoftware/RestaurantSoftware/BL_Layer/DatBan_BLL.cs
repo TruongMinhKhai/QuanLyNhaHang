@@ -1,7 +1,5 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
+﻿using DevExpress.XtraGrid;
 using RestaurantSoftware.DA_Layer;
-using RestaurantSoftware.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,47 +9,32 @@ using System.Threading.Tasks;
 
 namespace RestaurantSoftware.BL_Layer
 {
-    class DatBan_BLL
+    public class DatBan_BLL
     {
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
-        public IEnumerable<Ban> LayDanhSachBan()
-        {
-            //var query = from ban in dbContext.Bans
-            //            where
-            //              !
-            //                (from DatBans in dbContext.DatBans
-            //                 where
-            //                   DatBans.thoigian == ngaydat.Date
-            //                 select new
-            //                 {
-            //                     DatBans.id_ban
-            //                 }).Contains(new { id_ban = (System.Int32?)ban.id_ban })
-            //            select ban;
-            //return query;
-
-            var query = from bn in dbContext.Bans
-                        where bn.trangthai == "Trống"
-                        select bn; 
-                       
-            return query;
-        }
-
-        public IEnumerable<Ban> LayDanhSachBanDat(DateTime ngaydat)
+        public IQueryable<Ban> LayDanhSachBan(DateTime ngaydat)
         {
             var query = from ban in dbContext.Bans
                         where
                           !
                             (from DatBans in dbContext.DatBans
                              where
-                               DatBans.thoigian == ngaydat.Date && DatBans.trangthai == "Chưa nhận bàn"
+                               DatBans.thoigian == ngaydat.Date
                              select new
                              {
                                  DatBans.id_ban
                              }).Contains(new { id_ban = (System.Int32?)ban.id_ban })
                         select ban;
             return query;
+        }
 
-           
+        public void LoadTrangThai(List<string> list, string str)
+        {
+            var query = dbContext.TrangThais.Where(TrangThai => TrangThai.lienket == str);
+            foreach(var q in query)
+            {
+                list.Add(q.tentrangthai);
+            }
         }
 
         public void LayDanhSachMon(GridControl grid)
@@ -68,8 +51,7 @@ namespace RestaurantSoftware.BL_Layer
                             tenviettat = m.tenviettat,
                             gia = m.gia,
                             tenloaimon = lm.tenloaimon,
-                            id_mon = m.id_mon,
-                            trangthai = m.trangthai
+                            id_mon = m.id_mon
                         };
 
             grid.DataSource = query;
@@ -90,133 +72,120 @@ namespace RestaurantSoftware.BL_Layer
                         };
             grid.DataSource = query;
         }
-       
+        public IEnumerable<KhachHang> LayDsKhachHang()
+        {
+            var query = from kh in dbContext.KhachHangs select kh;
+            return query;
+        }
+
         public void ThemMoiPhieuDatBan(DatBan db)
         {
             dbContext.DatBans.InsertOnSubmit(db);
             dbContext.SubmitChanges();
         }
-       
-        public void LoadChiTietDatBan(int iddatban, GridControl grid)
+        public void LoadChiTietDatBan(string TenBan, DateTime ngaydat, GridControl grid)
         {
-            try
-            {
-                var query = from ct in dbContext.Chitiet_DatBans
-                            join m in dbContext.Mons on ct.id_mon equals m.id_mon
-                            where
-                              ct.id_datban == iddatban
-                            select new
-                            {
-                                ct.id_datban,
-                                ct.id_mon,
-                                m.tenmon,
-                                ct.soluong,
-                                m.gia,
-                                thanhtien = ct.soluong*m.gia
-                            };
-                grid.DataSource = query;
-            }
-            catch (Exception)
-            {
-
-                Notifications.Answers("Chưa có món ăn");
-            }
-
+            var query = from ct in dbContext.Chitiet_DatBans
+                        where
+                          ct.DatBan.Ban.tenban == TenBan &&
+                          ct.DatBan.thoigian == ngaydat.Date
+                        select new
+                        {
+                            ct.id_datban,
+                            ct.id_mon,
+                            ct.Mon.tenmon,
+                            ct.soluong,
+                            gia = (decimal?)ct.Mon.gia,
+                            ct.thanhtien
+                        };
+            grid.DataSource = query;
         }
-        public void loadid(int iddatban, string trangthai, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt, TextEdit tenban)
+        public int KiemTraMonDaCoChua(int? id_datban, int? id_mon)
         {
-            try
-            {
-                int idkh = -1;
-                var query = (from db in dbContext.DatBans
-                             join bn in dbContext.Bans on db.id_ban equals bn.id_ban
-                             join nv in dbContext.NhanViens on db.id_nhanvien equals nv.id_nhanvien
-                             where db.trangthai == trangthai
-                             select new ChiTiet_DatBan
-                             {
-                                 Iddatban = db.id_datban,
-                                 Idban = bn.id_ban,
-                                 Tenban = bn.tenban,
-                                 Trangthai = bn.trangthai,
-                                 Idnhanvien = nv.id_nhanvien,
-                                 Tennhanvien = nv.tennhanvien,
-                                 Ngay = Convert.ToDateTime(db.thoigian)
-
-                             }).ToList();
-                foreach (var id in query)
-                {
-                    if (id.Iddatban == iddatban)
-                    {
-                        nhanvien.EditValue = id.Idnhanvien;
-                        ngay.DateTime = id.Ngay;
-                        tenban.Text = id.Tenban;
-                        idkh = id.Iddatban;
-                        laykhachhang(idkh, tenkh, sdt);
-                    }
-                }
-
-            }
-            catch (Exception)
-            {
-
-                Notifications.Answers("Hóa đơn này chưa có khách hàng.");
-            }
-
-
+            var query = (from ct_db in dbContext.Chitiet_DatBans
+                         where ct_db.id_datban == id_datban &&
+                               ct_db.id_mon == id_mon
+                         select ct_db).Count();
+            return query;
         }
-        void laykhachhang(int id, TextEdit tenkh, TextEdit sdt)
+        public void ThemChiTiet(Chitiet_DatBan ct)
         {
-            var query = (from db in dbContext.DatBans
-                         join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
-                         where db.id_datban == id
-                         select new ChiTiet_ThanhToan
-                         {
-                             Tenkhachhang = kh.tenkh,
-                             Sodienthoai = kh.sdt
-
-                         }).ToList();
-            foreach (var i in query)
-            {
-                tenkh.Text = i.Tenkhachhang;
-                sdt.Text = i.Sodienthoai;
-            }
+            dbContext.Chitiet_DatBans.InsertOnSubmit(ct);
+            dbContext.SubmitChanges();
         }
-        public void load(int iddatban, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt, TextEdit tenban)
+        public void CapNhatChiTiet(Chitiet_DatBan ct)
         {
-            try
+            var queryChitiet_DatBans =
+                from Chitiet_DatBans in dbContext.Chitiet_DatBans
+                where
+                  Chitiet_DatBans.id_datban == ct.id_datban &&
+                  Chitiet_DatBans.id_mon == ct.id_mon
+                select Chitiet_DatBans;
+            foreach (var Chitiet_DatBans in queryChitiet_DatBans)
             {
-                int idkh = -1;
-                var query = (from db in dbContext.DatBans
-                             join bn in dbContext.Bans on db.id_ban equals bn.id_ban
-                             join nv in dbContext.NhanViens on db.id_nhanvien equals nv.id_nhanvien
-                             select new ChiTiet_DatBan
-                             {
-                                 Iddatban = db.id_datban,
-                                 Idban = bn.id_ban,
-                                 Tenban = bn.tenban,
-                                 Idnhanvien = nv.id_nhanvien,
-                                 Tennhanvien = nv.tennhanvien,
-                                 Ngay = Convert.ToDateTime(db.thoigian),
-
-                             }).ToList();
-                foreach (var id in query)
-                {
-                    if (id.Iddatban == iddatban)
-                    {
-                        nhanvien.EditValue = id.Idnhanvien;
-                        ngay.DateTime = id.Ngay;
-                        tenban.Text = id.Tenban;
-                        idkh = id.Iddatban;
-                        laykhachhang(idkh, tenkh, sdt);
-                    }
-                }
+                Chitiet_DatBans.soluong += ct.soluong;
+                Chitiet_DatBans.dongia = ct.dongia;
+                Chitiet_DatBans.thanhtien += ct.thanhtien;
             }
-            catch (Exception)
+            dbContext.SubmitChanges();
+        }
+        public void XoaChiTiet(int id_datban, int id_mon)
+        {
+            var queryChitiet_DatBans =
+                from Chitiet_DatBans in dbContext.Chitiet_DatBans
+                where
+                  Chitiet_DatBans.id_datban == id_datban &&
+                  Chitiet_DatBans.id_mon == id_mon
+                select Chitiet_DatBans;
+            foreach (var del in queryChitiet_DatBans)
             {
-                Notifications.Answers("Hóa đơn này chưa có khách hàng.");
-
+                dbContext.Chitiet_DatBans.DeleteOnSubmit(del);
+            }
+            dbContext.SubmitChanges();
+        }
+        public void SuaPhieuDatBan(DatBan db)
+        {
+            var query =
+                from datban in dbContext.DatBans
+                where
+                  datban.id_datban == db.id_datban
+                select datban;
+            foreach (var q in query)
+            {
+                q.id_ban = db.id_ban;
+                q.id_khachhang = db.id_khachhang;
+                q.thoigian = db.thoigian;
+            }
+            dbContext.SubmitChanges();
+        }
+        public void XoaPhieuDatBan(int id)
+        {
+            var queryChitiet_DatBans =
+                from Chitiet_DatBans in dbContext.Chitiet_DatBans
+                where
+                  Chitiet_DatBans.id_datban == id 
+                select Chitiet_DatBans;
+            foreach (var del in queryChitiet_DatBans)
+            {
+                dbContext.Chitiet_DatBans.DeleteOnSubmit(del);
             }
 
+            var queryDatban = from datban in dbContext.DatBans
+                              where
+                                datban.id_datban == id
+                              select datban;
+            foreach (var del in queryDatban)
+            {
+                dbContext.DatBans.DeleteOnSubmit(del);
+            }
+            dbContext.SubmitChanges();
+        }
+        public IQueryable<DatBan> LoadPhieuDatBan(int? idban,DateTime? dt)
+        {
+            var query = from datban in dbContext.DatBans
+                        where datban.thoigian == dt && datban.id_ban == idban
+                        select datban;
+            return query;
         }
     }
 }
