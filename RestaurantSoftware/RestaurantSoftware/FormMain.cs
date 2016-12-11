@@ -310,9 +310,41 @@ namespace RestaurantSoftware
             }
             else
             {
-                P_Layer.Frm_DonVi tkmon = new P_Layer.Frm_DonVi();
-                tkmon.MdiParent = this;
-                tkmon.Show();
+                P_Layer.Frm_DonVi donvi = new P_Layer.Frm_DonVi();
+                donvi.MdiParent = this;
+                donvi.Show();
+            }
+        }
+
+        private void btn_DoanhThuThang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.ExistForm(typeof(P_Layer.Frm_DoanhThuTheoThang));
+
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                P_Layer.Frm_DoanhThuTheoThang dtThang = new P_Layer.Frm_DoanhThuTheoThang();
+                dtThang.MdiParent = this;
+                dtThang.Show();
+            }
+        }
+
+        private void btn_DoanhThuNam_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.ExistForm(typeof(P_Layer.Frm_DoanhThuTheoNam));
+
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                P_Layer.Frm_DoanhThuTheoNam dtnam = new P_Layer.Frm_DoanhThuTheoNam();
+                dtnam.MdiParent = this;
+                dtnam.Show();
             }
         }
     }

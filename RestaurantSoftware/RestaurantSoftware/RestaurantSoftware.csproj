@@ -126,6 +126,12 @@
     <Compile Include="P_Layer\Frm_Ban.Designer.cs">
       <DependentUpon>Frm_Ban.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_Layer\Frm_ChartDoanhThuNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_ChartDoanhThuNam.Designer.cs">
+      <DependentUpon>Frm_ChartDoanhThuNam.cs</DependentUpon>
+    </Compile>
     <Compile Include="P_Layer\Frm_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,18 @@
     </Compile>
     <Compile Include="P_Layer\Frm_DatBan.Designer.cs">
       <DependentUpon>Frm_DatBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DoanhThuTheoNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DoanhThuTheoNam.Designer.cs">
+      <DependentUpon>Frm_DoanhThuTheoNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DoanhThuTheoThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DoanhThuTheoThang.Designer.cs">
+      <DependentUpon>Frm_DoanhThuTheoThang.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Layer\Frm_DonVi.cs">
       <SubType>Form</SubType>
@@ -285,6 +303,15 @@
     <EmbeddedResource Include="PrintRibbonControllerResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_ChartDoanhThuNam.resx">
+      <DependentUpon>Frm_ChartDoanhThuNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_DoanhThuTheoNam.resx">
+      <DependentUpon>Frm_DoanhThuTheoNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_DoanhThuTheoThang.resx">
+      <DependentUpon>Frm_DoanhThuTheoThang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_DonVi.resx">
       <DependentUpon>Frm_DonVi.cs</DependentUpon>
