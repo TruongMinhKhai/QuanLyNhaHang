@@ -54,18 +54,7 @@ namespace RestaurantSoftware.P_Layer
                 ListViewItem lvItem = new ListViewItem();
                 ListViewGroup lvGroup = new ListViewGroup();
                 lvItem.Text = dr["tenban"].ToString();
-                switch (dr["trangthai"].ToString())
-                {
-                    case "Trống":
-                        lvItem.ImageIndex = 2;
-                        break;
-                    case "Đã đặt":
-                        lvItem.ImageIndex = 1;
-                        break;
-                    case "Đang sử dụng":
-                        lvItem.ImageIndex = 0;
-                        break;
-                }
+                lvItem.ImageIndex = 0;
                 lvItem.Name = dr["Idban"].ToString();
                 lvGroup.Header = dr["Tenloaiban"].ToString();
                 lvItem.Group = lvGroup;
@@ -102,9 +91,10 @@ namespace RestaurantSoftware.P_Layer
                 txt_KhachDua.Text = "";
                 txt_TraLai.Text = "";
                 txt_Ban.Text = lvDsBan.SelectedItems[0].Text;
-                _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "Chưa thanh toán", txt_MaHoaDon, cmb_NhanVien, dt_NgayLap,txt_TenKH,txt_SDT);
+                _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "Chưa thanh toán", txt_MaHoaDon, cmb_NhanVien, dt_NgayLap,txt_TenKH,txt_SDT,txt_KhachDua);
                 _thanhToanBll.LayDsThamSo(txt_VAT, txt_KhuyenMai);
                 LoadChiTietHoaDon();
+                chuyenvetiente(txt_KhachDua);
                 btn_ThanhToan.Enabled = true;
                 checkBoxKhuyenmai.Enabled = true;
                 txt_KhachDua.Enabled = true;
@@ -179,6 +169,8 @@ namespace RestaurantSoftware.P_Layer
                 if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Chưa thanh toán")
                 {
                     _thanhToanBll.LayDsThamSo(txt_VAT, txt_KhuyenMai);
+                    txt_KhachDua.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_DaTra);
+
                     btn_ThanhToan.Enabled = true;
                     checkBoxKhuyenmai.Enabled = true;
                     txt_KhachDua.Enabled = true;

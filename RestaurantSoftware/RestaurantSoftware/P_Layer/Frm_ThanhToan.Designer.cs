@@ -60,10 +60,12 @@
             this.grd_DanhSachMon = new DevExpress.XtraGrid.GridControl();
             this.gv_DanhSachMon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.col_TenMon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.col_SoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.col_ThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.txt_MaHoaDon = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -90,6 +92,7 @@
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.col_DaTra = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenKH.Properties)).BeginInit();
@@ -108,7 +111,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_TongTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_DanhSachMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_DanhSachMon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaHoaDon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -213,7 +218,8 @@
             this.col_khachHang,
             this.col_sdt,
             this.col_KhuyenMai,
-            this.col_Vat});
+            this.col_Vat,
+            this.col_DaTra});
             this.gv_HoaDon.GridControl = this.grv_HoaDon;
             this.gv_HoaDon.GroupCount = 1;
             this.gv_HoaDon.Name = "gv_HoaDon";
@@ -432,7 +438,9 @@
             this.grd_DanhSachMon.MainView = this.gv_DanhSachMon;
             this.grd_DanhSachMon.Name = "grd_DanhSachMon";
             this.grd_DanhSachMon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit1});
+            this.repositoryItemTextEdit1,
+            this.repositoryItemTextEdit2,
+            this.repositoryItemTextEdit3});
             this.grd_DanhSachMon.Size = new System.Drawing.Size(436, 300);
             this.grd_DanhSachMon.TabIndex = 9;
             this.grd_DanhSachMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -452,10 +460,16 @@
             // col_TenMon
             // 
             this.col_TenMon.Caption = "Tên Món";
+            this.col_TenMon.ColumnEdit = this.repositoryItemTextEdit3;
             this.col_TenMon.FieldName = "tenmon";
             this.col_TenMon.Name = "col_TenMon";
             this.col_TenMon.Visible = true;
             this.col_TenMon.VisibleIndex = 0;
+            // 
+            // repositoryItemTextEdit3
+            // 
+            this.repositoryItemTextEdit3.AutoHeight = false;
+            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
             // 
             // col_SoLuong
             // 
@@ -497,6 +511,11 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "thanhtien", "Tổng Tiền={0:0.##}")});
             this.col_ThanhTien.Visible = true;
             this.col_ThanhTien.VisibleIndex = 3;
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
             // txt_MaHoaDon
             // 
@@ -750,6 +769,12 @@
             this.imageList1.Images.SetKeyName(1, "table-vang.png");
             this.imageList1.Images.SetKeyName(2, "table-xanh.png");
             // 
+            // col_DaTra
+            // 
+            this.col_DaTra.Caption = "Đã trả";
+            this.col_DaTra.FieldName = "datra";
+            this.col_DaTra.Name = "col_DaTra";
+            // 
             // Frm_ThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -777,7 +802,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_TongTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_DanhSachMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_DanhSachMon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaHoaDon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -869,6 +896,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_KhuyenMai;
         private DevExpress.XtraGrid.Columns.GridColumn col_Vat;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn col_DaTra;
 
     }
 }

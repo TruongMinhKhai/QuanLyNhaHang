@@ -47,7 +47,8 @@ namespace RestaurantSoftware.BL_Layer
                             kh.tenkh,
                             kh.sdt,
                             db.vat,
-                            db.khuyenmai
+                            db.khuyenmai,
+                            datra = (decimal?)db.datra
                         };
             gr.DataSource = query;
         }
@@ -109,7 +110,7 @@ namespace RestaurantSoftware.BL_Layer
             }
             
         }
-        public void loadid(int idban, string trangthai, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt)
+        public void loadid(int idban, string trangthai, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt, TextEdit kd)
         {
             try
             {
@@ -127,6 +128,7 @@ namespace RestaurantSoftware.BL_Layer
                                  Idnhanvien = nv.id_nhanvien,
                                  Tennhanvien = nv.tennhanvien,
                                  Ngay = Convert.ToDateTime(db.thoigian),
+                                 Khachtra = Convert.ToInt32(db.datra)
 
                              }).ToList();
                 foreach (var id in query)
@@ -137,6 +139,7 @@ namespace RestaurantSoftware.BL_Layer
                         nhanvien.EditValue = id.Idnhanvien;
                         ngay.DateTime = id.Ngay;
                         idkh = id.Idhoadon;
+                        kd.EditValue = id.Khachtra;
                         laykhachhang(idkh, tenkh, sdt);
                     }
                 }
