@@ -102,7 +102,7 @@ namespace RestaurantSoftware.DA_Layer
     #endregion
 		
 		public RestaurantDBDataContext() : 
-				base(global::RestaurantSoftware.Properties.Settings.Default.nhahang_dbConnectionString2, mappingSource)
+				base(global::RestaurantSoftware.Properties.Settings.Default.nhahang_dbConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -1124,6 +1124,8 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private System.Nullable<decimal> _thanhtien;
 		
+		private System.Nullable<decimal> _dongia;
+		
 		private EntityRef<DatBan> _DatBan;
 		
 		private EntityRef<Mon> _Mon;
@@ -1142,6 +1144,8 @@ namespace RestaurantSoftware.DA_Layer
     partial void OnsoluongChanged();
     partial void OnthanhtienChanging(System.Nullable<decimal> value);
     partial void OnthanhtienChanged();
+    partial void OndongiaChanging(System.Nullable<decimal> value);
+    partial void OndongiaChanged();
     #endregion
 		
 		public Chitiet_DatBan()
@@ -1255,6 +1259,26 @@ namespace RestaurantSoftware.DA_Layer
 					this._thanhtien = value;
 					this.SendPropertyChanged("thanhtien");
 					this.OnthanhtienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dongia", DbType="Money")]
+		public System.Nullable<decimal> dongia
+		{
+			get
+			{
+				return this._dongia;
+			}
+			set
+			{
+				if ((this._dongia != value))
+				{
+					this.OndongiaChanging(value);
+					this.SendPropertyChanging();
+					this._dongia = value;
+					this.SendPropertyChanged("dongia");
+					this.OndongiaChanged();
 				}
 			}
 		}
@@ -1628,6 +1652,8 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private System.Nullable<decimal> _thanhtien;
 		
+		private System.Nullable<decimal> _dongia;
+		
 		private EntityRef<HoaDonThanhToan> _HoaDonThanhToan;
 		
 		private EntityRef<Mon> _Mon;
@@ -1646,6 +1672,8 @@ namespace RestaurantSoftware.DA_Layer
     partial void OnsoluongChanged();
     partial void OnthanhtienChanging(System.Nullable<decimal> value);
     partial void OnthanhtienChanged();
+    partial void OndongiaChanging(System.Nullable<decimal> value);
+    partial void OndongiaChanged();
     #endregion
 		
 		public Chitiet_HoaDonThanhToan()
@@ -1759,6 +1787,26 @@ namespace RestaurantSoftware.DA_Layer
 					this._thanhtien = value;
 					this.SendPropertyChanged("thanhtien");
 					this.OnthanhtienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dongia", DbType="Money")]
+		public System.Nullable<decimal> dongia
+		{
+			get
+			{
+				return this._dongia;
+			}
+			set
+			{
+				if ((this._dongia != value))
+				{
+					this.OndongiaChanging(value);
+					this.SendPropertyChanging();
+					this._dongia = value;
+					this.SendPropertyChanged("dongia");
+					this.OndongiaChanged();
 				}
 			}
 		}

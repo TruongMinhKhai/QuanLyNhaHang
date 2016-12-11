@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="nhahang_db" Class="RestaurantDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GP5UIG3\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Security=True" SettingsObjectName="RestaurantSoftware.Properties.Settings" SettingsPropertyName="nhahang_dbConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Security=True" SettingsObjectName="RestaurantSoftware.Properties.Settings" SettingsPropertyName="nhahang_dbConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Ban" Member="Bans">
     <Type Name="Ban">
       <Column Name="id_ban" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -46,6 +46,7 @@
       <Column Name="id_mon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="thanhtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="DatBan_Chitiet_DatBan" Member="DatBan" ThisKey="id_datban" OtherKey="id_datban" Type="DatBan" IsForeignKey="true" />
       <Association Name="Mon_Chitiet_DatBan" Member="Mon" ThisKey="id_mon" OtherKey="id_mon" Type="Mon" IsForeignKey="true" />
     </Type>
@@ -69,6 +70,7 @@
       <Column Name="id_mon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="thanhtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="HoaDonThanhToan_Chitiet_HoaDonThanhToan" Member="HoaDonThanhToan" ThisKey="id_hoadon" OtherKey="id_hoadon" Type="HoaDonThanhToan" IsForeignKey="true" />
       <Association Name="Mon_Chitiet_HoaDonThanhToan" Member="Mon" ThisKey="id_mon" OtherKey="id_mon" Type="Mon" IsForeignKey="true" />
     </Type>
