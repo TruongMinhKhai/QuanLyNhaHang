@@ -258,6 +258,7 @@
             this.cmb_NhanVienLap.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tennhanvien", "Tên Nhân Viên")});
             this.cmb_NhanVienLap.Properties.DisplayMember = "tennhanvien";
+            this.cmb_NhanVienLap.Properties.NullText = "Chọn nhân viên";
             this.cmb_NhanVienLap.Properties.ValueMember = "id_nhanvien";
             this.cmb_NhanVienLap.Size = new System.Drawing.Size(240, 20);
             this.cmb_NhanVienLap.StyleController = this.layoutControl1;

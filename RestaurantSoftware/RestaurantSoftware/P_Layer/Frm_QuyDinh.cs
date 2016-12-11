@@ -47,7 +47,7 @@ namespace RestaurantSoftware.P_Layer
             txt_TenQuyDinh.Text = gv_QuyDinh.GetFocusedRowCellDisplayText(col_TenQuyDinh);
             string a = gv_QuyDinh.GetFocusedRowCellDisplayText(col_NhanVien);
             cmb_NhanVienLap.EditValue = int.Parse(a);
-            dt_NgayLap.Text = gv_QuyDinh.GetFocusedRowCellDisplayText(col_NgayLap);
+            dt_NgayLap.DateTime = Convert.ToDateTime(gv_QuyDinh.GetFocusedRowCellDisplayText(col_NgayLap));
             rxt_NoiDung.Text = gv_QuyDinh.GetFocusedRowCellDisplayText(col_NoiDung);
             kt = "Sua";
 
@@ -77,8 +77,6 @@ namespace RestaurantSoftware.P_Layer
                 _quydinhBLL.ThemQuyDinh(qd);
                 Notifications.Answers("Thêm thành công!");
                 LoadDataSource();
-
-
             }
             else
                 if (kt == "Sua")

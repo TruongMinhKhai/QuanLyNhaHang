@@ -26,8 +26,7 @@ namespace RestaurantSoftware.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GP5UIG3\\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Secu" +
-            "rity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Security=True")]
         public string nhahang_dbConnectionString {
             get {
                 return ((string)(this["nhahang_dbConnectionString"]));
@@ -37,10 +36,21 @@ namespace RestaurantSoftware.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-L65GGB3;Initial Catalog=nhahang_db;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Security=True")]
         public string nhahang_dbConnectionString1 {
             get {
                 return ((string)(this["nhahang_dbConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GP5UIG3\\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Secu" +
+            "rity=True")]
+        public string nhahang_dbConnectionString2 {
+            get {
+                return ((string)(this["nhahang_dbConnectionString2"]));
             }
         }
     }

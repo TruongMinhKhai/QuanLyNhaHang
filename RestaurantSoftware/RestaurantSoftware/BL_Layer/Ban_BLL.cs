@@ -30,6 +30,13 @@ namespace RestaurantSoftware.BL_Layer
             // update 
             dbContext.SubmitChanges();
         }
+        public void CapNhatBanThanhToan(Ban ban)
+        {
+            Ban _ban = dbContext.Bans.Single<Ban>(x => x.id_ban == ban.id_ban);
+            _ban.trangthai = ban.trangthai;
+            // update 
+            dbContext.SubmitChanges();
+        }
         public bool KiemTraBanTonTai(string _tenBan, int id = -1)
         {
             IEnumerable<Ban> query = from b in dbContext.Bans
