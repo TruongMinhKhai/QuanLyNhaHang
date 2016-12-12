@@ -129,7 +129,7 @@ namespace RestaurantSoftware.P_Layer
                     mon.tenmon = gridView1.GetRowCellValue(id, "tenmon").ToString();
                     mon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
                     mon.tenviettat = gridView1.GetRowCellValue(id, "tenviettat").ToString();
-                    mon.gia = decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
+                    mon.gia = int.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
                     mon.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
                     mon.id_donvi = int.Parse(gridView1.GetRowCellValue(id, "id_donvi").ToString());
                     
