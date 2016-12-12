@@ -45,6 +45,7 @@
             this.col_sdt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_KhuyenMai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_Vat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_DaTra = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txt_Ban = new DevExpress.XtraEditors.TextEdit();
             this.lvDsBan = new System.Windows.Forms.ListView();
             this.cmb_NhanVien = new DevExpress.XtraEditors.LookUpEdit();
@@ -92,7 +93,6 @@
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.col_DaTra = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenKH.Properties)).BeginInit();
@@ -292,6 +292,12 @@
             this.col_Vat.Caption = "Vat";
             this.col_Vat.FieldName = "vat";
             this.col_Vat.Name = "col_Vat";
+            // 
+            // col_DaTra
+            // 
+            this.col_DaTra.Caption = "Đã trả";
+            this.col_DaTra.FieldName = "datra";
+            this.col_DaTra.Name = "col_DaTra";
             // 
             // txt_Ban
             // 
@@ -768,12 +774,6 @@
             this.imageList1.Images.SetKeyName(0, "table-do.png");
             this.imageList1.Images.SetKeyName(1, "table-vang.png");
             this.imageList1.Images.SetKeyName(2, "table-xanh.png");
-            // 
-            // col_DaTra
-            // 
-            this.col_DaTra.Caption = "Đã trả";
-            this.col_DaTra.FieldName = "datra";
-            this.col_DaTra.Name = "col_DaTra";
             // 
             // Frm_ThanhToan
             // 

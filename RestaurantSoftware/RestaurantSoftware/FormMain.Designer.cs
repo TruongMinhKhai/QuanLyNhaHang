@@ -86,6 +86,7 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btn_HoaDon = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -124,9 +125,10 @@
             this.btn_LoaiQuyDinh,
             this.btn_SuCo,
             this.btn_LoaiSuCo,
-            this.btn_DonVi});
+            this.btn_DonVi,
+            this.btn_HoaDon});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 35;
+            this.ribbonControl1.MaxItemId = 36;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -483,6 +485,7 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btn_ThanhToan);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btn_HoaDon);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Doanh thu";
             // 
@@ -580,6 +583,15 @@
             this.xtraTabbedMdiManager1.FloatOnDrag = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // btn_HoaDon
+            // 
+            this.btn_HoaDon.Caption = "Hóa đơn";
+            this.btn_HoaDon.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.Glyph")));
+            this.btn_HoaDon.Id = 35;
+            this.btn_HoaDon.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.LargeGlyph")));
+            this.btn_HoaDon.Name = "btn_HoaDon";
+            this.btn_HoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HoaDon_ItemClick);
+            // 
             // FormMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -662,6 +674,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem btn_DonVi;
+        private DevExpress.XtraBars.BarButtonItem btn_HoaDon;
     }
 }
 

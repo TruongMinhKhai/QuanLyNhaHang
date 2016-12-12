@@ -347,5 +347,21 @@ namespace RestaurantSoftware
                 dtnam.Show();
             }
         }
+
+        private void btn_HoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.ExistForm(typeof(P_Layer.Frm_HoaDon));
+
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                P_Layer.Frm_HoaDon dtnam = new P_Layer.Frm_HoaDon();
+                dtnam.MdiParent = this;
+                dtnam.Show();
+            }
+        }
     }
 }
