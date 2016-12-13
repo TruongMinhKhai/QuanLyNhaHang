@@ -31,7 +31,8 @@ namespace RestaurantSoftware.BL_Layer
                             db.vat,
                             db.khuyenmai,
                             datra = (decimal?)db.datra,
-                            db.id_nhanvien
+                            db.id_nhanvien,
+                            tongtien = (int?)db.tongtien
                         };
             gr.DataSource = query;
         }
