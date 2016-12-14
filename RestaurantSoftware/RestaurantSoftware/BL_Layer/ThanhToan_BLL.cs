@@ -36,6 +36,7 @@ namespace RestaurantSoftware.BL_Layer
             var query = from db in dbContext.HoaDonThanhToans
                         join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
                         join bn in dbContext.Bans on db.id_ban equals bn.id_ban
+                        where !(db.trangthai == "Hủy")
                         select new
                         {
                             db.id_hoadon,
@@ -59,30 +60,55 @@ namespace RestaurantSoftware.BL_Layer
         }
         public void LayDsThamSo(TextEdit Vat, TextEdit km)
         {
+            LayVAT(Vat);
+            LayKM(km);
+        }
+        public void LayVAT(TextEdit vat)
+        {
             try
             {
                 var query = (from db in dbContext.ThamSos
-                             
-                             select new 
+                             where db.tenthamso == "vat"
+                             select new
                              {
-                                db.khuyenmai,
-                                db.vat
+                                 db.giatri
 
                              }).ToList();
                 foreach (var id in query)
                 {
-                    Vat.Text = id.vat.ToString();
-                    km.Text = id.khuyenmai.ToString();
+                    vat.Text = id.giatri.ToString();
                 }
 
             }
             catch (Exception)
             {
 
-                Notifications.Answers("Chưa có tham số");
+                Notifications.Answers("Chưa có tham số VAT");
             }
         }
+        public void LayKM(TextEdit km)
+        {
+            try
+            {
+                var query = (from db in dbContext.ThamSos
+                             where db.tenthamso == "khuyenmai"
+                             select new
+                             {
+                                 db.giatri
 
+                             }).ToList();
+                foreach (var id in query)
+                {
+                    km.Text = id.giatri.ToString();
+                }
+
+            }
+            catch (Exception)
+            {
+
+                Notifications.Answers("Chưa có tham số khuyến mãi");
+            }
+        }
         public void LoadChiTietHoaDon(int idhoadon, GridControl grid)
         {
             try

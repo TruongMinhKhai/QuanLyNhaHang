@@ -5518,60 +5518,42 @@ namespace RestaurantSoftware.DA_Layer
 	public partial class ThamSo
 	{
 		
-		private System.Nullable<int> _id_thamso;
+		private string _tenthamso;
 		
-		private System.Nullable<double> _vat;
-		
-		private System.Nullable<double> _khuyenmai;
+		private System.Nullable<int> _giatri;
 		
 		public ThamSo()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_thamso", DbType="Int")]
-		public System.Nullable<int> id_thamso
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenthamso", DbType="NVarChar(50)")]
+		public string tenthamso
 		{
 			get
 			{
-				return this._id_thamso;
+				return this._tenthamso;
 			}
 			set
 			{
-				if ((this._id_thamso != value))
+				if ((this._tenthamso != value))
 				{
-					this._id_thamso = value;
+					this._tenthamso = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vat", DbType="Float")]
-		public System.Nullable<double> vat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giatri", DbType="Int")]
+		public System.Nullable<int> giatri
 		{
 			get
 			{
-				return this._vat;
+				return this._giatri;
 			}
 			set
 			{
-				if ((this._vat != value))
+				if ((this._giatri != value))
 				{
-					this._vat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khuyenmai", DbType="Float")]
-		public System.Nullable<double> khuyenmai
-		{
-			get
-			{
-				return this._khuyenmai;
-			}
-			set
-			{
-				if ((this._khuyenmai != value))
-				{
-					this._khuyenmai = value;
+					this._giatri = value;
 				}
 			}
 		}

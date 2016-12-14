@@ -250,9 +250,8 @@
   </Table>
   <Table Name="dbo.ThamSo" Member="ThamSos">
     <Type Name="ThamSo">
-      <Column Name="id_thamso" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="vat" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="khuyenmai" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="tenthamso" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="giatri" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

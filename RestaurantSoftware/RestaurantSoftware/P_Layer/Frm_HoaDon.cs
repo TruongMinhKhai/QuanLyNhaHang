@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using RestaurantSoftware.BL_Layer;
 using RestaurantSoftware.Utils;
+using RestaurantSoftware.DA_Layer;
 
 namespace RestaurantSoftware.P_Layer
 {
@@ -92,6 +93,24 @@ namespace RestaurantSoftware.P_Layer
             txt_TongHoaDon.Text = temp.ToString("#,###");
             KiemtraTextBox();
             LoadChiTietHoaDon();
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn này!", "THÔNG BÁO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                HoaDonThanhToan qd = new HoaDonThanhToan();
+                qd.id_hoadon = int.Parse(txt_MaHoaDon.Text);
+                qd.trangthai = "Hủy";
+                HoaDon_Bll.CapNhatHoaDon(qd);
+                Notifications.Answers("Xóa thành công!");
+                Frm_HoaDon_Load(sender, e);
+            }
+            else
+                Notifications.Answers("Xóa không thành công!");
+
+           
         }
 
       

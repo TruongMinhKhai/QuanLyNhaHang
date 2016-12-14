@@ -36,5 +36,12 @@ namespace RestaurantSoftware.BL_Layer
                         };
             gr.DataSource = query;
         }
+        public void CapNhatHoaDon(HoaDonThanhToan m)
+        {
+            HoaDonThanhToan hd = dbContext.HoaDonThanhToans.Single<HoaDonThanhToan>(x => x.id_hoadon == m.id_hoadon);
+            hd.trangthai = m.trangthai;
+            // update 
+            dbContext.SubmitChanges();
+        }
     }
 }
