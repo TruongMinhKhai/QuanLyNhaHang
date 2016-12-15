@@ -12,6 +12,7 @@ namespace RestaurantSoftware.BL_Layer
     {
         ChiTiet_ThanhToan ctth = new ChiTiet_ThanhToan();
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
+        
         public void LoadHoaDon(GridControl gr)
         {
             var query = from db in dbContext.HoaDonThanhToans
