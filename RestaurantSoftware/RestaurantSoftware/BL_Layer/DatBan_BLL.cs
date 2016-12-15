@@ -51,7 +51,8 @@ namespace RestaurantSoftware.BL_Layer
                             tenviettat = m.tenviettat,
                             gia = m.gia,
                             tenloaimon = lm.tenloaimon,
-                            id_mon = m.id_mon
+                            id_mon = m.id_mon,
+                            donvi = m.DonVi.tendonvi
                         };
 
             grid.DataSource = query;
@@ -71,6 +72,7 @@ namespace RestaurantSoftware.BL_Layer
                             db.KhachHang.sdt
                         };
             grid.DataSource = query;
+            
         }
         public IEnumerable<KhachHang> LayDsKhachHang()
         {
@@ -89,16 +91,19 @@ namespace RestaurantSoftware.BL_Layer
                         where
                           ct.DatBan.Ban.tenban == TenBan &&
                           ct.DatBan.thoigian == ngaydat.Date
-                        select new
-                        {
-                            ct.id_datban,
-                            ct.id_mon,
-                            ct.Mon.tenmon,
-                            ct.soluong,
-                            gia = (decimal?)ct.Mon.gia,
-                            ct.thanhtien
-                        };
+                        select ct;
+                        //select new
+                        //{
+                        //    id_datban = ct.id_datban,
+                        //    id_mon = ct.id_mon,
+                        //    tenmon = ct.Mon.tenmon,
+                        //    soluong = ct.soluong,
+                        //    gia = (decimal?)ct.Mon.gia,
+                        //    thanhtien = ct.thanhtien,
+                        //    donvi = ct.Mon.DonVi.tendonvi
+                        //};
             grid.DataSource = query;
+            
         }
         public int KiemTraMonDaCoChua(int? id_datban, int? id_mon)
         {
@@ -186,6 +191,18 @@ namespace RestaurantSoftware.BL_Layer
                         where datban.thoigian == dt && datban.id_ban == idban
                         select datban;
             return query;
+        }
+
+        public double LoadThamSo(string tenthamso)
+        {
+            ThamSo ts = dbContext.ThamSos.Single(p => p.tenthamso == tenthamso);
+            return ts.giatri;
+                
+        }
+
+        public void UpdateDatabase()
+        {
+            dbContext.SubmitChanges();
         }
     }
 }

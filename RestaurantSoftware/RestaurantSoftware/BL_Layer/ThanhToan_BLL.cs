@@ -60,19 +60,19 @@ namespace RestaurantSoftware.BL_Layer
         {
             try
             {
-                var query = (from db in dbContext.ThamSos
+                //var query = (from db in dbContext.ThamSos
                              
-                             select new 
-                             {
-                                db.khuyenmai,
-                                db.vat
+                //             select new 
+                //             {
+                //                 db.khuyenmai,
+                //                 db.vat
 
-                             }).ToList();
-                foreach (var id in query)
-                {
-                    Vat.Text = id.vat.ToString();
-                    km.Text = id.khuyenmai.ToString();
-                }
+                //             }).ToList();
+                //foreach (var id in query)
+                //{
+                //    Vat.Text = id.vat.ToString();
+                //    km.Text = id.khuyenmai.ToString();
+                //}
 
             }
             catch (Exception)

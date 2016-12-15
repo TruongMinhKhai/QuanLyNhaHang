@@ -15,9 +15,7 @@
     <Type Name="TrangThai">
       <Column Name="[id-trangthai]" Member="id_trangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tentrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="id_loaitrangthai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="lienket" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="LoaiTrangThai_TrangThai" Member="LoaiTrangThai" ThisKey="id_loaitrangthai" OtherKey="id_loaitrangthai" Type="LoaiTrangThai" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.BaoCaoDoanhThu" Member="BaoCaoDoanhThus">
@@ -177,13 +175,6 @@
       <Association Name="LoaiMon_Mon" Member="Mons" ThisKey="id_loaimon" OtherKey="id_loaimon" Type="Mon" />
     </Type>
   </Table>
-  <Table Name="dbo.LoaiTrangThai" Member="LoaiTrangThais">
-    <Type Name="LoaiTrangThai">
-      <Column Name="id_loaitrangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="tenloaitrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="LoaiTrangThai_TrangThai" Member="TrangThais" ThisKey="id_loaitrangthai" OtherKey="id_loaitrangthai" Type="TrangThai" />
-    </Type>
-  </Table>
   <Table Name="dbo.Mon" Member="Mons">
     <Type Name="Mon">
       <Column Name="id_mon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -258,9 +249,8 @@
   </Table>
   <Table Name="dbo.ThamSo" Member="ThamSos">
     <Type Name="ThamSo">
-      <Column Name="id_thamso" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="vat" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="khuyenmai" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="tenthamso" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="giatri" Type="System.Double" DbType="Float NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

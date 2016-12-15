@@ -282,6 +282,34 @@ namespace RestaurantSoftware.P_Layer
             MessageBox.Show("Chọn bàn trống để chuyển đến.");
 
         }
+
+        private void gridView_ChitietHoaDon_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            try
+            {
+                int soluong = int.Parse(gridView_ChitietHoaDon.GetFocusedRowCellValue("soluong").ToString());
+                if (soluong <= 0)
+                {
+                    MessageBox.Show("Số lượng phải lớn hơn 0");
+                    return;
+                }
+                double dongia = double.Parse(gridView_ChitietHoaDon.GetFocusedRowCellValue("Mon.gia").ToString());
+                double thanhtien = soluong * dongia;
+                gridView_ChitietHoaDon.SetFocusedRowCellValue("thanhtien", thanhtien);
+                phucvubll.UpdateDatabase();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            Frm_ThanhToan frmThanhtoan = new Frm_ThanhToan();
+            frmThanhtoan.MdiParent = FormMain.ActiveForm;
+            frmThanhtoan.Show();
+        }
         
         
     }

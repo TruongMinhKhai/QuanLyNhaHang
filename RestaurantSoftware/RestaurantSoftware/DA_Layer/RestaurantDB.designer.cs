@@ -78,9 +78,6 @@ namespace RestaurantSoftware.DA_Layer
     partial void InsertLoaiMon(LoaiMon instance);
     partial void UpdateLoaiMon(LoaiMon instance);
     partial void DeleteLoaiMon(LoaiMon instance);
-    partial void InsertLoaiTrangThai(LoaiTrangThai instance);
-    partial void UpdateLoaiTrangThai(LoaiTrangThai instance);
-    partial void DeleteLoaiTrangThai(LoaiTrangThai instance);
     partial void InsertMon(Mon instance);
     partial void UpdateMon(Mon instance);
     partial void DeleteMon(Mon instance);
@@ -99,6 +96,9 @@ namespace RestaurantSoftware.DA_Layer
     partial void InsertSuCo(SuCo instance);
     partial void UpdateSuCo(SuCo instance);
     partial void DeleteSuCo(SuCo instance);
+    partial void InsertThamSo(ThamSo instance);
+    partial void UpdateThamSo(ThamSo instance);
+    partial void DeleteThamSo(ThamSo instance);
     #endregion
 		
 		public RestaurantDBDataContext() : 
@@ -256,14 +256,6 @@ namespace RestaurantSoftware.DA_Layer
 			get
 			{
 				return this.GetTable<LoaiMon>();
-			}
-		}
-		
-		public System.Data.Linq.Table<LoaiTrangThai> LoaiTrangThais
-		{
-			get
-			{
-				return this.GetTable<LoaiTrangThai>();
 			}
 		}
 		
@@ -565,11 +557,7 @@ namespace RestaurantSoftware.DA_Layer
 		
 		private string _tentrangthai;
 		
-		private System.Nullable<int> _id_loaitrangthai;
-		
 		private string _lienket;
-		
-		private EntityRef<LoaiTrangThai> _LoaiTrangThai;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -579,15 +567,12 @@ namespace RestaurantSoftware.DA_Layer
     partial void Onid_trangthaiChanged();
     partial void OntentrangthaiChanging(string value);
     partial void OntentrangthaiChanged();
-    partial void Onid_loaitrangthaiChanging(System.Nullable<int> value);
-    partial void Onid_loaitrangthaiChanged();
     partial void OnlienketChanging(string value);
     partial void OnlienketChanged();
     #endregion
 		
 		public TrangThai()
 		{
-			this._LoaiTrangThai = default(EntityRef<LoaiTrangThai>);
 			OnCreated();
 		}
 		
@@ -631,30 +616,6 @@ namespace RestaurantSoftware.DA_Layer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_loaitrangthai", DbType="Int")]
-		public System.Nullable<int> id_loaitrangthai
-		{
-			get
-			{
-				return this._id_loaitrangthai;
-			}
-			set
-			{
-				if ((this._id_loaitrangthai != value))
-				{
-					if (this._LoaiTrangThai.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_loaitrangthaiChanging(value);
-					this.SendPropertyChanging();
-					this._id_loaitrangthai = value;
-					this.SendPropertyChanged("id_loaitrangthai");
-					this.Onid_loaitrangthaiChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lienket", DbType="NVarChar(50)")]
 		public string lienket
 		{
@@ -671,40 +632,6 @@ namespace RestaurantSoftware.DA_Layer
 					this._lienket = value;
 					this.SendPropertyChanged("lienket");
 					this.OnlienketChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiTrangThai_TrangThai", Storage="_LoaiTrangThai", ThisKey="id_loaitrangthai", OtherKey="id_loaitrangthai", IsForeignKey=true)]
-		public LoaiTrangThai LoaiTrangThai
-		{
-			get
-			{
-				return this._LoaiTrangThai.Entity;
-			}
-			set
-			{
-				LoaiTrangThai previousValue = this._LoaiTrangThai.Entity;
-				if (((previousValue != value) 
-							|| (this._LoaiTrangThai.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LoaiTrangThai.Entity = null;
-						previousValue.TrangThais.Remove(this);
-					}
-					this._LoaiTrangThai.Entity = value;
-					if ((value != null))
-					{
-						value.TrangThais.Add(this);
-						this._id_loaitrangthai = value.id_loaitrangthai;
-					}
-					else
-					{
-						this._id_loaitrangthai = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("LoaiTrangThai");
 				}
 			}
 		}
@@ -4044,120 +3971,6 @@ namespace RestaurantSoftware.DA_Layer
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoaiTrangThai")]
-	public partial class LoaiTrangThai : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_loaitrangthai;
-		
-		private string _tenloaitrangthai;
-		
-		private EntitySet<TrangThai> _TrangThais;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_loaitrangthaiChanging(int value);
-    partial void Onid_loaitrangthaiChanged();
-    partial void OntenloaitrangthaiChanging(string value);
-    partial void OntenloaitrangthaiChanged();
-    #endregion
-		
-		public LoaiTrangThai()
-		{
-			this._TrangThais = new EntitySet<TrangThai>(new Action<TrangThai>(this.attach_TrangThais), new Action<TrangThai>(this.detach_TrangThais));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_loaitrangthai", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_loaitrangthai
-		{
-			get
-			{
-				return this._id_loaitrangthai;
-			}
-			set
-			{
-				if ((this._id_loaitrangthai != value))
-				{
-					this.Onid_loaitrangthaiChanging(value);
-					this.SendPropertyChanging();
-					this._id_loaitrangthai = value;
-					this.SendPropertyChanged("id_loaitrangthai");
-					this.Onid_loaitrangthaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenloaitrangthai", DbType="NVarChar(50)")]
-		public string tenloaitrangthai
-		{
-			get
-			{
-				return this._tenloaitrangthai;
-			}
-			set
-			{
-				if ((this._tenloaitrangthai != value))
-				{
-					this.OntenloaitrangthaiChanging(value);
-					this.SendPropertyChanging();
-					this._tenloaitrangthai = value;
-					this.SendPropertyChanged("tenloaitrangthai");
-					this.OntenloaitrangthaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiTrangThai_TrangThai", Storage="_TrangThais", ThisKey="id_loaitrangthai", OtherKey="id_loaitrangthai")]
-		public EntitySet<TrangThai> TrangThais
-		{
-			get
-			{
-				return this._TrangThais;
-			}
-			set
-			{
-				this._TrangThais.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TrangThais(TrangThai entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiTrangThai = this;
-		}
-		
-		private void detach_TrangThais(TrangThai entity)
-		{
-			this.SendPropertyChanging();
-			entity.LoaiTrangThai = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Mon")]
 	public partial class Mon : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -5681,64 +5494,87 @@ namespace RestaurantSoftware.DA_Layer
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ThamSo")]
-	public partial class ThamSo
+	public partial class ThamSo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _id_thamso;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Nullable<double> _vat;
+		private string _tenthamso;
 		
-		private System.Nullable<double> _khuyenmai;
+		private double _giatri;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OntenthamsoChanging(string value);
+    partial void OntenthamsoChanged();
+    partial void OngiatriChanging(double value);
+    partial void OngiatriChanged();
+    #endregion
 		
 		public ThamSo()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_thamso", DbType="Int")]
-		public System.Nullable<int> id_thamso
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenthamso", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string tenthamso
 		{
 			get
 			{
-				return this._id_thamso;
+				return this._tenthamso;
 			}
 			set
 			{
-				if ((this._id_thamso != value))
+				if ((this._tenthamso != value))
 				{
-					this._id_thamso = value;
+					this.OntenthamsoChanging(value);
+					this.SendPropertyChanging();
+					this._tenthamso = value;
+					this.SendPropertyChanged("tenthamso");
+					this.OntenthamsoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vat", DbType="Float")]
-		public System.Nullable<double> vat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giatri", DbType="Float NOT NULL", IsPrimaryKey=true)]
+		public double giatri
 		{
 			get
 			{
-				return this._vat;
+				return this._giatri;
 			}
 			set
 			{
-				if ((this._vat != value))
+				if ((this._giatri != value))
 				{
-					this._vat = value;
+					this.OngiatriChanging(value);
+					this.SendPropertyChanging();
+					this._giatri = value;
+					this.SendPropertyChanged("giatri");
+					this.OngiatriChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khuyenmai", DbType="Float")]
-		public System.Nullable<double> khuyenmai
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
 		{
-			get
+			if ((this.PropertyChanging != null))
 			{
-				return this._khuyenmai;
+				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
-			set
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
 			{
-				if ((this._khuyenmai != value))
-				{
-					this._khuyenmai = value;
-				}
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

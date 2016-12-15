@@ -21,7 +21,8 @@ namespace RestaurantSoftware.P_Layer
         int iddatbanSelected = 0;
         IQueryable<Ban> ban;
         List<string> ttban = new List<string>();
-        
+        double giatrithamso;
+
         public Frm_DatBan()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace RestaurantSoftware.P_Layer
             
             datban_bll.LoadTrangThai(trangthaiDatBan, "datban");
             datban_bll.LoadTrangThai(ttban, "ban");
+            giatrithamso = datban_bll.LoadThamSo("datcoc");
         }
         public void LoadDsBan()
         {
@@ -103,8 +105,10 @@ namespace RestaurantSoftware.P_Layer
         }
         public void LoadChiTietDatBan()
         {
-            
             datban_bll.LoadChiTietDatBan(txtBan.Text, dtNgayDat.DateTime, gridControl_ChiTietDatBan);
+            double a = Convert.ToDouble(gridView_ChiTietDatBan.Columns["thanhtien"].SummaryItem.SummaryValue);
+            txtTamTinh.Text = a.ToString();
+            txtDatCoc.Text = Convert.ToString(a * giatrithamso / 100); //70% tien tam tinh
         }
         private void Frm_DatBan_Load(object sender, EventArgs e)
         {
@@ -113,24 +117,17 @@ namespace RestaurantSoftware.P_Layer
             LoadDsDatBan();
             LoadDsKhachHang();
             LoadChiTietDatBan();
+            dtNgayDat.DateTime = DateTime.Now;
         }
 
         private void btn_ThemMon_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             try
             {
-                if (gridView_DsDatBan.GetRowCellValue(gridView_DsDatBan.FocusedRowHandle, "id_datban") != null || iddatbanSelected != 0)
+                if (iddatbanSelected != 0)
                 {
-                    
                     Chitiet_DatBan ct_datban = new Chitiet_DatBan();
-                    if (gridView_DsDatBan.GetRowCellValue(gridView_DsDatBan.FocusedRowHandle, "id_datban") != null)
-                    {
-                        ct_datban.id_datban = int.Parse(gridView_DsDatBan.GetRowCellValue(gridView_DsDatBan.FocusedRowHandle, "id_datban").ToString());
-                    }
-                    else
-                    {
-                        ct_datban.id_datban = iddatbanSelected;
-                    }
+                    ct_datban.id_datban = iddatbanSelected;
                     if (gridView_DsMon.EditingValue == null)
                     {
                         ct_datban.soluong = 1;
@@ -183,6 +180,8 @@ namespace RestaurantSoftware.P_Layer
             if (lvDsBan.SelectedItems.Count > 0)
             {
                 txtBan.Text = lvDsBan.SelectedItems[0].Text;
+                iddatbanSelected = 0;
+
             }
 
 
@@ -239,6 +238,7 @@ namespace RestaurantSoftware.P_Layer
         {
             dtNgayDat.DateTime = (DateTime)gridView_DsDatBan.GetRowCellValue(e.RowHandle, "thoigian");
             txtBan.Text = gridView_DsDatBan.GetRowCellValue(e.RowHandle, "tenban").ToString();
+            iddatbanSelected = int.Parse(gridView_DsDatBan.GetRowCellValue(gridView_DsDatBan.FocusedRowHandle, "id_datban").ToString());
             cbxKhachHang.Properties.ValueMember = "tenkh";
             cbxKhachHang.EditValue = gridView_DsDatBan.GetRowCellValue(e.RowHandle, "tenkh").ToString();
             cbxKhachHang.Properties.ValueMember = "id_khachhang";
@@ -278,31 +278,40 @@ namespace RestaurantSoftware.P_Layer
 
         private void btnSuaPhieu_Click(object sender, EventArgs e)
         {
-            if(gridView_DsDatBan.GetFocusedRowCellValue(id_datban) != null)
+            try
             {
-                DatBan db = new DatBan();
-                db.id_datban = int.Parse(gridView_DsDatBan.GetFocusedRowCellValue(id_datban).ToString());
-                db.id_khachhang = (int)cbxKhachHang.EditValue;
-                if (lvDsBan.SelectedItems.Count > 0)
+                if (gridView_DsDatBan.GetFocusedRowCellValue(id_datban) != null)
                 {
-                    db.id_ban = Convert.ToInt16(lvDsBan.SelectedItems[0].Name);
+                    DatBan db = new DatBan();
+                    db.id_datban = int.Parse(gridView_DsDatBan.GetFocusedRowCellValue(id_datban).ToString());
+                    db.id_khachhang = (int)cbxKhachHang.EditValue;
+                    if (lvDsBan.SelectedItems.Count > 0)
+                    {
+                        db.id_ban = Convert.ToInt16(lvDsBan.SelectedItems[0].Name);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xin chọn Bàn");
+                        return;
+                    }
+                    db.thoigian = dtNgayDat.DateTime;
+                    db.tiencoc = int.Parse(txtDatCoc.Text);
+                    datban_bll.SuaPhieuDatBan(db);
+                    MessageBox.Show("Sửa phiếu thành công");
+                    LoadDsBan();
+                    LoadDsDatBan();
+                    //LoadChiTietDatBan();
                 }
                 else
                 {
-                    MessageBox.Show("Xin chọn Bàn");
-                    return;
+                    MessageBox.Show("Chọn phiếu đặt bàn muốn sửa");
                 }
-                db.thoigian = dtNgayDat.DateTime;
-                datban_bll.SuaPhieuDatBan(db);
-                MessageBox.Show("Sửa phiếu thành công");
-                LoadDsBan();
-                LoadDsDatBan();
-                LoadChiTietDatBan();
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Chọn phiếu đặt bàn muốn sửa");
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void btnXoaPhieu_Click(object sender, EventArgs e)
@@ -332,6 +341,33 @@ namespace RestaurantSoftware.P_Layer
             Frm_KhachHang frmKh = new Frm_KhachHang();
             frmKh.MdiParent = FormMain.ActiveForm;
             frmKh.Show();
+        }
+
+        private void gridView_ChiTietDatBan_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            try
+            {
+                int soluong = int.Parse(gridView_ChiTietDatBan.GetFocusedRowCellValue("soluong").ToString());
+                if (soluong <= 0)
+                {
+                    MessageBox.Show("Số lượng > 0");
+                    return;
+                }
+                double dongia = double.Parse(gridView_ChiTietDatBan.GetFocusedRowCellValue("Mon.gia").ToString());
+                double thanhtien = soluong * dongia;
+                gridView_ChiTietDatBan.SetFocusedRowCellValue("thanhtien", thanhtien);
+                datban_bll.UpdateDatabase();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+            Frm_InPhieuDatBan pdb = new Frm_InPhieuDatBan(iddatbanSelected);
+            pdb.Show();
         }
     }
 }
