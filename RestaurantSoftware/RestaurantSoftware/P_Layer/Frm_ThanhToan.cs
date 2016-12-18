@@ -248,7 +248,7 @@ namespace RestaurantSoftware.P_Layer
                 }
                 else
                 {
-                    temp  = int.Parse((txt.Text).Replace(",", ""));
+                    temp = int.Parse((txt.Text).Replace(",", ""));
                     return temp;
                 }
             }
@@ -257,8 +257,6 @@ namespace RestaurantSoftware.P_Layer
 
                 return temp;
             }
-            return temp;
-
         }
         public void TongTien()
         {

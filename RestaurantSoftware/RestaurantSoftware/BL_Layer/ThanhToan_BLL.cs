@@ -58,27 +58,47 @@ namespace RestaurantSoftware.BL_Layer
         }
         public void LayDsThamSo(TextEdit Vat, TextEdit km)
         {
+            LayVAT(Vat);
+            LayKM(km);
+        }
+        public void LayVAT(TextEdit vat)
+        {
             try
             {
                 var query = (from db in dbContext.ThamSos
-                             
-                             select new 
+                             where db.tenthamso == "vat"
+                             select new
                              {
-                                db.khuyenmai,
-                                db.vat
-
+                                 db.giatri
                              }).ToList();
                 foreach (var id in query)
                 {
-                    Vat.Text = id.vat.ToString();
-                    km.Text = id.khuyenmai.ToString();
+                    vat.Text = id.giatri.ToString();
                 }
-
             }
             catch (Exception)
             {
-
-                Notifications.Answers("Chưa có tham số");
+                Notifications.Answers("Chưa có tham số VAT");
+            }
+        }
+        public void LayKM(TextEdit km)
+        {
+            try
+            {
+                var query = (from db in dbContext.ThamSos
+                             where db.tenthamso == "khuyenmai"
+                             select new
+                             {
+                                 db.giatri
+                             }).ToList();
+                foreach (var id in query)
+                {
+                    km.Text = id.giatri.ToString();
+                }
+            }
+            catch (Exception)
+            {
+                Notifications.Answers("Chưa có tham số khuyến mãi");
             }
         }
 
@@ -159,7 +179,6 @@ namespace RestaurantSoftware.BL_Layer
                          {
                              Tenkhachhang = kh.tenkh,
                              Sodienthoai = kh.sdt
-
                          }).ToList();
             foreach (var i in query)
             {

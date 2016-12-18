@@ -15,9 +15,7 @@
     <Type Name="TrangThai">
       <Column Name="[id-trangthai]" Member="id_trangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tentrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="id_loaitrangthai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="lienket" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="LoaiTrangThai_TrangThai" Member="LoaiTrangThai" ThisKey="id_loaitrangthai" OtherKey="id_loaitrangthai" Type="LoaiTrangThai" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.BaoCaoDoanhThu" Member="BaoCaoDoanhThus">
@@ -120,6 +118,7 @@
       <Column Name="thoigian" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="thue" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tongtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="HoaDonNhapHang_Chitiet_HoaDonNhapHang" Member="Chitiet_HoaDonNhapHangs" ThisKey="id_nhaphang" OtherKey="id_nhaphang" Type="Chitiet_HoaDonNhapHang" />
       <Association Name="NhanVien_HoaDonNhapHang" Member="NhanVien" ThisKey="id_nhanvien" OtherKey="id_nhanvien" Type="NhanVien" IsForeignKey="true" />
     </Type>
@@ -175,13 +174,6 @@
       <Column Name="tenloaimon" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="trangthai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="LoaiMon_Mon" Member="Mons" ThisKey="id_loaimon" OtherKey="id_loaimon" Type="Mon" />
-    </Type>
-  </Table>
-  <Table Name="dbo.LoaiTrangThai" Member="LoaiTrangThais">
-    <Type Name="LoaiTrangThai">
-      <Column Name="id_loaitrangthai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="tenloaitrangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="LoaiTrangThai_TrangThai" Member="TrangThais" ThisKey="id_loaitrangthai" OtherKey="id_loaitrangthai" Type="TrangThai" />
     </Type>
   </Table>
   <Table Name="dbo.Mon" Member="Mons">
@@ -258,9 +250,8 @@
   </Table>
   <Table Name="dbo.ThamSo" Member="ThamSos">
     <Type Name="ThamSo">
-      <Column Name="id_thamso" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="vat" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="khuyenmai" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="tenthamso" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="giatri" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

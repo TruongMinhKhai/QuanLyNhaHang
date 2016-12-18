@@ -135,7 +135,7 @@
        on ("HoaDonThanhToan"."id_hoadon" = "Chitiet_HoaDonThanhToan"."id_hoadon"))
   inner join "dbo"."DonVi" "DonVi"
        on ("DonVi"."id_donvi" = "Mon"."id_donvi"))
-WHERE CONVERT(varchar(11),"HoaDonThanhToan"."thoigian",103) = CONVERT(varchar(11),@NgayThongKe ,103)
+WHERE CONVERT(varchar(11),"HoaDonThanhToan"."thoigian",103) = CONVERT(varchar(11),@NgayThongKe ,103) AND "HoaDonThanhToan"."trangthai" = N'Đã thanh toán'
 Group by "Mon"."tenmon", "Mon"."gia", "HoaDonThanhToan"."thoigian", "DonVi"."tendonvi"</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">

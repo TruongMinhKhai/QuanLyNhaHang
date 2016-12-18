@@ -197,6 +197,7 @@
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.gridControl1_ProcessGridKey);
             // 
             // gridView1
             // 
@@ -210,6 +211,9 @@
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsCustomization.AllowSort = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
             this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
             this.gridView1.OptionsNavigation.AutoMoveRowFocus = false;
             this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
@@ -219,6 +223,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
+            this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
             // 
             // col_TenKhachHang
             // 
@@ -229,6 +234,7 @@
             this.col_TenKhachHang.Caption = "Tên khách hàng (*)";
             this.col_TenKhachHang.FieldName = "tenkh";
             this.col_TenKhachHang.Name = "col_TenKhachHang";
+            this.col_TenKhachHang.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenKhachHang.Visible = true;
             this.col_TenKhachHang.VisibleIndex = 0;
             // 
@@ -242,6 +248,7 @@
             this.col_SDT.ColumnEdit = this.repositoryItemTextEdit2;
             this.col_SDT.FieldName = "sdt";
             this.col_SDT.Name = "col_SDT";
+            this.col_SDT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_SDT.Visible = true;
             this.col_SDT.VisibleIndex = 1;
             // 
@@ -260,6 +267,7 @@
             this.col_DiaChi.Caption = "Địa Chỉ";
             this.col_DiaChi.FieldName = "diachi";
             this.col_DiaChi.Name = "col_DiaChi";
+            this.col_DiaChi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_DiaChi.Visible = true;
             this.col_DiaChi.VisibleIndex = 2;
             // 
