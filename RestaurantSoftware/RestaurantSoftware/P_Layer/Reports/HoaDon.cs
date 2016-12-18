@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace RestaurantSoftware.P_Layer.Reports
 {
-    public partial class HoaDonThanhToan : DevExpress.XtraReports.UI.XtraReport
+    public partial class HoaDon : DevExpress.XtraReports.UI.XtraReport
     {
-        public HoaDonThanhToan()
+        public HoaDon()
         {
             InitializeComponent();
         }

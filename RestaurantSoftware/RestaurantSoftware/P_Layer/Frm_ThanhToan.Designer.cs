@@ -367,6 +367,7 @@
             this.btn_in.StyleController = this.layoutControl1;
             this.btn_in.TabIndex = 18;
             this.btn_in.Text = "in";
+            this.btn_in.Click += new System.EventHandler(this.btn_in_Click);
             // 
             // txt_TraLai
             // 
@@ -491,7 +492,7 @@
             this.col_DonGia.ColumnEdit = this.repositoryItemTextEdit1;
             this.col_DonGia.DisplayFormat.FormatString = "#,###";
             this.col_DonGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.col_DonGia.FieldName = "gia";
+            this.col_DonGia.FieldName = "dongia";
             this.col_DonGia.Name = "col_DonGia";
             this.col_DonGia.Visible = true;
             this.col_DonGia.VisibleIndex = 2;

@@ -94,5 +94,19 @@ namespace RestaurantSoftware.DA_Layer
             get { return khachtra; }
             set { khachtra = value; }
         }
+        int dongia;
+
+        public int Dongia
+        {
+            get { return dongia; }
+            set { dongia = value; }
+        }
+        string donvi;
+
+        public string Donvi
+        {
+            get { return donvi; }
+            set { donvi = value; }
+        }
     }
 }

@@ -44,5 +44,22 @@ namespace RestaurantSoftware.BL_Layer
             // update 
             dbContext.SubmitChanges();
         }
+        public void CapNhatVatKhuyenMai(HoaDonThanhToan m)
+        {
+            try
+            {
+                HoaDonThanhToan hd = dbContext.HoaDonThanhToans.Single<HoaDonThanhToan>(x => x.id_hoadon == m.id_hoadon && x.trangthai == "Chưa thanh toán");
+                hd.vat = m.vat;
+                hd.khuyenmai = m.khuyenmai;
+                // update 
+                dbContext.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                
+               
+            }
+           
+        }
     }
 }

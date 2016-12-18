@@ -3382,7 +3382,9 @@ namespace RestaurantSoftware.DA_Layer
 			this.SendPropertyChanging();
 			entity.HoaDonThanhToan = null;
 		}
-	}
+
+        public IQueryable<Chitiet_HoaDonThanhToan> DataSource { get; set; }
+    }
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KhachHang")]
 	public partial class KhachHang : INotifyPropertyChanging, INotifyPropertyChanged

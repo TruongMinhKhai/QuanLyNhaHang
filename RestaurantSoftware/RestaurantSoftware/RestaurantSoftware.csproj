@@ -234,6 +234,12 @@
     <Compile Include="P_Layer\Frm_PhucVu.Designer.cs">
       <DependentUpon>Frm_PhucVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_Layer\Frm_PrintfHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_PrintfHoaDon.Designer.cs">
+      <DependentUpon>Frm_PrintfHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="P_Layer\Frm_QuanLyNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,11 +288,11 @@
     <Compile Include="P_Layer\Reports\DoanhThuTheoThang.Designer.cs">
       <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
     </Compile>
-    <Compile Include="P_Layer\Reports\HoaDonThanhToan.cs">
+    <Compile Include="P_Layer\Reports\HoaDon.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="P_Layer\Reports\HoaDonThanhToan.Designer.cs">
-      <DependentUpon>HoaDonThanhToan.cs</DependentUpon>
+    <Compile Include="P_Layer\Reports\HoaDon.Designer.cs">
+      <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Layer\Reports\ThongKeMon.cs">
       <SubType>Component</SubType>
@@ -322,6 +328,9 @@
     <EmbeddedResource Include="P_Layer\Frm_DonVi.resx">
       <DependentUpon>Frm_DonVi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_PrintfHoaDon.resx">
+      <DependentUpon>Frm_PrintfHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_ThongKeMon.resx">
       <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,8 +343,8 @@
     <EmbeddedResource Include="P_Layer\Reports\DoanhThuTheoThang.resx">
       <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="P_Layer\Reports\HoaDonThanhToan.resx">
-      <DependentUpon>HoaDonThanhToan.cs</DependentUpon>
+    <EmbeddedResource Include="P_Layer\Reports\HoaDon.resx">
+      <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\ThongKeMon.resx">
       <DependentUpon>ThongKeMon.cs</DependentUpon>

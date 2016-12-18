@@ -207,45 +207,7 @@ namespace RestaurantSoftware.BL_Layer
             // update 
             dbContext.SubmitChanges();
         }
-        //public void load(int idban, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt)
-        //{
-        //    try
-        //    {
-        //        int idkh = -1;
-        //        var query = (from db in dbContext.HoaDonThanhToans
-        //                     join bn in dbContext.Bans on db.id_ban equals bn.id_ban
-        //                     join nv in dbContext.NhanViens on db.id_nhanvien equals nv.id_nhanvien
-        //                     select new ChiTiet_ThanhToan
-        //                     {
-        //                         Idhoadon = db.id_hoadon,
-        //                         Idban = bn.id_ban,
-        //                         Tenban = bn.tenban,
-        //                         Trangthai = bn.trangthai,
-        //                         Idnhanvien = nv.id_nhanvien,
-        //                         Tennhanvien = nv.tennhanvien,
-        //                         Ngay = Convert.ToDateTime(db.thoigian),
-
-        //                     }).ToList();
-        //        foreach (var id in query)
-        //        {
-        //            if (id.Idban == idban)
-        //            {
-        //                idhoadon.Text = (id.Idhoadon).ToString();
-        //                nhanvien.EditValue = id.Idnhanvien;
-        //                ngay.DateTime = id.Ngay;
-        //                idkh = id.Idhoadon;
-        //                laykhachhang(idkh, tenkh, sdt);
-        //            }
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Notifications.Answers("Hóa đơn này chưa có khách hàng.");
-
-        //    }
-           
-        //}
-
+        
 
     }
 }
