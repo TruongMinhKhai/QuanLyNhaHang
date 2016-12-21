@@ -68,7 +68,7 @@ namespace RestaurantSoftware.P_Layer
                     hh.soluong = int.Parse(gridView1.GetFocusedRowCellValue(col_SoLuong).ToString());
                     hh.dongia = decimal.Parse(gridView1.GetFocusedRowCellValue(col_DonGia).ToString());
                     hh.id_donvi = int.Parse(gridView1.GetFocusedRowCellValue(col_DonVi).ToString());
-                    hh.id_nhacungcap = int.Parse(gridView1.GetFocusedRowCellValue(col_NhaCungCap).ToString());
+                    //hh.id_nhacungcap = int.Parse(gridView1.GetFocusedRowCellValue(col_NhaCungCap).ToString());
                     _hanghoaBLL.ThemHangHoaMoi(hh);
                     Notifications.Success("Thêm hàng hoá thành công");
                     LoadHangHoa();
@@ -145,7 +145,7 @@ namespace RestaurantSoftware.P_Layer
                     hh.soluong =int.Parse(gridView1.GetRowCellValue(id,"soluong").ToString());
                     hh.dongia = decimal.Parse(gridView1.GetRowCellValue(id,"dongia").ToString());
                     hh.id_donvi =int.Parse(gridView1.GetRowCellValue(id,"id_donvi").ToString());
-                    hh.id_nhacungcap =int.Parse(gridView1.GetRowCellValue(id,"id_nhacungcap").ToString());
+                    //hh.id_nhacungcap =int.Parse(gridView1.GetRowCellValue(id,"id_nhacungcap").ToString());
                     if (!_hanghoaBLL.KiemTraHangHoaTonTai(hh.tenhanghoa, hh.id_hanghoa))
                     {
                         _hanghoaBLL.CapNhatHangHoa(hh);

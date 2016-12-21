@@ -29,7 +29,6 @@ namespace RestaurantSoftware.BL_Layer
         public IEnumerable<HangHoa> LayDanhSachHangHoa(int _NhaCungCapID)
         {
             IEnumerable<HangHoa> query = from m in dbContext.HangHoas
-                                         where m.id_nhacungcap == _NhaCungCapID
                                          select m;
             return query;
         }

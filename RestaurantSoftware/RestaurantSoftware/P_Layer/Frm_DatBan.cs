@@ -22,10 +22,12 @@ namespace RestaurantSoftware.P_Layer
         IQueryable<Ban> ban;
         List<string> ttban = new List<string>();
         double giatrithamso;
+        int ID_NHANVIEN = 1;
 
-        public Frm_DatBan()
+        public Frm_DatBan(int idnv)
         {
             InitializeComponent();
+            ID_NHANVIEN = idnv;
         }
         public void Init()
         {
@@ -163,12 +165,12 @@ namespace RestaurantSoftware.P_Layer
 
         private void dtNgayDat_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dtNgayDat.DateTime, DateTime.Today) < 0)
-            {
-                MessageBox.Show("Chọn ngày không hợp lệ!");
-                dtNgayDat.DateTime = DateTime.Today;
-                return;
-            }
+            //if (DateTime.Compare(dtNgayDat.DateTime, DateTime.Today) < 0)
+            //{
+            //    MessageBox.Show("Chọn ngày không hợp lệ!");
+            //    dtNgayDat.DateTime = DateTime.Today;
+            //    return;
+            //}
             txtBan.Text = "";
             LoadDsBan();
             LoadChiTietDatBan();
@@ -181,7 +183,7 @@ namespace RestaurantSoftware.P_Layer
             {
                 txtBan.Text = lvDsBan.SelectedItems[0].Text;
                 iddatbanSelected = 0;
-
+                btnThemMoi.Enabled = true;
             }
 
 
@@ -206,6 +208,11 @@ namespace RestaurantSoftware.P_Layer
                 MessageBox.Show("Xin chọn khách hàng");
                 return;
             }
+            if (DateTime.Compare(dtNgayDat.DateTime, DateTime.Today) < 0) 
+            {
+                MessageBox.Show("Ngày đặt bàn không nhỏ hơn ngày hiện tại");
+                return;
+            }
             DatBan db = new DatBan();
             
 
@@ -220,7 +227,7 @@ namespace RestaurantSoftware.P_Layer
             }
 
             db.id_khachhang = (int)cbxKhachHang.EditValue;
-            db.id_nhanvien = 1;
+            db.id_nhanvien = ID_NHANVIEN;
             db.thoigian = dtNgayDat.DateTime.Date;
             db.trangthai = trangthaiDatBan[0]; //0.chờ  1.nhận  2.hủy
             datban_bll.ThemMoiPhieuDatBan(db);
@@ -242,7 +249,7 @@ namespace RestaurantSoftware.P_Layer
             cbxKhachHang.Properties.ValueMember = "tenkh";
             cbxKhachHang.EditValue = gridView_DsDatBan.GetRowCellValue(e.RowHandle, "tenkh").ToString();
             cbxKhachHang.Properties.ValueMember = "id_khachhang";
-            
+            btnThemMoi.Enabled = false;
         }
 
         private void txtBan_EditValueChanged(object sender, EventArgs e)

@@ -25,11 +25,13 @@ namespace RestaurantSoftware.P_Layer
         int idbanSelected;
         int idhoadonSelected;
         int idhoadonMoved;
+        int ID_NHANVIEN = 0;
         bool ischuyenban = false;
         string trangthaibanSelected ="";
-        public Frm_PhucVu()
+        public Frm_PhucVu(int idnv)
         {
             InitializeComponent();
+            ID_NHANVIEN = idnv;
         }
         public void Init()
         {
@@ -244,7 +246,7 @@ namespace RestaurantSoftware.P_Layer
             {
                 HoaDonThanhToan hd = new HoaDonThanhToan();
                 hd.id_ban = idbanSelected;
-                hd.id_nhanvien = 1;
+                hd.id_nhanvien = ID_NHANVIEN;
                 hd.thoigian = today;
                 hd.trangthai = tthoadon[0];
                 phucvubll.ThemMoiHoaDon(hd);
