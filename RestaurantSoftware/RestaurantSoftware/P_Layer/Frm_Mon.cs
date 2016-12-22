@@ -145,7 +145,7 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
-            if(_listUpdate.Count > 1)
+            if(_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
                     Mon mon = new Mon();
@@ -153,7 +153,7 @@ namespace RestaurantSoftware.P_Layer
                     mon.tenmon = gridView1.GetRowCellValue(id, "tenmon").ToString();
                     mon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
                     mon.tenviettat = gridView1.GetRowCellValue(id, "tenviettat").ToString();
-                    mon.gia = int.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
+                    mon.gia = decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
                     mon.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
                     mon.id_donvi = int.Parse(gridView1.GetRowCellValue(id, "id_donvi").ToString());
                     
@@ -234,12 +234,30 @@ namespace RestaurantSoftware.P_Layer
                     gridControl1.ExportToRtf(saveFileDialog1.FileName);
             }
         }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "col_STT" && e.RowHandle != GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+            if (e.Column.Name == "col_STT" && e.RowHandle == GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (gridView1.RowCount + 1).ToString();
+            }
+        }
+
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
             btn_Xoa.Enabled = false;
             if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
             {
                 btn_Xoa.Enabled = true;
+            }
+
+            if(this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                btn_Luu.Enabled = false;
             }
         }
 
@@ -268,18 +286,6 @@ namespace RestaurantSoftware.P_Layer
             {
                 LoadDataSource();
                 btn_Luu.Enabled = false;
-            }
-        }
-
-        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
-        {
-            if (e.Column.Name == "col_STT" && e.RowHandle != GridControl.NewItemRowHandle)
-            {
-                e.DisplayText = (e.RowHandle + 1).ToString();
-            }
-            if (e.Column.Name == "col_STT" && e.RowHandle == GridControl.NewItemRowHandle)
-            {
-                e.DisplayText = (gridView1.RowCount + 1).ToString();
             }
         }
     }

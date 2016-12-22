@@ -34,9 +34,9 @@ namespace RestaurantSoftware
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            P_Layer.Frm_DangNhap dangnhap = new P_Layer.Frm_DangNhap();
-            dangnhap.LoginEvent += dangnhap_LoginEvent;
-            dangnhap.ShowDialog();
+            //P_Layer.Frm_DangNhap dangnhap = new P_Layer.Frm_DangNhap();
+            //dangnhap.LoginEvent += dangnhap_LoginEvent;
+            //dangnhap.ShowDialog();
         }
 
         void dangnhap_LoginEvent(string username, string pass)

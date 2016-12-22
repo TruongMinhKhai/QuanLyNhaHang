@@ -42,6 +42,11 @@ namespace RestaurantSoftware.P_Layer
         private void btn_LamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadDataSource();
+            this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
+            gridView1.SelectRow(gridView1.FocusedRowHandle);
+            gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            gridView1.ShowEditor();
+            btn_Luu.Enabled = false;
         }
 
         private void btn_Them_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -62,6 +67,7 @@ namespace RestaurantSoftware.P_Layer
                     {
                         LoaiMon Lm = new LoaiMon();
                         Lm.tenloaimon = gridView1.GetFocusedRowCellValue(col_TenLoaiMon).ToString();
+                        Lm.trangthai = true;
                         _loaimon_Bll.ThemLoaiMon(Lm);
                         Notifications.Success("Thêm loại món mới thành công!");
                         LoadDataSource();
@@ -94,7 +100,7 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
-            if (_listUpdate.Count > 1)
+            if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
                     LoaiMon loaimon = new LoaiMon();
@@ -181,6 +187,20 @@ namespace RestaurantSoftware.P_Layer
             }
         }
 
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            btn_Xoa.Enabled = false;
+            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Xoa.Enabled = true;
+            }
+
+            if (this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                btn_Luu.Enabled = false;
+            }
+        }
+
         private void gridView1_RowUpdated_1(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
             if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
@@ -231,6 +251,5 @@ namespace RestaurantSoftware.P_Layer
                 LoadDataSource();
             }
         }
-
     }
 }

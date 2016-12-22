@@ -51,7 +51,7 @@ namespace RestaurantSoftware.BL_Layer
         public bool KiemTraThongTin(int id_loaimon)
         {
             IEnumerable<int> mons = _monBll.getIDMon(id_loaimon);
-            if(mons.Count() > 0)
+            if(mons != null)
             {
                 foreach(int i in mons)
                 {

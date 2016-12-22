@@ -51,11 +51,13 @@
             this.col_MatKhau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.col_Quyen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Lue_PhanQuyen = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Lue_PhanQuyen)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -108,6 +110,7 @@
             // btn_Xoa
             // 
             this.btn_Xoa.Caption = "Xóa";
+            this.btn_Xoa.Enabled = false;
             this.btn_Xoa.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Glyph")));
             this.btn_Xoa.Id = 1;
             this.btn_Xoa.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.LargeGlyph")));
@@ -117,6 +120,7 @@
             // btn_Luu
             // 
             this.btn_Luu.Caption = "Lưu";
+            this.btn_Luu.Enabled = false;
             this.btn_Luu.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Luu.Glyph")));
             this.btn_Luu.Id = 2;
             this.btn_Luu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Luu.LargeGlyph")));
@@ -200,13 +204,13 @@
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit2});
+            this.repositoryItemTextEdit2,
+            this.Lue_PhanQuyen});
             this.gridControl1.Size = new System.Drawing.Size(684, 237);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridControl1.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.gridControl1_ProcessGridKey);
-            this.gridControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridControl1_MouseDown);
             // 
             // gridView1
             // 
@@ -232,6 +236,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
+            this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
             // 
             // col_TenNhanVien
             // 
@@ -277,7 +282,6 @@
             // 
             this.repositoryItemTextEdit2.AutoHeight = false;
             this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
-            this.repositoryItemTextEdit2.UseSystemPasswordChar = true;
             // 
             // col_Quyen
             // 
@@ -286,11 +290,25 @@
             this.col_Quyen.AppearanceHeader.Options.UseTextOptions = true;
             this.col_Quyen.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_Quyen.Caption = "Phân Quyền";
+            this.col_Quyen.ColumnEdit = this.Lue_PhanQuyen;
             this.col_Quyen.FieldName = "id_quyen";
             this.col_Quyen.Name = "col_Quyen";
             this.col_Quyen.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_Quyen.Visible = true;
             this.col_Quyen.VisibleIndex = 3;
+            // 
+            // Lue_PhanQuyen
+            // 
+            this.Lue_PhanQuyen.AutoHeight = false;
+            this.Lue_PhanQuyen.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.Lue_PhanQuyen.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tenquyen", "Tên quyền", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            this.Lue_PhanQuyen.DisplayMember = "tenquyen";
+            this.Lue_PhanQuyen.Name = "Lue_PhanQuyen";
+            this.Lue_PhanQuyen.NullText = "[Xin chọn phân quyền]";
+            this.Lue_PhanQuyen.ShowHeader = false;
+            this.Lue_PhanQuyen.ValueMember = "id_quyen";
             // 
             // Frm_NguoiDung
             // 
@@ -310,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Lue_PhanQuyen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,5 +357,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_MatKhau;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraGrid.Columns.GridColumn col_Quyen;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit Lue_PhanQuyen;
     }
 }

@@ -25,7 +25,9 @@ namespace RestaurantSoftware.P_Layer
         private List<int> _listUpdate = new List<int>();
         public Frm_NguoiDung()
         {
+            RestaurantDBDataContext db = new RestaurantDBDataContext();
             InitializeComponent();
+            Lue_PhanQuyen.DataSource = db.PhanQuyens;
         }
 
         private void Frm_NguoiDung_Load(object sender, EventArgs e)
@@ -58,6 +60,7 @@ namespace RestaurantSoftware.P_Layer
                         nv.tendangnhap = gridView1.GetFocusedRowCellValue(col_TenDangNhap).ToString();
                         nv.matkhau = gridView1.GetFocusedRowCellValue(col_MatKhau).ToString();
                         nv.id_quyen = int.Parse(gridView1.GetFocusedRowCellValue(col_Quyen).ToString());
+                        nv.trangthai = true;
                         _Nv_Bll.ThemNhanVien(nv);
                         Notifications.Success("Thêm nhân viên mới thành công!");
                         LoadDataSource();
@@ -111,7 +114,7 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
-            if (_listUpdate.Count > 1)
+            if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
                     NhanVien nv = new NhanVien();
@@ -160,6 +163,7 @@ namespace RestaurantSoftware.P_Layer
         private void btn_LamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadDataSource();
+            btn_Luu.Enabled = false;
             this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
             gridView1.SelectRow(gridView1.FocusedRowHandle);
             gridView1.FocusedColumn = gridView1.VisibleColumns[0];
@@ -188,6 +192,10 @@ namespace RestaurantSoftware.P_Layer
             if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
             {
                 btn_Xoa.Enabled = true;
+            }
+            if (this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                btn_Luu.Enabled = false;
             }
         }
 
@@ -219,7 +227,7 @@ namespace RestaurantSoftware.P_Layer
             }
         }
 
-        private void gridControl1_MouseDown(object sender, MouseEventArgs e)
+        private void gridView1_MouseDown(object sender, MouseEventArgs e)
         {
             GridView view = sender as GridView;
             Point p = view.GridControl.PointToClient(MousePosition);

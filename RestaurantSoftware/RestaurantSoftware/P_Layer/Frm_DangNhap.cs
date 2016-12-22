@@ -61,14 +61,24 @@ namespace RestaurantSoftware.P_Layer
                 Application.Exit();
             }
         }
-
-        private void Frm_DangNhap_KeyDown(object sender, KeyEventArgs e)
+        private void txt_MatKhau_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
             {
-                this.AcceptButton = btn_DangNhap;
-                btn_DangNhap.PerformClick();
+                btn_DangNhap_Click(sender, e);
             }
+        }
+
+        private void txt_TenTaiKhoan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_DangNhap_Click(sender, e);
+            }
+        }
+        private void Frm_DangNhap_Enter(object sender, EventArgs e)
+        {
+            btn_DangNhap_Click(sender, e);
         }
     }
 }

@@ -184,6 +184,20 @@ namespace RestaurantSoftware.P_Layer
             }
         }
 
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            btn_Xoa.Enabled = false;
+            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Xoa.Enabled = true;
+            }
+
+            if (this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                btn_LuuLai.Enabled = false;
+            }
+        }
+
         private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
             if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)

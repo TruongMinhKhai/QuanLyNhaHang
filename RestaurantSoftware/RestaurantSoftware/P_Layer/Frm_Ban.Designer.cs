@@ -106,6 +106,7 @@
             // btn_Xoa
             // 
             this.btn_Xoa.Caption = "Xóa";
+            this.btn_Xoa.Enabled = false;
             this.btn_Xoa.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Glyph")));
             this.btn_Xoa.Id = 3;
             this.btn_Xoa.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.LargeGlyph")));
@@ -115,6 +116,7 @@
             // btn_LuuLai
             // 
             this.btn_LuuLai.Caption = "Lưu lại";
+            this.btn_LuuLai.Enabled = false;
             this.btn_LuuLai.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_LuuLai.Glyph")));
             this.btn_LuuLai.Id = 4;
             this.btn_LuuLai.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_LuuLai.LargeGlyph")));
@@ -214,6 +216,7 @@
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
             // 

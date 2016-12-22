@@ -219,7 +219,6 @@
             this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
-            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
@@ -246,6 +245,8 @@
             this.col_SDT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_SDT.Caption = "Số Điện Thoại (*)";
             this.col_SDT.ColumnEdit = this.repositoryItemTextEdit2;
+            this.col_SDT.DisplayFormat.FormatString = "(####)-###-###";
+            this.col_SDT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.col_SDT.FieldName = "sdt";
             this.col_SDT.Name = "col_SDT";
             this.col_SDT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
@@ -255,7 +256,10 @@
             // repositoryItemTextEdit2
             // 
             this.repositoryItemTextEdit2.AutoHeight = false;
-            this.repositoryItemTextEdit2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit2.Mask.EditMask = "(9999)-000-0000";
+            this.repositoryItemTextEdit2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.repositoryItemTextEdit2.Mask.ShowPlaceHolders = false;
+            this.repositoryItemTextEdit2.Mask.UseMaskAsDisplayFormat = true;
             this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
             // col_DiaChi
