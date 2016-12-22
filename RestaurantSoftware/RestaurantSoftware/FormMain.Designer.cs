@@ -60,6 +60,7 @@
             this.btn_SuCo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_LoaiSuCo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_DonVi = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_HoaDon = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -86,7 +87,8 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btn_HoaDon = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup15 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_ThayDoiThamSo = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -126,9 +128,10 @@
             this.btn_SuCo,
             this.btn_LoaiSuCo,
             this.btn_DonVi,
-            this.btn_HoaDon});
+            this.btn_HoaDon,
+            this.btn_ThayDoiThamSo});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 36;
+            this.ribbonControl1.MaxItemId = 37;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -383,6 +386,15 @@
             this.btn_DonVi.Name = "btn_DonVi";
             this.btn_DonVi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DonVi_ItemClick);
             // 
+            // btn_HoaDon
+            // 
+            this.btn_HoaDon.Caption = "Hóa đơn";
+            this.btn_HoaDon.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.Glyph")));
+            this.btn_HoaDon.Id = 35;
+            this.btn_HoaDon.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.LargeGlyph")));
+            this.btn_HoaDon.Name = "btn_HoaDon";
+            this.btn_HoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HoaDon_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -417,7 +429,8 @@
             this.ribbonPageGroup9,
             this.ribbonPageGroup11,
             this.ribbonPageGroup12,
-            this.ribbonPageGroup14});
+            this.ribbonPageGroup14,
+            this.ribbonPageGroup15});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Quản lý hệ thống";
             // 
@@ -583,14 +596,21 @@
             this.xtraTabbedMdiManager1.FloatOnDrag = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // btn_HoaDon
+            // ribbonPageGroup15
             // 
-            this.btn_HoaDon.Caption = "Hóa đơn";
-            this.btn_HoaDon.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.Glyph")));
-            this.btn_HoaDon.Id = 35;
-            this.btn_HoaDon.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_HoaDon.LargeGlyph")));
-            this.btn_HoaDon.Name = "btn_HoaDon";
-            this.btn_HoaDon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_HoaDon_ItemClick);
+            this.ribbonPageGroup15.ItemLinks.Add(this.btn_ThayDoiThamSo);
+            this.ribbonPageGroup15.Name = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Text = "Tham Số";
+            // 
+            // btn_ThayDoiThamSo
+            // 
+            this.btn_ThayDoiThamSo.Caption = "Thay đổi tham số";
+            this.btn_ThayDoiThamSo.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_ThayDoiThamSo.Glyph")));
+            this.btn_ThayDoiThamSo.Id = 36;
+            this.btn_ThayDoiThamSo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_ThayDoiThamSo.LargeGlyph")));
+            this.btn_ThayDoiThamSo.LargeWidth = 100;
+            this.btn_ThayDoiThamSo.Name = "btn_ThayDoiThamSo";
+            this.btn_ThayDoiThamSo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ThayDoiThamSo_ItemClick);
             // 
             // FormMain
             // 
@@ -675,6 +695,8 @@
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem btn_DonVi;
         private DevExpress.XtraBars.BarButtonItem btn_HoaDon;
+        private DevExpress.XtraBars.BarButtonItem btn_ThayDoiThamSo;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
     }
 }
 

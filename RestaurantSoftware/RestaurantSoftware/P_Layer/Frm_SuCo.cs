@@ -81,6 +81,7 @@ namespace RestaurantSoftware.P_Layer
                 qd.id_nhanvien = (int)cmb_NhanVienLap.EditValue;
                 qd.ngaylap = dt_NgayLap.DateTime;
                 qd.noidung = rxt_NoiDung.Text;
+                qd.id_khachhang = (int)cmb_TenKhachHang.EditValue;
                 _sucoBLL.ThemSuCo(qd);
                 Notifications.Answers("Thêm thành công!");
                 LoadDataSource();
@@ -96,8 +97,10 @@ namespace RestaurantSoftware.P_Layer
                     qd.id_nhanvien = (int)cmb_NhanVienLap.EditValue;
                     qd.ngaylap = dt_NgayLap.DateTime;
                     qd.noidung = rxt_NoiDung.Text;
+                    qd.id_khachhang = (int)cmb_TenKhachHang.EditValue;
                     _sucoBLL.CapNhatSuCo(qd);
                     Notifications.Answers("Sửa thành công!");
+                    LoadDataSource();
 
 
                 }
@@ -105,9 +108,19 @@ namespace RestaurantSoftware.P_Layer
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            _sucoBLL.XoaSuCo(int.Parse(txt_MaSuCo.Text));
-            Notifications.Answers("Xóa thành công!");
-            btn_LamMoi_Click(sender, e);
+            DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xóa sự cố này!", "THÔNG BÁO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                _sucoBLL.XoaSuCo(int.Parse(txt_MaSuCo.Text));
+                Notifications.Answers("Xóa thành công!");
+                btn_LamMoi_Click(sender, e);
+                LoadDataSource();
+
+            }
+            else
+                Notifications.Answers("Xóa không thành công!");
+
+           
         }
 
         private void btn_LamMoi_Click(object sender, EventArgs e)
@@ -118,6 +131,12 @@ namespace RestaurantSoftware.P_Layer
             rxt_NoiDung.Text = "";
             kt = "Them";
             LoadDataSource();
+        }
+
+        private void btn_In_Click(object sender, EventArgs e)
+        {
+            PrintfSuCo sc = new PrintfSuCo(int.Parse(txt_MaSuCo.Text));
+            sc.Show();
         }
     }
 }

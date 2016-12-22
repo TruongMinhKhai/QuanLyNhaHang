@@ -41,3 +41,6 @@ D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\Rest
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_PrintfHoaDon.resources
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.HoaDon.resources
+D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThayDoiThamSo.resources
+D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.PrintfSuCo.resources
+D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.InSuCo.resources

@@ -323,6 +323,7 @@
             this.btn_In.StyleController = this.layoutControl1;
             this.btn_In.TabIndex = 15;
             this.btn_In.Text = "In";
+            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
             // 
             // txt_TenSuCo
             // 

@@ -363,5 +363,20 @@ namespace RestaurantSoftware
                 dtnam.Show();
             }
         }
+
+        private void btn_ThayDoiThamSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.ExistForm(typeof(P_Layer.Frm_ThayDoiThamSo));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                P_Layer.Frm_ThayDoiThamSo ThamSo = new P_Layer.Frm_ThayDoiThamSo();
+                ThamSo.MdiParent = this;
+                ThamSo.Show();
+            }
+        }
     }
 }

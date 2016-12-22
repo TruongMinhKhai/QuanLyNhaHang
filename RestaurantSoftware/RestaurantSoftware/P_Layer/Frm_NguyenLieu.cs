@@ -53,35 +53,35 @@ namespace RestaurantSoftware.P_Layer
         // xử lý thêm nguyên liệu
         private void btn_Them_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
-            gridView1.SelectRow(gridView1.FocusedRowHandle);
-            gridView1.FocusedColumn = gridView1.VisibleColumns[0];
-            gridView1.ShowEditor();
-            gridView1.PostEditor();
-            if (KiemTraHang())
-            {
-                if (!_hanghoaBLL.KiemTraHangHoaTonTai(gridView1.GetFocusedRowCellValue(col_TenHangHoa).ToString()))
-                {
-                    HangHoa hh = new HangHoa();
-                    hh.tenhanghoa = gridView1.GetFocusedRowCellValue(col_TenHangHoa).ToString() ;
-                    hh.id_loaihang = int.Parse(gridView1.GetFocusedRowCellValue(col_LoaiHang).ToString());
-                    hh.soluong = int.Parse(gridView1.GetFocusedRowCellValue(col_SoLuong).ToString());
-                    hh.dongia = decimal.Parse(gridView1.GetFocusedRowCellValue(col_DonGia).ToString());
-                    hh.id_donvi = int.Parse(gridView1.GetFocusedRowCellValue(col_DonVi).ToString());
-                    hh.id_nhacungcap = int.Parse(gridView1.GetFocusedRowCellValue(col_NhaCungCap).ToString());
-                    _hanghoaBLL.ThemHangHoaMoi(hh);
-                    Notifications.Success("Thêm hàng hoá thành công");
-                    LoadHangHoa();
-                }
-                else
-                {
-                    Notifications.Error("Tên hàng hoá đã tồn tại. Vui lòng nhập tên hàng hoá lại.");
-                }
-            }
-            else
-            {
-                Notifications.Error("Bạn chưa nhập đầy đủ thông tin hàng hoá. Vui lòng nhập lại");
-            }
+            //this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
+            //gridView1.SelectRow(gridView1.FocusedRowHandle);
+            //gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            //gridView1.ShowEditor();
+            //gridView1.PostEditor();
+            //if (KiemTraHang())
+            //{
+            //    if (!_hanghoaBLL.KiemTraHangHoaTonTai(gridView1.GetFocusedRowCellValue(col_TenHangHoa).ToString()))
+            //    {
+            //        HangHoa hh = new HangHoa();
+            //        hh.tenhanghoa = gridView1.GetFocusedRowCellValue(col_TenHangHoa).ToString() ;
+            //        hh.id_loaihang = int.Parse(gridView1.GetFocusedRowCellValue(col_LoaiHang).ToString());
+            //        hh.soluong = int.Parse(gridView1.GetFocusedRowCellValue(col_SoLuong).ToString());
+            //        hh.dongia = decimal.Parse(gridView1.GetFocusedRowCellValue(col_DonGia).ToString());
+            //        hh.id_donvi = int.Parse(gridView1.GetFocusedRowCellValue(col_DonVi).ToString());
+            //        hh.id_nhacungcap = int.Parse(gridView1.GetFocusedRowCellValue(col_NhaCungCap).ToString());
+            //        _hanghoaBLL.ThemHangHoaMoi(hh);
+            //        Notifications.Success("Thêm hàng hoá thành công");
+            //        LoadHangHoa();
+            //    }
+            //    else
+            //    {
+            //        Notifications.Error("Tên hàng hoá đã tồn tại. Vui lòng nhập tên hàng hoá lại.");
+            //    }
+            //}
+            //else
+            //{
+            //    Notifications.Error("Bạn chưa nhập đầy đủ thông tin hàng hoá. Vui lòng nhập lại");
+            //}
         }
         //hàm kiểm tra một hàng trong gridview
         private bool KiemTraHang()
@@ -132,53 +132,53 @@ namespace RestaurantSoftware.P_Layer
         // hàm lưu hàng hoá
         private void btn_Luu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-             string error = "";
-            bool isUpdate = false;
-            if (_listUpdate.Count > 1)
-            {
-                foreach (int id in _listUpdate)
-                {
-                    HangHoa hh =new HangHoa();
-                    hh.id_hanghoa = int.Parse(gridView1.GetRowCellValue(id,"id_hanghoa").ToString());
-                    hh.tenhanghoa =gridView1.GetRowCellValue(id,"tenhanghoa").ToString();
-                    hh.id_loaihang =int.Parse(gridView1.GetRowCellValue(id,"id_loaihang").ToString());
-                    hh.soluong =int.Parse(gridView1.GetRowCellValue(id,"soluong").ToString());
-                    hh.dongia = decimal.Parse(gridView1.GetRowCellValue(id,"dongia").ToString());
-                    hh.id_donvi =int.Parse(gridView1.GetRowCellValue(id,"id_donvi").ToString());
-                    hh.id_nhacungcap =int.Parse(gridView1.GetRowCellValue(id,"id_nhacungcap").ToString());
-                    if (!_hanghoaBLL.KiemTraHangHoaTonTai(hh.tenhanghoa, hh.id_hanghoa))
-                    {
-                        _hanghoaBLL.CapNhatHangHoa(hh);
-                        isUpdate = true;
-                    }
-                    else
-                    {
-                        if (error == "")
-                        {
-                            error = hh.tenhanghoa;
-                        }
-                        else
-                        {
-                            error += "|" + hh.tenhanghoa;
-                        }
-                    }
-                }
-            }
-            if (isUpdate == true)
-            {
-                if (error.Length == 0)
-                {
-                    Notifications.Success("Cập dữ liệu thành công.");
-                }
-                else
-                {
-                    Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các hàng hoá chưa được cập nhật (" + error + "). Lỗi: Tên hàng hoá đã tồn tại.");
-                }
-            }
-            else
-            {
-                Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên hàng hoá đã tồn tại.");
-            }
+            // string error = "";
+            //bool isUpdate = false;
+            //if (_listUpdate.Count > 1)
+            //{
+            //    foreach (int id in _listUpdate)
+            //    {
+            //        HangHoa hh =new HangHoa();
+            //        hh.id_hanghoa = int.Parse(gridView1.GetRowCellValue(id,"id_hanghoa").ToString());
+            //        hh.tenhanghoa =gridView1.GetRowCellValue(id,"tenhanghoa").ToString();
+            //        hh.id_loaihang =int.Parse(gridView1.GetRowCellValue(id,"id_loaihang").ToString());
+            //        hh.soluong =int.Parse(gridView1.GetRowCellValue(id,"soluong").ToString());
+            //        hh.dongia = decimal.Parse(gridView1.GetRowCellValue(id,"dongia").ToString());
+            //        hh.id_donvi =int.Parse(gridView1.GetRowCellValue(id,"id_donvi").ToString());
+            //        hh.id_nhacungcap =int.Parse(gridView1.GetRowCellValue(id,"id_nhacungcap").ToString());
+            //        if (!_hanghoaBLL.KiemTraHangHoaTonTai(hh.tenhanghoa, hh.id_hanghoa))
+            //        {
+            //            _hanghoaBLL.CapNhatHangHoa(hh);
+            //            isUpdate = true;
+            //        }
+            //        else
+            //        {
+            //            if (error == "")
+            //            {
+            //                error = hh.tenhanghoa;
+            //            }
+            //            else
+            //            {
+            //                error += "|" + hh.tenhanghoa;
+            //            }
+            //        }
+            //    }
+            //}
+            //if (isUpdate == true)
+            //{
+            //    if (error.Length == 0)
+            //    {
+            //        Notifications.Success("Cập dữ liệu thành công.");
+            //    }
+            //    else
+            //    {
+            //        Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các hàng hoá chưa được cập nhật (" + error + "). Lỗi: Tên hàng hoá đã tồn tại.");
+            //    }
+            //}
+            //else
+            //{
+            //    Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên hàng hoá đã tồn tại.");
+            //}
         }
         // xử lý làm mới 
         private void btn_LamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

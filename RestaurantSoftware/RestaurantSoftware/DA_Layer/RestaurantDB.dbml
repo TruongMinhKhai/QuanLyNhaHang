@@ -57,6 +57,7 @@
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="thanhtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="id_nhacungcap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HangHoa_Chitiet_HoaDonNhapHang" Member="HangHoa" ThisKey="id_hanghoa" OtherKey="id_hanghoa" Type="HangHoa" IsForeignKey="true" />
       <Association Name="HoaDonNhapHang_Chitiet_HoaDonNhapHang" Member="HoaDonNhapHang" ThisKey="id_nhaphang" OtherKey="id_nhaphang" Type="HoaDonNhapHang" IsForeignKey="true" />
     </Type>
@@ -67,8 +68,8 @@
       <Column Name="id_hoadon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_mon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="thanhtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="thanhtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Association Name="HoaDonThanhToan_Chitiet_HoaDonThanhToan" Member="HoaDonThanhToan" ThisKey="id_hoadon" OtherKey="id_hoadon" Type="HoaDonThanhToan" IsForeignKey="true" />
       <Association Name="Mon_Chitiet_HoaDonThanhToan" Member="Mon" ThisKey="id_mon" OtherKey="id_mon" Type="Mon" IsForeignKey="true" />
     </Type>
@@ -92,6 +93,7 @@
     <Type Name="DonVi">
       <Column Name="id_donvi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tendonvi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="lienket" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="DonVi_HangHoa" Member="HangHoas" ThisKey="id_donvi" OtherKey="id_donvi" Type="HangHoa" />
       <Association Name="DonVi_Mon" Member="Mons" ThisKey="id_donvi" OtherKey="id_donvi" Type="Mon" />
     </Type>
@@ -104,11 +106,9 @@
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="id_donvi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="id_nhacungcap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HangHoa_Chitiet_HoaDonNhapHang" Member="Chitiet_HoaDonNhapHangs" ThisKey="id_hanghoa" OtherKey="id_hanghoa" Type="Chitiet_HoaDonNhapHang" />
       <Association Name="DonVi_HangHoa" Member="DonVi" ThisKey="id_donvi" OtherKey="id_donvi" Type="DonVi" IsForeignKey="true" />
       <Association Name="LoaiHangHoa_HangHoa" Member="LoaiHangHoa" ThisKey="id_loaihang" OtherKey="id_loaihang" Type="LoaiHangHoa" IsForeignKey="true" />
-      <Association Name="NhaCungCap_HangHoa" Member="NhaCungCap" ThisKey="id_nhacungcap" OtherKey="id_nhacungcap" Type="NhaCungCap" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HoaDonNhapHang" Member="HoaDonNhapHangs">
@@ -199,7 +199,6 @@
       <Column Name="sdt" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ghichu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="NhaCungCap_HangHoa" Member="HangHoas" ThisKey="id_nhacungcap" OtherKey="id_nhacungcap" Type="HangHoa" />
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
@@ -250,6 +249,7 @@
   </Table>
   <Table Name="dbo.ThamSo" Member="ThamSos">
     <Type Name="ThamSo">
+      <Column Name="id_thamso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenthamso" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="giatri" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
