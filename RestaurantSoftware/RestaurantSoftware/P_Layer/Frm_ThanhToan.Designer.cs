@@ -448,6 +448,7 @@
             this.gv_DanhSachMon.GridControl = this.grd_DanhSachMon;
             this.gv_DanhSachMon.Name = "gv_DanhSachMon";
             this.gv_DanhSachMon.OptionsBehavior.ReadOnly = true;
+            this.gv_DanhSachMon.OptionsView.ShowGroupPanel = false;
             // 
             // col_TenMon
             // 

@@ -113,6 +113,11 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="nhahang_dbDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>nhahang_dbDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PrintRibbonControllerResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +130,12 @@
     </Compile>
     <Compile Include="P_Layer\Frm_Ban.Designer.cs">
       <DependentUpon>Frm_Ban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Frm_ChartDoanhThuNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_ChartDoanhThuNam.Designer.cs">
+      <DependentUpon>Frm_ChartDoanhThuNam.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Layer\Frm_DangNhap.cs">
       <SubType>Form</SubType>
@@ -143,6 +154,18 @@
     </Compile>
     <Compile Include="P_Layer\Frm_DatBan.Designer.cs">
       <DependentUpon>Frm_DatBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DoanhThuTheoNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DoanhThuTheoNam.Designer.cs">
+      <DependentUpon>Frm_DoanhThuTheoNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DoanhThuTheoThang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_DoanhThuTheoThang.Designer.cs">
+      <DependentUpon>Frm_DoanhThuTheoThang.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Layer\Frm_DonVi.cs">
       <SubType>Form</SubType>
@@ -246,36 +269,6 @@
     <Compile Include="P_Layer\Frm_ThongKeMon.Designer.cs">
       <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="P_Layer\Reports\Chart_DoanhThuTheoNam.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="P_Layer\Reports\Chart_DoanhThuTheoNam.Designer.cs">
-      <DependentUpon>Chart_DoanhThuTheoNam.cs</DependentUpon>
-    </Compile>
-    <Compile Include="P_Layer\Reports\DoanhThuTheoNam.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="P_Layer\Reports\DoanhThuTheoNam.Designer.cs">
-      <DependentUpon>DoanhThuTheoNam.cs</DependentUpon>
-    </Compile>
-    <Compile Include="P_Layer\Reports\DoanhThuTheoThang.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="P_Layer\Reports\DoanhThuTheoThang.Designer.cs">
-      <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="P_Layer\Reports\ThongKeMon.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="P_Layer\Reports\ThongKeMon.Designer.cs">
-      <DependentUpon>ThongKeMon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="P_Layer\Reports\ThongKeMonTheoNgay.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="P_Layer\Reports\ThongKeMonTheoNgay.Designer.cs">
-      <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
-    </Compile>
     <Compile Include="DA_Layer\HangHoaTon.cs" />
     <Compile Include="Utils\Notifications.cs" />
     <Compile Include="Utils\Utils.cs" />
@@ -286,28 +279,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_ChartDoanhThuNam.resx">
+      <DependentUpon>Frm_ChartDoanhThuNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_DoanhThuTheoNam.resx">
+      <DependentUpon>Frm_DoanhThuTheoNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_DoanhThuTheoThang.resx">
+      <DependentUpon>Frm_DoanhThuTheoThang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_DonVi.resx">
       <DependentUpon>Frm_DonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_ThongKeMon.resx">
       <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="P_Layer\Reports\Chart_DoanhThuTheoNam.resx">
-      <DependentUpon>Chart_DoanhThuTheoNam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="P_Layer\Reports\DoanhThuTheoNam.resx">
-      <DependentUpon>DoanhThuTheoNam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="P_Layer\Reports\DoanhThuTheoThang.resx">
-      <DependentUpon>DoanhThuTheoThang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="P_Layer\Reports\ThongKeMon.resx">
-      <DependentUpon>ThongKeMon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="P_Layer\Reports\ThongKeMonTheoNgay.resx">
-      <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -384,6 +373,17 @@
       <LastGenOutput>RestaurantDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="nhahang_dbDataSet3.xsc">
+      <DependentUpon>nhahang_dbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="nhahang_dbDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>nhahang_dbDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="nhahang_dbDataSet3.xss">
+      <DependentUpon>nhahang_dbDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -405,6 +405,9 @@
     <Content Include="Resource\table-do.png" />
     <Content Include="Resource\table-vang.png" />
     <Content Include="Resource\table-xanh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="P_Layer\Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

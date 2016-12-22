@@ -269,6 +269,7 @@
             this.btn_DoanhThuThang.Id = 19;
             this.btn_DoanhThuThang.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_DoanhThuThang.LargeGlyph")));
             this.btn_DoanhThuThang.Name = "btn_DoanhThuThang";
+            this.btn_DoanhThuThang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DoanhThuThang_ItemClick);
             // 
             // btn_DoanhThuNam
             // 
@@ -277,6 +278,7 @@
             this.btn_DoanhThuNam.Id = 20;
             this.btn_DoanhThuNam.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_DoanhThuNam.LargeGlyph")));
             this.btn_DoanhThuNam.Name = "btn_DoanhThuNam";
+            this.btn_DoanhThuNam.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DoanhThuNam_ItemClick);
             // 
             // btn_ThongKeMon
             // 
@@ -574,6 +576,8 @@
             // 
             // xtraTabbedMdiManager1
             // 
+            this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageAndTabControlHeader;
+            this.xtraTabbedMdiManager1.FloatOnDrag = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // FormMain

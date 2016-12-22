@@ -64,14 +64,14 @@ namespace RestaurantSoftware.BL_Layer
                              
                              select new 
                              {
-                                db.khuyenmai,
-                                db.vat
+                                db.tenthamso,
+                                db.giatri
 
                              }).ToList();
                 foreach (var id in query)
                 {
-                    Vat.Text = id.vat.ToString();
-                    km.Text = id.khuyenmai.ToString();
+                    Vat.Text = id.tenthamso.ToString();
+                    km.Text = id.giatri.ToString();
                 }
 
             }

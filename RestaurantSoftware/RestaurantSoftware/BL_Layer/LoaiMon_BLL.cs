@@ -50,12 +50,15 @@ namespace RestaurantSoftware.BL_Layer
 
         public bool KiemTraThongTin(int id_loaimon)
         {
-            int id_mon = _monBll.getIDMon(id_loaimon);
-            if(id_mon > 0)
+            IEnumerable<int> mons = _monBll.getIDMon(id_loaimon);
+            if(mons.Count() > 0)
             {
-                if (_monBll.KiemTraThongTin(id_mon))
-                    return true;
-                return false;
+                foreach(int i in mons)
+                {
+                    if (_monBll.KiemTraThongTin(i))
+                        return true;
+                }
+                    
             }
             return false;
         }

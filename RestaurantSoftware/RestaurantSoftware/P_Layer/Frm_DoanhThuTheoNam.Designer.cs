@@ -1,6 +1,6 @@
 ﻿namespace RestaurantSoftware.P_Layer
 {
-    partial class Frm_ThongKeMon
+    partial class Frm_DoanhThuTheoNam
     {
         /// <summary>
         /// Required designer variable.
@@ -98,7 +98,7 @@
             DevExpress.Utils.SuperToolTip superToolTip23 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem23 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem23 = new DevExpress.Utils.ToolTipItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ThongKeMon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DoanhThuTheoNam));
             DevExpress.Utils.SuperToolTip superToolTip24 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem24 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem24 = new DevExpress.Utils.ToolTipItem();
@@ -237,6 +237,7 @@
             this.printPreviewStaticItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
             this.zoomTrackBarEditItem1 = new DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem();
             this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
+            this.btn_ChartDTNam = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage();
             this.printPreviewRibbonPageGroup1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
             this.printPreviewRibbonPageGroup2 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
@@ -256,11 +257,11 @@
             // documentViewer1
             // 
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            //this.documentViewer1.DocumentSource = typeof(RestaurantSoftware.P_Layer.Reports.ThongKeMon);
+            //this.documentViewer1.DocumentSource = typeof(RestaurantSoftware.P_Layer.Reports.DoanhThuTheoNam);
             this.documentViewer1.IsMetric = false;
             this.documentViewer1.Location = new System.Drawing.Point(0, 141);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(787, 243);
+            this.documentViewer1.Size = new System.Drawing.Size(524, 186);
             this.documentViewer1.TabIndex = 0;
             // 
             // documentViewerRibbonController1
@@ -329,16 +330,18 @@
             this.printPreviewBarItem49,
             this.barButtonItem1,
             this.printPreviewStaticItem2,
-            this.zoomTrackBarEditItem1});
+            this.zoomTrackBarEditItem1,
+            this.btn_ChartDTNam});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 57;
+            this.ribbonControl1.MaxItemId = 59;
             this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.PageHeaderItemLinks.Add(this.btn_ChartDTNam);
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemProgressBar1,
             this.repositoryItemZoomTrackBar1});
-            this.ribbonControl1.Size = new System.Drawing.Size(787, 141);
+            this.ribbonControl1.Size = new System.Drawing.Size(524, 141);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.TransparentEditors = true;
             // 
@@ -1380,6 +1383,13 @@
             this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
             this.repositoryItemZoomTrackBar1.ScrollThumbStyle = DevExpress.XtraEditors.Repository.ScrollThumbStyle.ArrowDownRight;
             // 
+            // btn_ChartDTNam
+            // 
+            this.btn_ChartDTNam.Caption = "Biểu đồ";
+            this.btn_ChartDTNam.Id = 58;
+            this.btn_ChartDTNam.Name = "btn_ChartDTNam";
+            this.btn_ChartDTNam.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ChartDTNam_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.ContextSpecifier = this.documentViewerRibbonController1;
@@ -1521,21 +1531,21 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 384);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 327);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(787, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(524, 27);
             // 
-            // Frm_ThongKeMon
+            // Frm_DoanhThuTheoNam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 411);
+            this.ClientSize = new System.Drawing.Size(524, 354);
             this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "Frm_ThongKeMon";
-            this.Text = "THỐNG KÊ MÓN THEO THÁNG";
+            this.Name = "Frm_DoanhThuTheoNam";
+            this.Text = "DOANH THU THEO NĂM";
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
@@ -1617,5 +1627,6 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup7;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+        private DevExpress.XtraBars.BarButtonItem btn_ChartDTNam;
     }
 }

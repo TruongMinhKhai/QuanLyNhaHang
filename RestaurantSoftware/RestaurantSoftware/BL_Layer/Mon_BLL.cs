@@ -60,14 +60,14 @@ namespace RestaurantSoftware.BL_Layer
             return query.First().id_mon;
         }
 
-        public int getIDMon(int id_loaimon)
+        public IEnumerable<int> getIDMon(int id_loaimon)
         {
-            IEnumerable<Mon> query = from m in dbContext.Mons where m.id_loaimon == id_loaimon select m;
+            IEnumerable<int> query = from m in dbContext.Mons where m.id_loaimon == id_loaimon select m.id_mon;
             if(query.Count() > 0)
             {
-                return query.First().id_mon;
+                return query;
             }
-            return 0;
+            return null;
         }
 
         public bool KiemTraThongTin(int id_mon)

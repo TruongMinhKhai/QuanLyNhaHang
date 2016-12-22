@@ -201,9 +201,6 @@ namespace RestaurantSoftware.P_Layer
             gridView1.FocusedColumn = gridView1.VisibleColumns[0];
             gridView1.ShowEditor();
         }
-
-       
-
         private void btn_In_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
