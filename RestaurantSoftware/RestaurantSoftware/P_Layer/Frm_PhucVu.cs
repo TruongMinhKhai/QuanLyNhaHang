@@ -249,7 +249,6 @@ namespace RestaurantSoftware.P_Layer
                 hd.id_nhanvien = ID_NHANVIEN;
                 hd.thoigian = today;
                 hd.trangthai = tthoadon[0];
-                hd.id_khachhang = 5;
                 phucvubll.ThemMoiHoaDon(hd);
                 MessageBox.Show("Đã nhận bàn");
                 ReLoadHoaDon();

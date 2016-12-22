@@ -168,10 +168,10 @@ namespace RestaurantSoftware.BL_Layer
                 }
            
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                Notifications.Answers("Hóa đơn này chưa có khách hàng.");
+                Notifications.Answers(ex.Message);
+                //Notifications.Answers("Hóa đơn này chưa có khách hàng.");
             }
             
             
