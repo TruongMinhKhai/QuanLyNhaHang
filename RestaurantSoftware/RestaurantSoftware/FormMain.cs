@@ -16,6 +16,11 @@ namespace RestaurantSoftware
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        int idnv = 0;
+        string tennv ="";
+        int? capdo = 0;
+        string chucvu = "";
+        RestaurantSoftware.DA_Layer.RestaurantDBDataContext dbContext = new DA_Layer.RestaurantDBDataContext();
         public FormMain()
         {
             InitializeComponent();
@@ -29,10 +34,45 @@ namespace RestaurantSoftware
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            //P_Layer.Frm_DangNhap dangnhap = new P_Layer.Frm_DangNhap();
-            //dangnhap.ShowDialog();
+            P_Layer.Frm_DangNhap dangnhap = new P_Layer.Frm_DangNhap();
+            dangnhap.LoginEvent += dangnhap_LoginEvent;
+            dangnhap.ShowDialog();
         }
 
+        void dangnhap_LoginEvent(string username, string pass)
+        {
+            var query = from a in dbContext.NhanViens
+                        where a.tendangnhap == username && a.matkhau == pass
+                        select a;
+            foreach(var i in query)
+            {
+                idnv = i.id_nhanvien;
+                tennv = i.tennhanvien;
+                capdo = i.PhanQuyen.capdo;
+                chucvu = i.PhanQuyen.tenquyen;
+            }
+            tenNguoiDung.Caption += ": " + tennv;
+            chucVu.Caption += " " + chucvu;
+            PhanQuyen();
+        }
+
+        void PhanQuyen()
+        {
+            if(capdo == 1) //thu ngan
+            {
+                nghiepvu.Visible = true;
+                hethong.Visible = false;
+                baocaothongke.Visible = false;
+                quanlyhethong.Visible = false;
+            }
+            if (capdo == 2) //admin
+            {
+                nghiepvu.Visible = true;
+                hethong.Visible = true;
+                baocaothongke.Visible = true;
+                quanlyhethong.Visible = true;
+            }
+        }
         private void btn_Ban_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.ExistForm(typeof(P_Layer.Frm_Ban));
@@ -124,7 +164,7 @@ namespace RestaurantSoftware
             }
             else
             {
-                P_Layer.Frm_QuyDinh QuyDinh = new P_Layer.Frm_QuyDinh();
+                P_Layer.Frm_QuyDinh QuyDinh = new P_Layer.Frm_QuyDinh(idnv);
                 QuyDinh.MdiParent = this;
                 QuyDinh.Show();
             }
@@ -169,7 +209,7 @@ namespace RestaurantSoftware
             }
             else
             {
-                P_Layer.Frm_PhucVu PhucVu = new P_Layer.Frm_PhucVu();
+                P_Layer.Frm_PhucVu PhucVu = new P_Layer.Frm_PhucVu(idnv);
                 PhucVu.MdiParent = this;
                 PhucVu.Show();
             }
@@ -184,7 +224,7 @@ namespace RestaurantSoftware
             }
             else
             {
-                P_Layer.Frm_DatBan DatBan = new P_Layer.Frm_DatBan();
+                P_Layer.Frm_DatBan DatBan = new P_Layer.Frm_DatBan(idnv);
                 DatBan.MdiParent = this;
                 DatBan.Show();
             }
@@ -199,7 +239,7 @@ namespace RestaurantSoftware
             }
             else
             {
-                P_Layer.Frm_ThanhToan ThanhToan = new P_Layer.Frm_ThanhToan();
+                P_Layer.Frm_ThanhToan ThanhToan = new P_Layer.Frm_ThanhToan(idnv);
                 ThanhToan.MdiParent = this;
                 ThanhToan.Show();
             }
@@ -229,7 +269,7 @@ namespace RestaurantSoftware
             }
             else
             {
-                P_Layer.Frm_SuCo SuCo = new P_Layer.Frm_SuCo();
+                P_Layer.Frm_SuCo SuCo = new P_Layer.Frm_SuCo(idnv);
                 SuCo.MdiParent = this;
                 SuCo.Show();
             }

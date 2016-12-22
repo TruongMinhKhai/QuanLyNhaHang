@@ -128,21 +128,8 @@ namespace RestaurantSoftware.BL_Layer
 
         public void LayDanhSachMon(GridControl grid)
         {
-            var query = from
-                            m in dbContext.Mons
-                        join
-                            lm in dbContext.LoaiMons
-                        on
-                        m.id_loaimon equals lm.id_loaimon
-                        select new
-                        {
-                            tenmon = m.tenmon,
-                            tenviettat = m.tenviettat,
-                            gia = m.gia,
-                            tenloaimon = lm.tenloaimon,
-                            id_mon = m.id_mon
-                        };
-
+            var query = from m in dbContext.Mons
+                    select m;
             grid.DataSource = query;
         }
 
@@ -158,15 +145,7 @@ namespace RestaurantSoftware.BL_Layer
         {
             var query = from cthd in dbContext.Chitiet_HoaDonThanhToans
                         where cthd.id_hoadon == idhoadon
-                        select new
-                                    {
-                                        cthd.id_hoadon,
-                                        cthd.id_mon,
-                                        cthd.Mon.tenmon,
-                                        cthd.soluong,
-                                        gia = (decimal?)cthd.Mon.gia,
-                                        cthd.thanhtien
-                                    };
+                        select cthd;
   
             grid.DataSource = query;
         }
@@ -258,5 +237,9 @@ namespace RestaurantSoftware.BL_Layer
             dbContext.SubmitChanges();
         }
 
+        public void UpdateDatabase()
+        {
+            dbContext.SubmitChanges();
+        }
     }
 }
