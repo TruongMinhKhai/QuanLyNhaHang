@@ -364,6 +364,7 @@ namespace RestaurantSoftware.P_Layer
                 double thanhtien = soluong * dongia;
                 gridView_ChiTietDatBan.SetFocusedRowCellValue("thanhtien", thanhtien);
                 datban_bll.UpdateDatabase();
+                MessageBox.Show("Đã thay đổi");
             }
             catch(Exception ex)
             {
