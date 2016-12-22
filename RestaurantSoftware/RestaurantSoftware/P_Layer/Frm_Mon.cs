@@ -270,5 +270,17 @@ namespace RestaurantSoftware.P_Layer
                 btn_Luu.Enabled = false;
             }
         }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "col_STT" && e.RowHandle != GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+            if (e.Column.Name == "col_STT" && e.RowHandle == GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (gridView1.RowCount + 1).ToString();
+            }
+        }
     }
 }

@@ -206,6 +206,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm loại món mới ở đây...";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsCustomization.AllowSort = false;
             this.gridView1.OptionsMenu.EnableColumnMenu = false;
@@ -232,6 +233,7 @@
             this.col_STT.Name = "col_STT";
             this.col_STT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_STT.OptionsColumn.ReadOnly = true;
+            this.col_STT.OptionsEditForm.StartNewRow = true;
             this.col_STT.Visible = true;
             this.col_STT.VisibleIndex = 0;
             // 

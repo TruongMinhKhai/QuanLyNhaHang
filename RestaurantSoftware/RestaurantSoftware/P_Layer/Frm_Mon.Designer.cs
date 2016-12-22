@@ -56,6 +56,7 @@
             this.col_DonVi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lue_DonVi = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_STT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -215,6 +216,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.col_STT,
             this.col_TenMon,
             this.col_LoaiMon,
             this.col_TenVietTat,
@@ -240,6 +242,7 @@
             this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SynchronizeClones = false;
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
@@ -256,7 +259,7 @@
             this.col_TenMon.Name = "col_TenMon";
             this.col_TenMon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenMon.Visible = true;
-            this.col_TenMon.VisibleIndex = 0;
+            this.col_TenMon.VisibleIndex = 1;
             // 
             // col_LoaiMon
             // 
@@ -270,7 +273,7 @@
             this.col_LoaiMon.Name = "col_LoaiMon";
             this.col_LoaiMon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_LoaiMon.Visible = true;
-            this.col_LoaiMon.VisibleIndex = 1;
+            this.col_LoaiMon.VisibleIndex = 2;
             // 
             // lue_LoaiMon
             // 
@@ -297,7 +300,7 @@
             this.col_TenVietTat.Name = "col_TenVietTat";
             this.col_TenVietTat.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenVietTat.Visible = true;
-            this.col_TenVietTat.VisibleIndex = 2;
+            this.col_TenVietTat.VisibleIndex = 3;
             // 
             // col_TrangThai
             // 
@@ -311,7 +314,7 @@
             this.col_TrangThai.Name = "col_TrangThai";
             this.col_TrangThai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TrangThai.Visible = true;
-            this.col_TrangThai.VisibleIndex = 3;
+            this.col_TrangThai.VisibleIndex = 4;
             // 
             // lue_TrangThai
             // 
@@ -340,7 +343,7 @@
             this.col_Gia.Name = "col_Gia";
             this.col_Gia.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_Gia.Visible = true;
-            this.col_Gia.VisibleIndex = 4;
+            this.col_Gia.VisibleIndex = 5;
             // 
             // txt_Gia
             // 
@@ -366,7 +369,7 @@
             this.col_DonVi.Name = "col_DonVi";
             this.col_DonVi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_DonVi.Visible = true;
-            this.col_DonVi.VisibleIndex = 5;
+            this.col_DonVi.VisibleIndex = 6;
             // 
             // lue_DonVi
             // 
@@ -387,6 +390,20 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 5;
+            // 
+            // col_STT
+            // 
+            this.col_STT.AppearanceCell.Options.UseTextOptions = true;
+            this.col_STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_STT.Caption = "Stt";
+            this.col_STT.Name = "col_STT";
+            this.col_STT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col_STT.OptionsColumn.ReadOnly = true;
+            this.col_STT.OptionsEditForm.StartNewRow = true;
+            this.col_STT.Visible = true;
+            this.col_STT.VisibleIndex = 0;
             // 
             // Frm_Mon
             // 
@@ -442,5 +459,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_DonVi;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn col_Gia;
+        private DevExpress.XtraGrid.Columns.GridColumn col_STT;
     }
 }

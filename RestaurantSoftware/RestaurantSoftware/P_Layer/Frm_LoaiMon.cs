@@ -200,6 +200,10 @@ namespace RestaurantSoftware.P_Layer
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
             }
+            if (e.Column.Name == "col_STT" && e.RowHandle == GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (gridView1.RowCount + 1).ToString();
+            }
         }
 
         private void gridControl1_ProcessGridKey(object sender, KeyEventArgs e)
