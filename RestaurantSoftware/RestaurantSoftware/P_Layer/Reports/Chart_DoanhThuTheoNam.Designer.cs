@@ -65,7 +65,7 @@
             this.xrLabel1,
             this.xrChart1,
             this.xrLabel2});
-            this.Detail.HeightF = 353.125F;
+            this.Detail.HeightF = 395.8333F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -73,7 +73,7 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(187.5F, 25F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(183.3333F, 68.75F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(75F, 25F);
@@ -93,7 +93,7 @@
             xyDiagram1.DefaultPane.EnableAxisYScrolling = DevExpress.Utils.DefaultBoolean.False;
             xyDiagram1.DefaultPane.EnableAxisYZooming = DevExpress.Utils.DefaultBoolean.False;
             this.xrChart1.Diagram = xyDiagram1;
-            this.xrChart1.LocationFloat = new DevExpress.Utils.PointFloat(162.5F, 50F);
+            this.xrChart1.LocationFloat = new DevExpress.Utils.PointFloat(158.3333F, 93.75F);
             this.xrChart1.Name = "xrChart1";
             series1.ArgumentDataMember = "thang";
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
@@ -132,7 +132,7 @@
             // 
             // xrLabel2
             // 
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(437.5F, 312.5F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(433.3333F, 356.25F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(75F, 25F);

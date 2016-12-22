@@ -131,7 +131,7 @@
   inner join "dbo"."HoaDonNhapHang"
        "HoaDonNhapHang"
        on ("HoaDonNhapHang"."id_nhanvien" = "NhanVien"."id_nhanvien"))
-WHERE YEAR("HoaDonThanhToan"."thoigian") = @NamBaoCao
+WHERE YEAR("HoaDonThanhToan"."thoigian") = @NamBaoCao AND "HoaDonThanhToan"."trangthai" = N'Đã thanh toán'
 GROUP BY MONTH("HoaDonThanhToan"."thoigian")</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">

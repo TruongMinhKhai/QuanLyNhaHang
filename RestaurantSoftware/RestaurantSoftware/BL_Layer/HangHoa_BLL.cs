@@ -26,13 +26,13 @@ namespace RestaurantSoftware.BL_Layer
             return query;
         }
         // hàm lấy danh sách hàng hoá theo id nha cung cap
-        //public IEnumerable<HangHoa> LayDanhSachHangHoa(int _NhaCungCapID)
-        //{
-        //    IEnumerable<HangHoa> query = from m in dbContext.HangHoas
-        //                                 where m.id_nhacungcap == _NhaCungCapID
-        //                                 select m;
-        //    return query;
-        //}
+        public IEnumerable<HangHoa> LayDanhSachHangHoa(int _NhaCungCapID)
+        {
+            IEnumerable<HangHoa> query = from m in dbContext.HangHoas
+                                         select m;
+            return query;
+        }
+
         // hàm lấy danh sách hàng hóa theo id đơn vị
         public IEnumerable<HangHoa> LayDanhSachHangHoaTheoIdDonVi(int _DonViID)
         {

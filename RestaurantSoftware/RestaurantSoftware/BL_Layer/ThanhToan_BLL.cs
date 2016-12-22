@@ -72,13 +72,11 @@ namespace RestaurantSoftware.BL_Layer
                              select new
                              {
                                  db.giatri
-
                              }).ToList();
                 foreach (var id in query)
                 {
                     vat.Text = id.giatri.ToString();
                 }
-
             }
             catch (Exception)
             {
@@ -95,20 +93,19 @@ namespace RestaurantSoftware.BL_Layer
                              select new
                              {
                                  db.giatri
-
                              }).ToList();
                 foreach (var id in query)
                 {
                     km.Text = id.giatri.ToString();
                 }
-
             }
             catch (Exception)
             {
-
                 Notifications.Answers("Chưa có tham số khuyến mãi");
+
             }
         }
+        
         public void LoadChiTietHoaDon(int idhoadon, GridControl grid)
         {
             try
@@ -188,7 +185,6 @@ namespace RestaurantSoftware.BL_Layer
                          {
                              Tenkhachhang = kh.tenkh,
                              Sodienthoai = kh.sdt
-
                          }).ToList();
             foreach (var i in query)
             {

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DangNhap));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btn_Thoat = new DevExpress.XtraEditors.SimpleButton();
             this.btn_DangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.txt_MatKhau = new DevExpress.XtraEditors.TextEdit();
             this.txt_TenTaiKhoan = new DevExpress.XtraEditors.TextEdit();
@@ -38,7 +39,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btn_Thoat = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MatKhau.Properties)).BeginInit();
@@ -63,6 +63,18 @@
             this.layoutControl1.Size = new System.Drawing.Size(373, 164);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btn_Thoat
+            // 
+            this.btn_Thoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.BackgroundImage")));
+            this.btn_Thoat.Image = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.Image")));
+            this.btn_Thoat.Location = new System.Drawing.Point(204, 110);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(147, 30);
+            this.btn_Thoat.StyleController = this.layoutControl1;
+            this.btn_Thoat.TabIndex = 7;
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
             // btn_DangNhap
             // 
@@ -149,18 +161,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // btn_Thoat
-            // 
-            this.btn_Thoat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.BackgroundImage")));
-            this.btn_Thoat.Image = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.Image")));
-            this.btn_Thoat.Location = new System.Drawing.Point(204, 110);
-            this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(147, 30);
-            this.btn_Thoat.StyleController = this.layoutControl1;
-            this.btn_Thoat.TabIndex = 7;
-            this.btn_Thoat.Text = "Thoát";
-            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
-            // 
             // Frm_DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +172,8 @@
             this.Name = "Frm_DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐĂNG NHẬP";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_DangNhap_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_DangNhap_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_MatKhau.Properties)).EndInit();

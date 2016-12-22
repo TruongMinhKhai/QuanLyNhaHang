@@ -205,6 +205,8 @@
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.gridControl1_ProcessGridKey);
+            this.gridControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridControl1_MouseDown);
             // 
             // gridView1
             // 
@@ -215,9 +217,13 @@
             this.col_Quyen});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.NewItemRowText = "Thêm dòng mới tại đây ...";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsCustomization.AllowSort = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
             this.gridView1.OptionsNavigation.AutoMoveRowFocus = false;
             this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
@@ -236,6 +242,7 @@
             this.col_TenNhanVien.Caption = "Tên nhân viên (*)";
             this.col_TenNhanVien.FieldName = "tennhanvien";
             this.col_TenNhanVien.Name = "col_TenNhanVien";
+            this.col_TenNhanVien.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenNhanVien.Visible = true;
             this.col_TenNhanVien.VisibleIndex = 0;
             // 
@@ -248,6 +255,7 @@
             this.col_TenDangNhap.Caption = "Tên đăng nhập";
             this.col_TenDangNhap.FieldName = "tendangnhap";
             this.col_TenDangNhap.Name = "col_TenDangNhap";
+            this.col_TenDangNhap.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenDangNhap.Visible = true;
             this.col_TenDangNhap.VisibleIndex = 1;
             // 
@@ -261,6 +269,7 @@
             this.col_MatKhau.ColumnEdit = this.repositoryItemTextEdit2;
             this.col_MatKhau.FieldName = "matkhau";
             this.col_MatKhau.Name = "col_MatKhau";
+            this.col_MatKhau.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_MatKhau.Visible = true;
             this.col_MatKhau.VisibleIndex = 2;
             // 
@@ -272,9 +281,14 @@
             // 
             // col_Quyen
             // 
+            this.col_Quyen.AppearanceCell.Options.UseTextOptions = true;
+            this.col_Quyen.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_Quyen.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_Quyen.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_Quyen.Caption = "Phân Quyền";
             this.col_Quyen.FieldName = "id_quyen";
             this.col_Quyen.Name = "col_Quyen";
+            this.col_Quyen.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_Quyen.Visible = true;
             this.col_Quyen.VisibleIndex = 3;
             // 

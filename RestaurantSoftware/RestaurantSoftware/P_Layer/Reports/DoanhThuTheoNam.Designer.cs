@@ -68,14 +68,20 @@
             this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.NamBaoCao = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrTable4 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
             this.calculatedField3 = new DevExpress.XtraReports.UI.CalculatedField();
+            this.calculatedField2 = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // xrTableCell3
@@ -127,13 +133,13 @@
             // xrLabel3
             // 
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 53.45832F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(0.0001271566F, 52.79168F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(246.1034F, 26.125F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(280.6813F, 26.125F);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
-            this.xrLabel3.Text = "Tỉnh Lâm Đồng";
+            this.xrLabel3.Text = "1306, Linh Trung, Thủ Đức";
             this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel2
@@ -145,8 +151,8 @@
             this.xrLabel2.SizeF = new System.Drawing.SizeF(273.8117F, 26.125F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "Nhà Hàng THỎ RỪNG ĐÀ LẠT";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrLabel2.Text = "Nhà Hàng PHỐ ĐÔI";
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLine3
             // 
@@ -360,15 +366,15 @@
             // 
             // xrLabel4
             // 
+            this.xrLabel4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Query.calculatedField2", "{0:\'Ngày \' dd \'tháng \' MM \'Năm \' yyyy}")});
             this.xrLabel4.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(503.1616F, 10.00001F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(467.0104F, 10.00001F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(238.505F, 26.12499F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(261.1144F, 23F);
             this.xrLabel4.StylePriority.UseFont = false;
-            this.xrLabel4.StylePriority.UseTextAlignment = false;
-            this.xrLabel4.Text = "Ngày        Tháng          Năm";
-            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrLabel4.Text = "xrLabel4";
             // 
             // xrLabel5
             // 
@@ -399,9 +405,55 @@
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel7,
+            this.xrTable4,
             this.xrLabel1});
-            this.ReportHeader.HeightF = 100F;
+            this.ReportHeader.HeightF = 121.875F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // xrLabel7
+            // 
+            this.xrLabel7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding(this.NamBaoCao, "Text", "")});
+            this.xrLabel7.Font = new System.Drawing.Font("Times New Roman", 13F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(581.271F, 98.87502F);
+            this.xrLabel7.Name = "xrLabel7";
+            this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel7.StylePriority.UseFont = false;
+            this.xrLabel7.Text = "xrLabel7";
+            // 
+            // NamBaoCao
+            // 
+            this.NamBaoCao.Name = "NamBaoCao";
+            // 
+            // xrTable4
+            // 
+            this.xrTable4.BackColor = System.Drawing.Color.White;
+            this.xrTable4.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold);
+            this.xrTable4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(108)))), ((int)(((byte)(59)))));
+            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(389.4232F, 96.875F);
+            this.xrTable4.Name = "xrTable4";
+            this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow4});
+            this.xrTable4.SizeF = new System.Drawing.SizeF(184.8788F, 25F);
+            this.xrTable4.StyleName = "TableHeader";
+            this.xrTable4.StylePriority.UseFont = false;
+            this.xrTable4.StylePriority.UseTextAlignment = false;
+            this.xrTable4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            // 
+            // xrTableRow4
+            // 
+            this.xrTableRow4.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell11});
+            this.xrTableRow4.Name = "xrTableRow4";
+            this.xrTableRow4.Weight = 1D;
+            // 
+            // xrTableCell11
+            // 
+            this.xrTableCell11.Name = "xrTableCell11";
+            this.xrTableCell11.Text = "Năm báo cáo:";
+            this.xrTableCell11.Weight = 0.76890454006491871D;
             // 
             // xrLabel1
             // 
@@ -417,10 +469,6 @@
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "BÁO CÁO DOANH THU THEO NĂM";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // NamBaoCao
-            // 
-            this.NamBaoCao.Name = "NamBaoCao";
             // 
             // sqlDataSource1
             // 
@@ -448,6 +496,12 @@
             this.calculatedField3.Expression = "[].Sum([calculatedField1])";
             this.calculatedField3.Name = "calculatedField3";
             // 
+            // calculatedField2
+            // 
+            this.calculatedField2.DataMember = "Query";
+            this.calculatedField2.Expression = "Now()";
+            this.calculatedField2.Name = "calculatedField2";
+            // 
             // DoanhThuTheoNam
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -460,7 +514,8 @@
             this.ReportHeader});
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
             this.calculatedField1,
-            this.calculatedField3});
+            this.calculatedField3,
+            this.calculatedField2});
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.sqlDataSource1});
             this.DataMember = "Query";
@@ -479,6 +534,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -510,7 +566,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
         private DevExpress.XtraReports.Parameters.Parameter NamBaoCao;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
@@ -526,6 +581,12 @@
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow3;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
         private DevExpress.XtraReports.UI.CalculatedField calculatedField3;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel7;
+        private DevExpress.XtraReports.UI.XRTable xrTable4;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow4;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
+        private DevExpress.XtraReports.UI.CalculatedField calculatedField2;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
 
     }
 }
