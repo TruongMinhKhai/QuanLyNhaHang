@@ -14,7 +14,6 @@ namespace RestaurantSoftware.BL_Layer
         public void LayDanhSachSuCo(GridControl grid)
         {
             var query = from db in dbContext.SuCos
-                        join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
                         select new
                         {
                             db.id_suco,
@@ -23,7 +22,7 @@ namespace RestaurantSoftware.BL_Layer
                             db.id_nhanvien,
                             db.ngaylap,
                             db.noidung,
-                            kh.tenkh
+                            db.KhachHang.tenkh
                         };
             grid.DataSource = query;
         }
@@ -44,6 +43,7 @@ namespace RestaurantSoftware.BL_Layer
             _qd.NhanVien = dbContext.NhanViens.Single<NhanVien>(l => l.id_nhanvien == m.id_nhanvien);
             _qd.ngaylap = m.ngaylap;
             _qd.noidung = m.noidung;
+            _qd.id_khachhang = m.id_khachhang;
             // update 
             dbContext.SubmitChanges();
         }

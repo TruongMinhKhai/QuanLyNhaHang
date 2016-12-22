@@ -89,6 +89,8 @@ namespace RestaurantSoftware.P_Layer
                     qd.noidung = rxt_NoiDung.Text;
                     _quydinhBLL.CapNhatQuyDinh(qd);
                     Notifications.Answers("Sửa thành công!");
+                    LoadDataSource();
+
 
 
                 }
@@ -96,9 +98,20 @@ namespace RestaurantSoftware.P_Layer
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            _quydinhBLL.XoaQuyDinh(int.Parse(txt_MaQuyDinh.Text));
-            Notifications.Answers("Xóa thành công!");
-            btn_LamMoi_Click(sender, e);
+            DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xóa quy định này!", "THÔNG BÁO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                _quydinhBLL.XoaQuyDinh(int.Parse(txt_MaQuyDinh.Text));
+                Notifications.Answers("Xóa thành công!");
+                btn_LamMoi_Click(sender, e);
+                LoadDataSource();
+
+
+
+            }
+            else
+                Notifications.Answers("Xóa không thành công!");
+           
 
         }
     }
