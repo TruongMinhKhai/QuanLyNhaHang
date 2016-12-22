@@ -36,6 +36,7 @@ namespace RestaurantSoftware.BL_Layer
             var query = from db in dbContext.HoaDonThanhToans
                         join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
                         join bn in dbContext.Bans on db.id_ban equals bn.id_ban
+                        where !(db.trangthai == "Hủy")
                         select new
                         {
                             db.id_hoadon,
@@ -47,7 +48,8 @@ namespace RestaurantSoftware.BL_Layer
                             kh.tenkh,
                             kh.sdt,
                             db.vat,
-                            db.khuyenmai
+                            db.khuyenmai,
+                            datra = (decimal?)db.datra
                         };
             gr.DataSource = query;
         }
@@ -78,6 +80,7 @@ namespace RestaurantSoftware.BL_Layer
             }
             catch (Exception)
             {
+
                 Notifications.Answers("Chưa có tham số VAT");
             }
         }
@@ -99,9 +102,10 @@ namespace RestaurantSoftware.BL_Layer
             catch (Exception)
             {
                 Notifications.Answers("Chưa có tham số khuyến mãi");
+
             }
         }
-
+        
         public void LoadChiTietHoaDon(int idhoadon, GridControl grid)
         {
             try
@@ -116,8 +120,8 @@ namespace RestaurantSoftware.BL_Layer
                                 ct.id_mon,
                                 m.tenmon,
                                 ct.soluong,
-                                thanhtien = ct.soluong * m.gia,
-                                m.gia,
+                                thanhtien = ct.soluong * ct.dongia,
+                                ct.dongia
                                 
                             };
                 grid.DataSource = query;
@@ -129,7 +133,7 @@ namespace RestaurantSoftware.BL_Layer
             }
             
         }
-        public void loadid(int idban, string trangthai, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt)
+        public void loadid(int idban, string trangthai, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt, TextEdit kd)
         {
             try
             {
@@ -147,6 +151,7 @@ namespace RestaurantSoftware.BL_Layer
                                  Idnhanvien = nv.id_nhanvien,
                                  Tennhanvien = nv.tennhanvien,
                                  Ngay = Convert.ToDateTime(db.thoigian),
+                                 Khachtra = Convert.ToInt32(db.datra)
 
                              }).ToList();
                 foreach (var id in query)
@@ -157,6 +162,7 @@ namespace RestaurantSoftware.BL_Layer
                         nhanvien.EditValue = id.Idnhanvien;
                         ngay.DateTime = id.Ngay;
                         idkh = id.Idhoadon;
+                        kd.EditValue = id.Khachtra;
                         laykhachhang(idkh, tenkh, sdt);
                     }
                 }
@@ -197,45 +203,7 @@ namespace RestaurantSoftware.BL_Layer
             // update 
             dbContext.SubmitChanges();
         }
-        //public void load(int idban, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt)
-        //{
-        //    try
-        //    {
-        //        int idkh = -1;
-        //        var query = (from db in dbContext.HoaDonThanhToans
-        //                     join bn in dbContext.Bans on db.id_ban equals bn.id_ban
-        //                     join nv in dbContext.NhanViens on db.id_nhanvien equals nv.id_nhanvien
-        //                     select new ChiTiet_ThanhToan
-        //                     {
-        //                         Idhoadon = db.id_hoadon,
-        //                         Idban = bn.id_ban,
-        //                         Tenban = bn.tenban,
-        //                         Trangthai = bn.trangthai,
-        //                         Idnhanvien = nv.id_nhanvien,
-        //                         Tennhanvien = nv.tennhanvien,
-        //                         Ngay = Convert.ToDateTime(db.thoigian),
-
-        //                     }).ToList();
-        //        foreach (var id in query)
-        //        {
-        //            if (id.Idban == idban)
-        //            {
-        //                idhoadon.Text = (id.Idhoadon).ToString();
-        //                nhanvien.EditValue = id.Idnhanvien;
-        //                ngay.DateTime = id.Ngay;
-        //                idkh = id.Idhoadon;
-        //                laykhachhang(idkh, tenkh, sdt);
-        //            }
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        Notifications.Answers("Hóa đơn này chưa có khách hàng.");
-
-        //    }
-           
-        //}
-
+        
 
     }
 }

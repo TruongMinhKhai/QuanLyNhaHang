@@ -32,6 +32,7 @@ namespace RestaurantSoftware.BL_Layer
                                          select m;
             return query;
         }
+
         // hàm lấy danh sách hàng hóa theo id đơn vị
         public IEnumerable<HangHoa> LayDanhSachHangHoaTheoIdDonVi(int _DonViID)
         {

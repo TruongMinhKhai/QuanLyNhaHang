@@ -23,5 +23,6 @@ namespace RestaurantSoftware.Utils
         {
             return MessageBox.Show(message, "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
         }
+        
     }
 }

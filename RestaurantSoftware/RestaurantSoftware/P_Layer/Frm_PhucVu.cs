@@ -25,11 +25,13 @@ namespace RestaurantSoftware.P_Layer
         int idbanSelected;
         int idhoadonSelected;
         int idhoadonMoved;
+        int ID_NHANVIEN = 0;
         bool ischuyenban = false;
         string trangthaibanSelected ="";
-        public Frm_PhucVu()
+        public Frm_PhucVu(int idnv)
         {
             InitializeComponent();
+            ID_NHANVIEN = idnv;
         }
         public void Init()
         {
@@ -244,11 +246,12 @@ namespace RestaurantSoftware.P_Layer
             {
                 HoaDonThanhToan hd = new HoaDonThanhToan();
                 hd.id_ban = idbanSelected;
-                hd.id_nhanvien = 1;
+                hd.id_nhanvien = ID_NHANVIEN;
                 hd.thoigian = today;
                 hd.trangthai = tthoadon[0];
+                hd.id_khachhang = 5;
                 phucvubll.ThemMoiHoaDon(hd);
-                MessageBox.Show("ok");
+                MessageBox.Show("Đã nhận bàn");
                 ReLoadHoaDon();
                 //làm tiếp: nhận bàn đã đặt. chuyển chitiet đặt bàn -> chi tiết hóa đơn.
                 if(trangthaibanSelected == ttban[2])
@@ -281,6 +284,35 @@ namespace RestaurantSoftware.P_Layer
             SetEnableControl(false);
             MessageBox.Show("Chọn bàn trống để chuyển đến.");
 
+        }
+
+        private void gridView_ChitietHoaDon_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            try
+            {
+                int soluong = int.Parse(gridView_ChitietHoaDon.GetFocusedRowCellValue("soluong").ToString());
+                if (soluong <= 0)
+                {
+                    MessageBox.Show("Số lượng phải lớn hơn 0");
+                    return;
+                }
+                double dongia = double.Parse(gridView_ChitietHoaDon.GetFocusedRowCellValue("Mon.gia").ToString());
+                double thanhtien = soluong * dongia;
+                gridView_ChitietHoaDon.SetFocusedRowCellValue("thanhtien", thanhtien);
+                phucvubll.UpdateDatabase();
+                MessageBox.Show("Đã thay đổi");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            Frm_ThanhToan frmThanhtoan = new Frm_ThanhToan(ID_NHANVIEN);
+            frmThanhtoan.MdiParent = FormMain.ActiveForm;
+            frmThanhtoan.Show();
         }
         
         

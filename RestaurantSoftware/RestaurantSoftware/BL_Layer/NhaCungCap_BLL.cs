@@ -62,15 +62,15 @@ namespace RestaurantSoftware.BL_Layer
         //Xóa nhà cung cấp
         public void XoaNhaCungCap(int _NhaCungCapID)
         {
-            HangHoa[] array = (_hanghoaBll.LayDanhSachHangHoa(_NhaCungCapID)).ToArray();
+            //HangHoa[] array = (_hanghoaBll.LayDanhSachHangHoa(_NhaCungCapID)).ToArray();
 
-            foreach (var row in array)
-            {
-                _hanghoaBll.XoaHangHoa(row.id_hanghoa);
-            }
-            NhaCungCap _NhaCungCap = dbContext.NhaCungCaps.Single<NhaCungCap>(x => x.id_nhacungcap == _NhaCungCapID);
-            dbContext.NhaCungCaps.DeleteOnSubmit(_NhaCungCap);
-            dbContext.SubmitChanges();
+            //foreach (var row in array)
+            //{
+            //    _hanghoaBll.XoaHangHoa(row.id_hanghoa);
+            //}
+            //NhaCungCap _NhaCungCap = dbContext.NhaCungCaps.Single<NhaCungCap>(x => x.id_nhacungcap == _NhaCungCapID);
+            //dbContext.NhaCungCaps.DeleteOnSubmit(_NhaCungCap);
+            //dbContext.SubmitChanges();
         }
     }
 }
