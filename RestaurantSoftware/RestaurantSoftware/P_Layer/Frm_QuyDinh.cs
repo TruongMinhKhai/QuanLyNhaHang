@@ -69,7 +69,26 @@ namespace RestaurantSoftware.P_Layer
 
 
         }
-
+        public void ReLoadQuyDinh()
+        {
+            var query = _quydinhBLL.LoadQuyDinh(txt_TenQuyDinh.Text);
+            foreach (var i in query)
+            {
+                txt_MaQuyDinh.Text = i.id_quydinh.ToString();
+            }
+        }
+        public bool KiemTraLuu()
+        {
+            var query = _quydinhBLL.KiemTraQuyDinh();
+            foreach (var i in query)
+            {
+                if(i.tenquydinh == txt_TenQuyDinh.Text)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         private void btn_Luu_Click(object sender, EventArgs e)
         {
             if (kt == "Them")
@@ -79,9 +98,19 @@ namespace RestaurantSoftware.P_Layer
                 qd.id_nhanvien = (int)cmb_NhanVienLap.EditValue;
                 qd.ngaylap = dt_NgayLap.DateTime;
                 qd.noidung = rxt_NoiDung.Text;
-                _quydinhBLL.ThemQuyDinh(qd);
-                Notifications.Answers("Thêm thành công!");
-                LoadDataSource();
+                if (KiemTraLuu() == true)
+                {
+                    _quydinhBLL.ThemQuyDinh(qd);
+                    Notifications.Answers("Thêm thành công!");
+                    ReLoadQuyDinh();
+                    LoadDataSource();
+                }
+                else
+                {
+                    Notifications.Answers("Tên quy định không được trùng");
+
+                }
+                
             }
             else
                 if (kt == "Sua")

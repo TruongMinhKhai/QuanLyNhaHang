@@ -26,6 +26,14 @@ namespace RestaurantSoftware.BL_Layer
                         };
             grid.DataSource = query;
         }
+        //Reload su co
+        public IQueryable<SuCo> LoadSuCo(string ten, DateTime dt, int idkh)
+        {
+            var query = from sc in dbContext.SuCos
+                        where sc.tensuco == ten && sc.ngaylap == dt && sc.id_khachhang == idkh
+                        select sc;
+            return query;
+        }
         public IEnumerable<KhachHang> LayDsKhachHang()
         {
             var query = from kh in dbContext.KhachHangs select kh;

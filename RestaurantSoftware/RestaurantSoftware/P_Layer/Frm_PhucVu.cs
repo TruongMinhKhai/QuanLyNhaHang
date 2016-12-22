@@ -249,9 +249,8 @@ namespace RestaurantSoftware.P_Layer
                 hd.id_nhanvien = ID_NHANVIEN;
                 hd.thoigian = today;
                 hd.trangthai = tthoadon[0];
-                hd.id_khachhang = 5;
                 phucvubll.ThemMoiHoaDon(hd);
-                MessageBox.Show("ok");
+                MessageBox.Show("Đã nhận bàn");
                 ReLoadHoaDon();
                 //làm tiếp: nhận bàn đã đặt. chuyển chitiet đặt bàn -> chi tiết hóa đơn.
                 if(trangthaibanSelected == ttban[2])
@@ -300,6 +299,7 @@ namespace RestaurantSoftware.P_Layer
                 double thanhtien = soluong * dongia;
                 gridView_ChitietHoaDon.SetFocusedRowCellValue("thanhtien", thanhtien);
                 phucvubll.UpdateDatabase();
+                MessageBox.Show("Đã thay đổi");
             }
             catch(Exception ex)
             {

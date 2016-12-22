@@ -397,7 +397,9 @@
     <EmbeddedResource Include="P_Layer\Reports\ThongKeMonTheoNgay.resx">
       <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
