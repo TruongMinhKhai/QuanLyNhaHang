@@ -34,7 +34,7 @@
             // documentViewer1
             // 
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-           // this.documentViewer1.DocumentSource = typeof(RestaurantSoftware.P_Layer.Reports.Chart_DoanhThuTheoNam);
+            this.documentViewer1.DocumentSource = typeof(RestaurantSoftware.P_Layer.Reports.Chart_DoanhThuTheoNam);
             this.documentViewer1.IsMetric = false;
             this.documentViewer1.Location = new System.Drawing.Point(0, 0);
             this.documentViewer1.Name = "documentViewer1";

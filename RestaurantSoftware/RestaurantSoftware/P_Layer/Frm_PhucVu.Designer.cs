@@ -43,8 +43,9 @@
             this.gridControl_ThucDon = new DevExpress.XtraGrid.GridControl();
             this.gridView_ThucDon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.thucdon_tenmon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.thucdon_tenviettat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.thucdon_donvi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.thucdon_gia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.thucdon_Thembutton = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnThemMon = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.thucdon_LoaiMon = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,7 +57,9 @@
             this.gridView_ChitietHoaDon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.chitiet_tenmon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.chitiet_soluong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.chitiet_gia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chitiet_donvi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.chitiet_thanhtien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.chitiet_btnXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnXoa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -86,9 +89,11 @@
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_ThucDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_ThucDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnThemMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_ChitietHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_ChitietHoaDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
@@ -135,19 +140,20 @@
             // 
             this.lvBan.Location = new System.Drawing.Point(24, 42);
             this.lvBan.Name = "lvBan";
-            this.lvBan.Size = new System.Drawing.Size(199, 449);
+            this.lvBan.Size = new System.Drawing.Size(202, 449);
             this.lvBan.TabIndex = 14;
             this.lvBan.UseCompatibleStateImageBehavior = false;
             this.lvBan.SelectedIndexChanged += new System.EventHandler(this.lvBan_SelectedIndexChanged);
             // 
             // gridControl_ThucDon
             // 
-            this.gridControl_ThucDon.Location = new System.Drawing.Point(697, 42);
+            this.gridControl_ThucDon.Location = new System.Drawing.Point(698, 42);
             this.gridControl_ThucDon.MainView = this.gridView_ThucDon;
             this.gridControl_ThucDon.Name = "gridControl_ThucDon";
             this.gridControl_ThucDon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnThemMon});
-            this.gridControl_ThucDon.Size = new System.Drawing.Size(271, 449);
+            this.btnThemMon,
+            this.repositoryItemTextEdit1});
+            this.gridControl_ThucDon.Size = new System.Drawing.Size(270, 449);
             this.gridControl_ThucDon.TabIndex = 13;
             this.gridControl_ThucDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_ThucDon});
@@ -156,7 +162,7 @@
             // 
             this.gridView_ThucDon.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.thucdon_tenmon,
-            this.thucdon_tenviettat,
+            this.thucdon_donvi,
             this.thucdon_gia,
             this.thucdon_Thembutton,
             this.thucdon_LoaiMon,
@@ -177,29 +183,38 @@
             this.thucdon_tenmon.VisibleIndex = 0;
             this.thucdon_tenmon.Width = 202;
             // 
-            // thucdon_tenviettat
+            // thucdon_donvi
             // 
-            this.thucdon_tenviettat.Caption = "Tên viết tắt";
-            this.thucdon_tenviettat.FieldName = "tenviettat";
-            this.thucdon_tenviettat.Name = "thucdon_tenviettat";
-            this.thucdon_tenviettat.Visible = true;
-            this.thucdon_tenviettat.VisibleIndex = 1;
-            this.thucdon_tenviettat.Width = 197;
+            this.thucdon_donvi.Caption = "Đơn Vị";
+            this.thucdon_donvi.FieldName = "DonVi.tendonvi";
+            this.thucdon_donvi.Name = "thucdon_donvi";
+            this.thucdon_donvi.Visible = true;
+            this.thucdon_donvi.VisibleIndex = 1;
+            this.thucdon_donvi.Width = 197;
             // 
             // thucdon_gia
             // 
             this.thucdon_gia.Caption = "Giá";
+            this.thucdon_gia.ColumnEdit = this.repositoryItemTextEdit1;
             this.thucdon_gia.FieldName = "gia";
             this.thucdon_gia.Name = "thucdon_gia";
             this.thucdon_gia.Visible = true;
             this.thucdon_gia.VisibleIndex = 2;
             this.thucdon_gia.Width = 188;
             // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.DisplayFormat.FormatString = "#,###";
+            this.repositoryItemTextEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
             // thucdon_Thembutton
             // 
             this.thucdon_Thembutton.Caption = "Thêm";
             this.thucdon_Thembutton.ColumnEdit = this.btnThemMon;
             this.thucdon_Thembutton.Name = "thucdon_Thembutton";
+            this.thucdon_Thembutton.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.thucdon_Thembutton.Visible = true;
             this.thucdon_Thembutton.VisibleIndex = 3;
             this.thucdon_Thembutton.Width = 109;
@@ -216,7 +231,7 @@
             // thucdon_LoaiMon
             // 
             this.thucdon_LoaiMon.Caption = "Loại Món";
-            this.thucdon_LoaiMon.FieldName = "tenloaimon";
+            this.thucdon_LoaiMon.FieldName = "LoaiMon.tenloaimon";
             this.thucdon_LoaiMon.Name = "thucdon_LoaiMon";
             this.thucdon_LoaiMon.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.thucdon_LoaiMon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
@@ -232,9 +247,9 @@
             // btnNhanBan
             // 
             this.btnNhanBan.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanBan.Image")));
-            this.btnNhanBan.Location = new System.Drawing.Point(263, 457);
+            this.btnNhanBan.Location = new System.Drawing.Point(266, 457);
             this.btnNhanBan.Name = "btnNhanBan";
-            this.btnNhanBan.Size = new System.Drawing.Size(130, 22);
+            this.btnNhanBan.Size = new System.Drawing.Size(129, 22);
             this.btnNhanBan.StyleController = this.layoutControl2;
             this.btnNhanBan.TabIndex = 11;
             this.btnNhanBan.Text = "Nhận Bàn";
@@ -243,17 +258,18 @@
             // btnThanhToan
             // 
             this.btnThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.Image")));
-            this.btnThanhToan.Location = new System.Drawing.Point(528, 457);
+            this.btnThanhToan.Location = new System.Drawing.Point(530, 457);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(129, 22);
+            this.btnThanhToan.Size = new System.Drawing.Size(128, 22);
             this.btnThanhToan.StyleController = this.layoutControl2;
             this.btnThanhToan.TabIndex = 10;
             this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btn_ChuyenBan
             // 
             this.btn_ChuyenBan.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChuyenBan.Image")));
-            this.btn_ChuyenBan.Location = new System.Drawing.Point(397, 457);
+            this.btn_ChuyenBan.Location = new System.Drawing.Point(399, 457);
             this.btn_ChuyenBan.Name = "btn_ChuyenBan";
             this.btn_ChuyenBan.Size = new System.Drawing.Size(127, 22);
             this.btn_ChuyenBan.StyleController = this.layoutControl2;
@@ -263,12 +279,13 @@
             // 
             // gridControl_ChitietHoaDon
             // 
-            this.gridControl_ChitietHoaDon.Location = new System.Drawing.Point(263, 186);
+            this.gridControl_ChitietHoaDon.Location = new System.Drawing.Point(266, 186);
             this.gridControl_ChitietHoaDon.MainView = this.gridView_ChitietHoaDon;
             this.gridControl_ChitietHoaDon.Name = "gridControl_ChitietHoaDon";
             this.gridControl_ChitietHoaDon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnXoa});
-            this.gridControl_ChitietHoaDon.Size = new System.Drawing.Size(394, 225);
+            this.btnXoa,
+            this.repositoryItemTextEdit2});
+            this.gridControl_ChitietHoaDon.Size = new System.Drawing.Size(392, 225);
             this.gridControl_ChitietHoaDon.TabIndex = 8;
             this.gridControl_ChitietHoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_ChitietHoaDon});
@@ -279,48 +296,79 @@
             this.chitiet_tenmon,
             this.chitiet_soluong,
             this.chitiet_gia,
+            this.chitiet_donvi,
             this.chitiet_thanhtien,
             this.chitiet_btnXoa,
             this.chitiet_idhoadon,
             this.chitiet_idmon});
             this.gridView_ChitietHoaDon.GridControl = this.gridControl_ChitietHoaDon;
             this.gridView_ChitietHoaDon.Name = "gridView_ChitietHoaDon";
+            this.gridView_ChitietHoaDon.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView_ChitietHoaDon_RowUpdated);
             // 
             // chitiet_tenmon
             // 
             this.chitiet_tenmon.Caption = "Tên món";
-            this.chitiet_tenmon.FieldName = "tenmon";
+            this.chitiet_tenmon.FieldName = "Mon.tenmon";
             this.chitiet_tenmon.Name = "chitiet_tenmon";
+            this.chitiet_tenmon.OptionsColumn.ReadOnly = true;
             this.chitiet_tenmon.Visible = true;
             this.chitiet_tenmon.VisibleIndex = 0;
-            this.chitiet_tenmon.Width = 187;
+            this.chitiet_tenmon.Width = 161;
             // 
             // chitiet_soluong
             // 
             this.chitiet_soluong.Caption = "Số lượng";
+            this.chitiet_soluong.ColumnEdit = this.repositoryItemTextEdit2;
+            this.chitiet_soluong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.chitiet_soluong.FieldName = "soluong";
             this.chitiet_soluong.Name = "chitiet_soluong";
             this.chitiet_soluong.Visible = true;
             this.chitiet_soluong.VisibleIndex = 1;
-            this.chitiet_soluong.Width = 107;
+            this.chitiet_soluong.Width = 93;
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.DisplayFormat.FormatString = "#,###";
+            this.repositoryItemTextEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemTextEdit2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
             // chitiet_gia
             // 
             this.chitiet_gia.Caption = "Giá";
-            this.chitiet_gia.FieldName = "gia";
+            this.chitiet_gia.ColumnEdit = this.repositoryItemTextEdit2;
+            this.chitiet_gia.DisplayFormat.FormatString = "#,###";
+            this.chitiet_gia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.chitiet_gia.FieldName = "Mon.gia";
             this.chitiet_gia.Name = "chitiet_gia";
+            this.chitiet_gia.OptionsColumn.ReadOnly = true;
             this.chitiet_gia.Visible = true;
-            this.chitiet_gia.VisibleIndex = 2;
-            this.chitiet_gia.Width = 175;
+            this.chitiet_gia.VisibleIndex = 3;
+            this.chitiet_gia.Width = 141;
+            // 
+            // chitiet_donvi
+            // 
+            this.chitiet_donvi.Caption = "Đơn vị";
+            this.chitiet_donvi.FieldName = "Mon.DonVi.tendonvi";
+            this.chitiet_donvi.Name = "chitiet_donvi";
+            this.chitiet_donvi.OptionsColumn.ReadOnly = true;
+            this.chitiet_donvi.Visible = true;
+            this.chitiet_donvi.VisibleIndex = 2;
+            this.chitiet_donvi.Width = 82;
             // 
             // chitiet_thanhtien
             // 
             this.chitiet_thanhtien.Caption = "Thành tiền";
+            this.chitiet_thanhtien.ColumnEdit = this.repositoryItemTextEdit2;
+            this.chitiet_thanhtien.DisplayFormat.FormatString = "#,###";
+            this.chitiet_thanhtien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.chitiet_thanhtien.FieldName = "thanhtien";
             this.chitiet_thanhtien.Name = "chitiet_thanhtien";
+            this.chitiet_thanhtien.OptionsColumn.ReadOnly = true;
             this.chitiet_thanhtien.Visible = true;
-            this.chitiet_thanhtien.VisibleIndex = 3;
-            this.chitiet_thanhtien.Width = 177;
+            this.chitiet_thanhtien.VisibleIndex = 4;
+            this.chitiet_thanhtien.Width = 155;
             // 
             // chitiet_btnXoa
             // 
@@ -328,8 +376,8 @@
             this.chitiet_btnXoa.ColumnEdit = this.btnXoa;
             this.chitiet_btnXoa.Name = "chitiet_btnXoa";
             this.chitiet_btnXoa.Visible = true;
-            this.chitiet_btnXoa.VisibleIndex = 4;
-            this.chitiet_btnXoa.Width = 50;
+            this.chitiet_btnXoa.VisibleIndex = 5;
+            this.chitiet_btnXoa.Width = 64;
             // 
             // btnXoa
             // 
@@ -355,31 +403,31 @@
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(322, 120);
+            this.dateEdit1.Location = new System.Drawing.Point(325, 120);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(335, 20);
+            this.dateEdit1.Size = new System.Drawing.Size(333, 20);
             this.dateEdit1.StyleController = this.layoutControl2;
             this.dateEdit1.TabIndex = 7;
             // 
             // txt_idHoadon
             // 
-            this.txt_idHoadon.Location = new System.Drawing.Point(322, 72);
+            this.txt_idHoadon.Location = new System.Drawing.Point(325, 72);
             this.txt_idHoadon.Name = "txt_idHoadon";
             this.txt_idHoadon.Properties.ReadOnly = true;
-            this.txt_idHoadon.Size = new System.Drawing.Size(335, 20);
+            this.txt_idHoadon.Size = new System.Drawing.Size(333, 20);
             this.txt_idHoadon.StyleController = this.layoutControl2;
             this.txt_idHoadon.TabIndex = 4;
             // 
             // txt_Ban
             // 
-            this.txt_Ban.Location = new System.Drawing.Point(322, 96);
+            this.txt_Ban.Location = new System.Drawing.Point(325, 96);
             this.txt_Ban.Name = "txt_Ban";
             this.txt_Ban.Properties.ReadOnly = true;
-            this.txt_Ban.Size = new System.Drawing.Size(335, 20);
+            this.txt_Ban.Size = new System.Drawing.Size(333, 20);
             this.txt_Ban.StyleController = this.layoutControl2;
             this.txt_Ban.TabIndex = 5;
             // 
@@ -402,9 +450,9 @@
             this.layoutControlGroup4,
             this.layoutControlGroup5,
             this.layoutControlGroup8});
-            this.layoutControlGroup6.Location = new System.Drawing.Point(227, 0);
+            this.layoutControlGroup6.Location = new System.Drawing.Point(230, 0);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
-            this.layoutControlGroup6.Size = new System.Drawing.Size(446, 495);
+            this.layoutControlGroup6.Size = new System.Drawing.Size(444, 495);
             this.layoutControlGroup6.Text = "Phiếu phục vụ";
             // 
             // layoutControlGroup4
@@ -415,7 +463,7 @@
             this.layoutControlItem4});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(422, 114);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(420, 114);
             this.layoutControlGroup4.Text = "Thông tin";
             // 
             // layoutControlItem1
@@ -423,7 +471,7 @@
             this.layoutControlItem1.Control = this.txt_idHoadon;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(398, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(396, 24);
             this.layoutControlItem1.Text = "Mã hóa đơn";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(56, 13);
             // 
@@ -432,7 +480,7 @@
             this.layoutControlItem2.Control = this.txt_Ban;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(398, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(396, 24);
             this.layoutControlItem2.Text = "Bàn";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(56, 13);
             // 
@@ -441,7 +489,7 @@
             this.layoutControlItem4.Control = this.dateEdit1;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(398, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(396, 24);
             this.layoutControlItem4.Text = "Ngày ";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(56, 13);
             // 
@@ -451,7 +499,7 @@
             this.layoutControlItem5});
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 114);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
-            this.layoutControlGroup5.Size = new System.Drawing.Size(422, 271);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(420, 271);
             this.layoutControlGroup5.Text = "Danh sách món đã gọi";
             // 
             // layoutControlItem5
@@ -459,7 +507,7 @@
             this.layoutControlItem5.Control = this.gridControl_ChitietHoaDon;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(398, 229);
+            this.layoutControlItem5.Size = new System.Drawing.Size(396, 229);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -471,13 +519,13 @@
             this.layoutControlItem8});
             this.layoutControlGroup8.Location = new System.Drawing.Point(0, 385);
             this.layoutControlGroup8.Name = "layoutControlGroup8";
-            this.layoutControlGroup8.Size = new System.Drawing.Size(422, 68);
+            this.layoutControlGroup8.Size = new System.Drawing.Size(420, 68);
             this.layoutControlGroup8.Text = "Thao tác";
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btn_ChuyenBan;
-            this.layoutControlItem6.Location = new System.Drawing.Point(134, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(133, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(131, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
@@ -486,9 +534,9 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnThanhToan;
-            this.layoutControlItem7.Location = new System.Drawing.Point(265, 0);
+            this.layoutControlItem7.Location = new System.Drawing.Point(264, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(133, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(132, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -497,7 +545,7 @@
             this.layoutControlItem8.Control = this.btnNhanBan;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(134, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(133, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -505,9 +553,9 @@
             // 
             this.layoutControlGroup7.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem10});
-            this.layoutControlGroup7.Location = new System.Drawing.Point(673, 0);
+            this.layoutControlGroup7.Location = new System.Drawing.Point(674, 0);
             this.layoutControlGroup7.Name = "layoutControlGroup7";
-            this.layoutControlGroup7.Size = new System.Drawing.Size(299, 495);
+            this.layoutControlGroup7.Size = new System.Drawing.Size(298, 495);
             this.layoutControlGroup7.Text = "Thực Đơn";
             // 
             // layoutControlItem10
@@ -515,7 +563,7 @@
             this.layoutControlItem10.Control = this.gridControl_ThucDon;
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(275, 453);
+            this.layoutControlItem10.Size = new System.Drawing.Size(274, 453);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
@@ -525,7 +573,7 @@
             this.layoutControlItem9});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(227, 495);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(230, 495);
             this.layoutControlGroup3.Text = "Danh sách bàn";
             // 
             // layoutControlItem9
@@ -533,7 +581,7 @@
             this.layoutControlItem9.Control = this.lvBan;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(203, 453);
+            this.layoutControlItem9.Size = new System.Drawing.Size(206, 453);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -558,9 +606,11 @@
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_ThucDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_ThucDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnThemMon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_ChitietHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_ChitietHoaDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnXoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
@@ -617,7 +667,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private System.Windows.Forms.ImageList imageList1;
         private DevExpress.XtraGrid.Columns.GridColumn thucdon_tenmon;
-        private DevExpress.XtraGrid.Columns.GridColumn thucdon_tenviettat;
+        private DevExpress.XtraGrid.Columns.GridColumn thucdon_donvi;
         private DevExpress.XtraGrid.Columns.GridColumn thucdon_gia;
         private DevExpress.XtraGrid.Columns.GridColumn thucdon_Thembutton;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnThemMon;
@@ -632,5 +682,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn chitiet_idhoadon;
         private DevExpress.XtraGrid.Columns.GridColumn chitiet_idmon;
         private DevExpress.XtraEditors.TextEdit txt_Ban;
+        private DevExpress.XtraGrid.Columns.GridColumn chitiet_donvi;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
     }
 }

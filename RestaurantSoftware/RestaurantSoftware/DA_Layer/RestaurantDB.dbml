@@ -256,6 +256,7 @@
   </Table>
   <Table Name="dbo.ThamSo" Member="ThamSos">
     <Type Name="ThamSo">
+      <Column Name="id_thamso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenthamso" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="giatri" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>

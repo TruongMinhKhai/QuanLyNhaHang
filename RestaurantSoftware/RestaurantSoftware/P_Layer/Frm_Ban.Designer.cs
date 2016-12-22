@@ -192,6 +192,7 @@
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.gridControl1_ProcessGridKey);
             // 
             // gridView1
             // 
@@ -202,9 +203,16 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm dòng mới tại đây...";
+            this.gridView1.OptionsBehavior.KeepGroupExpandedOnSorting = false;
+            this.gridView1.OptionsCustomization.AllowFilter = false;
+            this.gridView1.OptionsCustomization.AllowSort = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
+            this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
             // 
             // col_TenBan
             // 
@@ -215,6 +223,7 @@
             this.col_TenBan.Caption = "Tên Bàn(*)";
             this.col_TenBan.FieldName = "tenban";
             this.col_TenBan.Name = "col_TenBan";
+            this.col_TenBan.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenBan.Visible = true;
             this.col_TenBan.VisibleIndex = 0;
             // 
@@ -228,6 +237,7 @@
             this.col_LoaiBan.ColumnEdit = this.lue_LoaiBan;
             this.col_LoaiBan.FieldName = "id_loaiban";
             this.col_LoaiBan.Name = "col_LoaiBan";
+            this.col_LoaiBan.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_LoaiBan.Visible = true;
             this.col_LoaiBan.VisibleIndex = 1;
             // 
@@ -256,6 +266,7 @@
             this.col_TrangThai.ColumnEdit = this.lue_TrangThai;
             this.col_TrangThai.FieldName = "trangthai";
             this.col_TrangThai.Name = "col_TrangThai";
+            this.col_TrangThai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TrangThai.Visible = true;
             this.col_TrangThai.VisibleIndex = 2;
             // 

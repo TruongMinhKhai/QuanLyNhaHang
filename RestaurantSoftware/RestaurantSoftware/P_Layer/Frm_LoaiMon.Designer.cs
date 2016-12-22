@@ -195,6 +195,7 @@
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.gridControl1_ProcessGridKey);
             // 
             // gridView1
             // 
@@ -205,16 +206,21 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm loại món mới ở đây...";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsCustomization.AllowFilter = false;
+            this.gridView1.OptionsCustomization.AllowSort = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
             this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.OptionsPrint.ExpandAllDetails = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.PaintStyleName = "Office2003";
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_TenLoaiMon, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated_1);
+            this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
             // 
             // col_STT
             // 
@@ -224,6 +230,7 @@
             this.col_STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_STT.Caption = "Stt";
             this.col_STT.Name = "col_STT";
+            this.col_STT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_STT.OptionsColumn.ReadOnly = true;
             this.col_STT.Visible = true;
             this.col_STT.VisibleIndex = 0;
@@ -237,6 +244,7 @@
             this.col_TenLoaiMon.Caption = "Tên loại món (*)";
             this.col_TenLoaiMon.FieldName = "tenloaimon";
             this.col_TenLoaiMon.Name = "col_TenLoaiMon";
+            this.col_TenLoaiMon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenLoaiMon.Visible = true;
             this.col_TenLoaiMon.VisibleIndex = 1;
             // 

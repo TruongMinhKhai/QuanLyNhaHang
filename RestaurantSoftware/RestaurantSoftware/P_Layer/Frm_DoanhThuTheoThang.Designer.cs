@@ -256,7 +256,7 @@
             // documentViewer1
             // 
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            //this.documentViewer1.DocumentSource = typeof(RestaurantSoftware.P_Layer.Reports.DoanhThuTheoThang);
+            this.documentViewer1.DocumentSource = typeof(RestaurantSoftware.P_Layer.Reports.DoanhThuTheoThang);
             this.documentViewer1.IsMetric = false;
             this.documentViewer1.Location = new System.Drawing.Point(0, 141);
             this.documentViewer1.Name = "documentViewer1";

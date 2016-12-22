@@ -96,6 +96,9 @@ namespace RestaurantSoftware.DA_Layer
     partial void InsertSuCo(SuCo instance);
     partial void UpdateSuCo(SuCo instance);
     partial void DeleteSuCo(SuCo instance);
+    partial void InsertThamSo(ThamSo instance);
+    partial void UpdateThamSo(ThamSo instance);
+    partial void DeleteThamSo(ThamSo instance);
     #endregion
 		
 		public RestaurantDBDataContext() : 
@@ -5659,15 +5662,52 @@ namespace RestaurantSoftware.DA_Layer
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ThamSo")]
-	public partial class ThamSo
+	public partial class ThamSo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_thamso;
 		
 		private string _tenthamso;
 		
 		private System.Nullable<int> _giatri;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_thamsoChanging(int value);
+    partial void Onid_thamsoChanged();
+    partial void OntenthamsoChanging(string value);
+    partial void OntenthamsoChanged();
+    partial void OngiatriChanging(System.Nullable<int> value);
+    partial void OngiatriChanged();
+    #endregion
+		
 		public ThamSo()
 		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_thamso", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_thamso
+		{
+			get
+			{
+				return this._id_thamso;
+			}
+			set
+			{
+				if ((this._id_thamso != value))
+				{
+					this.Onid_thamsoChanging(value);
+					this.SendPropertyChanging();
+					this._id_thamso = value;
+					this.SendPropertyChanged("id_thamso");
+					this.Onid_thamsoChanged();
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenthamso", DbType="NVarChar(50)")]
@@ -5681,7 +5721,11 @@ namespace RestaurantSoftware.DA_Layer
 			{
 				if ((this._tenthamso != value))
 				{
+					this.OntenthamsoChanging(value);
+					this.SendPropertyChanging();
 					this._tenthamso = value;
+					this.SendPropertyChanged("tenthamso");
+					this.OntenthamsoChanged();
 				}
 			}
 		}
@@ -5697,8 +5741,32 @@ namespace RestaurantSoftware.DA_Layer
 			{
 				if ((this._giatri != value))
 				{
+					this.OngiatriChanging(value);
+					this.SendPropertyChanging();
 					this._giatri = value;
+					this.SendPropertyChanged("giatri");
+					this.OngiatriChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

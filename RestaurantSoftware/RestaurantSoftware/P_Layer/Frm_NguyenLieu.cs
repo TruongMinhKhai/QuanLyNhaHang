@@ -85,6 +85,7 @@ namespace RestaurantSoftware.P_Layer
             {
                 Notifications.Error("Bạn chưa nhập đầy đủ thông tin hàng hoá. Vui lòng nhập lại");
             }
+
         }
         //hàm kiểm tra một hàng trong gridview
         private bool KiemTraHang()

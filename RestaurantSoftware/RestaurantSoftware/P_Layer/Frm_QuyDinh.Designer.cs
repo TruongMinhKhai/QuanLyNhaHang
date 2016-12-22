@@ -151,6 +151,7 @@
             this.gv_QuyDinh.GroupCount = 1;
             this.gv_QuyDinh.Name = "gv_QuyDinh";
             this.gv_QuyDinh.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gv_QuyDinh.OptionsBehavior.Editable = false;
             this.gv_QuyDinh.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gv_QuyDinh.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_NgayLap, DevExpress.Data.ColumnSortOrder.Ascending)});

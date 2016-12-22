@@ -202,6 +202,32 @@ namespace RestaurantSoftware.P_Layer
             }
         }
 
+        private void gridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            GridView view = sender as GridView;
+            Point p = view.GridControl.PointToClient(MousePosition);
+            GridHitInfo info = view.CalcHitInfo(p);
+            if (info.HitTest == GridHitTest.Column)
+            {
+                LoadDataSource();
+            }
+        }
+
+        private void gridControl1_ProcessGridKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle
+                && gridView1.FocusedColumn == gridView1.Columns["diachi"])
+            {
+                btn_Them.PerformClick();
+            }
+            if (e.KeyCode == Keys.Tab && this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle
+                && gridView1.FocusedColumn == gridView1.Columns["diachi"])
+            {
+                gridView1.SelectRow(gridView1.FocusedRowHandle);
+                gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            }
+        }
+
         
     }
 }
