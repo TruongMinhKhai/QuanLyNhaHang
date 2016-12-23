@@ -13,10 +13,12 @@ namespace RestaurantSoftware.BL_Layer
     public class NhapHang_BLL
     {
         RestaurantDBDataContext dbContext = null;
+        private int ID = 0;
         // hàm khởi tạo lớp nhập hàng
         public NhapHang_BLL()
         {
             dbContext = new RestaurantDBDataContext();
+            ID = LayID();
         }
         // load trạng thái
         public void LoadTrangThai(List<string> list, string str)
@@ -157,28 +159,28 @@ namespace RestaurantSoftware.BL_Layer
             grc.DataSource = query;    
         }
         // Lấy id
-        public string LayIdNhapHang()
+        public int LayID()
         {
-            int id = 0;
-            string maPhieuNhap = "";
             var query = from hd in dbContext.HoaDonNhapHangs
                         select hd;
-            foreach(var row in query){
-                id = row.id_nhaphang;
-            }
-            if(id < 10){
-                maPhieuNhap = "PN000" + id;
-            }else if(id > 10 && id < 100){
-                maPhieuNhap = "PN00" + id;
-            }
-            else if(id > 99 && id < 1000){
-                maPhieuNhap = "PN0" + id;
-            }
-            else
+            //ID = query.Count();
+            foreach (var row in query)
             {
-                maPhieuNhap = "PN" + id;
+                ID = row.id_nhaphang;
             }
-            return maPhieuNhap;
+            return ID;
+        }
+        //Hien thi ID
+        public string HienThiID(int ID)
+        {
+            string ID_NHAPHANG = "";
+            if (ID < 10)
+                ID_NHAPHANG = "PN000" + ID;
+            else if (ID > 9 && ID < 100)
+                ID_NHAPHANG = "PN00" + ID;
+            else if (ID > 99 && ID < 1000)
+                ID_NHAPHANG = "PN" + ID;
+            return ID_NHAPHANG;
         }
         // lấy tên nhà cung cấp
         public void LoadNhaCungCap(string tenhanghoa, TextEdit txtNhaCungCap)
@@ -224,9 +226,10 @@ namespace RestaurantSoftware.BL_Layer
                         where cthd.id_nhaphang == ct.id_nhaphang && cthd.id_hanghoa == ct.id_hanghoa
                         select cthd;
             foreach(var cthd in query){
-                cthd.soluong = ct.soluong;
+                // cập nhật chi tiết phiếu nhập
+                cthd.soluong += ct.soluong;
                 cthd.dongia = ct.dongia;
-                cthd.thanhtien = ct.thanhtien;
+                cthd.thanhtien += ct.thanhtien;
             }
             dbContext.SubmitChanges();
         }
@@ -283,6 +286,8 @@ namespace RestaurantSoftware.BL_Layer
                 row.id_nhacungcap = hd.id_nhacungcap;
                 row.id_nhanvien = hd.id_nhanvien;
                 row.thoigian = hd.thoigian;
+                row.thue = hd.thue;
+                row.tongtien = hd.tongtien;
             }
             dbContext.SubmitChanges();
         }
@@ -299,6 +304,8 @@ namespace RestaurantSoftware.BL_Layer
                         select cthd;
             foreach(var row in query){
                 row.HangHoa.soluong += row.soluong;
+                decimal dongia =(decimal) ((row.HangHoa.dongia * row.HangHoa.soluong + row.soluong * row.dongia) /(row.HangHoa.soluong + row.soluong));
+                row.HangHoa.dongia = dongia;
             }
             dbContext.SubmitChanges();
         }

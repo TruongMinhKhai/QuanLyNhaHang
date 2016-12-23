@@ -124,7 +124,7 @@ namespace RestaurantSoftware.P_Layer
         {
              string error = "";
             bool isUpdate = false;
-            if (_listUpdate.Count > 1)
+            if (_listUpdate.Count > 0)
             {
                 foreach (int id in _listUpdate)
                 {
