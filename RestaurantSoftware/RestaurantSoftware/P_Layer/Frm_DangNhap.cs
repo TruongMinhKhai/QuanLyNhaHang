@@ -19,6 +19,7 @@ namespace RestaurantSoftware.P_Layer
         private DangNhap_BLL _dangnhap_Bll = new DangNhap_BLL();
         public delegate void Login(string username, string pass);
         public event Login LoginEvent;
+        bool check = false;
         public Frm_DangNhap()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace RestaurantSoftware.P_Layer
                     Notifications.Error("Đăng nhập thất bại!");
                     this.Close();
                 }
+                check = true;
                 Notifications.Success("Đăng nhập thành công!");
                 this.Close();
             }
@@ -53,7 +55,7 @@ namespace RestaurantSoftware.P_Layer
 
         private void Frm_DangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (_dangnhap_Bll.KiemTraQuyen(txt_TenTaiKhoan.Text.ToString(), txt_MatKhau.Text.ToString()))
+            if (_dangnhap_Bll.KiemTraQuyen(txt_TenTaiKhoan.Text.ToString(), txt_MatKhau.Text.ToString()) && check == true)
             {
             }
             else

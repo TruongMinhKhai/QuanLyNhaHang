@@ -204,11 +204,15 @@ namespace RestaurantSoftware.P_Layer
                 if(ischuyenban == true)
                 {
                     //sửa hóa đơn: id_ban
-                    if(idhoadonSelected != 0)
+                    if(idhoadonSelected != 0 || trangthaibanSelected == ttban[2])
                     {
                         MessageBox.Show("Xin chọn bàn trống");
                         ischuyenban = false;
                         SetEnableControl(true);
+                        if (trangthaibanSelected == ttban[2])
+                        {
+                            btn_ChuyenBan.Enabled = false;
+                        }
                         return;
                     }
                     else
@@ -297,6 +301,10 @@ namespace RestaurantSoftware.P_Layer
                 }
                 double dongia = double.Parse(gridView_ChitietHoaDon.GetFocusedRowCellValue("Mon.gia").ToString());
                 double thanhtien = soluong * dongia;
+                if (thanhtien == Convert.ToDouble(gridView_ChitietHoaDon.GetFocusedRowCellValue("thanhtien")))
+                {
+                    return;
+                }
                 gridView_ChitietHoaDon.SetFocusedRowCellValue("thanhtien", thanhtien);
                 phucvubll.UpdateDatabase();
                 MessageBox.Show("Đã thay đổi");

@@ -12,19 +12,28 @@ namespace RestaurantSoftware.BL_Layer
     public class DatBan_BLL
     {
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
-        public IQueryable<Ban> LayDanhSachBan(DateTime ngaydat)
+        public IQueryable<Ban> LayDanhSachBan(DateTime ngaydat, List<string> ttdatban, List<string> tthoadon)
         {
-            var query = from ban in dbContext.Bans
-                        where
-                          !
-                            (from DatBans in dbContext.DatBans
-                             where
-                               DatBans.thoigian == ngaydat.Date
-                             select new
-                             {
-                                 DatBans.id_ban
-                             }).Contains(new { id_ban = (System.Int32?)ban.id_ban })
-                        select ban;
+            //var query = from ban in dbContext.Bans
+            //            where 
+            //              !
+            //                (from DatBans in dbContext.DatBans
+            //                 where
+            //                   (DatBans.thoigian == ngaydat.Date && DatBans.trangthai == ttdatban[0])
+            //                 select new
+            //                 {
+            //                     DatBans.id_ban
+            //                 }).Contains(new { id_ban = (System.Int32?)ban.id_ban })
+            //            select ban;
+
+            var query = from b in dbContext.Bans
+                    where
+                        !
+                        ((from db in dbContext.DatBans where db.thoigian == ngaydat && db.trangthai == ttdatban[0] select new { db.id_ban })
+                        .Union(from hd in dbContext.HoaDonThanhToans where hd.thoigian == ngaydat && hd.trangthai == tthoadon[0] select new { hd.id_ban }))
+                        .Contains(new { id_ban = (System.Int32?)b.id_ban })
+                    select b;
+
             return query;
         }
 
@@ -85,12 +94,11 @@ namespace RestaurantSoftware.BL_Layer
             dbContext.DatBans.InsertOnSubmit(db);
             dbContext.SubmitChanges();
         }
-        public void LoadChiTietDatBan(string TenBan, DateTime ngaydat, GridControl grid)
+        public void LoadChiTietDatBan(int iddatban,GridControl grid)
         {
             var query = from ct in dbContext.Chitiet_DatBans
                         where
-                          ct.DatBan.Ban.tenban == TenBan &&
-                          ct.DatBan.thoigian == ngaydat.Date
+                          ct.id_datban == iddatban
                         select ct;
                         //select new
                         //{

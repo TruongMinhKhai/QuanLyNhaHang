@@ -221,6 +221,11 @@ namespace RestaurantSoftware.P_Layer
 
         private void gridControl1_MouseDown(object sender, MouseEventArgs e)
         {
+            
+        }
+
+        private void gridView1_MouseDown(object sender, MouseEventArgs e)
+        {
             GridView view = sender as GridView;
             Point p = view.GridControl.PointToClient(MousePosition);
             GridHitInfo info = view.CalcHitInfo(p);
