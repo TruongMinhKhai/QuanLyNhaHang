@@ -54,7 +54,8 @@ namespace RestaurantSoftware.P_Layer
             gridView1.PostEditor();
             if (KiemTraHang())
             {
-                if (!_ban_Bll.KiemTraBanTonTai(gridView1.GetFocusedRowCellValue(col_TenBan).ToString()))
+                string TenBan = gridView1.GetFocusedRowCellValue(col_TenBan).ToString();
+                if (_ban_Bll.KiemTraBanTonTai(TenBan) != -1)
                 {
                     try
                     {
@@ -62,9 +63,19 @@ namespace RestaurantSoftware.P_Layer
                         ban.tenban = gridView1.GetFocusedRowCellValue(col_TenBan).ToString();
                         ban.id_loaiban = int.Parse(gridView1.GetFocusedRowCellValue(col_LoaiBan).ToString());
                         ban.trangthai = gridView1.GetFocusedRowCellValue(col_TrangThai).ToString();
-                        _ban_Bll.ThemBanMoi(ban);
+                        if (_ban_Bll.KiemTraBanTonTai(TenBan) == 1)
+                        {
+                            _ban_Bll.ThemBanMoi(ban);
+                        }
+                        else
+                        {
+                            ban.id_ban = _ban_Bll.LayIdBan(TenBan);
+                            _ban_Bll.CapNhatBan(ban);
+                        }
                         Notifications.Success("Thêm bàn mới thành công!");
                         LoadDataSource();
+                        btn_LuuLai.Enabled = false;
+                        _listUpdate.Clear();
                     }
                     catch (Exception)
                     {
@@ -115,15 +126,16 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
-            if (_listUpdate.Count > 1)
+            if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
                     Ban ban = new Ban();
+                    ban.id_ban = int.Parse(gridView1.GetRowCellValue(id, "id_ban").ToString());
                     ban.tenban = gridView1.GetRowCellValue(id, "tenban").ToString();
                     ban.id_loaiban = int.Parse(gridView1.GetRowCellValue(id, "id_loaiban").ToString());
                     ban.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
 
-                    if (!_ban_Bll.KiemTraBanTonTai(ban.tenban,ban.id_ban))
+                    if (_ban_Bll.KiemTraBanTonTai(ban.tenban,ban.id_ban) == 1)
                     {
                         _ban_Bll.CapNhatBan(ban);
                         isUpdate = true;

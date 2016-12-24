@@ -61,16 +61,28 @@ namespace RestaurantSoftware.P_Layer
             //gridView1.UpdateCurrentRow(); 
             if (KiemTraHang())
             {
-                if (!_loaimon_Bll.KiemTraLoaiMonTonTai(gridView1.GetFocusedRowCellValue(col_TenLoaiMon).ToString()))
+                string TenLoaiMon = gridView1.GetFocusedRowCellValue(col_TenLoaiMon).ToString();
+                if (_loaimon_Bll.KiemTraLoaiMonTonTai(TenLoaiMon) != -1)
                 {
                     try
                     {
                         LoaiMon Lm = new LoaiMon();
                         Lm.tenloaimon = gridView1.GetFocusedRowCellValue(col_TenLoaiMon).ToString();
                         Lm.trangthai = true;
-                        _loaimon_Bll.ThemLoaiMon(Lm);
-                        Notifications.Success("Thêm loại món mới thành công!");
+                        if (_loaimon_Bll.KiemTraLoaiMonTonTai(TenLoaiMon) == 1)
+                        {
+                            _loaimon_Bll.ThemLoaiMon(Lm);
+                        }
+                        else
+                        {
+                            Lm.id_loaimon = _loaimon_Bll.LayIdLoaiMon(TenLoaiMon);
+                            _loaimon_Bll.CapNhatLoaiMon(Lm);
+                        }
+                        
+                        Notifications.Success("Thêm món mới thành công!");
                         LoadDataSource();
+                        btn_Luu.Enabled = false;
+                        _listUpdate.Clear();
                     }
                     catch (Exception)
                     {
@@ -107,7 +119,7 @@ namespace RestaurantSoftware.P_Layer
                     loaimon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
                     loaimon.tenloaimon = gridView1.GetRowCellValue(id, "tenloaimon").ToString();
                     
-                    if (!_loaimon_Bll.KiemTraLoaiMonTonTai(loaimon.tenloaimon,loaimon.id_loaimon))
+                    if (_loaimon_Bll.KiemTraLoaiMonTonTai(loaimon.tenloaimon,loaimon.id_loaimon) == 1)
                     {
                         _loaimon_Bll.CapNhatLoaiMon(loaimon);
                         isUpdate = true;

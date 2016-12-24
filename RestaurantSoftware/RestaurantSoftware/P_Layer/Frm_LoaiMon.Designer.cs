@@ -235,8 +235,9 @@
             this.col_STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_STT.Caption = "Stt";
             this.col_STT.Name = "col_STT";
+            this.col_STT.OptionsColumn.AllowEdit = false;
             this.col_STT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.col_STT.OptionsColumn.ReadOnly = true;
+            this.col_STT.OptionsColumn.TabStop = false;
             this.col_STT.OptionsEditForm.StartNewRow = true;
             this.col_STT.Visible = true;
             this.col_STT.VisibleIndex = 0;

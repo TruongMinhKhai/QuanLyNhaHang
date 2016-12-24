@@ -34,7 +34,7 @@ namespace RestaurantSoftware.BL_Layer
             // update 
             dbContext.SubmitChanges();
         }
-        public bool KiemTraTenMonTonTai(string _tenMon, int id = -1)
+        public int KiemTraTenMonTonTai(string _tenMon, int id = -1)
         {
             IEnumerable<Mon> query = from m in dbContext.Mons
                                      where m.tenmon == _tenMon
@@ -46,12 +46,16 @@ namespace RestaurantSoftware.BL_Layer
                     query = query.Where(m => m.id_mon == id);
                     if (query.Count() == 1)
                     {
-                        return false;
+                        return 1;
                     }
                 }
-                return true;
+                if (query.Where(y => y.trangthai.Equals("Delete")).Count() > 0)
+                {
+                    return 0;
+                }
+                return -1;
             }
-            return false;
+            return 1;
         }
 
         public int LayIdMon(string TenMon)

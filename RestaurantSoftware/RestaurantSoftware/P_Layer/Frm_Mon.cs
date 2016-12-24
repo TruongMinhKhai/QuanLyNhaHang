@@ -56,7 +56,8 @@ namespace RestaurantSoftware.P_Layer
             gridView1.PostEditor();
             if (KiemTraHang())
             {
-                if (!_monBll.KiemTraTenMonTonTai(gridView1.GetFocusedRowCellValue(col_TenMon).ToString()))
+                string tenmon = gridView1.GetFocusedRowCellValue(col_TenMon).ToString();
+                if (_monBll.KiemTraTenMonTonTai(tenmon) != -1)
                 {
                     try
                     {
@@ -67,9 +68,19 @@ namespace RestaurantSoftware.P_Layer
                         mon.trangthai = gridView1.GetFocusedRowCellValue(col_TrangThai).ToString();
                         mon.gia = decimal.Parse(gridView1.GetFocusedRowCellValue(col_Gia).ToString());
                         mon.id_donvi = int.Parse(gridView1.GetFocusedRowCellValue(col_DonVi).ToString());
-                        _monBll.ThemMonMoi(mon);
+                        if(_monBll.KiemTraTenMonTonTai(tenmon) == 1)
+                        {
+                            _monBll.ThemMonMoi(mon);
+                        }
+                        else
+                        {
+                            mon.id_mon = _monBll.LayIdMon(tenmon);
+                            _monBll.CapNhatMon(mon);
+                        }
                         Notifications.Success("Thêm món mới thành công!");
                         LoadDataSource();
+                        btn_Luu.Enabled = false;
+                        _listUpdate.Clear();
                     }
                     catch (Exception)
                     {
@@ -156,11 +167,12 @@ namespace RestaurantSoftware.P_Layer
                     mon.gia = decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
                     mon.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
                     mon.id_donvi = int.Parse(gridView1.GetRowCellValue(id, "id_donvi").ToString());
-                    
-                    if (!_monBll.KiemTraTenMonTonTai(mon.tenmon, mon.id_mon))
+
+                    if (_monBll.KiemTraTenMonTonTai(mon.tenmon, mon.id_mon) == 1)
                     {
                         _monBll.CapNhatMon(mon);
                         isUpdate = true;
+                        btn_Luu.Enabled = false;
                     }
                     else
                     {
@@ -189,7 +201,6 @@ namespace RestaurantSoftware.P_Layer
             {
                 Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên món đã tồn tại.");
             }
-            btn_Luu.Enabled = false;
             LoadDataSource();
         }
 
