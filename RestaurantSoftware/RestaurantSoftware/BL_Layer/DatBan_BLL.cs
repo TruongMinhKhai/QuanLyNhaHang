@@ -74,6 +74,7 @@ namespace RestaurantSoftware.BL_Layer
                         {
                             db.id_datban,
                             db.Ban.tenban,
+                            db.Ban.id_ban,
                             db.trangthai,
                             db.thoigian,
                             db.NhanVien.tennhanvien,
@@ -168,6 +169,20 @@ namespace RestaurantSoftware.BL_Layer
                 q.id_ban = db.id_ban;
                 q.id_khachhang = db.id_khachhang;
                 q.thoigian = db.thoigian;
+                q.tiencoc = db.tiencoc;
+            }
+            dbContext.SubmitChanges();
+        }
+        public void SuaTienCoc(DatBan db)
+        {
+            var query =
+                from datban in dbContext.DatBans
+                where
+                  datban.id_datban == db.id_datban
+                select datban;
+            foreach (var q in query)
+            {
+                q.tiencoc = db.tiencoc;
             }
             dbContext.SubmitChanges();
         }

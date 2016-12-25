@@ -20,6 +20,7 @@ namespace RestaurantSoftware.P_Layer
         DatBan_BLL datban_bll = new DatBan_BLL();
         List<string> ttdatban = new List<string>();
         int iddatbanSelected = 0;
+        int idbanSelected = 0;
         IQueryable<Ban> ban;
         List<string> ttban = new List<string>();
         List<string> tthoadon = new List<string>();
@@ -186,6 +187,7 @@ namespace RestaurantSoftware.P_Layer
             {
                 txtBan.Text = lvDsBan.SelectedItems[0].Text;
                 iddatbanSelected = 0;
+                idbanSelected = Convert.ToInt32(lvDsBan.SelectedItems[0].Name);
                 btnThemMoi.Enabled = true;
             }
 
@@ -243,11 +245,13 @@ namespace RestaurantSoftware.P_Layer
             MessageBox.Show("Thêm phiếu đặt thành công");
             LoadDsBan();
             LoadDsDatBan();
+            LoadChiTietDatBan();
         }
 
         private void gridView_DsDatBan_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             iddatbanSelected = Convert.ToInt32(gridView_DsDatBan.GetFocusedRowCellValue("id_datban"));
+            idbanSelected = Convert.ToInt32(gridView_DsDatBan.GetFocusedRowCellValue(id_ban));
             dtNgayDat.DateTime = (DateTime)gridView_DsDatBan.GetRowCellValue(e.RowHandle, "thoigian");
             txtBan.Text = gridView_DsDatBan.GetRowCellValue(e.RowHandle, "tenban").ToString();
             cbxKhachHang.Properties.ValueMember = "tenkh";
@@ -260,6 +264,7 @@ namespace RestaurantSoftware.P_Layer
                 btnSuaPhieu.Enabled = false;
                 btnThemMoi.Enabled = false;
                 xoachitiet.Visible = false;
+                ctdb_soluong.OptionsColumn.ReadOnly = true;
                 them.Visible = false;
             }
             else
@@ -267,6 +272,7 @@ namespace RestaurantSoftware.P_Layer
                 btnSuaPhieu.Enabled = true;
                 btn_Xoachitiet.ReadOnly = false;
                 xoachitiet.Visible = true;
+                ctdb_soluong.OptionsColumn.ReadOnly = false;
                 them.Visible = true;
             }
         }
@@ -311,15 +317,7 @@ namespace RestaurantSoftware.P_Layer
                     DatBan db = new DatBan();
                     db.id_datban = int.Parse(gridView_DsDatBan.GetFocusedRowCellValue(id_datban).ToString());
                     db.id_khachhang = (int)cbxKhachHang.EditValue;
-                    if (lvDsBan.SelectedItems.Count > 0)
-                    {
-                        db.id_ban = Convert.ToInt16(lvDsBan.SelectedItems[0].Name);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xin chọn Bàn");
-                        return;
-                    }
+                    db.id_ban = idbanSelected;
                     db.thoigian = dtNgayDat.DateTime;
                     db.tiencoc = Convert.ToDecimal(txtDatCoc.EditValue);
                     datban_bll.SuaPhieuDatBan(db);
@@ -399,6 +397,14 @@ namespace RestaurantSoftware.P_Layer
         {
             Frm_InPhieuDatBan pdb = new Frm_InPhieuDatBan(iddatbanSelected);
             pdb.Show();
+        }
+
+        private void txtTamTinh_EditValueChanged(object sender, EventArgs e)
+        {
+            DatBan datban = new DatBan();
+            datban.id_datban = iddatbanSelected;
+            datban.tiencoc = Convert.ToDecimal(txtDatCoc.EditValue);
+            datban_bll.SuaTienCoc(datban);
         }
     }
 }

@@ -303,6 +303,7 @@
             this.chitiet_idmon});
             this.gridView_ChitietHoaDon.GridControl = this.gridControl_ChitietHoaDon;
             this.gridView_ChitietHoaDon.Name = "gridView_ChitietHoaDon";
+            this.gridView_ChitietHoaDon.OptionsView.ShowGroupPanel = false;
             this.gridView_ChitietHoaDon.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView_ChitietHoaDon_RowUpdated);
             // 
             // chitiet_tenmon
