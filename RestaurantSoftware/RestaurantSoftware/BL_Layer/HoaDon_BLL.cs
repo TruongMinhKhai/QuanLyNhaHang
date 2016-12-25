@@ -18,7 +18,7 @@ namespace RestaurantSoftware.BL_Layer
             var query = from db in dbContext.HoaDonThanhToans
                         join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
                         join bn in dbContext.Bans on db.id_ban equals bn.id_ban
-                        where db.trangthai == "Đã thanh toán"
+                        where !(db.trangthai == "Chưa thanh toán")
                         select new
                         {
                             db.id_hoadon,

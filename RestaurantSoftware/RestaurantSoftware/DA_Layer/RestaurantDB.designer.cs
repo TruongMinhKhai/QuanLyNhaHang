@@ -102,7 +102,7 @@ namespace RestaurantSoftware.DA_Layer
     #endregion
 		
 		public RestaurantDBDataContext() : 
-				base(global::RestaurantSoftware.Properties.Settings.Default.nhahang_dbConnectionString1, mappingSource)
+				base(global::RestaurantSoftware.Properties.Settings.Default.nhahang_dbConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
