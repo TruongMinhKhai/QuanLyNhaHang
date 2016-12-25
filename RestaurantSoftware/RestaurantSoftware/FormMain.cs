@@ -258,7 +258,7 @@ namespace RestaurantSoftware
             }
             else
             {
-                P_Layer.Frm_QuanLyNhapHang QuanLyNhapHang = new P_Layer.Frm_QuanLyNhapHang();
+                P_Layer.Frm_QuanLyNhapHang QuanLyNhapHang = new P_Layer.Frm_QuanLyNhapHang(idnv, tennv);
                 QuanLyNhapHang.MdiParent = this;
                 QuanLyNhapHang.Show();
             }

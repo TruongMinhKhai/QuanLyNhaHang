@@ -12,6 +12,8 @@ using RestaurantSoftware.BL_Layer;
 using RestaurantSoftware.DA_Layer;
 using DevExpress.XtraGrid;
 using RestaurantSoftware.Utils;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace RestaurantSoftware.P_Layer
 {
@@ -23,9 +25,11 @@ namespace RestaurantSoftware.P_Layer
         public Frm_NhaCungCap()
         {
             InitializeComponent();
+            RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
             dt = new DataTable();
             _nccBLL = new NhaCungCap_BLL();
             _listUpdate = new List<int>();
+            lue_TrangThai.DataSource = dbContext.TrangThais.Where(trangthai => trangthai.lienket == "nhacungcap");
         }
         //Xử lý sự kiện load của form nhà cung cấp
         private void Frm_NhaCungCap_Load(object sender, EventArgs e)
@@ -55,6 +59,7 @@ namespace RestaurantSoftware.P_Layer
                     ncc.diachi = gridView1.GetFocusedRowCellValue(col_SoDienThoai).ToString();
                     ncc.sdt = gridView1.GetFocusedRowCellValue(col_SoDienThoai).ToString();
                     ncc.ghichu = gridView1.GetFocusedRowCellValue(col_GhiChu).ToString();
+                    ncc.trangthai = gridView1.GetFocusedRowCellValue(col_TrangThai).ToString();
                     _nccBLL.ThemNhaCungCapMoi(ncc);
                     Notifications.Success("Thêm nhà cung cấp thành công");
                     LoadNhaCungCap();
@@ -73,7 +78,7 @@ namespace RestaurantSoftware.P_Layer
         private bool KiemTraHang()
         {
             if (gridView1.GetFocusedRowCellValue(col_TenNhaCungCap) != null || gridView1.GetFocusedRowCellValue(col_DiaChi) != null
-                || gridView1.GetFocusedRowCellValue(col_SoDienThoai) != null || gridView1.GetFocusedRowCellValue(col_GhiChu) != null)
+                || gridView1.GetFocusedRowCellValue(col_SoDienThoai) != null || gridView1.GetFocusedRowCellValue(col_TrangThai) != null )
             {
                 return true;
             }
@@ -84,36 +89,18 @@ namespace RestaurantSoftware.P_Layer
         {
             for (int i = 0; i < gridView1.SelectedRowsCount; i++)
             {
-                if (gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "trangthai").Equals("Không"))
+                int _ID_NhaCungCap = int.Parse(gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "id_nhacungcap").ToString());
+                if (_nccBLL.KiemTraThongTin(_ID_NhaCungCap))
                 {
-                    if (Notifications.Answers("Bạn thật sự có muốn xóa dữ liệu không") == DialogResult.Cancel)
-                    {
-                        return;
-                    }
-                    int _ID_Mon = int.Parse(gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "id_nhacungcap").ToString());
-                    _nccBLL.XoaNhaCungCap(_ID_Mon);
-                    Notifications.Success("Bạn xóa thành công");
+                    _nccBLL.XoaTam(_ID_NhaCungCap); // xóa tạm
                 }
                 else
                 {
-                    Notifications.Success("Bạn không được phép xoá");
+                    _nccBLL.XoaNhaCungCap(_ID_NhaCungCap);
                 }
-               
             }
+            Notifications.Success("Xóa dữ liệu thành công!");
             LoadNhaCungCap();
-        }
-        // xử lý khi update dữ liệu trên hàng
-        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
-        {
-            if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
-            {
-                btn_Luu.Enabled = true;
-                _listUpdate.Add(e.RowHandle);
-            }
-            else
-            {
-                btn_Luu.Enabled = false;
-            }
         }
         // xử lý làm mới nhà cung cấp
         private void btn_LamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -155,6 +142,7 @@ namespace RestaurantSoftware.P_Layer
                     ncc.diachi = gridView1.GetRowCellValue(id, "diachi").ToString();
                     ncc.sdt = gridView1.GetRowCellValue(id, "sdt").ToString();
                     ncc.ghichu = gridView1.GetRowCellValue(id, "ghichu").ToString();
+                    ncc.trangthai = gridView1.GetRowCellValue(id,"trangthai").ToString();
                     if (!_nccBLL.KiemTraNhaCungCapTonTai(ncc.tennhacungcap, ncc.id_nhacungcap))
                     {
                         _nccBLL.CapNhatNhaCungCap(ncc);
@@ -188,8 +176,57 @@ namespace RestaurantSoftware.P_Layer
             {
                 Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên nhà cung cấp đã tồn tại.");
             }
+            btn_Luu.Enabled = true;
+            LoadNhaCungCap();
         }
-       
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            btn_Xoa.Enabled = false;
+            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Xoa.Enabled = true;
+            }
+        }
+        
+        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Luu.Enabled = true;
+                _listUpdate.Add(e.RowHandle);
+            }
+            else
+            {
+                btn_Luu.Enabled = false;
+            }
+        }
+
+        private void grc_NhaCungCap_ProcessGridKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle
+               && gridView1.FocusedColumn == gridView1.Columns["trangthai"])
+            {
+                btn_Them.PerformClick();
+            }
+            if (e.KeyCode == Keys.Tab && this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle
+                && gridView1.FocusedColumn == gridView1.Columns["trangthai"])
+            {
+                gridView1.SelectRow(gridView1.FocusedRowHandle);
+                gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            }
+        }
+
+        private void gridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            GridView view = sender as GridView;
+            Point p = view.GridControl.PointToClient(MousePosition);
+            GridHitInfo info = view.CalcHitInfo(p);
+            if (info.HitTest == GridHitTest.Column)
+            {
+                LoadNhaCungCap();
+            }
+        }
+
        
     }
 }
