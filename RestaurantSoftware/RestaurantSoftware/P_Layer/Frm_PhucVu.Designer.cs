@@ -417,6 +417,7 @@
             // 
             this.txt_idHoadon.Location = new System.Drawing.Point(325, 72);
             this.txt_idHoadon.Name = "txt_idHoadon";
+            this.txt_idHoadon.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.txt_idHoadon.Properties.ReadOnly = true;
             this.txt_idHoadon.Size = new System.Drawing.Size(333, 20);
             this.txt_idHoadon.StyleController = this.layoutControl2;

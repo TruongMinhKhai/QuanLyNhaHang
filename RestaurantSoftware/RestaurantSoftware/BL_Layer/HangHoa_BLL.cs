@@ -22,14 +22,9 @@ namespace RestaurantSoftware.BL_Layer
         // hàm lấy danh sách hàng hóa
         public IEnumerable<HangHoa> LayDanhSachHangHoa()
         {
-            IEnumerable<HangHoa> query = from hh in dbContext.HangHoas select hh;
-            return query;
-        }
-        // hàm lấy danh sách hàng hoá theo id nha cung cap
-        public IEnumerable<HangHoa> LayDanhSachHangHoa(int _NhaCungCapID)
-        {
-            IEnumerable<HangHoa> query = from m in dbContext.HangHoas
-                                         select m;
+            IEnumerable<HangHoa> query = from hh in dbContext.HangHoas 
+                                         where hh.trangthai != "Xoa"
+                                         select hh;
             return query;
         }
 
@@ -77,15 +72,29 @@ namespace RestaurantSoftware.BL_Layer
             return false;
         }
         // hàm xóa hàng hóa
+        public bool KiemTraThongTin(int _HangHoaID)
+        {
+            IEnumerable<Chitiet_HoaDonNhapHang> _KiemTraHangHoa = from db in dbContext.Chitiet_HoaDonNhapHangs
+                                                         where db.id_hanghoa == _HangHoaID
+                                                         select db;
+            if (_KiemTraHangHoa.Count() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void XoaTam(int _HangHoaID)
+        {
+            HangHoa _hanghoa = dbContext.HangHoas.Single<HangHoa>(x=>x.id_hanghoa == _HangHoaID);
+            _hanghoa.trangthai = "Xoa";
+            // update 
+            dbContext.SubmitChanges();
+        }
         public void XoaHangHoa(int _HangHoaID)
         {
-            Chitiet_HoaDonNhapHang[] array = (_nhaphangBll.LayDanhSachChiTietDonHang(_HangHoaID)).ToArray();
-            foreach (var row in array)
-            {
-                _nhaphangBll.XoaChiTietHoaDonNhapHang(row.id_ctnhaphang);
-            }
-            HangHoa _HangHoa = dbContext.HangHoas.Single<HangHoa>(x => x.id_hanghoa == _HangHoaID);
-            dbContext.HangHoas.DeleteOnSubmit(_HangHoa);
+            HangHoa _hanghoa = dbContext.HangHoas.Single<HangHoa>(x=>x.id_hanghoa == _HangHoaID);
+            dbContext.HangHoas.DeleteOnSubmit(_hanghoa);
             dbContext.SubmitChanges();
         }
         // hàm lấy danh sách hàng hóa tồn

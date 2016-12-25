@@ -46,16 +46,20 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.grc_NhaCungCap = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.col_STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TenNhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col_DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_SoDienThoai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_GhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col_SoThuTu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lue_TrangThai = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.lue_Status = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grc_NhaCungCap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_TrangThai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_Status)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -108,6 +112,7 @@
             // btn_Xoa
             // 
             this.btn_Xoa.Caption = "Xóa";
+            this.btn_Xoa.Enabled = false;
             this.btn_Xoa.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Glyph")));
             this.btn_Xoa.Id = 1;
             this.btn_Xoa.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.LargeGlyph")));
@@ -117,6 +122,7 @@
             // btn_Luu
             // 
             this.btn_Luu.Caption = "Lưu";
+            this.btn_Luu.Enabled = false;
             this.btn_Luu.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Luu.Glyph")));
             this.btn_Luu.Id = 2;
             this.btn_Luu.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Luu.LargeGlyph")));
@@ -146,14 +152,14 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(684, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(716, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 261);
-            this.barDockControlBottom.Size = new System.Drawing.Size(684, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(716, 0);
             // 
             // barDockControlLeft
             // 
@@ -166,7 +172,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(684, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(716, 24);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 237);
             // 
             // barEditItem1
@@ -199,32 +205,55 @@
             this.grc_NhaCungCap.MainView = this.gridView1;
             this.grc_NhaCungCap.MenuManager = this.barManager1;
             this.grc_NhaCungCap.Name = "grc_NhaCungCap";
-            this.grc_NhaCungCap.Size = new System.Drawing.Size(684, 237);
+            this.grc_NhaCungCap.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.lue_Status,
+            this.lue_TrangThai});
+            this.grc_NhaCungCap.Size = new System.Drawing.Size(716, 237);
             this.grc_NhaCungCap.TabIndex = 4;
             this.grc_NhaCungCap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.grc_NhaCungCap.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.grc_NhaCungCap_ProcessGridKey);
             // 
             // gridView1
             // 
-            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.col_SoThuTu,
+            this.col_STT,
             this.col_TenNhaCungCap,
             this.col_SoDienThoai,
             this.col_DiaChi,
             this.col_GhiChu,
             this.col_TrangThai});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.grc_NhaCungCap;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm dòng mới tại đây...";
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsCustomization.AllowSort = false;
             this.gridView1.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsFilter.AllowColumnMRUFilterList = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
             this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
+            this.gridView1.OptionsPrint.ExpandAllDetails = true;
+            this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
-            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.PaintStyleName = "Office2003";
+            this.gridView1.SynchronizeClones = false;
+            this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
+            this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
+            this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
+            // 
+            // col_STT
+            // 
+            this.col_STT.AppearanceCell.Options.UseTextOptions = true;
+            this.col_STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_STT.Caption = "STT";
+            this.col_STT.Name = "col_STT";
+            this.col_STT.OptionsColumn.ReadOnly = true;
             // 
             // col_TenNhaCungCap
             // 
@@ -232,23 +261,12 @@
             this.col_TenNhaCungCap.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_TenNhaCungCap.AppearanceHeader.Options.UseTextOptions = true;
             this.col_TenNhaCungCap.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_TenNhaCungCap.Caption = "Tên nhà cung cấp";
+            this.col_TenNhaCungCap.Caption = "Tên nhà cung cấp(*)";
             this.col_TenNhaCungCap.FieldName = "tennhacungcap";
             this.col_TenNhaCungCap.Name = "col_TenNhaCungCap";
+            this.col_TenNhaCungCap.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenNhaCungCap.Visible = true;
             this.col_TenNhaCungCap.VisibleIndex = 0;
-            // 
-            // col_DiaChi
-            // 
-            this.col_DiaChi.AppearanceCell.Options.UseTextOptions = true;
-            this.col_DiaChi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_DiaChi.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_DiaChi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_DiaChi.Caption = "Địa chỉ";
-            this.col_DiaChi.FieldName = "diachi";
-            this.col_DiaChi.Name = "col_DiaChi";
-            this.col_DiaChi.Visible = true;
-            this.col_DiaChi.VisibleIndex = 1;
             // 
             // col_SoDienThoai
             // 
@@ -256,11 +274,25 @@
             this.col_SoDienThoai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_SoDienThoai.AppearanceHeader.Options.UseTextOptions = true;
             this.col_SoDienThoai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_SoDienThoai.Caption = "Số điện thoại";
+            this.col_SoDienThoai.Caption = "Số điện thoại(*)";
             this.col_SoDienThoai.FieldName = "sdt";
             this.col_SoDienThoai.Name = "col_SoDienThoai";
+            this.col_SoDienThoai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_SoDienThoai.Visible = true;
-            this.col_SoDienThoai.VisibleIndex = 2;
+            this.col_SoDienThoai.VisibleIndex = 1;
+            // 
+            // col_DiaChi
+            // 
+            this.col_DiaChi.AppearanceCell.Options.UseTextOptions = true;
+            this.col_DiaChi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_DiaChi.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_DiaChi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_DiaChi.Caption = "Địa chỉ(*)";
+            this.col_DiaChi.FieldName = "diachi";
+            this.col_DiaChi.Name = "col_DiaChi";
+            this.col_DiaChi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col_DiaChi.Visible = true;
+            this.col_DiaChi.VisibleIndex = 2;
             // 
             // col_GhiChu
             // 
@@ -271,6 +303,7 @@
             this.col_GhiChu.Caption = "Ghi chú";
             this.col_GhiChu.FieldName = "ghichu";
             this.col_GhiChu.Name = "col_GhiChu";
+            this.col_GhiChu.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_GhiChu.Visible = true;
             this.col_GhiChu.VisibleIndex = 3;
             // 
@@ -280,29 +313,42 @@
             this.col_TrangThai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_TrangThai.AppearanceHeader.Options.UseTextOptions = true;
             this.col_TrangThai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_TrangThai.Caption = "Trạng thái";
+            this.col_TrangThai.Caption = "Trạng thái (*)";
+            this.col_TrangThai.ColumnEdit = this.lue_TrangThai;
             this.col_TrangThai.FieldName = "trangthai";
             this.col_TrangThai.Name = "col_TrangThai";
-            this.col_TrangThai.Visible = true;
-            this.col_TrangThai.VisibleIndex = 4;
+            this.col_TrangThai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             // 
-            // col_SoThuTu
+            // lue_TrangThai
             // 
-            this.col_SoThuTu.AppearanceCell.Options.UseTextOptions = true;
-            this.col_SoThuTu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_SoThuTu.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_SoThuTu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_SoThuTu.Caption = "Số thứ tự";
-            this.col_SoThuTu.FieldName = "id_nhacungcap";
-            this.col_SoThuTu.Name = "col_SoThuTu";
-            this.col_SoThuTu.Visible = true;
-            this.col_SoThuTu.VisibleIndex = 0;
+            this.lue_TrangThai.AutoHeight = false;
+            this.lue_TrangThai.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_TrangThai.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tentrangthai", "Trạng thái", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            this.lue_TrangThai.DisplayMember = "tentrangthai";
+            this.lue_TrangThai.Name = "lue_TrangThai";
+            this.lue_TrangThai.NullText = "Xin chọn trạng thái ở đây...";
+            this.lue_TrangThai.ValueMember = "tentrangthai";
+            // 
+            // lue_Status
+            // 
+            this.lue_Status.AutoHeight = false;
+            this.lue_Status.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_Status.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tentrangthai", "Trạng Thái", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Center)});
+            this.lue_Status.DisplayMember = "tentrangthai";
+            this.lue_Status.Name = "lue_Status";
+            this.lue_Status.NullText = "[Xin chọn trạng thái món...]";
+            this.lue_Status.ShowHeader = false;
+            this.lue_Status.ValueMember = "tentrangthai";
             // 
             // Frm_NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 261);
+            this.ClientSize = new System.Drawing.Size(716, 261);
             this.Controls.Add(this.grc_NhaCungCap);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -315,6 +361,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grc_NhaCungCap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_TrangThai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_Status)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,7 +390,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_DiaChi;
         private DevExpress.XtraGrid.Columns.GridColumn col_SoDienThoai;
         private DevExpress.XtraGrid.Columns.GridColumn col_GhiChu;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_Status;
         private DevExpress.XtraGrid.Columns.GridColumn col_TrangThai;
-        private DevExpress.XtraGrid.Columns.GridColumn col_SoThuTu;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_TrangThai;
+        private DevExpress.XtraGrid.Columns.GridColumn col_STT;
     }
 }

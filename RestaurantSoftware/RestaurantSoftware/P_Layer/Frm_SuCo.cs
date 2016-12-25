@@ -19,9 +19,11 @@ namespace RestaurantSoftware.P_Layer
         DataTable dt = new DataTable();
         private SuCo_BLL _sucoBLL = new SuCo_BLL();
         private List<int> _listUpdate = new List<int>();
+        DateTime today = DateTime.Today;
         FormMain fr = new FormMain();
         string kt = "Them";
         int ID_NHANVIEN = 0;
+        int idSuCoSelected = 0;
         public Frm_SuCo(int idnv)
         {
             InitializeComponent();
@@ -73,26 +75,45 @@ namespace RestaurantSoftware.P_Layer
             txt_SoDienThoai.Text = row["sdt"].ToString();
             txt_DiaChi.Text = row["diachi"].ToString();
         }
-
+        public void ReLoadSuCo()
+        {
+            int c = Convert.ToInt32(cmb_TenKhachHang.EditValue);
+            var query = _sucoBLL.LoadSuCo(txt_TenSuCo.Text, today,c);
+                foreach(var i in query)
+                {
+                    idSuCoSelected = i.id_suco;
+                    txt_MaSuCo.Text = i.id_suco.ToString();
+                }
+        }
         private void btn_Luu_Click(object sender, EventArgs e)
         {
             if (kt == "Them")
             {
-                SuCo qd = new SuCo();
-                qd.tensuco = txt_TenSuCo.Text;
-                qd.id_nhanvien = (int)cmb_NhanVienLap.EditValue;
-                qd.ngaylap = dt_NgayLap.DateTime;
-                qd.noidung = rxt_NoiDung.Text;
-                qd.id_khachhang = (int)cmb_TenKhachHang.EditValue;
-                _sucoBLL.ThemSuCo(qd);
-                Notifications.Answers("Thêm thành công!");
-                LoadDataSource();
+                if (txt_TenSuCo.Text != "")
+                {
+                    SuCo qd = new SuCo();
+                    qd.tensuco = txt_TenSuCo.Text;
+                    qd.id_nhanvien = (int)cmb_NhanVienLap.EditValue;
+                    qd.ngaylap = dt_NgayLap.DateTime;
+                    qd.noidung = rxt_NoiDung.Text;
+                    qd.id_khachhang = (int)cmb_TenKhachHang.EditValue;
+                    _sucoBLL.ThemSuCo(qd);
+                    Notifications.Answers("Thêm thành công!");
+                    ReLoadSuCo();
+                    LoadDataSource();
+                }
+                else
+                    Notifications.Answers("Bạn chưa nhập tên sự cố.");
+
+                
 
 
             }
             else
                 if (kt == "Sua")
                 {
+                    if (txt_TenSuCo.Text != "")
+                    {
                     SuCo qd = new SuCo();
                     qd.id_suco = int.Parse(txt_MaSuCo.Text);
                     qd.tensuco = txt_TenSuCo.Text;
@@ -104,24 +125,34 @@ namespace RestaurantSoftware.P_Layer
                     Notifications.Answers("Sửa thành công!");
                     LoadDataSource();
 
+                   }
+                    else
+                        Notifications.Answers("Bạn chưa nhập tên sự cố.");
 
-                }
+              }
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xóa sự cố này!", "THÔNG BÁO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            if (dlr == DialogResult.Yes)
-            {
-                _sucoBLL.XoaSuCo(int.Parse(txt_MaSuCo.Text));
-                Notifications.Answers("Xóa thành công!");
-                btn_LamMoi_Click(sender, e);
-                LoadDataSource();
+             DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xóa sự cố này!", "THÔNG BÁO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (dlr == DialogResult.Yes)
+                {
+                    try
+                    {
+               
+                            _sucoBLL.XoaSuCo(int.Parse(txt_MaSuCo.Text));
+                            Notifications.Answers("Xóa thành công!");
+                            btn_LamMoi_Click(sender, e);
+                            LoadDataSource();
+                    }
+                    catch (Exception)
+                    {
 
-            }
-            else
-                Notifications.Answers("Xóa không thành công!");
-
+                        Notifications.Answers("Bạn chưa chọn sự cố để xóa");
+                    }
+                }
+                else
+                    Notifications.Answers("Xóa không thành công!");
            
         }
 
@@ -138,8 +169,17 @@ namespace RestaurantSoftware.P_Layer
 
         private void btn_In_Click(object sender, EventArgs e)
         {
-            PrintfSuCo sc = new PrintfSuCo(int.Parse(txt_MaSuCo.Text));
-            sc.Show();
+            try
+            {
+                PrintfSuCo sc = new PrintfSuCo(int.Parse(txt_MaSuCo.Text));
+                sc.Show();
+            }
+            catch (Exception)
+            {
+                
+                Notifications.Answers(" Bạn chưa chọn sự cố để in");
+            }
+           
         }
     }
 }

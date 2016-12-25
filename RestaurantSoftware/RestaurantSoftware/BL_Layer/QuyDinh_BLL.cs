@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraGrid;
 using RestaurantSoftware.DA_Layer;
+using RestaurantSoftware.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +26,33 @@ namespace RestaurantSoftware.BL_Layer
                         };
             grid.DataSource = query;
         }
+        public IQueryable<QuyDinh> LoadQuyDinh(string ten)
+        {
+            var query = from sc in dbContext.QuyDinhs
+                        where sc.tenquydinh == ten
+                        select sc;
+            return query;
+        }
+        public IQueryable<QuyDinh> KiemTraQuyDinh()
+        {
+            var query = from sc in dbContext.QuyDinhs
+                        select sc;
+            return query;
+        }
         public void ThemQuyDinh(QuyDinh quydinh)
         {
-            dbContext.QuyDinhs.InsertOnSubmit(quydinh);
-            dbContext.SubmitChanges();
+            try
+            {
+                dbContext.QuyDinhs.InsertOnSubmit(quydinh);
+                dbContext.SubmitChanges();
+            }
+            catch (Exception)
+            {
+
+                Notifications.Answers("Bạn hãy kiểm tra lại, tên quy định không được trùng nhau.");
+
+            }
+          
         }
         public void CapNhatQuyDinh(QuyDinh m)
         {

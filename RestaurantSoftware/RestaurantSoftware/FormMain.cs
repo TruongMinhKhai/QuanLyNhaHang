@@ -20,6 +20,8 @@ namespace RestaurantSoftware
         string tennv ="";
         int? capdo = 0;
         string chucvu = "";
+        string matkhau = "";
+        
         RestaurantSoftware.DA_Layer.RestaurantDBDataContext dbContext = new DA_Layer.RestaurantDBDataContext();
         public FormMain()
         {
@@ -34,9 +36,9 @@ namespace RestaurantSoftware
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            //P_Layer.Frm_DangNhap dangnhap = new P_Layer.Frm_DangNhap();
-            //dangnhap.LoginEvent += dangnhap_LoginEvent;
-            //dangnhap.ShowDialog();
+            P_Layer.Frm_DangNhap dangnhap = new P_Layer.Frm_DangNhap();
+            dangnhap.LoginEvent += dangnhap_LoginEvent;
+            dangnhap.ShowDialog();
         }
 
         void dangnhap_LoginEvent(string username, string pass)
@@ -51,6 +53,7 @@ namespace RestaurantSoftware
                 capdo = i.PhanQuyen.capdo;
                 chucvu = i.PhanQuyen.tenquyen;
             }
+            matkhau = pass;
             tenNguoiDung.Caption += ": " + tennv;
             chucVu.Caption += " " + chucvu;
             PhanQuyen();
@@ -61,6 +64,7 @@ namespace RestaurantSoftware
             if(capdo == 1) //thu ngan
             {
                 nghiepvu.Visible = true;
+                btn_HoaDon.Enabled = false;
                 hethong.Visible = false;
                 baocaothongke.Visible = false;
                 quanlyhethong.Visible = false;
@@ -254,7 +258,7 @@ namespace RestaurantSoftware
             }
             else
             {
-                P_Layer.Frm_QuanLyNhapHang QuanLyNhapHang = new P_Layer.Frm_QuanLyNhapHang();
+                P_Layer.Frm_QuanLyNhapHang QuanLyNhapHang = new P_Layer.Frm_QuanLyNhapHang(idnv, tennv);
                 QuanLyNhapHang.MdiParent = this;
                 QuanLyNhapHang.Show();
             }
@@ -417,6 +421,12 @@ namespace RestaurantSoftware
                 ThamSo.MdiParent = this;
                 ThamSo.Show();
             }
+        }
+
+        private void navBarItem3_LinkPressed(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            P_Layer.Frm_DoiMatKhau doimatkhau = new P_Layer.Frm_DoiMatKhau(idnv,matkhau);
+            doimatkhau.Show();
         }
     }
 }

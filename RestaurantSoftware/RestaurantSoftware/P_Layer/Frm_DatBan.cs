@@ -11,16 +11,18 @@ using DevExpress.XtraEditors;
 using RestaurantSoftware.BL_Layer;
 using RestaurantSoftware.Utils;
 using RestaurantSoftware.DA_Layer;
+using DevExpress.XtraGrid;
 
 namespace RestaurantSoftware.P_Layer
 {
     public partial class Frm_DatBan : DevExpress.XtraEditors.XtraForm
     {
         DatBan_BLL datban_bll = new DatBan_BLL();
-        List<string> trangthaiDatBan = new List<string>();
+        List<string> ttdatban = new List<string>();
         int iddatbanSelected = 0;
         IQueryable<Ban> ban;
         List<string> ttban = new List<string>();
+        List<string> tthoadon = new List<string>();
         double giatrithamso;
         int ID_NHANVIEN = 1;
 
@@ -33,15 +35,16 @@ namespace RestaurantSoftware.P_Layer
         {
             //dtNgayDat.DateTime = DateTime.Now;
             
-            datban_bll.LoadTrangThai(trangthaiDatBan, "datban");
+            datban_bll.LoadTrangThai(ttdatban, "datban");
             datban_bll.LoadTrangThai(ttban, "ban");
+            datban_bll.LoadTrangThai(tthoadon, "hoadon");
             giatrithamso = datban_bll.LoadThamSo("datcoc");
         }
         public void LoadDsBan()
         {
             lvDsBan.Clear();
             lvDsBan.LargeImageList = imageList1;
-            ban = datban_bll.LayDanhSachBan(dtNgayDat.DateTime);
+            ban = datban_bll.LayDanhSachBan(dtNgayDat.DateTime,ttdatban,tthoadon);
             foreach (var dr in ban)
             {
                 bool exsistGroup = false;
@@ -107,7 +110,7 @@ namespace RestaurantSoftware.P_Layer
         }
         public void LoadChiTietDatBan()
         {
-            datban_bll.LoadChiTietDatBan(txtBan.Text, dtNgayDat.DateTime, gridControl_ChiTietDatBan);
+            datban_bll.LoadChiTietDatBan(iddatbanSelected,gridControl_ChiTietDatBan);
             double a = Convert.ToDouble(gridView_ChiTietDatBan.Columns["thanhtien"].SummaryItem.SummaryValue);
             txtTamTinh.Text = a.ToString();
             txtDatCoc.Text = Convert.ToString(a * giatrithamso / 100); //70% tien tam tinh
@@ -229,7 +232,8 @@ namespace RestaurantSoftware.P_Layer
             db.id_khachhang = (int)cbxKhachHang.EditValue;
             db.id_nhanvien = ID_NHANVIEN;
             db.thoigian = dtNgayDat.DateTime.Date;
-            db.trangthai = trangthaiDatBan[0]; //0.chờ  1.nhận  2.hủy
+            db.trangthai = ttdatban[0]; //0.chờ  1.nhận  2.hủy
+            db.tiencoc = Convert.ToDecimal(txtDatCoc.EditValue);
             datban_bll.ThemMoiPhieuDatBan(db);
             IQueryable<DatBan> query = datban_bll.LoadPhieuDatBan(db.id_ban, db.thoigian);
             foreach(var i in query)
@@ -243,18 +247,33 @@ namespace RestaurantSoftware.P_Layer
 
         private void gridView_DsDatBan_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
+            iddatbanSelected = Convert.ToInt32(gridView_DsDatBan.GetFocusedRowCellValue("id_datban"));
             dtNgayDat.DateTime = (DateTime)gridView_DsDatBan.GetRowCellValue(e.RowHandle, "thoigian");
             txtBan.Text = gridView_DsDatBan.GetRowCellValue(e.RowHandle, "tenban").ToString();
-            iddatbanSelected = int.Parse(gridView_DsDatBan.GetRowCellValue(gridView_DsDatBan.FocusedRowHandle, "id_datban").ToString());
             cbxKhachHang.Properties.ValueMember = "tenkh";
             cbxKhachHang.EditValue = gridView_DsDatBan.GetRowCellValue(e.RowHandle, "tenkh").ToString();
             cbxKhachHang.Properties.ValueMember = "id_khachhang";
             btnThemMoi.Enabled = false;
+            LoadChiTietDatBan();
+            if(gridView_DsDatBan.GetFocusedRowCellValue("trangthai").ToString() != ttdatban[0])
+            {
+                btnSuaPhieu.Enabled = false;
+                btnThemMoi.Enabled = false;
+                xoachitiet.Visible = false;
+                them.Visible = false;
+            }
+            else
+            {
+                btnSuaPhieu.Enabled = true;
+                btn_Xoachitiet.ReadOnly = false;
+                xoachitiet.Visible = true;
+                them.Visible = true;
+            }
         }
 
         private void txtBan_EditValueChanged(object sender, EventArgs e)
         {
-            LoadChiTietDatBan();
+            
         }
 
         private void btn_Xoachitiet_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -302,7 +321,7 @@ namespace RestaurantSoftware.P_Layer
                         return;
                     }
                     db.thoigian = dtNgayDat.DateTime;
-                    db.tiencoc = int.Parse(txtDatCoc.Text);
+                    db.tiencoc = Convert.ToDecimal(txtDatCoc.EditValue);
                     datban_bll.SuaPhieuDatBan(db);
                     MessageBox.Show("Sửa phiếu thành công");
                     LoadDsBan();
@@ -354,7 +373,7 @@ namespace RestaurantSoftware.P_Layer
         {
             try
             {
-                int soluong = int.Parse(gridView_ChiTietDatBan.GetFocusedRowCellValue("soluong").ToString());
+                int soluong = Convert.ToInt32(gridView_ChiTietDatBan.GetFocusedRowCellValue("soluong").ToString());
                 if (soluong <= 0)
                 {
                     MessageBox.Show("Số lượng > 0");
@@ -362,11 +381,15 @@ namespace RestaurantSoftware.P_Layer
                 }
                 double dongia = double.Parse(gridView_ChiTietDatBan.GetFocusedRowCellValue("Mon.gia").ToString());
                 double thanhtien = soluong * dongia;
+                if(thanhtien == Convert.ToDouble(gridView_ChiTietDatBan.GetFocusedRowCellValue("thanhtien")))
+                {
+                    return;
+                }
                 gridView_ChiTietDatBan.SetFocusedRowCellValue("thanhtien", thanhtien);
                 datban_bll.UpdateDatabase();
                 MessageBox.Show("Đã thay đổi");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

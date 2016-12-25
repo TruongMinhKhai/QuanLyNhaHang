@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="nhahang_db" Class="RestaurantDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Security=True" SettingsObjectName="RestaurantSoftware.Properties.Settings" SettingsPropertyName="nhahang_dbConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=nhahang_db;Integrated Security=True" SettingsObjectName="RestaurantSoftware.Properties.Settings" SettingsPropertyName="nhahang_dbConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Ban" Member="Bans">
     <Type Name="Ban">
       <Column Name="id_ban" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -57,7 +57,6 @@
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="thanhtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="id_nhacungcap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HangHoa_Chitiet_HoaDonNhapHang" Member="HangHoa" ThisKey="id_hanghoa" OtherKey="id_hanghoa" Type="HangHoa" IsForeignKey="true" />
       <Association Name="HoaDonNhapHang_Chitiet_HoaDonNhapHang" Member="HoaDonNhapHang" ThisKey="id_nhaphang" OtherKey="id_nhaphang" Type="HoaDonNhapHang" IsForeignKey="true" />
     </Type>
@@ -94,6 +93,7 @@
       <Column Name="id_donvi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="tendonvi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="lienket" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="DonVi_HangHoa" Member="HangHoas" ThisKey="id_donvi" OtherKey="id_donvi" Type="HangHoa" />
       <Association Name="DonVi_Mon" Member="Mons" ThisKey="id_donvi" OtherKey="id_donvi" Type="Mon" />
     </Type>
@@ -106,6 +106,7 @@
       <Column Name="soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="dongia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="id_donvi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="HangHoa_Chitiet_HoaDonNhapHang" Member="Chitiet_HoaDonNhapHangs" ThisKey="id_hanghoa" OtherKey="id_hanghoa" Type="Chitiet_HoaDonNhapHang" />
       <Association Name="DonVi_HangHoa" Member="DonVi" ThisKey="id_donvi" OtherKey="id_donvi" Type="DonVi" IsForeignKey="true" />
       <Association Name="LoaiHangHoa_HangHoa" Member="LoaiHangHoa" ThisKey="id_loaihang" OtherKey="id_loaihang" Type="LoaiHangHoa" IsForeignKey="true" />
@@ -119,7 +120,10 @@
       <Column Name="thue" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tongtien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="trangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="id_nhacungcap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ghichu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="HoaDonNhapHang_Chitiet_HoaDonNhapHang" Member="Chitiet_HoaDonNhapHangs" ThisKey="id_nhaphang" OtherKey="id_nhaphang" Type="Chitiet_HoaDonNhapHang" />
+      <Association Name="NhaCungCap_HoaDonNhapHang" Member="NhaCungCap" ThisKey="id_nhacungcap" OtherKey="id_nhacungcap" Type="NhaCungCap" IsForeignKey="true" />
       <Association Name="NhanVien_HoaDonNhapHang" Member="NhanVien" ThisKey="id_nhanvien" OtherKey="id_nhanvien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
@@ -199,6 +203,8 @@
       <Column Name="sdt" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ghichu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="trangthai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NhaCungCap_HoaDonNhapHang" Member="HoaDonNhapHangs" ThisKey="id_nhacungcap" OtherKey="id_nhacungcap" Type="HoaDonNhapHang" />
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">

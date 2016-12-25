@@ -30,6 +30,9 @@ namespace RestaurantSoftware.P_Layer
          private void LoadDataSource()
         {
             HoaDon_Bll.LoadHoaDon(grv_HoaDon);
+            btn_Xoa.Enabled = false;
+            btn_in.Enabled = false;
+
         }
          private void Frm_HoaDon_Load(object sender, EventArgs e)
          {
@@ -79,6 +82,7 @@ namespace RestaurantSoftware.P_Layer
 
         private void gv_HoaDon_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
+            btn_in.Enabled = true;
             txt_TenKH.Text = "";
             txt_SDT.Text = "";
             txt_TenKH.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_khachHang);
@@ -93,22 +97,29 @@ namespace RestaurantSoftware.P_Layer
             txt_TongHoaDon.Text = temp.ToString("#,###");
             KiemtraTextBox();
             LoadChiTietHoaDon();
+            if (gv_HoaDon.GetFocusedRowCellDisplayText(col_TrangThai) == "Hủy")
+            {
+                btn_Xoa.Enabled = false;
+            }
+            else
+                btn_Xoa.Enabled = true;
+          
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn xóa hóa đơn này!", "THÔNG BÁO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn hủy hóa đơn này!", "THÔNG BÁO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
             {
                 HoaDonThanhToan qd = new HoaDonThanhToan();
                 qd.id_hoadon = int.Parse(txt_MaHoaDon.Text);
                 qd.trangthai = "Hủy";
                 HoaDon_Bll.CapNhatHoaDon(qd);
-                Notifications.Answers("Xóa thành công!");
+                Notifications.Answers("Hủy thành công!");
                 Frm_HoaDon_Load(sender, e);
             }
             else
-                Notifications.Answers("Xóa không thành công!");
+                Notifications.Answers("Hủy không thành công!");
 
            
         }

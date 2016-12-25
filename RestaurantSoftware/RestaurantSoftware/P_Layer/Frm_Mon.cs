@@ -227,9 +227,6 @@ namespace RestaurantSoftware.P_Layer
             gridView1.ShowEditor();
             btn_Luu.Enabled = false;
         }
-
-       
-
         private void btn_In_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
