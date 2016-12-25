@@ -35,7 +35,7 @@ namespace RestaurantSoftware.P_Layer
             // load dữ liệu đơn vị
             //lue_DonVi.DataSource = new RestaurantSoftware.DA_Layer.RestaurantDBDataContext().DonVis;
             lue_TrangThai.DataSource = db.TrangThais.Where(TrangThai => TrangThai.lienket == "hanghoa");
-            lue_DonVi.DataSource = db.TrangThais.Where(DonVi => DonVi.lienket == "hanghoa");
+            lue_DonVi.DataSource = db.DonVis.Where(DonVi => DonVi.lienket == "hanghoa");
         }
         private void Frm_NguyenLieu_Load(object sender, EventArgs e)
         {

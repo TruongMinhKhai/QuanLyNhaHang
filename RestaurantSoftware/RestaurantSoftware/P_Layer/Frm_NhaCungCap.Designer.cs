@@ -318,8 +318,6 @@
             this.col_TrangThai.FieldName = "trangthai";
             this.col_TrangThai.Name = "col_TrangThai";
             this.col_TrangThai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.col_TrangThai.Visible = true;
-            this.col_TrangThai.VisibleIndex = 4;
             // 
             // lue_TrangThai
             // 
