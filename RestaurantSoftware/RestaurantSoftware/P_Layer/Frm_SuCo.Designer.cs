@@ -338,6 +338,7 @@
             this.txt_MaSuCo.Enabled = false;
             this.txt_MaSuCo.Location = new System.Drawing.Point(418, 42);
             this.txt_MaSuCo.Name = "txt_MaSuCo";
+            this.txt_MaSuCo.Properties.ReadOnly = true;
             this.txt_MaSuCo.Size = new System.Drawing.Size(166, 20);
             this.txt_MaSuCo.StyleController = this.layoutControl1;
             this.txt_MaSuCo.TabIndex = 4;
@@ -418,7 +419,7 @@
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(255, 24);
-            this.layoutControlItem1.Text = "Mã sự cố";
+            this.layoutControlItem1.Text = "Mã sự cố*";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(82, 13);
             // 
             // layoutControlItem4

@@ -28,6 +28,8 @@ namespace RestaurantSoftware.BL_Layer
                             Tenban = bn.tenban,
                             Trangthai = bn.trangthai,
                             Tenloaiban = lb.tenloaiban,
+                            Datra = (int)db.datra
+
                         };
             return query;
         }
@@ -50,7 +52,7 @@ namespace RestaurantSoftware.BL_Layer
                             kh.sdt,
                             db.vat,
                             db.khuyenmai,
-                            datra = (decimal?)db.datra
+                            datra = (int?)db.datra
                         };
             gr.DataSource = query;
         }
@@ -134,19 +136,22 @@ namespace RestaurantSoftware.BL_Layer
             }
             
         }
-        public void loadid(int idban, string trangthai, TextEdit idhoadon, TextEdit kd)
+        public void loadid(int idban, string trangthai, TextEdit idhoadon, TextEdit dt)
         {
             var query = (from db in dbContext.HoaDonThanhToans
                         where db.id_ban == idban && db.trangthai==trangthai
                         select new
                         {
                             Idhoadon = db.id_hoadon,
+                            Datra = db.datra
                             
                         }).ToList();
           
             foreach (var id in query)
             {
                     idhoadon.EditValue = id.Idhoadon;
+                    dt.Text = id.Datra.ToString();
+
             }
             
             
@@ -162,6 +167,7 @@ namespace RestaurantSoftware.BL_Layer
             _qd.tongtien = m.tongtien;
             _qd.trangthai = m.trangthai;
             _qd.id_khachhang = m.id_khachhang;
+            _qd.datra = m.datra;
             // update 
             dbContext.SubmitChanges();
         }
