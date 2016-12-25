@@ -64,6 +64,8 @@ namespace RestaurantSoftware.P_Layer
                         _Nv_Bll.ThemNhanVien(nv);
                         Notifications.Success("Thêm nhân viên mới thành công!");
                         LoadDataSource();
+                        btn_Luu.Enabled = false;
+                        _listUpdate.Clear();
                     }
                     catch (Exception)
                     {

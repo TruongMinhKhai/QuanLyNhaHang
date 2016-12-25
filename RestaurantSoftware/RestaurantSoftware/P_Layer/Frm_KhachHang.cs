@@ -61,6 +61,8 @@ namespace RestaurantSoftware.P_Layer
                         Notifications.Success("Thêm khách hàng mới thành công!");
                         LoadDataSource();
                         btn_Luu.Enabled = false;
+                        btn_Luu.Enabled = false;
+                        _listUpdate.Clear();
                     }
                     catch (Exception)
                     {
