@@ -102,6 +102,7 @@
             // btn_Xoa
             // 
             this.btn_Xoa.Caption = "Xóa";
+            this.btn_Xoa.Enabled = false;
             this.btn_Xoa.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Glyph")));
             this.btn_Xoa.Id = 1;
             this.btn_Xoa.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.LargeGlyph")));
@@ -202,10 +203,12 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.col_STT,
             this.col_TenLoaiMon});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm loại món mới ở đây...";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.ImmediateUpdateRowPosition = false;
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsCustomization.AllowSort = false;
             this.gridView1.OptionsMenu.EnableColumnMenu = false;
@@ -215,10 +218,12 @@
             this.gridView1.OptionsPrint.ExpandAllDetails = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_TenLoaiMon, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated_1);
             this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
             // 
@@ -230,8 +235,10 @@
             this.col_STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_STT.Caption = "Stt";
             this.col_STT.Name = "col_STT";
+            this.col_STT.OptionsColumn.AllowEdit = false;
             this.col_STT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.col_STT.OptionsColumn.ReadOnly = true;
+            this.col_STT.OptionsColumn.TabStop = false;
+            this.col_STT.OptionsEditForm.StartNewRow = true;
             this.col_STT.Visible = true;
             this.col_STT.VisibleIndex = 0;
             // 
@@ -245,6 +252,7 @@
             this.col_TenLoaiMon.FieldName = "tenloaimon";
             this.col_TenLoaiMon.Name = "col_TenLoaiMon";
             this.col_TenLoaiMon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col_TenLoaiMon.OptionsFilter.AllowFilter = false;
             this.col_TenLoaiMon.Visible = true;
             this.col_TenLoaiMon.VisibleIndex = 1;
             // 

@@ -28,7 +28,7 @@ namespace RestaurantSoftware.P_Layer
         }
         private void LoadDanhSachPhieuNhapHang() {
             //RestaurantSoftware.Utils.Utils.ConvertToDataTable<NhapHang_BLL>(_nhaphangBLL.LayDanhSachPhieuNhap(gridControl1));
-            _nhaphangBLL.LayDanhSachPhieuNhap(grc_DanhSachPhieuNhap);
+            //_nhaphangBLL.LayDanhSachPhieuNhap(grc_DanhSachPhieuNhap);
         }
     }
 }

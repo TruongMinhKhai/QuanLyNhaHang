@@ -113,11 +113,7 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrintRibbonControllerResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
-    </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="P_Layer\Frm_Ban.cs">
@@ -348,10 +344,7 @@
     <None Include="DA_Layer\RestaurantDB.dbml.layout">
       <DependentUpon>RestaurantDB.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx" />
     <EmbeddedResource Include="P_Layer\Frm_ChartDoanhThuNam.resx">
       <DependentUpon>Frm_ChartDoanhThuNam.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,7 +399,9 @@
     <EmbeddedResource Include="P_Layer\Reports\ThongKeMonTheoNgay.resx">
       <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -432,9 +427,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_DatBan.resx">
       <DependentUpon>Frm_DatBan.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_HoaDon.resx">
       <DependentUpon>Frm_HoaDon.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_KhachHang.resx">
       <DependentUpon>Frm_KhachHang.cs</DependentUpon>
@@ -465,6 +462,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_PhucVu.resx">
       <DependentUpon>Frm_PhucVu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_QuanLyNhapHang.resx">
       <DependentUpon>Frm_QuanLyNhapHang.cs</DependentUpon>
@@ -506,6 +504,7 @@
     <None Include="Resources\table-do.png" />
     <Content Include="Resource\table-do.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

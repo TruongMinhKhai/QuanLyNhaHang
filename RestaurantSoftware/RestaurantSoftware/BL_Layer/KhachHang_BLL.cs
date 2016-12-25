@@ -47,7 +47,7 @@ namespace RestaurantSoftware.BL_Layer
         public bool KiemTraSDTTonTai(string sdt, int id = -1)
         {
             IEnumerable<KhachHang> query = from kh in dbContext.KhachHangs
-                                     where kh.sdt == sdt
+                                     where kh.sdt == sdt && kh.trangthai != false
                                      select kh;
             if (0 < query.Count() && query.Count() <= 2)
             {

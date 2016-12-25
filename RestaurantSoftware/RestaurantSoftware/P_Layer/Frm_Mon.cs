@@ -56,7 +56,8 @@ namespace RestaurantSoftware.P_Layer
             gridView1.PostEditor();
             if (KiemTraHang())
             {
-                if (!_monBll.KiemTraTenMonTonTai(gridView1.GetFocusedRowCellValue(col_TenMon).ToString()))
+                string tenmon = gridView1.GetFocusedRowCellValue(col_TenMon).ToString();
+                if (_monBll.KiemTraTenMonTonTai(tenmon) != -1)
                 {
                     try
                     {
@@ -67,9 +68,19 @@ namespace RestaurantSoftware.P_Layer
                         mon.trangthai = gridView1.GetFocusedRowCellValue(col_TrangThai).ToString();
                         mon.gia = decimal.Parse(gridView1.GetFocusedRowCellValue(col_Gia).ToString());
                         mon.id_donvi = int.Parse(gridView1.GetFocusedRowCellValue(col_DonVi).ToString());
-                        _monBll.ThemMonMoi(mon);
+                        if(_monBll.KiemTraTenMonTonTai(tenmon) == 1)
+                        {
+                            _monBll.ThemMonMoi(mon);
+                        }
+                        else
+                        {
+                            mon.id_mon = _monBll.LayIdMon(tenmon);
+                            _monBll.CapNhatMon(mon);
+                        }
                         Notifications.Success("Thêm món mới thành công!");
                         LoadDataSource();
+                        btn_Luu.Enabled = false;
+                        _listUpdate.Clear();
                     }
                     catch (Exception)
                     {
@@ -145,7 +156,7 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
-            if(_listUpdate.Count > 1)
+            if(_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
                     Mon mon = new Mon();
@@ -153,14 +164,15 @@ namespace RestaurantSoftware.P_Layer
                     mon.tenmon = gridView1.GetRowCellValue(id, "tenmon").ToString();
                     mon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
                     mon.tenviettat = gridView1.GetRowCellValue(id, "tenviettat").ToString();
-                    mon.gia = int.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
+                    mon.gia = decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
                     mon.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
                     mon.id_donvi = int.Parse(gridView1.GetRowCellValue(id, "id_donvi").ToString());
-                    
-                    if (!_monBll.KiemTraTenMonTonTai(mon.tenmon, mon.id_mon))
+
+                    if (_monBll.KiemTraTenMonTonTai(mon.tenmon, mon.id_mon) == 1)
                     {
                         _monBll.CapNhatMon(mon);
                         isUpdate = true;
+                        btn_Luu.Enabled = false;
                     }
                     else
                     {
@@ -189,7 +201,6 @@ namespace RestaurantSoftware.P_Layer
             {
                 Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên món đã tồn tại.");
             }
-            btn_Luu.Enabled = false;
             LoadDataSource();
         }
 
@@ -216,9 +227,6 @@ namespace RestaurantSoftware.P_Layer
             gridView1.ShowEditor();
             btn_Luu.Enabled = false;
         }
-
-       
-
         private void btn_In_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
@@ -234,12 +242,30 @@ namespace RestaurantSoftware.P_Layer
                     gridControl1.ExportToRtf(saveFileDialog1.FileName);
             }
         }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "col_STT" && e.RowHandle != GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+            if (e.Column.Name == "col_STT" && e.RowHandle == GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (gridView1.RowCount + 1).ToString();
+            }
+        }
+
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
             btn_Xoa.Enabled = false;
             if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
             {
                 btn_Xoa.Enabled = true;
+            }
+
+            if(this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                btn_Luu.Enabled = false;
             }
         }
 

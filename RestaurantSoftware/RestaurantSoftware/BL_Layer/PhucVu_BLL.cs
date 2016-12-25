@@ -223,6 +223,7 @@ namespace RestaurantSoftware.BL_Layer
                 cthoadon.thanhtien = ctdb.thanhtien;
                 ThemMoiChiTietHoaDon(cthoadon);
             }
+            dbContext.SubmitChanges();
         }
 
         public void SuaHoaDon(int idbanSelected,int idhd)

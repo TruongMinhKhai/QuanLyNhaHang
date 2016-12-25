@@ -42,6 +42,11 @@ namespace RestaurantSoftware.P_Layer
         private void btn_LamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadDataSource();
+            this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
+            gridView1.SelectRow(gridView1.FocusedRowHandle);
+            gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            gridView1.ShowEditor();
+            btn_Luu.Enabled = false;
         }
 
         private void btn_Them_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -56,15 +61,28 @@ namespace RestaurantSoftware.P_Layer
             //gridView1.UpdateCurrentRow(); 
             if (KiemTraHang())
             {
-                if (!_loaimon_Bll.KiemTraLoaiMonTonTai(gridView1.GetFocusedRowCellValue(col_TenLoaiMon).ToString()))
+                string TenLoaiMon = gridView1.GetFocusedRowCellValue(col_TenLoaiMon).ToString();
+                if (_loaimon_Bll.KiemTraLoaiMonTonTai(TenLoaiMon) != -1)
                 {
                     try
                     {
                         LoaiMon Lm = new LoaiMon();
                         Lm.tenloaimon = gridView1.GetFocusedRowCellValue(col_TenLoaiMon).ToString();
-                        _loaimon_Bll.ThemLoaiMon(Lm);
-                        Notifications.Success("Thêm loại món mới thành công!");
+                        Lm.trangthai = true;
+                        if (_loaimon_Bll.KiemTraLoaiMonTonTai(TenLoaiMon) == 1)
+                        {
+                            _loaimon_Bll.ThemLoaiMon(Lm);
+                        }
+                        else
+                        {
+                            Lm.id_loaimon = _loaimon_Bll.LayIdLoaiMon(TenLoaiMon);
+                            _loaimon_Bll.CapNhatLoaiMon(Lm);
+                        }
+                        
+                        Notifications.Success("Thêm món mới thành công!");
                         LoadDataSource();
+                        btn_Luu.Enabled = false;
+                        _listUpdate.Clear();
                     }
                     catch (Exception)
                     {
@@ -94,14 +112,14 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
-            if (_listUpdate.Count > 1)
+            if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
                     LoaiMon loaimon = new LoaiMon();
                     loaimon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
                     loaimon.tenloaimon = gridView1.GetRowCellValue(id, "tenloaimon").ToString();
                     
-                    if (!_loaimon_Bll.KiemTraLoaiMonTonTai(loaimon.tenloaimon,loaimon.id_loaimon))
+                    if (_loaimon_Bll.KiemTraLoaiMonTonTai(loaimon.tenloaimon,loaimon.id_loaimon) == 1)
                     {
                         _loaimon_Bll.CapNhatLoaiMon(loaimon);
                         isUpdate = true;
@@ -181,6 +199,20 @@ namespace RestaurantSoftware.P_Layer
             }
         }
 
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            btn_Xoa.Enabled = false;
+            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Xoa.Enabled = true;
+            }
+
+            if (this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                btn_Luu.Enabled = false;
+            }
+        }
+
         private void gridView1_RowUpdated_1(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
             if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
@@ -199,6 +231,10 @@ namespace RestaurantSoftware.P_Layer
             if(e.Column.Name == "col_STT" && e.RowHandle != GridControl.NewItemRowHandle)
             {
                 e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+            if (e.Column.Name == "col_STT" && e.RowHandle == GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (gridView1.RowCount + 1).ToString();
             }
         }
 
@@ -227,6 +263,5 @@ namespace RestaurantSoftware.P_Layer
                 LoadDataSource();
             }
         }
-
     }
 }

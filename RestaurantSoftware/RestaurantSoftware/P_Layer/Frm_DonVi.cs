@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using RestaurantSoftware.BL_Layer;
 using RestaurantSoftware.DA_Layer;
 using RestaurantSoftware.Utils;
@@ -46,13 +48,22 @@ namespace RestaurantSoftware.P_Layer
             gridView1.PostEditor();
             if (KiemTraHang())
             {
+                
                 if (!_dvBLL.KiemTraDonViTonTai(gridView1.GetFocusedRowCellValue(col_TenDonVi).ToString()))
                 {
-                    DonVi dv = new DonVi();
-                    dv.tendonvi = gridView1.GetFocusedRowCellValue(col_TenDonVi).ToString();
-                    _dvBLL.ThemDonViMoi(dv);
-                    Notifications.Success("Thêm đơn vị thành công");
-                    LoadDonVi();
+                    try
+                    {
+                        DonVi dv = new DonVi();
+                        dv.tendonvi = gridView1.GetFocusedRowCellValue(col_TenDonVi).ToString();
+                        _dvBLL.ThemDonViMoi(dv);
+                        Notifications.Success("Thêm đơn vị thành công");
+                        LoadDonVi();
+                    }
+                    catch (Exception)
+                    {
+
+                        Notifications.Error("Bạn chưa nhập đầy đủ thông tin món. Vui lòng nhập lại!");
+                    }
                 }
                 else
                 {
@@ -76,44 +87,30 @@ namespace RestaurantSoftware.P_Layer
         // xử lý xóa đơn vị
         private void btn_Xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (Notifications.Answers("Bạn thật sự muốn xóa dữ liệu?") == DialogResult.Cancel)
+            {
+                return;
+            }
             for (int i = 0; i < gridView1.SelectedRowsCount; i++)
             {
-                if (gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "trangthai").Equals("Không"))
+                int _ID_DonVi = int.Parse(gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "id_donvi").ToString());
+                if (_dvBLL.KiemTraThongTin(_ID_DonVi))
                 {
-                    if (Notifications.Answers("Bạn thật sự có muốn xóa dữ liệu không") == DialogResult.Cancel)
-                    {
-                        return;
-                    }
-                    int _ID_DonVi = int.Parse(gridView1.GetRowCellValue(gridView1.GetSelectedRows()[i], "id_donvi").ToString());
-                    _dvBLL.XoaDonVi(_ID_DonVi);
-                    Notifications.Success("Bạn xóa thành công");
+                    _dvBLL.XoaTam(_ID_DonVi);
                 }
                 else
                 {
-                    Notifications.Success("Bạn không được phép xoá");
+                    _dvBLL.XoaMon(_ID_DonVi);
                 }
-
             }
+            Notifications.Success("Xóa dữ liệu thành công!");
             LoadDonVi();
-        }
-        // xử lý khi update dữ liệu trên hàng
-        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
-        {
-            if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
-            {
-                btn_Luu.Enabled = true;
-                _listUpdate.Add(e.RowHandle);
-            }
-            else
-            {
-                btn_Luu.Enabled = false;
-            }
         }
         private void btn_Luu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string error = "";
             bool isUpdate = false;
-            if (_listUpdate.Count > 1)
+            if (_listUpdate.Count > 0)
             {
                 foreach (int id in _listUpdate)
                 {
@@ -154,6 +151,8 @@ namespace RestaurantSoftware.P_Layer
             {
                 Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên đơn vị đã tồn tại.");
             }
+            btn_Luu.Enabled = false;
+            LoadDonVi();
         }
 
         private void btn_LamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -178,6 +177,54 @@ namespace RestaurantSoftware.P_Layer
                 if (saveFileDialog1.FilterIndex == 3)
                     grc_DonVi.ExportToRtf(saveFileDialog1.FileName);
             }
+        }
+
+        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Luu.Enabled = true;
+                _listUpdate.Add(e.RowHandle);
+            }
+            else
+            {
+                btn_Luu.Enabled = false;
+            }
+        }
+
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            btn_Xoa.Enabled = false;
+            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Xoa.Enabled = true;
+            }
+        }
+
+        private void gridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+            GridView view = sender as GridView;
+            Point p = view.GridControl.PointToClient(MousePosition);
+            GridHitInfo info = view.CalcHitInfo(p);
+            if (info.HitTest == GridHitTest.Column)
+            {
+                LoadDonVi();
+            }
+        }
+        private void grc_DonVi_ProcessGridKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle
+              && gridView1.FocusedColumn == gridView1.Columns["trangthai"])
+            {
+                btn_Them.PerformClick();
+            }
+            if (e.KeyCode == Keys.Tab && this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle
+                && gridView1.FocusedColumn == gridView1.Columns["trangthai"])
+            {
+                gridView1.SelectRow(gridView1.FocusedRowHandle);
+                gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            }
+
         }
     }
 }

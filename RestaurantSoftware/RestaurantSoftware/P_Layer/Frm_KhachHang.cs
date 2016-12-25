@@ -60,6 +60,9 @@ namespace RestaurantSoftware.P_Layer
                         _kh_Bll.ThemKhachHang(kh);
                         Notifications.Success("Thêm khách hàng mới thành công!");
                         LoadDataSource();
+                        btn_Luu.Enabled = false;
+                        btn_Luu.Enabled = false;
+                        _listUpdate.Clear();
                     }
                     catch (Exception)
                     {
@@ -110,7 +113,7 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
-            if (_listUpdate.Count > 1)
+            if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
                     KhachHang kh = new KhachHang();
@@ -158,6 +161,7 @@ namespace RestaurantSoftware.P_Layer
         private void btn_LamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadDataSource();
+            btn_Luu.Enabled = false;
             this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
             gridView1.SelectRow(gridView1.FocusedRowHandle);
             gridView1.FocusedColumn = gridView1.VisibleColumns[0];
@@ -186,6 +190,10 @@ namespace RestaurantSoftware.P_Layer
             if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
             {
                 btn_Xoa.Enabled = true;
+            }
+            if(this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                btn_Luu.Enabled = false;
             }
         }
 

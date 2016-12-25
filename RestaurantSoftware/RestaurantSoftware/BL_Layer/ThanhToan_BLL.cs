@@ -36,10 +36,11 @@ namespace RestaurantSoftware.BL_Layer
             var query = from db in dbContext.HoaDonThanhToans
                         join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
                         join bn in dbContext.Bans on db.id_ban equals bn.id_ban
-                        where !(db.trangthai == "Hủy")
+                        where db.trangthai == "Đã thanh toán"
                         select new
                         {
                             db.id_hoadon,
+                            db.id_nhanvien,
                             db.id_ban,
                             bn.tenban,
                             db.trangthai,
@@ -133,65 +134,25 @@ namespace RestaurantSoftware.BL_Layer
             }
             
         }
-        public void loadid(int idban, string trangthai, TextEdit idhoadon, LookUpEdit nhanvien, DateEdit ngay, TextEdit tenkh, TextEdit sdt, TextEdit kd)
-        {
-            try
-            {
-                int idkh = -1;
-                var query = (from db in dbContext.HoaDonThanhToans
-                             join bn in dbContext.Bans on db.id_ban equals bn.id_ban
-                             join nv in dbContext.NhanViens on db.id_nhanvien equals nv.id_nhanvien
-                             where db.trangthai == trangthai
-                             select new ChiTiet_ThanhToan
-                             {
-                                 Idhoadon = db.id_hoadon,
-                                 Idban = bn.id_ban,
-                                 Tenban = bn.tenban,
-                                 Trangthai = bn.trangthai,
-                                 Idnhanvien = nv.id_nhanvien,
-                                 Tennhanvien = nv.tennhanvien,
-                                 Ngay = Convert.ToDateTime(db.thoigian),
-                                 Khachtra = Convert.ToInt32(db.datra)
-
-                             }).ToList();
-                foreach (var id in query)
-                {
-                    if (id.Idban == idban)
-                    {
-                        idhoadon.Text = (id.Idhoadon).ToString();
-                        nhanvien.EditValue = id.Idnhanvien;
-                        ngay.DateTime = id.Ngay;
-                        idkh = id.Idhoadon;
-                        kd.EditValue = id.Khachtra;
-                        laykhachhang(idkh, tenkh, sdt);
-                    }
-                }
-           
-            }
-            catch (Exception ex)
-            {
-                Notifications.Answers(ex.Message);
-                //Notifications.Answers("Hóa đơn này chưa có khách hàng.");
-            }
-            
-            
-        }
-        void laykhachhang(int id, TextEdit tenkh, TextEdit sdt)
+        public void loadid(int idban, string trangthai, TextEdit idhoadon, TextEdit kd)
         {
             var query = (from db in dbContext.HoaDonThanhToans
-                         join kh in dbContext.KhachHangs on db.id_khachhang equals kh.id_khachhang
-                         where db.id_hoadon == id
-                         select new ChiTiet_ThanhToan
-                         {
-                             Tenkhachhang = kh.tenkh,
-                             Sodienthoai = kh.sdt
-                         }).ToList();
-            foreach (var i in query)
+                        where db.id_ban == idban && db.trangthai==trangthai
+                        select new
+                        {
+                            Idhoadon = db.id_hoadon,
+                            
+                        }).ToList();
+          
+            foreach (var id in query)
             {
-                tenkh.Text = i.Tenkhachhang;
-                sdt.Text = i.Sodienthoai;
+                    idhoadon.EditValue = id.Idhoadon;
             }
+            
+            
+            
         }
+     
 
         public void ThanhToan(HoaDonThanhToan m)
         {
@@ -200,6 +161,7 @@ namespace RestaurantSoftware.BL_Layer
             _qd.vat = m.vat;
             _qd.tongtien = m.tongtien;
             _qd.trangthai = m.trangthai;
+            _qd.id_khachhang = m.id_khachhang;
             // update 
             dbContext.SubmitChanges();
         }

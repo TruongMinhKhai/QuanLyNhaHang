@@ -20,7 +20,8 @@ namespace RestaurantSoftware.BL_Layer
         // hàm lấy danh sách nhà cung cấp
         public IEnumerable<NhaCungCap> LayDanhSachNhaCungCap()
         {
-            IEnumerable<NhaCungCap> query = from ncc in dbContext.NhaCungCaps select ncc;
+            IEnumerable<NhaCungCap> query = from ncc in dbContext.NhaCungCaps where ncc.trangthai != "Xoa"
+                                            select ncc;
             return query;
         }
         // hàm thêm nhà cung cấp
@@ -62,15 +63,29 @@ namespace RestaurantSoftware.BL_Layer
         //Xóa nhà cung cấp
         public void XoaNhaCungCap(int _NhaCungCapID)
         {
-            //HangHoa[] array = (_hanghoaBll.LayDanhSachHangHoa(_NhaCungCapID)).ToArray();
-
-            //foreach (var row in array)
-            //{
-            //    _hanghoaBll.XoaHangHoa(row.id_hanghoa);
-            //}
-            //NhaCungCap _NhaCungCap = dbContext.NhaCungCaps.Single<NhaCungCap>(x => x.id_nhacungcap == _NhaCungCapID);
-            //dbContext.NhaCungCaps.DeleteOnSubmit(_NhaCungCap);
-            //dbContext.SubmitChanges();
+            NhaCungCap _NhaCungCap = dbContext.NhaCungCaps.Single<NhaCungCap>(x => x.id_nhacungcap == _NhaCungCapID);
+            dbContext.NhaCungCaps.DeleteOnSubmit(_NhaCungCap);
+            dbContext.SubmitChanges();
+        }
+        // xoa tam
+        public void XoaTam(int _NhaCungCapID)
+        {
+            NhaCungCap _NhaCungCap = dbContext.NhaCungCaps.Single<NhaCungCap>(x => x.id_nhacungcap == _NhaCungCapID);
+            _NhaCungCap.trangthai = "Xoa";
+            // update 
+            dbContext.SubmitChanges();
+        }
+        // hàm kiểm tra thông tin
+        public bool KiemTraThongTin(int _NhaCungCapID)
+        {
+            IEnumerable<HoaDonNhapHang> _KiemTraHoaDon = from hd in dbContext.HoaDonNhapHangs
+                                                                  where hd.id_nhacungcap == _NhaCungCapID
+                                                                  select hd;
+            if (_KiemTraHoaDon.Count() > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

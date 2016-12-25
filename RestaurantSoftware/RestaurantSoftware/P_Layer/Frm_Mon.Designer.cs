@@ -45,6 +45,7 @@
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.col_STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TenMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_LoaiMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lue_LoaiMon = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -215,6 +216,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.col_STT,
             this.col_TenMon,
             this.col_LoaiMon,
             this.col_TenVietTat,
@@ -225,24 +227,41 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm dòng mới tại đây...";
+            this.gridView1.OptionsBehavior.ImmediateUpdateRowPosition = false;
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsCustomization.AllowSort = false;
             this.gridView1.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.False;
-            this.gridView1.OptionsFilter.AllowColumnMRUFilterList = false;
             this.gridView1.OptionsMenu.EnableColumnMenu = false;
             this.gridView1.OptionsMenu.EnableFooterMenu = false;
             this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
-            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
             this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.OptionsPrint.ExpandAllDetails = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.SynchronizeClones = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_TenMon, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
+            // 
+            // col_STT
+            // 
+            this.col_STT.AppearanceCell.Options.UseTextOptions = true;
+            this.col_STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_STT.Caption = "Stt";
+            this.col_STT.Name = "col_STT";
+            this.col_STT.OptionsColumn.AllowEdit = false;
+            this.col_STT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col_STT.OptionsColumn.TabStop = false;
+            this.col_STT.OptionsEditForm.StartNewRow = true;
+            this.col_STT.Visible = true;
+            this.col_STT.VisibleIndex = 0;
+            this.col_STT.Width = 66;
             // 
             // col_TenMon
             // 
@@ -256,7 +275,8 @@
             this.col_TenMon.Name = "col_TenMon";
             this.col_TenMon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenMon.Visible = true;
-            this.col_TenMon.VisibleIndex = 0;
+            this.col_TenMon.VisibleIndex = 1;
+            this.col_TenMon.Width = 97;
             // 
             // col_LoaiMon
             // 
@@ -270,7 +290,8 @@
             this.col_LoaiMon.Name = "col_LoaiMon";
             this.col_LoaiMon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_LoaiMon.Visible = true;
-            this.col_LoaiMon.VisibleIndex = 1;
+            this.col_LoaiMon.VisibleIndex = 2;
+            this.col_LoaiMon.Width = 97;
             // 
             // lue_LoaiMon
             // 
@@ -297,7 +318,8 @@
             this.col_TenVietTat.Name = "col_TenVietTat";
             this.col_TenVietTat.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenVietTat.Visible = true;
-            this.col_TenVietTat.VisibleIndex = 2;
+            this.col_TenVietTat.VisibleIndex = 3;
+            this.col_TenVietTat.Width = 97;
             // 
             // col_TrangThai
             // 
@@ -311,7 +333,8 @@
             this.col_TrangThai.Name = "col_TrangThai";
             this.col_TrangThai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TrangThai.Visible = true;
-            this.col_TrangThai.VisibleIndex = 3;
+            this.col_TrangThai.VisibleIndex = 4;
+            this.col_TrangThai.Width = 97;
             // 
             // lue_TrangThai
             // 
@@ -340,7 +363,8 @@
             this.col_Gia.Name = "col_Gia";
             this.col_Gia.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_Gia.Visible = true;
-            this.col_Gia.VisibleIndex = 4;
+            this.col_Gia.VisibleIndex = 5;
+            this.col_Gia.Width = 97;
             // 
             // txt_Gia
             // 
@@ -366,7 +390,8 @@
             this.col_DonVi.Name = "col_DonVi";
             this.col_DonVi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_DonVi.Visible = true;
-            this.col_DonVi.VisibleIndex = 5;
+            this.col_DonVi.VisibleIndex = 6;
+            this.col_DonVi.Width = 111;
             // 
             // lue_DonVi
             // 
@@ -442,5 +467,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_DonVi;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn col_Gia;
+        private DevExpress.XtraGrid.Columns.GridColumn col_STT;
     }
 }

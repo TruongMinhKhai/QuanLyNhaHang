@@ -21,7 +21,9 @@ namespace RestaurantSoftware.BL_Layer
         // hàm lấy danh sách đơn vị
         public IEnumerable<DonVi> LayDanhSachDonVi()
         {
-            IEnumerable<DonVi> query = from hh in dbContext.DonVis select hh;
+            IEnumerable<DonVi> query = from dv in dbContext.DonVis 
+                                       where dv.trangthai != "Xoa"
+                                       select dv;
             return query;
         }
         // hàm thêm đơn vị
@@ -57,18 +59,34 @@ namespace RestaurantSoftware.BL_Layer
             }
             return false;
         }
-        //Xóa nhà cung cấp
-        public void XoaDonVi(int _DonViID)
+        public bool KiemTraThongTin(int _DonViID)
         {
-            HangHoa[] array = (_hanghoaBLL.LayDanhSachHangHoaTheoIdDonVi(_DonViID)).ToArray();
-
-            foreach (var row in array)
+            IEnumerable<HangHoa> _KiemTraHangHoa = from db in dbContext.HangHoas
+                                                   where db.id_donvi == _DonViID
+                                                   select db;
+            IEnumerable<Mon> _KiemTraMon = from db in dbContext.Mons
+                                           where db.id_donvi == _DonViID
+                                           select db;
+            if (_KiemTraHangHoa.Count() > 0 && _KiemTraMon.Count() > 0)
             {
-                _hanghoaBLL.XoaHangHoa(row.id_hanghoa);
+                return true;
             }
-            DonVi _DonVi = dbContext.DonVis.Single<DonVi>(x => x.id_donvi == _DonViID);
-            dbContext.DonVis.DeleteOnSubmit(_DonVi);
+            return false;
+        }
+        // xóa tạm
+        public void XoaTam(int _DonViID)
+        {
+            DonVi _dv = dbContext.DonVis.Single<DonVi>(x => x.id_donvi == _DonViID);
+            _dv.trangthai = "Xoa";
+            // update 
             dbContext.SubmitChanges();
         }
+        // xóa món
+        public void XoaMon(int _DonViID)
+        {
+            DonVi _dv = dbContext.DonVis.Single<DonVi>(x=> x.id_donvi == _DonViID);
+            dbContext.SubmitChanges();
+        }
+
     }
 }

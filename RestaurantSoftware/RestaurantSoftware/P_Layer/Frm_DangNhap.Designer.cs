@@ -96,6 +96,7 @@
             this.txt_MatKhau.Size = new System.Drawing.Size(257, 20);
             this.txt_MatKhau.StyleController = this.layoutControl1;
             this.txt_MatKhau.TabIndex = 5;
+            this.txt_MatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_MatKhau_KeyDown);
             // 
             // txt_TenTaiKhoan
             // 
@@ -104,6 +105,7 @@
             this.txt_TenTaiKhoan.Size = new System.Drawing.Size(257, 20);
             this.txt_TenTaiKhoan.StyleController = this.layoutControl1;
             this.txt_TenTaiKhoan.TabIndex = 4;
+            this.txt_TenTaiKhoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_TenTaiKhoan_KeyDown);
             // 
             // layoutControlGroup1
             // 
@@ -173,7 +175,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐĂNG NHẬP";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_DangNhap_FormClosing);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Frm_DangNhap_KeyDown);
+            this.Enter += new System.EventHandler(this.Frm_DangNhap_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_MatKhau.Properties)).EndInit();
