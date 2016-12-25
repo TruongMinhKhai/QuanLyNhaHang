@@ -37,7 +37,14 @@ namespace RestaurantSoftware.BL_Layer
             // update 
             dbContext.SubmitChanges();
         }
-        public bool KiemTraBanTonTai(string _tenBan, int id = -1)
+
+        public int LayIdBan(string TenBan)
+        {
+            IEnumerable<Ban> query = from b in dbContext.Bans where b.tenban  == TenBan select b;
+            return query.First().id_ban;
+        }
+
+        public int KiemTraBanTonTai(string _tenBan, int id = -1)
         {
             IEnumerable<Ban> query = from b in dbContext.Bans
                                      where b.tenban  == _tenBan
@@ -49,12 +56,17 @@ namespace RestaurantSoftware.BL_Layer
                     query = query.Where(b => b.id_ban == id);
                     if (query.Count() == 1)
                     {
-                        return false;
+                        return 1;
                     }
                 }
-                return true;
+
+                if (query.Where(y => y.trangthai.Equals("Hỏng")).Count() > 0)
+                {
+                    return 0;
+                }
+                return -1;
             }
-            return false;
+            return 1;
         }
 
         public bool KiemTraThongTin(int id_ban)

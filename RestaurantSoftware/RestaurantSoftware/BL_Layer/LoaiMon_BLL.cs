@@ -20,10 +20,16 @@ namespace RestaurantSoftware.BL_Layer
             dbContext.SubmitChanges();
         }
 
-        public bool KiemTraLoaiMonTonTai(string _LoaiMon, int id = -1)
+        public int LayIdLoaiMon(string TenLoaiMon)
+        {
+            IEnumerable<LoaiMon> query = from lm in dbContext.LoaiMons where lm.tenloaimon == TenLoaiMon select lm;
+            return query.First().id_loaimon;
+        }
+
+        public int KiemTraLoaiMonTonTai(string _LoaiMon, int id = -1)
         {
             IEnumerable<LoaiMon> query = from lm in dbContext.LoaiMons
-                                     where lm.tenloaimon == _LoaiMon
+                                         where lm.tenloaimon == _LoaiMon
                                      select lm;
             if (0 < query.Count() && query.Count() <= 2)
             {
@@ -32,12 +38,18 @@ namespace RestaurantSoftware.BL_Layer
                     query = query.Where(lm => lm.id_loaimon == id);
                     if (query.Count() == 1)
                     {
-                        return false;
+                        return 1;
                     }
                 }
-                return true;
+
+                if (query.Where(y => y.trangthai.Equals(false)).Count() > 0)
+                {
+                    return 0;
+                }
+
+                return -1;
             }
-            return false;
+            return 1;
         }
 
         public void CapNhatLoaiMon(LoaiMon lm)
@@ -51,7 +63,7 @@ namespace RestaurantSoftware.BL_Layer
         public bool KiemTraThongTin(int id_loaimon)
         {
             IEnumerable<int> mons = _monBll.getIDMon(id_loaimon);
-            if(mons.Count() > 0)
+            if(mons != null)
             {
                 foreach(int i in mons)
                 {

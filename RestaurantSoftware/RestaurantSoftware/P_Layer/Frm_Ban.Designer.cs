@@ -45,6 +45,7 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.col_STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TenBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_LoaiBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lue_LoaiBan = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -105,6 +106,7 @@
             // btn_Xoa
             // 
             this.btn_Xoa.Caption = "Xóa";
+            this.btn_Xoa.Enabled = false;
             this.btn_Xoa.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Glyph")));
             this.btn_Xoa.Id = 3;
             this.btn_Xoa.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.LargeGlyph")));
@@ -114,6 +116,7 @@
             // btn_LuuLai
             // 
             this.btn_LuuLai.Caption = "Lưu lại";
+            this.btn_LuuLai.Enabled = false;
             this.btn_LuuLai.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_LuuLai.Glyph")));
             this.btn_LuuLai.Id = 4;
             this.btn_LuuLai.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btn_LuuLai.LargeGlyph")));
@@ -197,12 +200,14 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.col_STT,
             this.col_TenBan,
             this.col_LoaiBan,
             this.col_TrangThai});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm dòng mới tại đây...";
+            this.gridView1.OptionsBehavior.ImmediateUpdateRowPosition = false;
             this.gridView1.OptionsBehavior.KeepGroupExpandedOnSorting = false;
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsCustomization.AllowSort = false;
@@ -211,8 +216,28 @@
             this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_TenBan, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
+            // 
+            // col_STT
+            // 
+            this.col_STT.AppearanceCell.Options.UseTextOptions = true;
+            this.col_STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_STT.Caption = "Stt";
+            this.col_STT.Name = "col_STT";
+            this.col_STT.OptionsColumn.AllowEdit = false;
+            this.col_STT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col_STT.OptionsColumn.TabStop = false;
+            this.col_STT.OptionsEditForm.StartNewRow = true;
+            this.col_STT.Visible = true;
+            this.col_STT.VisibleIndex = 0;
+            this.col_STT.Width = 69;
             // 
             // col_TenBan
             // 
@@ -225,7 +250,8 @@
             this.col_TenBan.Name = "col_TenBan";
             this.col_TenBan.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenBan.Visible = true;
-            this.col_TenBan.VisibleIndex = 0;
+            this.col_TenBan.VisibleIndex = 1;
+            this.col_TenBan.Width = 195;
             // 
             // col_LoaiBan
             // 
@@ -239,7 +265,8 @@
             this.col_LoaiBan.Name = "col_LoaiBan";
             this.col_LoaiBan.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_LoaiBan.Visible = true;
-            this.col_LoaiBan.VisibleIndex = 1;
+            this.col_LoaiBan.VisibleIndex = 2;
+            this.col_LoaiBan.Width = 195;
             // 
             // lue_LoaiBan
             // 
@@ -268,7 +295,8 @@
             this.col_TrangThai.Name = "col_TrangThai";
             this.col_TrangThai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TrangThai.Visible = true;
-            this.col_TrangThai.VisibleIndex = 2;
+            this.col_TrangThai.VisibleIndex = 3;
+            this.col_TrangThai.Width = 207;
             // 
             // lue_TrangThai
             // 
@@ -328,5 +356,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_TrangThai;
         private DevExpress.XtraGrid.Columns.GridColumn col_TrangThai;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_LoaiBan;
+        private DevExpress.XtraGrid.Columns.GridColumn col_STT;
     }
 }
