@@ -79,7 +79,8 @@ namespace RestaurantSoftware.BL_Layer
                             db.thoigian,
                             db.NhanVien.tennhanvien,
                             db.KhachHang.tenkh,
-                            db.KhachHang.sdt
+                            db.KhachHang.sdt,
+                            db.tiencoc
                         };
             grid.DataSource = query;
             
@@ -221,6 +222,11 @@ namespace RestaurantSoftware.BL_Layer
             ThamSo ts = dbContext.ThamSos.Single(p => p.tenthamso == tenthamso);
             return (int)ts.giatri;
                 
+        }
+        public double LoadTienCoc(int iddatban)
+        {
+            DatBan ts = dbContext.DatBans.Single(p => p.id_datban == iddatban);
+            return (double)ts.tiencoc;
         }
 
         public void UpdateDatabase()
