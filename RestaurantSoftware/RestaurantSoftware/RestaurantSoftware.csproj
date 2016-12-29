@@ -182,6 +182,18 @@
     <Compile Include="P_Layer\Frm_InPhieuDatBan.Designer.cs">
       <DependentUpon>Frm_InPhieuDatBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_Layer\Frm_InPhieuNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_InPhieuNhapHang.Designer.cs">
+      <DependentUpon>Frm_InPhieuNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Frm_BaoCaoTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_BaoCaoTonKho.Designer.cs">
+      <DependentUpon>Frm_BaoCaoTonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="P_Layer\Frm_KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +338,12 @@
     <Compile Include="P_Layer\Reports\PhieuDatBan.Designer.cs">
       <DependentUpon>PhieuDatBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_Layer\Reports\PhieuNhapHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Reports\PhieuNhapHang.designer.cs">
+      <DependentUpon>PhieuNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="P_Layer\Reports\ThongKeMon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -339,12 +357,30 @@
       <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
     </Compile>
     <Compile Include="DA_Layer\HangHoaTon.cs" />
+    <Compile Include="P_Layer\Reports\TonKho.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Reports\TonKho.Designer.cs">
+      <DependentUpon>TonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Notifications.cs" />
     <Compile Include="Utils\Utils.cs" />
+    <EmbeddedResource Include="P_Layer\Frm_InPhieuNhapHang.resx">
+      <DependentUpon>Frm_InPhieuNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_BaoCaoTonKho.resx">
+      <DependentUpon>Frm_BaoCaoTonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Reports\TonKho.resx">
+      <DependentUpon>TonKho.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DA_Layer\RestaurantDB.dbml.layout">
       <DependentUpon>RestaurantDB.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="PrintRibbonControllerResources.resx" />
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_ChartDoanhThuNam.resx">
       <DependentUpon>Frm_ChartDoanhThuNam.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\PhieuDatBan.resx">
       <DependentUpon>PhieuDatBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Reports\PhieuNhapHang.resx">
+      <DependentUpon>PhieuNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\ThongKeMon.resx">
       <DependentUpon>ThongKeMon.cs</DependentUpon>

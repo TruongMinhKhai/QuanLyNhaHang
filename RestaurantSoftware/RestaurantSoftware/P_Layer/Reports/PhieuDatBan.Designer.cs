@@ -387,12 +387,12 @@
             // 
             // xrPageInfo1
             // 
-            this.xrPageInfo1.Format = "TP Hồ Chí Minh, Ngày {0:MM/dd/yyyy}";
+            this.xrPageInfo1.Format = "TP Hồ Chí Minh, Ngày {0}";
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(434.9168F, 165.1544F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.xrPageInfo1.SizeF = new System.Drawing.SizeF(228.8749F, 18F);
+            this.xrPageInfo1.SizeF = new System.Drawing.SizeF(243.1665F, 18F);
             this.xrPageInfo1.StylePriority.UseTextAlignment = false;
             this.xrPageInfo1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
