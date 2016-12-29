@@ -181,7 +181,7 @@
             // xrLabel22
             // 
             this.xrLabel22.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "DatBan.thoigian")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "DatBan.thoigian", "{0:dd/MM/yyyy}")});
             this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(547.3333F, 117F);
             this.xrLabel22.Name = "xrLabel22";
             this.xrLabel22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -387,7 +387,7 @@
             // 
             // xrPageInfo1
             // 
-            this.xrPageInfo1.Format = "TP Hồ Chí Minh, Ngày {0:MM/dd/yyyy}";
+            this.xrPageInfo1.Format = "Bình Dương, {0:dd/MM/yyyy}";
             this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(434.9168F, 165.1544F);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);

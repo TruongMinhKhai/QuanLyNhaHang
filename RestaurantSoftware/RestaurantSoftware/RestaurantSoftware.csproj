@@ -186,6 +186,12 @@
     <Compile Include="P_Layer\Frm_InPhieuDatBan.Designer.cs">
       <DependentUpon>Frm_InPhieuDatBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="P_Layer\Frm_InQuyDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Frm_InQuyDinh.Designer.cs">
+      <DependentUpon>Frm_InQuyDinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="P_Layer\Frm_KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,11 +294,11 @@
     <Compile Include="P_Layer\Frm_ThongKeMon.Designer.cs">
       <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="P_Layer\PrintfSuCo.cs">
+    <Compile Include="P_Layer\Frm_InSuCo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="P_Layer\PrintfSuCo.Designer.cs">
-      <DependentUpon>PrintfSuCo.cs</DependentUpon>
+    <Compile Include="P_Layer\Frm_InSuCo.Designer.cs">
+      <DependentUpon>Frm_InSuCo.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Layer\Reports\Chart_DoanhThuTheoNam.cs">
       <SubType>Component</SubType>
@@ -317,6 +323,12 @@
     </Compile>
     <Compile Include="P_Layer\Reports\HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P_Layer\Reports\InQuyDinh.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P_Layer\Reports\InQuyDinh.Designer.cs">
+      <DependentUpon>InQuyDinh.cs</DependentUpon>
     </Compile>
     <Compile Include="P_Layer\Reports\InSuCo.cs">
       <SubType>Component</SubType>
@@ -367,6 +379,9 @@
     <EmbeddedResource Include="P_Layer\Frm_DonVi.resx">
       <DependentUpon>Frm_DonVi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Frm_InQuyDinh.resx">
+      <DependentUpon>Frm_InQuyDinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Frm_PrintfHoaDon.resx">
       <DependentUpon>Frm_PrintfHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,8 +394,8 @@
     <EmbeddedResource Include="P_Layer\Frm_ThongKeMon.resx">
       <DependentUpon>Frm_ThongKeMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="P_Layer\PrintfSuCo.resx">
-      <DependentUpon>PrintfSuCo.cs</DependentUpon>
+    <EmbeddedResource Include="P_Layer\Frm_InSuCo.resx">
+      <DependentUpon>Frm_InSuCo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\Chart_DoanhThuTheoNam.resx">
       <DependentUpon>Chart_DoanhThuTheoNam.cs</DependentUpon>
@@ -393,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P_Layer\Reports\InQuyDinh.resx">
+      <DependentUpon>InQuyDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\InSuCo.resx">
       <DependentUpon>InSuCo.cs</DependentUpon>
