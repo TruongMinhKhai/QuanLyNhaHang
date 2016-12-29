@@ -278,5 +278,10 @@ namespace RestaurantSoftware.P_Layer
                 btn_LuuLai.Enabled = false;
             }
         }
+
+        private void gridView1_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            gridView1.SetRowCellValue(e.RowHandle, "trangthai", "Trống");
+        }
     }
 }
