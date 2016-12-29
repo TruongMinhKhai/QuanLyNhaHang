@@ -110,5 +110,12 @@ namespace RestaurantSoftware.BL_Layer
             dbContext.Mons.DeleteAllOnSubmit(_mons);
             dbContext.SubmitChanges();
         }
+        public bool KiemTraMon(Mon mon)
+        {
+            if (mon.tenmon != null && mon.gia != null && mon.tenmon.ToString() != "" 
+                && mon.gia.ToString() != "" && mon.gia != 0)
+                return true;
+            return false;
+        }
     }
 }

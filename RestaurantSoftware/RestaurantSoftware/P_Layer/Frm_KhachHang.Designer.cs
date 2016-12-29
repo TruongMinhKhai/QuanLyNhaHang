@@ -220,6 +220,7 @@
             this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_TenKhachHang, DevExpress.Data.ColumnSortOrder.Ascending)});

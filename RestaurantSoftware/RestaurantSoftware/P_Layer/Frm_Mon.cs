@@ -101,8 +101,11 @@ namespace RestaurantSoftware.P_Layer
 
         private bool KiemTraHang()
         {
-            if (gridView1.GetFocusedRowCellValue(col_TenMon) != null || gridView1.GetFocusedRowCellValue(col_LoaiMon) != null
-                || gridView1.GetFocusedRowCellValue(col_TenVietTat) != null || gridView1.GetFocusedRowCellValue(col_TrangThai) != null || gridView1.GetFocusedRowCellValue(gridColumn1) != null)
+            if (gridView1.GetFocusedRowCellValue(col_TenMon) != null && gridView1.GetFocusedRowCellValue(col_LoaiMon) != null
+                && gridView1.GetFocusedRowCellValue(col_TrangThai) != null && gridView1.GetFocusedRowCellValue(col_Gia) != null 
+                && gridView1.GetFocusedRowCellValue(col_DonVi) != null && gridView1.GetFocusedRowCellValue(col_TenMon).ToString() != ""
+                && gridView1.GetFocusedRowCellValue(col_LoaiMon).ToString() != "" && gridView1.GetFocusedRowCellValue(col_TrangThai).ToString() != "" 
+                && gridView1.GetFocusedRowCellValue(col_Gia).ToString() != "" && gridView1.GetFocusedRowCellValue(col_DonVi).ToString() != "")
                 return true;
             return false;
         }
@@ -133,7 +136,8 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
-            if(_listUpdate.Count > 0)
+            bool KiemTra = false;
+            if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
                     Mon mon = new Mon();
@@ -141,27 +145,34 @@ namespace RestaurantSoftware.P_Layer
                     mon.tenmon = gridView1.GetRowCellValue(id, "tenmon").ToString();
                     mon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
                     mon.tenviettat = gridView1.GetRowCellValue(id, "tenviettat").ToString();
-                    mon.gia = decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString());
+                    mon.gia = (gridView1.GetRowCellValue(id, "gia").ToString() == "") ? decimal.Parse(gridView1.GetRowCellValue(id, "gia").ToString()) : 0;
                     mon.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
                     mon.id_donvi = int.Parse(gridView1.GetRowCellValue(id, "id_donvi").ToString());
-
-                    if (_monBll.KiemTraTenMonTonTai(mon.tenmon, mon.id_mon) == 1)
+                    if(_monBll.KiemTraMon(mon))
                     {
-                        _monBll.CapNhatMon(mon);
-                        isUpdate = true;
-                        btn_Luu.Enabled = false;
-                    }
-                    else
-                    {
-                        if (error == "")
+                        if (_monBll.KiemTraTenMonTonTai(mon.tenmon, mon.id_mon) == 1)
                         {
-                            error = mon.tenmon;
+                            _monBll.CapNhatMon(mon);
+                            isUpdate = true;
+                            btn_Luu.Enabled = false;
                         }
                         else
                         {
-                            error += " | " + mon.tenmon;
+                            if (error == "")
+                            {
+                                error = mon.tenmon;
+                            }
+                            else
+                            {
+                                error += " | " + mon.tenmon;
+                            }
                         }
                     }
+                    else
+                    {
+                        KiemTra = true;
+                    }
+                    
                 }
             if (isUpdate == true)
             {
@@ -173,6 +184,10 @@ namespace RestaurantSoftware.P_Layer
                 {
                     Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các món chưa được cập nhật (" + error + "). Lỗi: Tên món đã tồn tại.");
                 }
+            }
+            else if(KiemTra == true)
+            {
+                Notifications.Error("Lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Dữ liệu không được rỗng, giá khác 0.");
             }
             else
             {
