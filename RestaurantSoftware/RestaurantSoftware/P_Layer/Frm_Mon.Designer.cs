@@ -244,6 +244,7 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_TenMon, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
             // 
@@ -276,7 +277,7 @@
             this.col_TenMon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenMon.Visible = true;
             this.col_TenMon.VisibleIndex = 1;
-            this.col_TenMon.Width = 97;
+            this.col_TenMon.Width = 120;
             // 
             // col_LoaiMon
             // 
@@ -291,7 +292,7 @@
             this.col_LoaiMon.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_LoaiMon.Visible = true;
             this.col_LoaiMon.VisibleIndex = 2;
-            this.col_LoaiMon.Width = 97;
+            this.col_LoaiMon.Width = 92;
             // 
             // lue_LoaiMon
             // 
@@ -319,7 +320,7 @@
             this.col_TenVietTat.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenVietTat.Visible = true;
             this.col_TenVietTat.VisibleIndex = 3;
-            this.col_TenVietTat.Width = 97;
+            this.col_TenVietTat.Width = 92;
             // 
             // col_TrangThai
             // 
@@ -334,7 +335,7 @@
             this.col_TrangThai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TrangThai.Visible = true;
             this.col_TrangThai.VisibleIndex = 4;
-            this.col_TrangThai.Width = 97;
+            this.col_TrangThai.Width = 92;
             // 
             // lue_TrangThai
             // 
@@ -355,7 +356,7 @@
             this.col_Gia.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_Gia.AppearanceHeader.Options.UseTextOptions = true;
             this.col_Gia.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_Gia.Caption = "Giá(*)";
+            this.col_Gia.Caption = "Giá(*) VNĐ";
             this.col_Gia.ColumnEdit = this.txt_Gia;
             this.col_Gia.DisplayFormat.FormatString = "#,###";
             this.col_Gia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
@@ -364,19 +365,22 @@
             this.col_Gia.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_Gia.Visible = true;
             this.col_Gia.VisibleIndex = 5;
-            this.col_Gia.Width = 97;
+            this.col_Gia.Width = 92;
             // 
             // txt_Gia
             // 
             this.txt_Gia.AutoHeight = false;
             this.txt_Gia.DisplayFormat.FormatString = "#,###";
-            this.txt_Gia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.txt_Gia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txt_Gia.EditFormat.FormatString = "#,###";
-            this.txt_Gia.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.txt_Gia.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txt_Gia.Mask.EditMask = "n0";
+            this.txt_Gia.Mask.IgnoreMaskBlank = false;
             this.txt_Gia.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_Gia.Mask.ShowPlaceHolders = false;
             this.txt_Gia.Mask.UseMaskAsDisplayFormat = true;
             this.txt_Gia.Name = "txt_Gia";
+            this.txt_Gia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Gia_KeyPress);
             // 
             // col_DonVi
             // 
@@ -391,7 +395,7 @@
             this.col_DonVi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_DonVi.Visible = true;
             this.col_DonVi.VisibleIndex = 6;
-            this.col_DonVi.Width = 111;
+            this.col_DonVi.Width = 108;
             // 
             // lue_DonVi
             // 

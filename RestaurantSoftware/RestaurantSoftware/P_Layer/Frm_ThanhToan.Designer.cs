@@ -414,6 +414,7 @@
             this.dt_NgayLap.EditValue = null;
             this.dt_NgayLap.Location = new System.Drawing.Point(296, 90);
             this.dt_NgayLap.Name = "dt_NgayLap";
+            this.dt_NgayLap.Properties.AllowFocused = false;
             this.dt_NgayLap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dt_NgayLap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

@@ -49,7 +49,7 @@ namespace RestaurantSoftware.P_Layer
         {
             this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
             gridView1.SelectRow(gridView1.FocusedRowHandle);
-            gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            gridView1.FocusedColumn = gridView1.VisibleColumns[1];
             gridView1.ShowEditor();
             gridView1.PostEditor();
             if (KiemTraHang())
@@ -176,7 +176,7 @@ namespace RestaurantSoftware.P_Layer
             LoadDataSource();
             this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
             gridView1.SelectRow(gridView1.FocusedRowHandle);
-            gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            gridView1.FocusedColumn = gridView1.VisibleColumns[1];
             gridView1.ShowEditor();
         }
 
@@ -259,6 +259,11 @@ namespace RestaurantSoftware.P_Layer
             {
                 e.DisplayText = (gridView1.RowCount + 1).ToString();
             }
+        }
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+          if (e.PrevFocusedRowHandle == GridControl.NewItemRowHandle)
+              LoadDataSource();
         }
     }
 }

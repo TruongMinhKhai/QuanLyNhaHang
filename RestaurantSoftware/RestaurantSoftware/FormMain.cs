@@ -310,7 +310,7 @@ namespace RestaurantSoftware
            
         }
 
-        private Form ExistForm(Type ftype)
+        public Form ExistForm(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
             {

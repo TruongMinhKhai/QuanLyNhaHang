@@ -240,5 +240,11 @@ namespace RestaurantSoftware.P_Layer
                 LoadDataSource();
             }
         }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.PrevFocusedRowHandle == GridControl.NewItemRowHandle)
+                LoadDataSource();
+        }
     }
 }
