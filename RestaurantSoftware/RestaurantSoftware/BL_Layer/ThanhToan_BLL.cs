@@ -156,7 +156,29 @@ namespace RestaurantSoftware.BL_Layer
 
         }
 
-       
+        public int loadTenBan(int idhoadon, TextEdit ban, TextEdit dt)
+        {
+            int idban = 0;
+            var query = (from db in dbContext.HoaDonThanhToans
+                         join b in dbContext.Bans on db.id_ban equals b.id_ban
+                         where db.id_hoadon == idhoadon
+                         select new
+                         {
+                             TenBan = b.tenban,
+                             Datra = (int)db.datra,
+                             Idban = (int)b.id_ban
+
+                         }).ToList();
+
+            foreach (var id in query)
+            {
+                ban.Text = id.TenBan;
+                dt.Text = id.Datra.ToString();
+                idban = id.Idban;
+
+            }
+            return idban;
+        }
 
         public void ThanhToan(HoaDonThanhToan m)
         {
