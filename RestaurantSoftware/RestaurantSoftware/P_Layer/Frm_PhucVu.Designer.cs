@@ -303,6 +303,7 @@
             this.chitiet_idmon});
             this.gridView_ChitietHoaDon.GridControl = this.gridControl_ChitietHoaDon;
             this.gridView_ChitietHoaDon.Name = "gridView_ChitietHoaDon";
+            this.gridView_ChitietHoaDon.OptionsView.ShowGroupPanel = false;
             this.gridView_ChitietHoaDon.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView_ChitietHoaDon_RowUpdated);
             // 
             // chitiet_tenmon
@@ -331,7 +332,8 @@
             this.repositoryItemTextEdit2.AutoHeight = false;
             this.repositoryItemTextEdit2.DisplayFormat.FormatString = "#,###";
             this.repositoryItemTextEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.repositoryItemTextEdit2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit2.Mask.EditMask = "\\d+";
+            this.repositoryItemTextEdit2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
             // 
             // chitiet_gia

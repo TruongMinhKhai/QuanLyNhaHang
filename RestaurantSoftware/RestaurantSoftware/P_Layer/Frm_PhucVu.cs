@@ -259,7 +259,7 @@ namespace RestaurantSoftware.P_Layer
                 //làm tiếp: nhận bàn đã đặt. chuyển chitiet đặt bàn -> chi tiết hóa đơn.
                 if(trangthaibanSelected == ttban[2])
                 {
-                    phucvubll.ChuyenChiTietDatBan(idbanSelected, today, idhoadonSelected);
+                    phucvubll.ChuyenChiTietDatBan(idbanSelected, today, idhoadonSelected,ttdatban);
                     phucvubll.LoadChiTietHoaDon(idhoadonSelected, gridControl_ChitietHoaDon);
                     phucvubll.SetTrangThaiPhieuDatBan(idbanSelected, today, ttdatban[1]); //đã nhận đơn đặt.
                 }

@@ -53,6 +53,7 @@
             this.trangthai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.thoigian = new DevExpress.XtraGrid.Columns.GridColumn();
             this.id_datban = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.id_ban = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl_DsMon = new DevExpress.XtraGrid.GridControl();
             this.gridView_DsMon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tenmon = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -204,6 +205,7 @@
             this.txtTamTinh.Size = new System.Drawing.Size(321, 20);
             this.txtTamTinh.StyleController = this.layoutControl1;
             this.txtTamTinh.TabIndex = 21;
+            this.txtTamTinh.EditValueChanged += new System.EventHandler(this.txtTamTinh_EditValueChanged);
             // 
             // txtDatCoc
             // 
@@ -219,6 +221,8 @@
             this.txtDatCoc.Size = new System.Drawing.Size(321, 20);
             this.txtDatCoc.StyleController = this.layoutControl1;
             this.txtDatCoc.TabIndex = 20;
+            this.txtDatCoc.EditValueChanged += new System.EventHandler(this.txtDatCoc_EditValueChanged);
+            this.txtDatCoc.Leave += new System.EventHandler(this.txtDatCoc_Leave);
             // 
             // btnThemKh
             // 
@@ -260,7 +264,8 @@
             this.sdt,
             this.trangthai,
             this.thoigian,
-            this.id_datban});
+            this.id_datban,
+            this.id_ban});
             this.gridView_DsDatBan.GridControl = this.gridControl_DsDatBan;
             this.gridView_DsDatBan.GroupCount = 1;
             this.gridView_DsDatBan.Name = "gridView_DsDatBan";
@@ -330,6 +335,12 @@
             this.id_datban.Caption = "id_datban";
             this.id_datban.FieldName = "id_datban";
             this.id_datban.Name = "id_datban";
+            // 
+            // id_ban
+            // 
+            this.id_ban.Caption = "id_ban";
+            this.id_ban.FieldName = "id_ban";
+            this.id_ban.Name = "id_ban";
             // 
             // gridControl_DsMon
             // 
@@ -533,7 +544,8 @@
             this.repositoryItemTextEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.repositoryItemTextEdit1.EditFormat.FormatString = "#,###";
             this.repositoryItemTextEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit1.Mask.EditMask = "\\d+";
+            this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // ctdb_donvi
@@ -1010,5 +1022,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraEditors.SimpleButton btnInPhieu;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private DevExpress.XtraGrid.Columns.GridColumn id_ban;
     }
 }

@@ -198,12 +198,14 @@ namespace RestaurantSoftware.BL_Layer
                          select cthd).Count();
             return query;
         }
-        public void ChuyenChiTietDatBan(int idban,DateTime today,int idhoadon)
+        public void ChuyenChiTietDatBan(int idban,DateTime today,int idhoadon, List<string> ttdatban)
         {
+            int? iddatban = 0;
             var chitietdatban = from ct in dbContext.Chitiet_DatBans
                         where
                           ct.DatBan.id_ban == idban &&
-                          ct.DatBan.thoigian == today
+                          ct.DatBan.thoigian == today &&
+                          ct.DatBan.trangthai == ttdatban[0]
                         select new
                         {
                             ct.id_datban,
@@ -222,7 +224,13 @@ namespace RestaurantSoftware.BL_Layer
                 cthoadon.dongia = ctdb.gia;
                 cthoadon.thanhtien = ctdb.thanhtien;
                 ThemMoiChiTietHoaDon(cthoadon);
+                iddatban = ctdb.id_datban;
             }
+            HoaDonThanhToan hdtt = dbContext.HoaDonThanhToans.Single<HoaDonThanhToan>(hd => hd.id_hoadon == idhoadon);
+            DatBan db = dbContext.DatBans.Single<DatBan>(d => d.id_datban == iddatban);
+            hdtt.datra = db.tiencoc;
+ 
+            // update 
             dbContext.SubmitChanges();
         }
 
