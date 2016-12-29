@@ -85,7 +85,7 @@ namespace RestaurantSoftware.P_Layer
 
         private bool KiemTraHang()
         {
-            if (gridView1.GetFocusedRowCellValue(col_TenNhanVien) != null)
+            if (gridView1.GetFocusedRowCellValue(col_TenNhanVien) != null && gridView1.GetFocusedRowCellValue(col_TenNhanVien).ToString() != "")
                 return true;
             return false;
         }
@@ -116,6 +116,7 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
+            bool KiemTra = false;
             if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
@@ -125,23 +126,30 @@ namespace RestaurantSoftware.P_Layer
                     nv.tendangnhap = gridView1.GetRowCellValue(id, "tendangnhap").ToString();
                     nv.matkhau = gridView1.GetRowCellValue(id, "matkhau").ToString();
                     nv.id_quyen = int.Parse(gridView1.GetRowCellValue(id, "id_quyen").ToString());
-
-                    if (!_Nv_Bll.KiemTraTDNTonTai(nv.tendangnhap,nv.id_nhanvien))
+                    if (_Nv_Bll.KiemTraNhanVien(nv))
                     {
-                        _Nv_Bll.CapNhatNhanVien(nv);
-                        isUpdate = true;
-                    }
-                    else
-                    {
-                        if (error == "")
+                        if (!_Nv_Bll.KiemTraTDNTonTai(nv.tendangnhap, nv.id_nhanvien))
                         {
-                            error = nv.tennhanvien;
+                            _Nv_Bll.CapNhatNhanVien(nv);
+                            isUpdate = true;
                         }
                         else
                         {
-                            error += " | " + nv.tennhanvien;
+                            if (error == "")
+                            {
+                                error = nv.tennhanvien;
+                            }
+                            else
+                            {
+                                error += " | " + nv.tennhanvien;
+                            }
                         }
                     }
+                    else
+                    {
+                        KiemTra = true;
+                    }
+                    
                 }
             if (isUpdate == true)
             {
@@ -153,6 +161,10 @@ namespace RestaurantSoftware.P_Layer
                 {
                     Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các nhân viên chưa được cập nhật (" + error + "). Lỗi: Tên nhân viên đã tồn tại.");
                 }
+            }
+            else if(KiemTra == true)
+            {
+                Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Dữ liệu không được rỗng.");
             }
             else
             {
@@ -239,6 +251,12 @@ namespace RestaurantSoftware.P_Layer
             {
                 LoadDataSource();
             }
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.PrevFocusedRowHandle == GridControl.NewItemRowHandle)
+                LoadDataSource();
         }
     }
 }

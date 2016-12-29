@@ -310,7 +310,7 @@ namespace RestaurantSoftware
            
         }
 
-        private Form ExistForm(Type ftype)
+        public Form ExistForm(Type ftype)
         {
             foreach (Form f in this.MdiChildren)
             {
@@ -418,8 +418,7 @@ namespace RestaurantSoftware
             else
             {
                 P_Layer.Frm_ThayDoiThamSo ThamSo = new P_Layer.Frm_ThayDoiThamSo();
-                ThamSo.MdiParent = this;
-                ThamSo.Show();
+                ThamSo.ShowDialog();
             }
         }
 

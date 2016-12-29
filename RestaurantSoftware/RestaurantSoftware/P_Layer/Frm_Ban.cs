@@ -49,7 +49,7 @@ namespace RestaurantSoftware.P_Layer
         {
             this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
             gridView1.SelectRow(gridView1.FocusedRowHandle);
-            gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            gridView1.FocusedColumn = gridView1.VisibleColumns[1];
             gridView1.ShowEditor();
             gridView1.PostEditor();
             if (KiemTraHang())
@@ -95,7 +95,8 @@ namespace RestaurantSoftware.P_Layer
 
         private bool KiemTraHang()
         {
-            if (gridView1.GetFocusedRowCellValue(col_TenBan) != null || gridView1.GetFocusedRowCellValue(col_TrangThai) != null)
+            if (gridView1.GetFocusedRowCellValue(col_TenBan) != null && gridView1.GetFocusedRowCellValue(col_TrangThai) != null
+                && gridView1.GetFocusedRowCellValue(col_TenBan).ToString() != "" && gridView1.GetFocusedRowCellValue(col_TrangThai).ToString() != "")
                 return true;
             return false;
         }
@@ -126,6 +127,7 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
+            bool KiemTra = false;
             if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
@@ -134,22 +136,29 @@ namespace RestaurantSoftware.P_Layer
                     ban.tenban = gridView1.GetRowCellValue(id, "tenban").ToString();
                     ban.id_loaiban = int.Parse(gridView1.GetRowCellValue(id, "id_loaiban").ToString());
                     ban.trangthai = gridView1.GetRowCellValue(id, "trangthai").ToString();
-
-                    if (_ban_Bll.KiemTraBanTonTai(ban.tenban,ban.id_ban) == 1)
+                    if (_ban_Bll.KiemTraBan(ban))
                     {
-                        _ban_Bll.CapNhatBan(ban);
-                        isUpdate = true;
-                    }
-                    else
-                    {
-                        if (error == "")
+                        if (_ban_Bll.KiemTraBanTonTai(ban.tenban, ban.id_ban) == 1)
                         {
-                            error = ban.tenban;
+                            _ban_Bll.CapNhatBan(ban);
+                            isUpdate = true;
                         }
                         else
                         {
-                            error += " | " + ban.tenban;
+                            if (error == "")
+                            {
+                                error = ban.tenban;
+                            }
+                            else
+                            {
+                                error += " | " + ban.tenban;
+                            }
                         }
+
+                    }
+                    else
+                    {
+                        KiemTra = true;
                     }
                 }
             if (isUpdate == true)
@@ -162,6 +171,10 @@ namespace RestaurantSoftware.P_Layer
                 {
                     Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các bàn chưa được cập nhật (" + error + "). Lỗi: Tên bàn đã tồn tại.");
                 }
+            }
+            else if(KiemTra == true)
+            {
+                Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Dữ liệu không được rỗng.");
             }
             else
             {
@@ -176,7 +189,7 @@ namespace RestaurantSoftware.P_Layer
             LoadDataSource();
             this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
             gridView1.SelectRow(gridView1.FocusedRowHandle);
-            gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            gridView1.FocusedColumn = gridView1.VisibleColumns[1];
             gridView1.ShowEditor();
         }
 
@@ -193,20 +206,6 @@ namespace RestaurantSoftware.P_Layer
                     gridControl1.ExportToXls(saveFileDialog1.FileName);
                 if (saveFileDialog1.FilterIndex == 3)
                     gridControl1.ExportToRtf(saveFileDialog1.FileName);
-            }
-        }
-
-        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-            btn_Xoa.Enabled = false;
-            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
-            {
-                btn_Xoa.Enabled = true;
-            }
-
-            if (this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
-            {
-                btn_LuuLai.Enabled = false;
             }
         }
 
@@ -258,6 +257,25 @@ namespace RestaurantSoftware.P_Layer
             if (e.Column.Name == "col_STT" && e.RowHandle == GridControl.NewItemRowHandle)
             {
                 e.DisplayText = (gridView1.RowCount + 1).ToString();
+            }
+        }
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+          if (e.PrevFocusedRowHandle == GridControl.NewItemRowHandle)
+              LoadDataSource();
+        }
+
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            btn_Xoa.Enabled = false;
+            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Xoa.Enabled = true;
+            }
+
+            if (this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                btn_LuuLai.Enabled = false;
             }
         }
     }

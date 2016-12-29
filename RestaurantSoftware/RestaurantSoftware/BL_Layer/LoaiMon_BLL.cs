@@ -75,6 +75,13 @@ namespace RestaurantSoftware.BL_Layer
             return false;
         }
 
+        public bool KiemTraLoaiMon(LoaiMon loaimon)
+        {
+            if (loaimon.tenloaimon != null && loaimon.tenloaimon.ToString() != "")
+                return true;
+            return false;
+        }
+
         public void XoaTam(int id_loaimon)
         {
             LoaiMon _loaimon = dbContext.LoaiMons.Single<LoaiMon>(x => x.id_loaimon == id_loaimon);

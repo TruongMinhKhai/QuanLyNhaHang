@@ -108,5 +108,12 @@ namespace RestaurantSoftware.DA_Layer
             get { return donvi; }
             set { donvi = value; }
         }
+        int datra;
+
+        public int Datra
+        {
+            get { return datra; }
+            set { datra = value; }
+        }
     }
 }

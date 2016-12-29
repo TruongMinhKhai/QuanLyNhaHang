@@ -61,7 +61,6 @@ namespace RestaurantSoftware.P_Layer
                         Notifications.Success("Thêm khách hàng mới thành công!");
                         LoadDataSource();
                         btn_Luu.Enabled = false;
-                        btn_Luu.Enabled = false;
                         _listUpdate.Clear();
                     }
                     catch (Exception)
@@ -82,7 +81,8 @@ namespace RestaurantSoftware.P_Layer
 
         private bool KiemTraHang()
         {
-            if (gridView1.GetFocusedRowCellValue(col_TenKhachHang) != null || gridView1.GetFocusedRowCellValue(col_SDT) != null)
+            if (gridView1.GetFocusedRowCellValue(col_TenKhachHang) != null && gridView1.GetFocusedRowCellValue(col_SDT) != null
+                && gridView1.GetFocusedRowCellValue(col_TenKhachHang).ToString() != "" && gridView1.GetFocusedRowCellValue(col_SDT).ToString() != "")
                 return true;
             return false;
         }
@@ -113,6 +113,7 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
+            bool KiemTra = false;
             if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
@@ -121,23 +122,30 @@ namespace RestaurantSoftware.P_Layer
                     kh.tenkh = gridView1.GetRowCellValue(id, "tenkh").ToString();
                     kh.sdt = gridView1.GetRowCellValue(id, "sdt").ToString();
                     kh.diachi = gridView1.GetRowCellValue(id, "diachi").ToString();
-
-                    if (!_kh_Bll.KiemTraSDTTonTai(kh.sdt,kh.id_khachhang))
+                    if (_kh_Bll.KiemTraKhachHang(kh))
                     {
-                        _kh_Bll.CapNhatKhachHang(kh);
-                        isUpdate = true;
-                    }
-                    else
-                    {
-                        if (error == "")
+                        if (!_kh_Bll.KiemTraSDTTonTai(kh.sdt, kh.id_khachhang))
                         {
-                            error = kh.tenkh;
+                            _kh_Bll.CapNhatKhachHang(kh);
+                            isUpdate = true;
                         }
                         else
                         {
-                            error += " | " + kh.tenkh;
+                            if (error == "")
+                            {
+                                error = kh.tenkh;
+                            }
+                            else
+                            {
+                                error += " | " + kh.tenkh;
+                            }
                         }
                     }
+                    else
+                    {
+                        KiemTra = true;
+                    }
+                    
                 }
             if (isUpdate == true)
             {
@@ -149,6 +157,10 @@ namespace RestaurantSoftware.P_Layer
                 {
                     Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các khách hàng chưa được cập nhật (" + error + "). Lỗi: Số điện thoại đã tồn tại.");
                 }
+            }
+            else if (KiemTra == true)
+            {
+                Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: dữ liệu không được rỗng.");
             }
             else
             {
@@ -234,6 +246,12 @@ namespace RestaurantSoftware.P_Layer
                 gridView1.SelectRow(gridView1.FocusedRowHandle);
                 gridView1.FocusedColumn = gridView1.VisibleColumns[0];
             }
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.PrevFocusedRowHandle == GridControl.NewItemRowHandle)
+                LoadDataSource();
         }
 
         

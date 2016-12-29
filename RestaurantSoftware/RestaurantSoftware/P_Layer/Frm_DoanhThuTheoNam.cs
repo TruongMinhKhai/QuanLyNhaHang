@@ -20,9 +20,9 @@ namespace RestaurantSoftware.P_Layer
 
         private void btn_ChartDTNam_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            P_Layer.Frm_ChartDoanhThuNam DT = new P_Layer.Frm_ChartDoanhThuNam();
-            DT.MdiParent = FormMain.ActiveForm;
-            DT.Show();
+                P_Layer.Frm_ChartDoanhThuNam DT = new P_Layer.Frm_ChartDoanhThuNam();
+                DT.MdiParent = FormMain.ActiveForm;
+                DT.Show();
         }
     }
 }

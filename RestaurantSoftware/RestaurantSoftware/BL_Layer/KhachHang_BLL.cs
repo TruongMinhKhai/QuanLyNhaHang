@@ -81,5 +81,12 @@ namespace RestaurantSoftware.BL_Layer
             }
             return false;
         }
+
+        public bool KiemTraKhachHang(KhachHang KH)
+        {
+            if (KH.tenkh != null && KH.sdt != null && KH.tenkh.ToString() != "" && KH.sdt.ToString() != "")
+                return true;
+            return false;
+        }
     }
 }

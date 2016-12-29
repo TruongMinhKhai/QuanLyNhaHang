@@ -139,14 +139,25 @@ namespace RestaurantSoftware.P_Layer
                 Notifications.Answers("Xóa thành công!");
                 btn_LamMoi_Click(sender, e);
                 LoadDataSource();
-
-
-
             }
             else
                 Notifications.Answers("Xóa không thành công!");
            
 
+        }
+
+        private void btn_In_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Frm_InQuyDinh sc = new Frm_InQuyDinh(int.Parse(txt_MaQuyDinh.Text));
+                sc.Show();
+            }
+            catch (Exception)
+            {
+
+                Notifications.Answers(" Bạn chưa chọn sự cố để in");
+            }
         }
     }
 }
