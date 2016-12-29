@@ -177,195 +177,195 @@
             DevExpress.Utils.SuperToolTip superToolTip49 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem49 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem49 = new DevExpress.Utils.ToolTipItem();
-            this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
-            this.documentViewerRibbonController1 = new DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController(this.components);
-            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.printPreviewBarItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem4 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem5 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem6 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem7 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem8 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem9 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem10 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem11 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem12 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem13 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem14 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem15 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem16 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem17 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem18 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem19 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem20 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem21 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem22 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem23 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem24 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem25 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem26 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem27 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem28 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem29 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem30 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem31 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem32 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem33 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem34 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem35 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem36 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem37 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem38 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem39 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem40 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem41 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem42 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem43 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem44 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem45 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem46 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem47 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewBarItem48 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.printPreviewStaticItem1 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.repositoryItemProgressBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
-            this.progressBarEditItem1 = new DevExpress.XtraPrinting.Preview.ProgressBarEditItem();
-            this.printPreviewBarItem49 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.printPreviewStaticItem2 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
-            this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
-            this.zoomTrackBarEditItem1 = new DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem();
-            this.ribbonPage1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage();
-            this.printPreviewRibbonPageGroup1 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.printPreviewRibbonPageGroup2 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.printPreviewRibbonPageGroup3 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.printPreviewRibbonPageGroup4 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.printPreviewRibbonPageGroup5 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.printPreviewRibbonPageGroup6 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.printPreviewRibbonPageGroup7 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            this.printPreviewRibbonPageGroup8 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
-            ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
+            this.documentViewer2 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
+            this.documentViewerRibbonController2 = new DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController(this.components);
+            this.ribbonControl2 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ribbonStatusBar2 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.printPreviewBarItem50 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem51 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem52 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem53 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem54 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem55 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem56 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem57 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem58 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem59 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem60 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem61 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem62 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem63 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem64 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem65 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem66 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem67 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem68 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem69 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem70 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem71 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem72 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem73 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem74 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem75 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem76 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem77 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem78 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem79 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem80 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem81 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem82 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem83 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem84 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem85 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem86 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem87 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem88 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem89 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem90 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem91 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem92 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem93 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem94 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem95 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem96 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewBarItem97 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.printPreviewStaticItem3 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
+            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.repositoryItemProgressBar2 = new DevExpress.XtraEditors.Repository.RepositoryItemProgressBar();
+            this.progressBarEditItem2 = new DevExpress.XtraPrinting.Preview.ProgressBarEditItem();
+            this.printPreviewBarItem98 = new DevExpress.XtraPrinting.Preview.PrintPreviewBarItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.printPreviewStaticItem4 = new DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem();
+            this.repositoryItemZoomTrackBar2 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
+            this.zoomTrackBarEditItem2 = new DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem();
+            this.ribbonPage2 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage();
+            this.printPreviewRibbonPageGroup9 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.printPreviewRibbonPageGroup10 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.printPreviewRibbonPageGroup11 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.printPreviewRibbonPageGroup12 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.printPreviewRibbonPageGroup13 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.printPreviewRibbonPageGroup14 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.printPreviewRibbonPageGroup15 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            this.printPreviewRibbonPageGroup16 = new DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup();
+            ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar2)).BeginInit();
             this.SuspendLayout();
             // 
-            // documentViewer1
+            // documentViewer2
             // 
-            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.documentViewer1.IsMetric = false;
-            this.documentViewer1.Location = new System.Drawing.Point(0, 141);
-            this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(737, 291);
-            this.documentViewer1.TabIndex = 0;
+            this.documentViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.documentViewer2.IsMetric = false;
+            this.documentViewer2.Location = new System.Drawing.Point(0, 141);
+            this.documentViewer2.Name = "documentViewer2";
+            this.documentViewer2.Size = new System.Drawing.Size(683, 203);
+            this.documentViewer2.TabIndex = 0;
             // 
-            // documentViewerRibbonController1
+            // documentViewerRibbonController2
             // 
-            this.documentViewerRibbonController1.DocumentViewer = this.documentViewer1;
-            this.documentViewerRibbonController1.RibbonControl = this.ribbonControl1;
-            this.documentViewerRibbonController1.RibbonStatusBar = this.ribbonStatusBar1;
+            this.documentViewerRibbonController2.DocumentViewer = this.documentViewer2;
+            this.documentViewerRibbonController2.RibbonControl = this.ribbonControl2;
+            this.documentViewerRibbonController2.RibbonStatusBar = this.ribbonStatusBar2;
             // 
-            // ribbonControl1
+            // ribbonControl2
             // 
-            this.ribbonControl1.AutoHideEmptyItems = true;
-            this.ribbonControl1.ExpandCollapseItem.Id = 0;
-            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl1.ExpandCollapseItem,
-            this.printPreviewBarItem1,
-            this.printPreviewBarItem2,
-            this.printPreviewBarItem3,
-            this.printPreviewBarItem4,
-            this.printPreviewBarItem5,
-            this.printPreviewBarItem6,
-            this.printPreviewBarItem7,
-            this.printPreviewBarItem8,
-            this.printPreviewBarItem9,
-            this.printPreviewBarItem10,
-            this.printPreviewBarItem11,
-            this.printPreviewBarItem12,
-            this.printPreviewBarItem13,
-            this.printPreviewBarItem14,
-            this.printPreviewBarItem15,
-            this.printPreviewBarItem16,
-            this.printPreviewBarItem17,
-            this.printPreviewBarItem18,
-            this.printPreviewBarItem19,
-            this.printPreviewBarItem20,
-            this.printPreviewBarItem21,
-            this.printPreviewBarItem22,
-            this.printPreviewBarItem23,
-            this.printPreviewBarItem24,
-            this.printPreviewBarItem25,
-            this.printPreviewBarItem26,
-            this.printPreviewBarItem27,
-            this.printPreviewBarItem28,
-            this.printPreviewBarItem29,
-            this.printPreviewBarItem30,
-            this.printPreviewBarItem31,
-            this.printPreviewBarItem32,
-            this.printPreviewBarItem33,
-            this.printPreviewBarItem34,
-            this.printPreviewBarItem35,
-            this.printPreviewBarItem36,
-            this.printPreviewBarItem37,
-            this.printPreviewBarItem38,
-            this.printPreviewBarItem39,
-            this.printPreviewBarItem40,
-            this.printPreviewBarItem41,
-            this.printPreviewBarItem42,
-            this.printPreviewBarItem43,
-            this.printPreviewBarItem44,
-            this.printPreviewBarItem45,
-            this.printPreviewBarItem46,
-            this.printPreviewBarItem47,
-            this.printPreviewBarItem48,
-            this.printPreviewStaticItem1,
-            this.barStaticItem1,
-            this.progressBarEditItem1,
-            this.printPreviewBarItem49,
-            this.barButtonItem1,
-            this.printPreviewStaticItem2,
-            this.zoomTrackBarEditItem1});
-            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 56;
-            this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
-            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemProgressBar1,
-            this.repositoryItemZoomTrackBar1});
-            this.ribbonControl1.Size = new System.Drawing.Size(737, 141);
-            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
-            this.ribbonControl1.TransparentEditors = true;
+            this.ribbonControl2.AutoHideEmptyItems = true;
+            this.ribbonControl2.ExpandCollapseItem.Id = 0;
+            this.ribbonControl2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl2.ExpandCollapseItem,
+            this.printPreviewBarItem50,
+            this.printPreviewBarItem51,
+            this.printPreviewBarItem52,
+            this.printPreviewBarItem53,
+            this.printPreviewBarItem54,
+            this.printPreviewBarItem55,
+            this.printPreviewBarItem56,
+            this.printPreviewBarItem57,
+            this.printPreviewBarItem58,
+            this.printPreviewBarItem59,
+            this.printPreviewBarItem60,
+            this.printPreviewBarItem61,
+            this.printPreviewBarItem62,
+            this.printPreviewBarItem63,
+            this.printPreviewBarItem64,
+            this.printPreviewBarItem65,
+            this.printPreviewBarItem66,
+            this.printPreviewBarItem67,
+            this.printPreviewBarItem68,
+            this.printPreviewBarItem69,
+            this.printPreviewBarItem70,
+            this.printPreviewBarItem71,
+            this.printPreviewBarItem72,
+            this.printPreviewBarItem73,
+            this.printPreviewBarItem74,
+            this.printPreviewBarItem75,
+            this.printPreviewBarItem76,
+            this.printPreviewBarItem77,
+            this.printPreviewBarItem78,
+            this.printPreviewBarItem79,
+            this.printPreviewBarItem80,
+            this.printPreviewBarItem81,
+            this.printPreviewBarItem82,
+            this.printPreviewBarItem83,
+            this.printPreviewBarItem84,
+            this.printPreviewBarItem85,
+            this.printPreviewBarItem86,
+            this.printPreviewBarItem87,
+            this.printPreviewBarItem88,
+            this.printPreviewBarItem89,
+            this.printPreviewBarItem90,
+            this.printPreviewBarItem91,
+            this.printPreviewBarItem92,
+            this.printPreviewBarItem93,
+            this.printPreviewBarItem94,
+            this.printPreviewBarItem95,
+            this.printPreviewBarItem96,
+            this.printPreviewBarItem97,
+            this.printPreviewStaticItem3,
+            this.barStaticItem2,
+            this.progressBarEditItem2,
+            this.printPreviewBarItem98,
+            this.barButtonItem2,
+            this.printPreviewStaticItem4,
+            this.zoomTrackBarEditItem2});
+            this.ribbonControl2.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl2.MaxItemId = 56;
+            this.ribbonControl2.Name = "ribbonControl2";
+            this.ribbonControl2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage2});
+            this.ribbonControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemProgressBar2,
+            this.repositoryItemZoomTrackBar2});
+            this.ribbonControl2.Size = new System.Drawing.Size(683, 141);
+            this.ribbonControl2.StatusBar = this.ribbonStatusBar2;
+            this.ribbonControl2.TransparentEditors = true;
             // 
-            // ribbonStatusBar1
+            // ribbonStatusBar2
             // 
-            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem1);
-            this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1, true);
-            this.ribbonStatusBar1.ItemLinks.Add(this.progressBarEditItem1);
-            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewBarItem49);
-            this.ribbonStatusBar1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
-            this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 432);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(737, 27);
+            this.ribbonStatusBar2.ItemLinks.Add(this.printPreviewStaticItem3);
+            this.ribbonStatusBar2.ItemLinks.Add(this.barStaticItem2, true);
+            this.ribbonStatusBar2.ItemLinks.Add(this.progressBarEditItem2);
+            this.ribbonStatusBar2.ItemLinks.Add(this.printPreviewBarItem98);
+            this.ribbonStatusBar2.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonStatusBar2.ItemLinks.Add(this.printPreviewStaticItem4);
+            this.ribbonStatusBar2.ItemLinks.Add(this.zoomTrackBarEditItem2);
+            this.ribbonStatusBar2.Location = new System.Drawing.Point(0, 344);
+            this.ribbonStatusBar2.Name = "ribbonStatusBar2";
+            this.ribbonStatusBar2.Ribbon = this.ribbonControl2;
+            this.ribbonStatusBar2.Size = new System.Drawing.Size(683, 27);
             // 
-            // printPreviewBarItem1
+            // printPreviewBarItem50
             // 
-            this.printPreviewBarItem1.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.printPreviewBarItem1.Caption = "Bookmarks";
-            this.printPreviewBarItem1.Command = DevExpress.XtraPrinting.PrintingSystemCommand.DocumentMap;
-            this.printPreviewBarItem1.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem1.Enabled = false;
-            this.printPreviewBarItem1.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_DocumentMap;
-            this.printPreviewBarItem1.Id = 1;
-            this.printPreviewBarItem1.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_DocumentMapLarge;
-            this.printPreviewBarItem1.Name = "printPreviewBarItem1";
+            this.printPreviewBarItem50.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem50.Caption = "Bookmarks";
+            this.printPreviewBarItem50.Command = DevExpress.XtraPrinting.PrintingSystemCommand.DocumentMap;
+            this.printPreviewBarItem50.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem50.Enabled = false;
+            this.printPreviewBarItem50.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_DocumentMap;
+            this.printPreviewBarItem50.Id = 1;
+            this.printPreviewBarItem50.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_DocumentMapLarge;
+            this.printPreviewBarItem50.Name = "printPreviewBarItem50";
             superToolTip1.FixedTooltipWidth = true;
             toolTipTitleItem1.Text = "Document Map";
             toolTipItem1.LeftIndent = 6;
@@ -374,19 +374,19 @@
             superToolTip1.Items.Add(toolTipTitleItem1);
             superToolTip1.Items.Add(toolTipItem1);
             superToolTip1.MaxWidth = 210;
-            this.printPreviewBarItem1.SuperTip = superToolTip1;
+            this.printPreviewBarItem50.SuperTip = superToolTip1;
             // 
-            // printPreviewBarItem2
+            // printPreviewBarItem51
             // 
-            this.printPreviewBarItem2.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.printPreviewBarItem2.Caption = "Parameters";
-            this.printPreviewBarItem2.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Parameters;
-            this.printPreviewBarItem2.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem2.Enabled = false;
-            this.printPreviewBarItem2.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Parameters;
-            this.printPreviewBarItem2.Id = 2;
-            this.printPreviewBarItem2.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ParametersLarge;
-            this.printPreviewBarItem2.Name = "printPreviewBarItem2";
+            this.printPreviewBarItem51.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem51.Caption = "Parameters";
+            this.printPreviewBarItem51.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Parameters;
+            this.printPreviewBarItem51.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem51.Enabled = false;
+            this.printPreviewBarItem51.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Parameters;
+            this.printPreviewBarItem51.Id = 2;
+            this.printPreviewBarItem51.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ParametersLarge;
+            this.printPreviewBarItem51.Name = "printPreviewBarItem51";
             superToolTip2.FixedTooltipWidth = true;
             toolTipTitleItem2.Text = "Parameters";
             toolTipItem2.LeftIndent = 6;
@@ -395,19 +395,19 @@
             superToolTip2.Items.Add(toolTipTitleItem2);
             superToolTip2.Items.Add(toolTipItem2);
             superToolTip2.MaxWidth = 210;
-            this.printPreviewBarItem2.SuperTip = superToolTip2;
+            this.printPreviewBarItem51.SuperTip = superToolTip2;
             // 
-            // printPreviewBarItem3
+            // printPreviewBarItem52
             // 
-            this.printPreviewBarItem3.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.printPreviewBarItem3.Caption = "Find";
-            this.printPreviewBarItem3.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Find;
-            this.printPreviewBarItem3.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem3.Enabled = false;
-            this.printPreviewBarItem3.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Find;
-            this.printPreviewBarItem3.Id = 3;
-            this.printPreviewBarItem3.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_FindLarge;
-            this.printPreviewBarItem3.Name = "printPreviewBarItem3";
+            this.printPreviewBarItem52.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem52.Caption = "Find";
+            this.printPreviewBarItem52.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Find;
+            this.printPreviewBarItem52.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem52.Enabled = false;
+            this.printPreviewBarItem52.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Find;
+            this.printPreviewBarItem52.Id = 3;
+            this.printPreviewBarItem52.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_FindLarge;
+            this.printPreviewBarItem52.Name = "printPreviewBarItem52";
             superToolTip3.FixedTooltipWidth = true;
             toolTipTitleItem3.Text = "Find";
             toolTipItem3.LeftIndent = 6;
@@ -415,19 +415,19 @@
             superToolTip3.Items.Add(toolTipTitleItem3);
             superToolTip3.Items.Add(toolTipItem3);
             superToolTip3.MaxWidth = 210;
-            this.printPreviewBarItem3.SuperTip = superToolTip3;
+            this.printPreviewBarItem52.SuperTip = superToolTip3;
             // 
-            // printPreviewBarItem4
+            // printPreviewBarItem53
             // 
-            this.printPreviewBarItem4.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.printPreviewBarItem4.Caption = "Thumbnails";
-            this.printPreviewBarItem4.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Thumbnails;
-            this.printPreviewBarItem4.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem4.Enabled = false;
-            this.printPreviewBarItem4.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Thumbnails;
-            this.printPreviewBarItem4.Id = 4;
-            this.printPreviewBarItem4.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ThumbnailsLarge;
-            this.printPreviewBarItem4.Name = "printPreviewBarItem4";
+            this.printPreviewBarItem53.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem53.Caption = "Thumbnails";
+            this.printPreviewBarItem53.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Thumbnails;
+            this.printPreviewBarItem53.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem53.Enabled = false;
+            this.printPreviewBarItem53.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Thumbnails;
+            this.printPreviewBarItem53.Id = 4;
+            this.printPreviewBarItem53.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ThumbnailsLarge;
+            this.printPreviewBarItem53.Name = "printPreviewBarItem53";
             superToolTip4.FixedTooltipWidth = true;
             toolTipTitleItem4.Text = "Thumbnails";
             toolTipItem4.LeftIndent = 6;
@@ -435,18 +435,18 @@
             superToolTip4.Items.Add(toolTipTitleItem4);
             superToolTip4.Items.Add(toolTipItem4);
             superToolTip4.MaxWidth = 210;
-            this.printPreviewBarItem4.SuperTip = superToolTip4;
+            this.printPreviewBarItem53.SuperTip = superToolTip4;
             // 
-            // printPreviewBarItem5
+            // printPreviewBarItem54
             // 
-            this.printPreviewBarItem5.Caption = "Options";
-            this.printPreviewBarItem5.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Customize;
-            this.printPreviewBarItem5.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem5.Enabled = false;
-            this.printPreviewBarItem5.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Customize;
-            this.printPreviewBarItem5.Id = 5;
-            this.printPreviewBarItem5.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_CustomizeLarge;
-            this.printPreviewBarItem5.Name = "printPreviewBarItem5";
+            this.printPreviewBarItem54.Caption = "Options";
+            this.printPreviewBarItem54.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Customize;
+            this.printPreviewBarItem54.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem54.Enabled = false;
+            this.printPreviewBarItem54.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Customize;
+            this.printPreviewBarItem54.Id = 5;
+            this.printPreviewBarItem54.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_CustomizeLarge;
+            this.printPreviewBarItem54.Name = "printPreviewBarItem54";
             superToolTip5.FixedTooltipWidth = true;
             toolTipTitleItem5.Text = "Options";
             toolTipItem5.LeftIndent = 6;
@@ -454,18 +454,18 @@
             superToolTip5.Items.Add(toolTipTitleItem5);
             superToolTip5.Items.Add(toolTipItem5);
             superToolTip5.MaxWidth = 210;
-            this.printPreviewBarItem5.SuperTip = superToolTip5;
+            this.printPreviewBarItem54.SuperTip = superToolTip5;
             // 
-            // printPreviewBarItem6
+            // printPreviewBarItem55
             // 
-            this.printPreviewBarItem6.Caption = "Print";
-            this.printPreviewBarItem6.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Print;
-            this.printPreviewBarItem6.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem6.Enabled = false;
-            this.printPreviewBarItem6.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Print;
-            this.printPreviewBarItem6.Id = 6;
-            this.printPreviewBarItem6.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PrintLarge;
-            this.printPreviewBarItem6.Name = "printPreviewBarItem6";
+            this.printPreviewBarItem55.Caption = "Print";
+            this.printPreviewBarItem55.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Print;
+            this.printPreviewBarItem55.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem55.Enabled = false;
+            this.printPreviewBarItem55.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Print;
+            this.printPreviewBarItem55.Id = 6;
+            this.printPreviewBarItem55.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PrintLarge;
+            this.printPreviewBarItem55.Name = "printPreviewBarItem55";
             superToolTip6.FixedTooltipWidth = true;
             toolTipTitleItem6.Text = "Print (Ctrl+P)";
             toolTipItem6.LeftIndent = 6;
@@ -473,18 +473,18 @@
             superToolTip6.Items.Add(toolTipTitleItem6);
             superToolTip6.Items.Add(toolTipItem6);
             superToolTip6.MaxWidth = 210;
-            this.printPreviewBarItem6.SuperTip = superToolTip6;
+            this.printPreviewBarItem55.SuperTip = superToolTip6;
             // 
-            // printPreviewBarItem7
+            // printPreviewBarItem56
             // 
-            this.printPreviewBarItem7.Caption = "Quick Print";
-            this.printPreviewBarItem7.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PrintDirect;
-            this.printPreviewBarItem7.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem7.Enabled = false;
-            this.printPreviewBarItem7.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PrintDirect;
-            this.printPreviewBarItem7.Id = 7;
-            this.printPreviewBarItem7.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PrintDirectLarge;
-            this.printPreviewBarItem7.Name = "printPreviewBarItem7";
+            this.printPreviewBarItem56.Caption = "Quick Print";
+            this.printPreviewBarItem56.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PrintDirect;
+            this.printPreviewBarItem56.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem56.Enabled = false;
+            this.printPreviewBarItem56.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PrintDirect;
+            this.printPreviewBarItem56.Id = 7;
+            this.printPreviewBarItem56.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PrintDirectLarge;
+            this.printPreviewBarItem56.Name = "printPreviewBarItem56";
             superToolTip7.FixedTooltipWidth = true;
             toolTipTitleItem7.Text = "Quick Print";
             toolTipItem7.LeftIndent = 6;
@@ -492,16 +492,16 @@
             superToolTip7.Items.Add(toolTipTitleItem7);
             superToolTip7.Items.Add(toolTipItem7);
             superToolTip7.MaxWidth = 210;
-            this.printPreviewBarItem7.SuperTip = superToolTip7;
+            this.printPreviewBarItem56.SuperTip = superToolTip7;
             // 
-            // printPreviewBarItem8
+            // printPreviewBarItem57
             // 
-            this.printPreviewBarItem8.Caption = "Custom Margins...";
-            this.printPreviewBarItem8.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageSetup;
-            this.printPreviewBarItem8.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem8.Enabled = false;
-            this.printPreviewBarItem8.Id = 8;
-            this.printPreviewBarItem8.Name = "printPreviewBarItem8";
+            this.printPreviewBarItem57.Caption = "Custom Margins...";
+            this.printPreviewBarItem57.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageSetup;
+            this.printPreviewBarItem57.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem57.Enabled = false;
+            this.printPreviewBarItem57.Id = 8;
+            this.printPreviewBarItem57.Name = "printPreviewBarItem57";
             superToolTip8.FixedTooltipWidth = true;
             toolTipTitleItem8.Text = "Page Setup";
             toolTipItem8.LeftIndent = 6;
@@ -509,18 +509,18 @@
             superToolTip8.Items.Add(toolTipTitleItem8);
             superToolTip8.Items.Add(toolTipItem8);
             superToolTip8.MaxWidth = 210;
-            this.printPreviewBarItem8.SuperTip = superToolTip8;
+            this.printPreviewBarItem57.SuperTip = superToolTip8;
             // 
-            // printPreviewBarItem9
+            // printPreviewBarItem58
             // 
-            this.printPreviewBarItem9.Caption = "Header/Footer";
-            this.printPreviewBarItem9.Command = DevExpress.XtraPrinting.PrintingSystemCommand.EditPageHF;
-            this.printPreviewBarItem9.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem9.Enabled = false;
-            this.printPreviewBarItem9.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_EditPageHF;
-            this.printPreviewBarItem9.Id = 9;
-            this.printPreviewBarItem9.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_EditPageHFLarge;
-            this.printPreviewBarItem9.Name = "printPreviewBarItem9";
+            this.printPreviewBarItem58.Caption = "Header/Footer";
+            this.printPreviewBarItem58.Command = DevExpress.XtraPrinting.PrintingSystemCommand.EditPageHF;
+            this.printPreviewBarItem58.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem58.Enabled = false;
+            this.printPreviewBarItem58.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_EditPageHF;
+            this.printPreviewBarItem58.Id = 9;
+            this.printPreviewBarItem58.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_EditPageHFLarge;
+            this.printPreviewBarItem58.Name = "printPreviewBarItem58";
             superToolTip9.FixedTooltipWidth = true;
             toolTipTitleItem9.Text = "Header and Footer";
             toolTipItem9.LeftIndent = 6;
@@ -528,19 +528,19 @@
             superToolTip9.Items.Add(toolTipTitleItem9);
             superToolTip9.Items.Add(toolTipItem9);
             superToolTip9.MaxWidth = 210;
-            this.printPreviewBarItem9.SuperTip = superToolTip9;
+            this.printPreviewBarItem58.SuperTip = superToolTip9;
             // 
-            // printPreviewBarItem10
+            // printPreviewBarItem59
             // 
-            this.printPreviewBarItem10.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem10.Caption = "Scale";
-            this.printPreviewBarItem10.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Scale;
-            this.printPreviewBarItem10.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem10.Enabled = false;
-            this.printPreviewBarItem10.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Scale;
-            this.printPreviewBarItem10.Id = 10;
-            this.printPreviewBarItem10.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ScaleLarge;
-            this.printPreviewBarItem10.Name = "printPreviewBarItem10";
+            this.printPreviewBarItem59.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem59.Caption = "Scale";
+            this.printPreviewBarItem59.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Scale;
+            this.printPreviewBarItem59.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem59.Enabled = false;
+            this.printPreviewBarItem59.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Scale;
+            this.printPreviewBarItem59.Id = 10;
+            this.printPreviewBarItem59.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ScaleLarge;
+            this.printPreviewBarItem59.Name = "printPreviewBarItem59";
             superToolTip10.FixedTooltipWidth = true;
             toolTipTitleItem10.Text = "Scale";
             toolTipItem10.LeftIndent = 6;
@@ -548,21 +548,21 @@
             superToolTip10.Items.Add(toolTipTitleItem10);
             superToolTip10.Items.Add(toolTipItem10);
             superToolTip10.MaxWidth = 210;
-            this.printPreviewBarItem10.SuperTip = superToolTip10;
+            this.printPreviewBarItem59.SuperTip = superToolTip10;
             // 
-            // printPreviewBarItem11
+            // printPreviewBarItem60
             // 
-            this.printPreviewBarItem11.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.printPreviewBarItem11.Caption = "Pointer";
-            this.printPreviewBarItem11.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Pointer;
-            this.printPreviewBarItem11.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem11.Down = true;
-            this.printPreviewBarItem11.Enabled = false;
-            this.printPreviewBarItem11.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Pointer;
-            this.printPreviewBarItem11.GroupIndex = 1;
-            this.printPreviewBarItem11.Id = 11;
-            this.printPreviewBarItem11.Name = "printPreviewBarItem11";
-            this.printPreviewBarItem11.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.printPreviewBarItem60.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem60.Caption = "Pointer";
+            this.printPreviewBarItem60.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Pointer;
+            this.printPreviewBarItem60.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem60.Down = true;
+            this.printPreviewBarItem60.Enabled = false;
+            this.printPreviewBarItem60.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Pointer;
+            this.printPreviewBarItem60.GroupIndex = 1;
+            this.printPreviewBarItem60.Id = 11;
+            this.printPreviewBarItem60.Name = "printPreviewBarItem60";
+            this.printPreviewBarItem60.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
             superToolTip11.FixedTooltipWidth = true;
             toolTipTitleItem11.Text = "Mouse Pointer";
             toolTipItem11.LeftIndent = 6;
@@ -570,20 +570,20 @@
             superToolTip11.Items.Add(toolTipTitleItem11);
             superToolTip11.Items.Add(toolTipItem11);
             superToolTip11.MaxWidth = 210;
-            this.printPreviewBarItem11.SuperTip = superToolTip11;
+            this.printPreviewBarItem60.SuperTip = superToolTip11;
             // 
-            // printPreviewBarItem12
+            // printPreviewBarItem61
             // 
-            this.printPreviewBarItem12.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.printPreviewBarItem12.Caption = "Hand Tool";
-            this.printPreviewBarItem12.Command = DevExpress.XtraPrinting.PrintingSystemCommand.HandTool;
-            this.printPreviewBarItem12.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem12.Enabled = false;
-            this.printPreviewBarItem12.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_HandTool;
-            this.printPreviewBarItem12.GroupIndex = 1;
-            this.printPreviewBarItem12.Id = 12;
-            this.printPreviewBarItem12.Name = "printPreviewBarItem12";
-            this.printPreviewBarItem12.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.printPreviewBarItem61.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem61.Caption = "Hand Tool";
+            this.printPreviewBarItem61.Command = DevExpress.XtraPrinting.PrintingSystemCommand.HandTool;
+            this.printPreviewBarItem61.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem61.Enabled = false;
+            this.printPreviewBarItem61.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_HandTool;
+            this.printPreviewBarItem61.GroupIndex = 1;
+            this.printPreviewBarItem61.Id = 12;
+            this.printPreviewBarItem61.Name = "printPreviewBarItem61";
+            this.printPreviewBarItem61.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
             superToolTip12.FixedTooltipWidth = true;
             toolTipTitleItem12.Text = "Hand Tool";
             toolTipItem12.LeftIndent = 6;
@@ -591,20 +591,20 @@
             superToolTip12.Items.Add(toolTipTitleItem12);
             superToolTip12.Items.Add(toolTipItem12);
             superToolTip12.MaxWidth = 210;
-            this.printPreviewBarItem12.SuperTip = superToolTip12;
+            this.printPreviewBarItem61.SuperTip = superToolTip12;
             // 
-            // printPreviewBarItem13
+            // printPreviewBarItem62
             // 
-            this.printPreviewBarItem13.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
-            this.printPreviewBarItem13.Caption = "Magnifier";
-            this.printPreviewBarItem13.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Magnifier;
-            this.printPreviewBarItem13.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem13.Enabled = false;
-            this.printPreviewBarItem13.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Magnifier;
-            this.printPreviewBarItem13.GroupIndex = 1;
-            this.printPreviewBarItem13.Id = 13;
-            this.printPreviewBarItem13.Name = "printPreviewBarItem13";
-            this.printPreviewBarItem13.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
+            this.printPreviewBarItem62.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.Check;
+            this.printPreviewBarItem62.Caption = "Magnifier";
+            this.printPreviewBarItem62.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Magnifier;
+            this.printPreviewBarItem62.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem62.Enabled = false;
+            this.printPreviewBarItem62.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Magnifier;
+            this.printPreviewBarItem62.GroupIndex = 1;
+            this.printPreviewBarItem62.Id = 13;
+            this.printPreviewBarItem62.Name = "printPreviewBarItem62";
+            this.printPreviewBarItem62.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
             superToolTip13.FixedTooltipWidth = true;
             toolTipTitleItem13.Text = "Magnifier";
             toolTipItem13.LeftIndent = 6;
@@ -614,18 +614,18 @@
             superToolTip13.Items.Add(toolTipTitleItem13);
             superToolTip13.Items.Add(toolTipItem13);
             superToolTip13.MaxWidth = 210;
-            this.printPreviewBarItem13.SuperTip = superToolTip13;
+            this.printPreviewBarItem62.SuperTip = superToolTip13;
             // 
-            // printPreviewBarItem14
+            // printPreviewBarItem63
             // 
-            this.printPreviewBarItem14.Caption = "Zoom Out";
-            this.printPreviewBarItem14.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ZoomOut;
-            this.printPreviewBarItem14.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem14.Enabled = false;
-            this.printPreviewBarItem14.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomOut;
-            this.printPreviewBarItem14.Id = 14;
-            this.printPreviewBarItem14.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomOutLarge;
-            this.printPreviewBarItem14.Name = "printPreviewBarItem14";
+            this.printPreviewBarItem63.Caption = "Zoom Out";
+            this.printPreviewBarItem63.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ZoomOut;
+            this.printPreviewBarItem63.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem63.Enabled = false;
+            this.printPreviewBarItem63.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomOut;
+            this.printPreviewBarItem63.Id = 14;
+            this.printPreviewBarItem63.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomOutLarge;
+            this.printPreviewBarItem63.Name = "printPreviewBarItem63";
             superToolTip14.FixedTooltipWidth = true;
             toolTipTitleItem14.Text = "Zoom Out";
             toolTipItem14.LeftIndent = 6;
@@ -633,18 +633,18 @@
             superToolTip14.Items.Add(toolTipTitleItem14);
             superToolTip14.Items.Add(toolTipItem14);
             superToolTip14.MaxWidth = 210;
-            this.printPreviewBarItem14.SuperTip = superToolTip14;
+            this.printPreviewBarItem63.SuperTip = superToolTip14;
             // 
-            // printPreviewBarItem15
+            // printPreviewBarItem64
             // 
-            this.printPreviewBarItem15.Caption = "Zoom In";
-            this.printPreviewBarItem15.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ZoomIn;
-            this.printPreviewBarItem15.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem15.Enabled = false;
-            this.printPreviewBarItem15.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomIn;
-            this.printPreviewBarItem15.Id = 15;
-            this.printPreviewBarItem15.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomInLarge;
-            this.printPreviewBarItem15.Name = "printPreviewBarItem15";
+            this.printPreviewBarItem64.Caption = "Zoom In";
+            this.printPreviewBarItem64.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ZoomIn;
+            this.printPreviewBarItem64.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem64.Enabled = false;
+            this.printPreviewBarItem64.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomIn;
+            this.printPreviewBarItem64.Id = 15;
+            this.printPreviewBarItem64.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomInLarge;
+            this.printPreviewBarItem64.Name = "printPreviewBarItem64";
             superToolTip15.FixedTooltipWidth = true;
             toolTipTitleItem15.Text = "Zoom In";
             toolTipItem15.LeftIndent = 6;
@@ -652,19 +652,19 @@
             superToolTip15.Items.Add(toolTipTitleItem15);
             superToolTip15.Items.Add(toolTipItem15);
             superToolTip15.MaxWidth = 210;
-            this.printPreviewBarItem15.SuperTip = superToolTip15;
+            this.printPreviewBarItem64.SuperTip = superToolTip15;
             // 
-            // printPreviewBarItem16
+            // printPreviewBarItem65
             // 
-            this.printPreviewBarItem16.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem16.Caption = "Zoom";
-            this.printPreviewBarItem16.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Zoom;
-            this.printPreviewBarItem16.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem16.Enabled = false;
-            this.printPreviewBarItem16.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Zoom;
-            this.printPreviewBarItem16.Id = 16;
-            this.printPreviewBarItem16.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomLarge;
-            this.printPreviewBarItem16.Name = "printPreviewBarItem16";
+            this.printPreviewBarItem65.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem65.Caption = "Zoom";
+            this.printPreviewBarItem65.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Zoom;
+            this.printPreviewBarItem65.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem65.Enabled = false;
+            this.printPreviewBarItem65.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Zoom;
+            this.printPreviewBarItem65.Id = 16;
+            this.printPreviewBarItem65.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ZoomLarge;
+            this.printPreviewBarItem65.Name = "printPreviewBarItem65";
             superToolTip16.FixedTooltipWidth = true;
             toolTipTitleItem16.Text = "Zoom";
             toolTipItem16.LeftIndent = 6;
@@ -672,18 +672,18 @@
             superToolTip16.Items.Add(toolTipTitleItem16);
             superToolTip16.Items.Add(toolTipItem16);
             superToolTip16.MaxWidth = 210;
-            this.printPreviewBarItem16.SuperTip = superToolTip16;
+            this.printPreviewBarItem65.SuperTip = superToolTip16;
             // 
-            // printPreviewBarItem17
+            // printPreviewBarItem66
             // 
-            this.printPreviewBarItem17.Caption = "First Page";
-            this.printPreviewBarItem17.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowFirstPage;
-            this.printPreviewBarItem17.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem17.Enabled = false;
-            this.printPreviewBarItem17.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowFirstPage;
-            this.printPreviewBarItem17.Id = 17;
-            this.printPreviewBarItem17.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowFirstPageLarge;
-            this.printPreviewBarItem17.Name = "printPreviewBarItem17";
+            this.printPreviewBarItem66.Caption = "First Page";
+            this.printPreviewBarItem66.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowFirstPage;
+            this.printPreviewBarItem66.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem66.Enabled = false;
+            this.printPreviewBarItem66.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowFirstPage;
+            this.printPreviewBarItem66.Id = 17;
+            this.printPreviewBarItem66.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowFirstPageLarge;
+            this.printPreviewBarItem66.Name = "printPreviewBarItem66";
             superToolTip17.FixedTooltipWidth = true;
             toolTipTitleItem17.Text = "First Page (Ctrl+Home)";
             toolTipItem17.LeftIndent = 6;
@@ -691,18 +691,18 @@
             superToolTip17.Items.Add(toolTipTitleItem17);
             superToolTip17.Items.Add(toolTipItem17);
             superToolTip17.MaxWidth = 210;
-            this.printPreviewBarItem17.SuperTip = superToolTip17;
+            this.printPreviewBarItem66.SuperTip = superToolTip17;
             // 
-            // printPreviewBarItem18
+            // printPreviewBarItem67
             // 
-            this.printPreviewBarItem18.Caption = "Previous Page";
-            this.printPreviewBarItem18.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowPrevPage;
-            this.printPreviewBarItem18.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem18.Enabled = false;
-            this.printPreviewBarItem18.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowPrevPage;
-            this.printPreviewBarItem18.Id = 18;
-            this.printPreviewBarItem18.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowPrevPageLarge;
-            this.printPreviewBarItem18.Name = "printPreviewBarItem18";
+            this.printPreviewBarItem67.Caption = "Previous Page";
+            this.printPreviewBarItem67.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowPrevPage;
+            this.printPreviewBarItem67.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem67.Enabled = false;
+            this.printPreviewBarItem67.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowPrevPage;
+            this.printPreviewBarItem67.Id = 18;
+            this.printPreviewBarItem67.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowPrevPageLarge;
+            this.printPreviewBarItem67.Name = "printPreviewBarItem67";
             superToolTip18.FixedTooltipWidth = true;
             toolTipTitleItem18.Text = "Previous Page (PageUp)";
             toolTipItem18.LeftIndent = 6;
@@ -710,18 +710,18 @@
             superToolTip18.Items.Add(toolTipTitleItem18);
             superToolTip18.Items.Add(toolTipItem18);
             superToolTip18.MaxWidth = 210;
-            this.printPreviewBarItem18.SuperTip = superToolTip18;
+            this.printPreviewBarItem67.SuperTip = superToolTip18;
             // 
-            // printPreviewBarItem19
+            // printPreviewBarItem68
             // 
-            this.printPreviewBarItem19.Caption = "Next  Page ";
-            this.printPreviewBarItem19.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowNextPage;
-            this.printPreviewBarItem19.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem19.Enabled = false;
-            this.printPreviewBarItem19.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowNextPage;
-            this.printPreviewBarItem19.Id = 19;
-            this.printPreviewBarItem19.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowNextPageLarge;
-            this.printPreviewBarItem19.Name = "printPreviewBarItem19";
+            this.printPreviewBarItem68.Caption = "Next  Page ";
+            this.printPreviewBarItem68.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowNextPage;
+            this.printPreviewBarItem68.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem68.Enabled = false;
+            this.printPreviewBarItem68.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowNextPage;
+            this.printPreviewBarItem68.Id = 19;
+            this.printPreviewBarItem68.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowNextPageLarge;
+            this.printPreviewBarItem68.Name = "printPreviewBarItem68";
             superToolTip19.FixedTooltipWidth = true;
             toolTipTitleItem19.Text = "Next Page (PageDown)";
             toolTipItem19.LeftIndent = 6;
@@ -729,18 +729,18 @@
             superToolTip19.Items.Add(toolTipTitleItem19);
             superToolTip19.Items.Add(toolTipItem19);
             superToolTip19.MaxWidth = 210;
-            this.printPreviewBarItem19.SuperTip = superToolTip19;
+            this.printPreviewBarItem68.SuperTip = superToolTip19;
             // 
-            // printPreviewBarItem20
+            // printPreviewBarItem69
             // 
-            this.printPreviewBarItem20.Caption = "Last  Page ";
-            this.printPreviewBarItem20.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowLastPage;
-            this.printPreviewBarItem20.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem20.Enabled = false;
-            this.printPreviewBarItem20.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowLastPage;
-            this.printPreviewBarItem20.Id = 20;
-            this.printPreviewBarItem20.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowLastPageLarge;
-            this.printPreviewBarItem20.Name = "printPreviewBarItem20";
+            this.printPreviewBarItem69.Caption = "Last  Page ";
+            this.printPreviewBarItem69.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ShowLastPage;
+            this.printPreviewBarItem69.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem69.Enabled = false;
+            this.printPreviewBarItem69.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowLastPage;
+            this.printPreviewBarItem69.Id = 20;
+            this.printPreviewBarItem69.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ShowLastPageLarge;
+            this.printPreviewBarItem69.Name = "printPreviewBarItem69";
             superToolTip20.FixedTooltipWidth = true;
             toolTipTitleItem20.Text = "Last Page (Ctrl+End)";
             toolTipItem20.LeftIndent = 6;
@@ -748,19 +748,19 @@
             superToolTip20.Items.Add(toolTipTitleItem20);
             superToolTip20.Items.Add(toolTipItem20);
             superToolTip20.MaxWidth = 210;
-            this.printPreviewBarItem20.SuperTip = superToolTip20;
+            this.printPreviewBarItem69.SuperTip = superToolTip20;
             // 
-            // printPreviewBarItem21
+            // printPreviewBarItem70
             // 
-            this.printPreviewBarItem21.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem21.Caption = "Many Pages";
-            this.printPreviewBarItem21.Command = DevExpress.XtraPrinting.PrintingSystemCommand.MultiplePages;
-            this.printPreviewBarItem21.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem21.Enabled = false;
-            this.printPreviewBarItem21.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_MultiplePages;
-            this.printPreviewBarItem21.Id = 21;
-            this.printPreviewBarItem21.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_MultiplePagesLarge;
-            this.printPreviewBarItem21.Name = "printPreviewBarItem21";
+            this.printPreviewBarItem70.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem70.Caption = "Many Pages";
+            this.printPreviewBarItem70.Command = DevExpress.XtraPrinting.PrintingSystemCommand.MultiplePages;
+            this.printPreviewBarItem70.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem70.Enabled = false;
+            this.printPreviewBarItem70.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_MultiplePages;
+            this.printPreviewBarItem70.Id = 21;
+            this.printPreviewBarItem70.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_MultiplePagesLarge;
+            this.printPreviewBarItem70.Name = "printPreviewBarItem70";
             superToolTip21.FixedTooltipWidth = true;
             toolTipTitleItem21.Text = "View Many Pages";
             toolTipItem21.LeftIndent = 6;
@@ -768,19 +768,19 @@
             superToolTip21.Items.Add(toolTipTitleItem21);
             superToolTip21.Items.Add(toolTipItem21);
             superToolTip21.MaxWidth = 210;
-            this.printPreviewBarItem21.SuperTip = superToolTip21;
+            this.printPreviewBarItem70.SuperTip = superToolTip21;
             // 
-            // printPreviewBarItem22
+            // printPreviewBarItem71
             // 
-            this.printPreviewBarItem22.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem22.Caption = "Page Color";
-            this.printPreviewBarItem22.Command = DevExpress.XtraPrinting.PrintingSystemCommand.FillBackground;
-            this.printPreviewBarItem22.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem22.Enabled = false;
-            this.printPreviewBarItem22.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_FillBackground;
-            this.printPreviewBarItem22.Id = 22;
-            this.printPreviewBarItem22.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_FillBackgroundLarge;
-            this.printPreviewBarItem22.Name = "printPreviewBarItem22";
+            this.printPreviewBarItem71.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem71.Caption = "Page Color";
+            this.printPreviewBarItem71.Command = DevExpress.XtraPrinting.PrintingSystemCommand.FillBackground;
+            this.printPreviewBarItem71.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem71.Enabled = false;
+            this.printPreviewBarItem71.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_FillBackground;
+            this.printPreviewBarItem71.Id = 22;
+            this.printPreviewBarItem71.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_FillBackgroundLarge;
+            this.printPreviewBarItem71.Name = "printPreviewBarItem71";
             superToolTip22.FixedTooltipWidth = true;
             toolTipTitleItem22.Text = "Background Color";
             toolTipItem22.LeftIndent = 6;
@@ -788,18 +788,18 @@
             superToolTip22.Items.Add(toolTipTitleItem22);
             superToolTip22.Items.Add(toolTipItem22);
             superToolTip22.MaxWidth = 210;
-            this.printPreviewBarItem22.SuperTip = superToolTip22;
+            this.printPreviewBarItem71.SuperTip = superToolTip22;
             // 
-            // printPreviewBarItem23
+            // printPreviewBarItem72
             // 
-            this.printPreviewBarItem23.Caption = "Watermark";
-            this.printPreviewBarItem23.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Watermark;
-            this.printPreviewBarItem23.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem23.Enabled = false;
-            this.printPreviewBarItem23.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Watermark;
-            this.printPreviewBarItem23.Id = 23;
-            this.printPreviewBarItem23.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_WatermarkLarge;
-            this.printPreviewBarItem23.Name = "printPreviewBarItem23";
+            this.printPreviewBarItem72.Caption = "Watermark";
+            this.printPreviewBarItem72.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Watermark;
+            this.printPreviewBarItem72.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem72.Enabled = false;
+            this.printPreviewBarItem72.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Watermark;
+            this.printPreviewBarItem72.Id = 23;
+            this.printPreviewBarItem72.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_WatermarkLarge;
+            this.printPreviewBarItem72.Name = "printPreviewBarItem72";
             superToolTip23.FixedTooltipWidth = true;
             toolTipTitleItem23.Text = "Watermark";
             toolTipItem23.LeftIndent = 6;
@@ -808,19 +808,19 @@
             superToolTip23.Items.Add(toolTipTitleItem23);
             superToolTip23.Items.Add(toolTipItem23);
             superToolTip23.MaxWidth = 210;
-            this.printPreviewBarItem23.SuperTip = superToolTip23;
+            this.printPreviewBarItem72.SuperTip = superToolTip23;
             // 
-            // printPreviewBarItem24
+            // printPreviewBarItem73
             // 
-            this.printPreviewBarItem24.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem24.Caption = "Export To";
-            this.printPreviewBarItem24.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportFile;
-            this.printPreviewBarItem24.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem24.Enabled = false;
-            this.printPreviewBarItem24.Glyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem24.Glyph")));
-            this.printPreviewBarItem24.Id = 24;
-            this.printPreviewBarItem24.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem24.LargeGlyph")));
-            this.printPreviewBarItem24.Name = "printPreviewBarItem24";
+            this.printPreviewBarItem73.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem73.Caption = "Export To";
+            this.printPreviewBarItem73.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportFile;
+            this.printPreviewBarItem73.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem73.Enabled = false;
+            this.printPreviewBarItem73.Glyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem73.Glyph")));
+            this.printPreviewBarItem73.Id = 24;
+            this.printPreviewBarItem73.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem73.LargeGlyph")));
+            this.printPreviewBarItem73.Name = "printPreviewBarItem73";
             superToolTip24.FixedTooltipWidth = true;
             toolTipTitleItem24.Text = "Export To...";
             toolTipItem24.LeftIndent = 6;
@@ -829,19 +829,19 @@
             superToolTip24.Items.Add(toolTipTitleItem24);
             superToolTip24.Items.Add(toolTipItem24);
             superToolTip24.MaxWidth = 210;
-            this.printPreviewBarItem24.SuperTip = superToolTip24;
+            this.printPreviewBarItem73.SuperTip = superToolTip24;
             // 
-            // printPreviewBarItem25
+            // printPreviewBarItem74
             // 
-            this.printPreviewBarItem25.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem25.Caption = "E-Mail As";
-            this.printPreviewBarItem25.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendFile;
-            this.printPreviewBarItem25.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem25.Enabled = false;
-            this.printPreviewBarItem25.Glyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem25.Glyph")));
-            this.printPreviewBarItem25.Id = 25;
-            this.printPreviewBarItem25.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem25.LargeGlyph")));
-            this.printPreviewBarItem25.Name = "printPreviewBarItem25";
+            this.printPreviewBarItem74.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem74.Caption = "E-Mail As";
+            this.printPreviewBarItem74.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendFile;
+            this.printPreviewBarItem74.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem74.Enabled = false;
+            this.printPreviewBarItem74.Glyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem74.Glyph")));
+            this.printPreviewBarItem74.Id = 25;
+            this.printPreviewBarItem74.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printPreviewBarItem74.LargeGlyph")));
+            this.printPreviewBarItem74.Name = "printPreviewBarItem74";
             superToolTip25.FixedTooltipWidth = true;
             toolTipTitleItem25.Text = "E-Mail As...";
             toolTipItem25.LeftIndent = 6;
@@ -850,18 +850,18 @@
             superToolTip25.Items.Add(toolTipTitleItem25);
             superToolTip25.Items.Add(toolTipItem25);
             superToolTip25.MaxWidth = 210;
-            this.printPreviewBarItem25.SuperTip = superToolTip25;
+            this.printPreviewBarItem74.SuperTip = superToolTip25;
             // 
-            // printPreviewBarItem26
+            // printPreviewBarItem75
             // 
-            this.printPreviewBarItem26.Caption = "Close";
-            this.printPreviewBarItem26.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ClosePreview;
-            this.printPreviewBarItem26.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem26.Enabled = false;
-            this.printPreviewBarItem26.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ClosePreview;
-            this.printPreviewBarItem26.Id = 26;
-            this.printPreviewBarItem26.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ClosePreviewLarge;
-            this.printPreviewBarItem26.Name = "printPreviewBarItem26";
+            this.printPreviewBarItem75.Caption = "Close";
+            this.printPreviewBarItem75.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ClosePreview;
+            this.printPreviewBarItem75.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem75.Enabled = false;
+            this.printPreviewBarItem75.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ClosePreview;
+            this.printPreviewBarItem75.Id = 26;
+            this.printPreviewBarItem75.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ClosePreviewLarge;
+            this.printPreviewBarItem75.Name = "printPreviewBarItem75";
             superToolTip26.FixedTooltipWidth = true;
             toolTipTitleItem26.Text = "Close Print Preview";
             toolTipItem26.LeftIndent = 6;
@@ -869,19 +869,19 @@
             superToolTip26.Items.Add(toolTipTitleItem26);
             superToolTip26.Items.Add(toolTipItem26);
             superToolTip26.MaxWidth = 210;
-            this.printPreviewBarItem26.SuperTip = superToolTip26;
+            this.printPreviewBarItem75.SuperTip = superToolTip26;
             // 
-            // printPreviewBarItem27
+            // printPreviewBarItem76
             // 
-            this.printPreviewBarItem27.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem27.Caption = "Orientation";
-            this.printPreviewBarItem27.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageOrientation;
-            this.printPreviewBarItem27.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem27.Enabled = false;
-            this.printPreviewBarItem27.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageOrientation;
-            this.printPreviewBarItem27.Id = 27;
-            this.printPreviewBarItem27.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageOrientationLarge;
-            this.printPreviewBarItem27.Name = "printPreviewBarItem27";
+            this.printPreviewBarItem76.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem76.Caption = "Orientation";
+            this.printPreviewBarItem76.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageOrientation;
+            this.printPreviewBarItem76.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem76.Enabled = false;
+            this.printPreviewBarItem76.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageOrientation;
+            this.printPreviewBarItem76.Id = 27;
+            this.printPreviewBarItem76.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageOrientationLarge;
+            this.printPreviewBarItem76.Name = "printPreviewBarItem76";
             superToolTip27.FixedTooltipWidth = true;
             toolTipTitleItem27.Text = "Page Orientation";
             toolTipItem27.LeftIndent = 6;
@@ -889,19 +889,19 @@
             superToolTip27.Items.Add(toolTipTitleItem27);
             superToolTip27.Items.Add(toolTipItem27);
             superToolTip27.MaxWidth = 210;
-            this.printPreviewBarItem27.SuperTip = superToolTip27;
+            this.printPreviewBarItem76.SuperTip = superToolTip27;
             // 
-            // printPreviewBarItem28
+            // printPreviewBarItem77
             // 
-            this.printPreviewBarItem28.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem28.Caption = "Size";
-            this.printPreviewBarItem28.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PaperSize;
-            this.printPreviewBarItem28.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem28.Enabled = false;
-            this.printPreviewBarItem28.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PaperSize;
-            this.printPreviewBarItem28.Id = 28;
-            this.printPreviewBarItem28.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PaperSizeLarge;
-            this.printPreviewBarItem28.Name = "printPreviewBarItem28";
+            this.printPreviewBarItem77.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem77.Caption = "Size";
+            this.printPreviewBarItem77.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PaperSize;
+            this.printPreviewBarItem77.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem77.Enabled = false;
+            this.printPreviewBarItem77.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PaperSize;
+            this.printPreviewBarItem77.Id = 28;
+            this.printPreviewBarItem77.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PaperSizeLarge;
+            this.printPreviewBarItem77.Name = "printPreviewBarItem77";
             superToolTip28.FixedTooltipWidth = true;
             toolTipTitleItem28.Text = "Page Size";
             toolTipItem28.LeftIndent = 6;
@@ -909,19 +909,19 @@
             superToolTip28.Items.Add(toolTipTitleItem28);
             superToolTip28.Items.Add(toolTipItem28);
             superToolTip28.MaxWidth = 210;
-            this.printPreviewBarItem28.SuperTip = superToolTip28;
+            this.printPreviewBarItem77.SuperTip = superToolTip28;
             // 
-            // printPreviewBarItem29
+            // printPreviewBarItem78
             // 
-            this.printPreviewBarItem29.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.printPreviewBarItem29.Caption = "Margins";
-            this.printPreviewBarItem29.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageMargins;
-            this.printPreviewBarItem29.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem29.Enabled = false;
-            this.printPreviewBarItem29.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageMargins;
-            this.printPreviewBarItem29.Id = 29;
-            this.printPreviewBarItem29.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageMarginsLarge;
-            this.printPreviewBarItem29.Name = "printPreviewBarItem29";
+            this.printPreviewBarItem78.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.printPreviewBarItem78.Caption = "Margins";
+            this.printPreviewBarItem78.Command = DevExpress.XtraPrinting.PrintingSystemCommand.PageMargins;
+            this.printPreviewBarItem78.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem78.Enabled = false;
+            this.printPreviewBarItem78.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageMargins;
+            this.printPreviewBarItem78.Id = 29;
+            this.printPreviewBarItem78.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageMarginsLarge;
+            this.printPreviewBarItem78.Name = "printPreviewBarItem78";
             superToolTip29.FixedTooltipWidth = true;
             toolTipTitleItem29.Text = "Page Margins";
             toolTipItem29.LeftIndent = 6;
@@ -930,19 +930,19 @@
             superToolTip29.Items.Add(toolTipTitleItem29);
             superToolTip29.Items.Add(toolTipItem29);
             superToolTip29.MaxWidth = 210;
-            this.printPreviewBarItem29.SuperTip = superToolTip29;
+            this.printPreviewBarItem78.SuperTip = superToolTip29;
             // 
-            // printPreviewBarItem30
+            // printPreviewBarItem79
             // 
-            this.printPreviewBarItem30.Caption = "PDF File";
-            this.printPreviewBarItem30.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendPdf;
-            this.printPreviewBarItem30.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem30.Description = "Adobe Portable Document Format";
-            this.printPreviewBarItem30.Enabled = false;
-            this.printPreviewBarItem30.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendPdf;
-            this.printPreviewBarItem30.Id = 30;
-            this.printPreviewBarItem30.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendPdfLarge;
-            this.printPreviewBarItem30.Name = "printPreviewBarItem30";
+            this.printPreviewBarItem79.Caption = "PDF File";
+            this.printPreviewBarItem79.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendPdf;
+            this.printPreviewBarItem79.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem79.Description = "Adobe Portable Document Format";
+            this.printPreviewBarItem79.Enabled = false;
+            this.printPreviewBarItem79.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendPdf;
+            this.printPreviewBarItem79.Id = 30;
+            this.printPreviewBarItem79.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendPdfLarge;
+            this.printPreviewBarItem79.Name = "printPreviewBarItem79";
             superToolTip30.FixedTooltipWidth = true;
             toolTipTitleItem30.Text = "E-Mail As PDF";
             toolTipItem30.LeftIndent = 6;
@@ -950,19 +950,19 @@
             superToolTip30.Items.Add(toolTipTitleItem30);
             superToolTip30.Items.Add(toolTipItem30);
             superToolTip30.MaxWidth = 210;
-            this.printPreviewBarItem30.SuperTip = superToolTip30;
+            this.printPreviewBarItem79.SuperTip = superToolTip30;
             // 
-            // printPreviewBarItem31
+            // printPreviewBarItem80
             // 
-            this.printPreviewBarItem31.Caption = "Text File";
-            this.printPreviewBarItem31.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendTxt;
-            this.printPreviewBarItem31.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem31.Description = "Plain Text";
-            this.printPreviewBarItem31.Enabled = false;
-            this.printPreviewBarItem31.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendTxt;
-            this.printPreviewBarItem31.Id = 31;
-            this.printPreviewBarItem31.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendTxtLarge;
-            this.printPreviewBarItem31.Name = "printPreviewBarItem31";
+            this.printPreviewBarItem80.Caption = "Text File";
+            this.printPreviewBarItem80.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendTxt;
+            this.printPreviewBarItem80.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem80.Description = "Plain Text";
+            this.printPreviewBarItem80.Enabled = false;
+            this.printPreviewBarItem80.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendTxt;
+            this.printPreviewBarItem80.Id = 31;
+            this.printPreviewBarItem80.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendTxtLarge;
+            this.printPreviewBarItem80.Name = "printPreviewBarItem80";
             superToolTip31.FixedTooltipWidth = true;
             toolTipTitleItem31.Text = "E-Mail As Text";
             toolTipItem31.LeftIndent = 6;
@@ -970,19 +970,19 @@
             superToolTip31.Items.Add(toolTipTitleItem31);
             superToolTip31.Items.Add(toolTipItem31);
             superToolTip31.MaxWidth = 210;
-            this.printPreviewBarItem31.SuperTip = superToolTip31;
+            this.printPreviewBarItem80.SuperTip = superToolTip31;
             // 
-            // printPreviewBarItem32
+            // printPreviewBarItem81
             // 
-            this.printPreviewBarItem32.Caption = "CSV File";
-            this.printPreviewBarItem32.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendCsv;
-            this.printPreviewBarItem32.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem32.Description = "Comma-Separated Values Text";
-            this.printPreviewBarItem32.Enabled = false;
-            this.printPreviewBarItem32.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendCsv;
-            this.printPreviewBarItem32.Id = 32;
-            this.printPreviewBarItem32.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendCsvLarge;
-            this.printPreviewBarItem32.Name = "printPreviewBarItem32";
+            this.printPreviewBarItem81.Caption = "CSV File";
+            this.printPreviewBarItem81.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendCsv;
+            this.printPreviewBarItem81.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem81.Description = "Comma-Separated Values Text";
+            this.printPreviewBarItem81.Enabled = false;
+            this.printPreviewBarItem81.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendCsv;
+            this.printPreviewBarItem81.Id = 32;
+            this.printPreviewBarItem81.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendCsvLarge;
+            this.printPreviewBarItem81.Name = "printPreviewBarItem81";
             superToolTip32.FixedTooltipWidth = true;
             toolTipTitleItem32.Text = "E-Mail As CSV";
             toolTipItem32.LeftIndent = 6;
@@ -990,19 +990,19 @@
             superToolTip32.Items.Add(toolTipTitleItem32);
             superToolTip32.Items.Add(toolTipItem32);
             superToolTip32.MaxWidth = 210;
-            this.printPreviewBarItem32.SuperTip = superToolTip32;
+            this.printPreviewBarItem81.SuperTip = superToolTip32;
             // 
-            // printPreviewBarItem33
+            // printPreviewBarItem82
             // 
-            this.printPreviewBarItem33.Caption = "MHT File";
-            this.printPreviewBarItem33.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendMht;
-            this.printPreviewBarItem33.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem33.Description = "Single File Web Page";
-            this.printPreviewBarItem33.Enabled = false;
-            this.printPreviewBarItem33.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendMht;
-            this.printPreviewBarItem33.Id = 33;
-            this.printPreviewBarItem33.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendMhtLarge;
-            this.printPreviewBarItem33.Name = "printPreviewBarItem33";
+            this.printPreviewBarItem82.Caption = "MHT File";
+            this.printPreviewBarItem82.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendMht;
+            this.printPreviewBarItem82.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem82.Description = "Single File Web Page";
+            this.printPreviewBarItem82.Enabled = false;
+            this.printPreviewBarItem82.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendMht;
+            this.printPreviewBarItem82.Id = 33;
+            this.printPreviewBarItem82.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendMhtLarge;
+            this.printPreviewBarItem82.Name = "printPreviewBarItem82";
             superToolTip33.FixedTooltipWidth = true;
             toolTipTitleItem33.Text = "E-Mail As MHT";
             toolTipItem33.LeftIndent = 6;
@@ -1010,19 +1010,19 @@
             superToolTip33.Items.Add(toolTipTitleItem33);
             superToolTip33.Items.Add(toolTipItem33);
             superToolTip33.MaxWidth = 210;
-            this.printPreviewBarItem33.SuperTip = superToolTip33;
+            this.printPreviewBarItem82.SuperTip = superToolTip33;
             // 
-            // printPreviewBarItem34
+            // printPreviewBarItem83
             // 
-            this.printPreviewBarItem34.Caption = "XLS File";
-            this.printPreviewBarItem34.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendXls;
-            this.printPreviewBarItem34.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem34.Description = "Microsoft Excel 2000-2003 Workbook";
-            this.printPreviewBarItem34.Enabled = false;
-            this.printPreviewBarItem34.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendXls;
-            this.printPreviewBarItem34.Id = 34;
-            this.printPreviewBarItem34.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendXlsLarge;
-            this.printPreviewBarItem34.Name = "printPreviewBarItem34";
+            this.printPreviewBarItem83.Caption = "XLS File";
+            this.printPreviewBarItem83.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendXls;
+            this.printPreviewBarItem83.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem83.Description = "Microsoft Excel 2000-2003 Workbook";
+            this.printPreviewBarItem83.Enabled = false;
+            this.printPreviewBarItem83.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendXls;
+            this.printPreviewBarItem83.Id = 34;
+            this.printPreviewBarItem83.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendXlsLarge;
+            this.printPreviewBarItem83.Name = "printPreviewBarItem83";
             superToolTip34.FixedTooltipWidth = true;
             toolTipTitleItem34.Text = "E-Mail As XLS";
             toolTipItem34.LeftIndent = 6;
@@ -1030,19 +1030,19 @@
             superToolTip34.Items.Add(toolTipTitleItem34);
             superToolTip34.Items.Add(toolTipItem34);
             superToolTip34.MaxWidth = 210;
-            this.printPreviewBarItem34.SuperTip = superToolTip34;
+            this.printPreviewBarItem83.SuperTip = superToolTip34;
             // 
-            // printPreviewBarItem35
+            // printPreviewBarItem84
             // 
-            this.printPreviewBarItem35.Caption = "XLSX File";
-            this.printPreviewBarItem35.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendXlsx;
-            this.printPreviewBarItem35.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem35.Description = "Microsoft Excel 2007 Workbook";
-            this.printPreviewBarItem35.Enabled = false;
-            this.printPreviewBarItem35.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendXlsx;
-            this.printPreviewBarItem35.Id = 35;
-            this.printPreviewBarItem35.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendXlsxLarge;
-            this.printPreviewBarItem35.Name = "printPreviewBarItem35";
+            this.printPreviewBarItem84.Caption = "XLSX File";
+            this.printPreviewBarItem84.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendXlsx;
+            this.printPreviewBarItem84.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem84.Description = "Microsoft Excel 2007 Workbook";
+            this.printPreviewBarItem84.Enabled = false;
+            this.printPreviewBarItem84.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendXlsx;
+            this.printPreviewBarItem84.Id = 35;
+            this.printPreviewBarItem84.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendXlsxLarge;
+            this.printPreviewBarItem84.Name = "printPreviewBarItem84";
             superToolTip35.FixedTooltipWidth = true;
             toolTipTitleItem35.Text = "E-Mail As XLSX";
             toolTipItem35.LeftIndent = 6;
@@ -1050,19 +1050,19 @@
             superToolTip35.Items.Add(toolTipTitleItem35);
             superToolTip35.Items.Add(toolTipItem35);
             superToolTip35.MaxWidth = 210;
-            this.printPreviewBarItem35.SuperTip = superToolTip35;
+            this.printPreviewBarItem84.SuperTip = superToolTip35;
             // 
-            // printPreviewBarItem36
+            // printPreviewBarItem85
             // 
-            this.printPreviewBarItem36.Caption = "RTF File";
-            this.printPreviewBarItem36.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendRtf;
-            this.printPreviewBarItem36.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem36.Description = "Rich Text Format";
-            this.printPreviewBarItem36.Enabled = false;
-            this.printPreviewBarItem36.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendRtf;
-            this.printPreviewBarItem36.Id = 36;
-            this.printPreviewBarItem36.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendRtfLarge;
-            this.printPreviewBarItem36.Name = "printPreviewBarItem36";
+            this.printPreviewBarItem85.Caption = "RTF File";
+            this.printPreviewBarItem85.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendRtf;
+            this.printPreviewBarItem85.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem85.Description = "Rich Text Format";
+            this.printPreviewBarItem85.Enabled = false;
+            this.printPreviewBarItem85.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendRtf;
+            this.printPreviewBarItem85.Id = 36;
+            this.printPreviewBarItem85.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendRtfLarge;
+            this.printPreviewBarItem85.Name = "printPreviewBarItem85";
             superToolTip36.FixedTooltipWidth = true;
             toolTipTitleItem36.Text = "E-Mail As RTF";
             toolTipItem36.LeftIndent = 6;
@@ -1070,19 +1070,19 @@
             superToolTip36.Items.Add(toolTipTitleItem36);
             superToolTip36.Items.Add(toolTipItem36);
             superToolTip36.MaxWidth = 210;
-            this.printPreviewBarItem36.SuperTip = superToolTip36;
+            this.printPreviewBarItem85.SuperTip = superToolTip36;
             // 
-            // printPreviewBarItem37
+            // printPreviewBarItem86
             // 
-            this.printPreviewBarItem37.Caption = "Image File";
-            this.printPreviewBarItem37.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendGraphic;
-            this.printPreviewBarItem37.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem37.Description = "BMP, GIF, JPEG, PNG, TIFF, EMF, WMF";
-            this.printPreviewBarItem37.Enabled = false;
-            this.printPreviewBarItem37.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendGraphic;
-            this.printPreviewBarItem37.Id = 37;
-            this.printPreviewBarItem37.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendGraphicLarge;
-            this.printPreviewBarItem37.Name = "printPreviewBarItem37";
+            this.printPreviewBarItem86.Caption = "Image File";
+            this.printPreviewBarItem86.Command = DevExpress.XtraPrinting.PrintingSystemCommand.SendGraphic;
+            this.printPreviewBarItem86.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem86.Description = "BMP, GIF, JPEG, PNG, TIFF, EMF, WMF";
+            this.printPreviewBarItem86.Enabled = false;
+            this.printPreviewBarItem86.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendGraphic;
+            this.printPreviewBarItem86.Id = 37;
+            this.printPreviewBarItem86.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SendGraphicLarge;
+            this.printPreviewBarItem86.Name = "printPreviewBarItem86";
             superToolTip37.FixedTooltipWidth = true;
             toolTipTitleItem37.Text = "E-Mail As Image";
             toolTipItem37.LeftIndent = 6;
@@ -1090,19 +1090,19 @@
             superToolTip37.Items.Add(toolTipTitleItem37);
             superToolTip37.Items.Add(toolTipItem37);
             superToolTip37.MaxWidth = 210;
-            this.printPreviewBarItem37.SuperTip = superToolTip37;
+            this.printPreviewBarItem86.SuperTip = superToolTip37;
             // 
-            // printPreviewBarItem38
+            // printPreviewBarItem87
             // 
-            this.printPreviewBarItem38.Caption = "PDF File";
-            this.printPreviewBarItem38.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportPdf;
-            this.printPreviewBarItem38.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem38.Description = "Adobe Portable Document Format";
-            this.printPreviewBarItem38.Enabled = false;
-            this.printPreviewBarItem38.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportPdf;
-            this.printPreviewBarItem38.Id = 38;
-            this.printPreviewBarItem38.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportPdfLarge;
-            this.printPreviewBarItem38.Name = "printPreviewBarItem38";
+            this.printPreviewBarItem87.Caption = "PDF File";
+            this.printPreviewBarItem87.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportPdf;
+            this.printPreviewBarItem87.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem87.Description = "Adobe Portable Document Format";
+            this.printPreviewBarItem87.Enabled = false;
+            this.printPreviewBarItem87.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportPdf;
+            this.printPreviewBarItem87.Id = 38;
+            this.printPreviewBarItem87.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportPdfLarge;
+            this.printPreviewBarItem87.Name = "printPreviewBarItem87";
             superToolTip38.FixedTooltipWidth = true;
             toolTipTitleItem38.Text = "Export to PDF";
             toolTipItem38.LeftIndent = 6;
@@ -1110,19 +1110,19 @@
             superToolTip38.Items.Add(toolTipTitleItem38);
             superToolTip38.Items.Add(toolTipItem38);
             superToolTip38.MaxWidth = 210;
-            this.printPreviewBarItem38.SuperTip = superToolTip38;
+            this.printPreviewBarItem87.SuperTip = superToolTip38;
             // 
-            // printPreviewBarItem39
+            // printPreviewBarItem88
             // 
-            this.printPreviewBarItem39.Caption = "HTML File";
-            this.printPreviewBarItem39.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportHtm;
-            this.printPreviewBarItem39.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem39.Description = "Web Page";
-            this.printPreviewBarItem39.Enabled = false;
-            this.printPreviewBarItem39.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportHtm;
-            this.printPreviewBarItem39.Id = 39;
-            this.printPreviewBarItem39.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportHtmLarge;
-            this.printPreviewBarItem39.Name = "printPreviewBarItem39";
+            this.printPreviewBarItem88.Caption = "HTML File";
+            this.printPreviewBarItem88.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportHtm;
+            this.printPreviewBarItem88.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem88.Description = "Web Page";
+            this.printPreviewBarItem88.Enabled = false;
+            this.printPreviewBarItem88.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportHtm;
+            this.printPreviewBarItem88.Id = 39;
+            this.printPreviewBarItem88.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportHtmLarge;
+            this.printPreviewBarItem88.Name = "printPreviewBarItem88";
             superToolTip39.FixedTooltipWidth = true;
             toolTipTitleItem39.Text = "Export to HTML";
             toolTipItem39.LeftIndent = 6;
@@ -1130,19 +1130,19 @@
             superToolTip39.Items.Add(toolTipTitleItem39);
             superToolTip39.Items.Add(toolTipItem39);
             superToolTip39.MaxWidth = 210;
-            this.printPreviewBarItem39.SuperTip = superToolTip39;
+            this.printPreviewBarItem88.SuperTip = superToolTip39;
             // 
-            // printPreviewBarItem40
+            // printPreviewBarItem89
             // 
-            this.printPreviewBarItem40.Caption = "Text File";
-            this.printPreviewBarItem40.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportTxt;
-            this.printPreviewBarItem40.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem40.Description = "Plain Text";
-            this.printPreviewBarItem40.Enabled = false;
-            this.printPreviewBarItem40.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportTxt;
-            this.printPreviewBarItem40.Id = 40;
-            this.printPreviewBarItem40.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportTxtLarge;
-            this.printPreviewBarItem40.Name = "printPreviewBarItem40";
+            this.printPreviewBarItem89.Caption = "Text File";
+            this.printPreviewBarItem89.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportTxt;
+            this.printPreviewBarItem89.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem89.Description = "Plain Text";
+            this.printPreviewBarItem89.Enabled = false;
+            this.printPreviewBarItem89.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportTxt;
+            this.printPreviewBarItem89.Id = 40;
+            this.printPreviewBarItem89.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportTxtLarge;
+            this.printPreviewBarItem89.Name = "printPreviewBarItem89";
             superToolTip40.FixedTooltipWidth = true;
             toolTipTitleItem40.Text = "Export to Text";
             toolTipItem40.LeftIndent = 6;
@@ -1150,19 +1150,19 @@
             superToolTip40.Items.Add(toolTipTitleItem40);
             superToolTip40.Items.Add(toolTipItem40);
             superToolTip40.MaxWidth = 210;
-            this.printPreviewBarItem40.SuperTip = superToolTip40;
+            this.printPreviewBarItem89.SuperTip = superToolTip40;
             // 
-            // printPreviewBarItem41
+            // printPreviewBarItem90
             // 
-            this.printPreviewBarItem41.Caption = "CSV File";
-            this.printPreviewBarItem41.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportCsv;
-            this.printPreviewBarItem41.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem41.Description = "Comma-Separated Values Text";
-            this.printPreviewBarItem41.Enabled = false;
-            this.printPreviewBarItem41.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportCsv;
-            this.printPreviewBarItem41.Id = 41;
-            this.printPreviewBarItem41.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportCsvLarge;
-            this.printPreviewBarItem41.Name = "printPreviewBarItem41";
+            this.printPreviewBarItem90.Caption = "CSV File";
+            this.printPreviewBarItem90.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportCsv;
+            this.printPreviewBarItem90.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem90.Description = "Comma-Separated Values Text";
+            this.printPreviewBarItem90.Enabled = false;
+            this.printPreviewBarItem90.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportCsv;
+            this.printPreviewBarItem90.Id = 41;
+            this.printPreviewBarItem90.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportCsvLarge;
+            this.printPreviewBarItem90.Name = "printPreviewBarItem90";
             superToolTip41.FixedTooltipWidth = true;
             toolTipTitleItem41.Text = "Export to CSV";
             toolTipItem41.LeftIndent = 6;
@@ -1170,19 +1170,19 @@
             superToolTip41.Items.Add(toolTipTitleItem41);
             superToolTip41.Items.Add(toolTipItem41);
             superToolTip41.MaxWidth = 210;
-            this.printPreviewBarItem41.SuperTip = superToolTip41;
+            this.printPreviewBarItem90.SuperTip = superToolTip41;
             // 
-            // printPreviewBarItem42
+            // printPreviewBarItem91
             // 
-            this.printPreviewBarItem42.Caption = "MHT File";
-            this.printPreviewBarItem42.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportMht;
-            this.printPreviewBarItem42.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem42.Description = "Single File Web Page";
-            this.printPreviewBarItem42.Enabled = false;
-            this.printPreviewBarItem42.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportMht;
-            this.printPreviewBarItem42.Id = 42;
-            this.printPreviewBarItem42.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportMhtLarge;
-            this.printPreviewBarItem42.Name = "printPreviewBarItem42";
+            this.printPreviewBarItem91.Caption = "MHT File";
+            this.printPreviewBarItem91.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportMht;
+            this.printPreviewBarItem91.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem91.Description = "Single File Web Page";
+            this.printPreviewBarItem91.Enabled = false;
+            this.printPreviewBarItem91.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportMht;
+            this.printPreviewBarItem91.Id = 42;
+            this.printPreviewBarItem91.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportMhtLarge;
+            this.printPreviewBarItem91.Name = "printPreviewBarItem91";
             superToolTip42.FixedTooltipWidth = true;
             toolTipTitleItem42.Text = "Export to MHT";
             toolTipItem42.LeftIndent = 6;
@@ -1190,19 +1190,19 @@
             superToolTip42.Items.Add(toolTipTitleItem42);
             superToolTip42.Items.Add(toolTipItem42);
             superToolTip42.MaxWidth = 210;
-            this.printPreviewBarItem42.SuperTip = superToolTip42;
+            this.printPreviewBarItem91.SuperTip = superToolTip42;
             // 
-            // printPreviewBarItem43
+            // printPreviewBarItem92
             // 
-            this.printPreviewBarItem43.Caption = "XLS File";
-            this.printPreviewBarItem43.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportXls;
-            this.printPreviewBarItem43.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem43.Description = "Microsoft Excel 2000-2003 Workbook";
-            this.printPreviewBarItem43.Enabled = false;
-            this.printPreviewBarItem43.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportXls;
-            this.printPreviewBarItem43.Id = 43;
-            this.printPreviewBarItem43.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportXlsLarge;
-            this.printPreviewBarItem43.Name = "printPreviewBarItem43";
+            this.printPreviewBarItem92.Caption = "XLS File";
+            this.printPreviewBarItem92.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportXls;
+            this.printPreviewBarItem92.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem92.Description = "Microsoft Excel 2000-2003 Workbook";
+            this.printPreviewBarItem92.Enabled = false;
+            this.printPreviewBarItem92.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportXls;
+            this.printPreviewBarItem92.Id = 43;
+            this.printPreviewBarItem92.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportXlsLarge;
+            this.printPreviewBarItem92.Name = "printPreviewBarItem92";
             superToolTip43.FixedTooltipWidth = true;
             toolTipTitleItem43.Text = "Export to XLS";
             toolTipItem43.LeftIndent = 6;
@@ -1210,19 +1210,19 @@
             superToolTip43.Items.Add(toolTipTitleItem43);
             superToolTip43.Items.Add(toolTipItem43);
             superToolTip43.MaxWidth = 210;
-            this.printPreviewBarItem43.SuperTip = superToolTip43;
+            this.printPreviewBarItem92.SuperTip = superToolTip43;
             // 
-            // printPreviewBarItem44
+            // printPreviewBarItem93
             // 
-            this.printPreviewBarItem44.Caption = "XLSX File";
-            this.printPreviewBarItem44.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportXlsx;
-            this.printPreviewBarItem44.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem44.Description = "Microsoft Excel 2007 Workbook";
-            this.printPreviewBarItem44.Enabled = false;
-            this.printPreviewBarItem44.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportXlsx;
-            this.printPreviewBarItem44.Id = 44;
-            this.printPreviewBarItem44.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportXlsxLarge;
-            this.printPreviewBarItem44.Name = "printPreviewBarItem44";
+            this.printPreviewBarItem93.Caption = "XLSX File";
+            this.printPreviewBarItem93.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportXlsx;
+            this.printPreviewBarItem93.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem93.Description = "Microsoft Excel 2007 Workbook";
+            this.printPreviewBarItem93.Enabled = false;
+            this.printPreviewBarItem93.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportXlsx;
+            this.printPreviewBarItem93.Id = 44;
+            this.printPreviewBarItem93.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportXlsxLarge;
+            this.printPreviewBarItem93.Name = "printPreviewBarItem93";
             superToolTip44.FixedTooltipWidth = true;
             toolTipTitleItem44.Text = "Export to XLSX";
             toolTipItem44.LeftIndent = 6;
@@ -1230,19 +1230,19 @@
             superToolTip44.Items.Add(toolTipTitleItem44);
             superToolTip44.Items.Add(toolTipItem44);
             superToolTip44.MaxWidth = 210;
-            this.printPreviewBarItem44.SuperTip = superToolTip44;
+            this.printPreviewBarItem93.SuperTip = superToolTip44;
             // 
-            // printPreviewBarItem45
+            // printPreviewBarItem94
             // 
-            this.printPreviewBarItem45.Caption = "RTF File";
-            this.printPreviewBarItem45.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportRtf;
-            this.printPreviewBarItem45.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem45.Description = "Rich Text Format";
-            this.printPreviewBarItem45.Enabled = false;
-            this.printPreviewBarItem45.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportRtf;
-            this.printPreviewBarItem45.Id = 45;
-            this.printPreviewBarItem45.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportRtfLarge;
-            this.printPreviewBarItem45.Name = "printPreviewBarItem45";
+            this.printPreviewBarItem94.Caption = "RTF File";
+            this.printPreviewBarItem94.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportRtf;
+            this.printPreviewBarItem94.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem94.Description = "Rich Text Format";
+            this.printPreviewBarItem94.Enabled = false;
+            this.printPreviewBarItem94.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportRtf;
+            this.printPreviewBarItem94.Id = 45;
+            this.printPreviewBarItem94.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportRtfLarge;
+            this.printPreviewBarItem94.Name = "printPreviewBarItem94";
             superToolTip45.FixedTooltipWidth = true;
             toolTipTitleItem45.Text = "Export to RTF";
             toolTipItem45.LeftIndent = 6;
@@ -1250,19 +1250,19 @@
             superToolTip45.Items.Add(toolTipTitleItem45);
             superToolTip45.Items.Add(toolTipItem45);
             superToolTip45.MaxWidth = 210;
-            this.printPreviewBarItem45.SuperTip = superToolTip45;
+            this.printPreviewBarItem94.SuperTip = superToolTip45;
             // 
-            // printPreviewBarItem46
+            // printPreviewBarItem95
             // 
-            this.printPreviewBarItem46.Caption = "Image File";
-            this.printPreviewBarItem46.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportGraphic;
-            this.printPreviewBarItem46.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem46.Description = "BMP, GIF, JPEG, PNG, TIFF, EMF, WMF";
-            this.printPreviewBarItem46.Enabled = false;
-            this.printPreviewBarItem46.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportGraphic;
-            this.printPreviewBarItem46.Id = 46;
-            this.printPreviewBarItem46.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportGraphicLarge;
-            this.printPreviewBarItem46.Name = "printPreviewBarItem46";
+            this.printPreviewBarItem95.Caption = "Image File";
+            this.printPreviewBarItem95.Command = DevExpress.XtraPrinting.PrintingSystemCommand.ExportGraphic;
+            this.printPreviewBarItem95.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem95.Description = "BMP, GIF, JPEG, PNG, TIFF, EMF, WMF";
+            this.printPreviewBarItem95.Enabled = false;
+            this.printPreviewBarItem95.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportGraphic;
+            this.printPreviewBarItem95.Id = 46;
+            this.printPreviewBarItem95.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportGraphicLarge;
+            this.printPreviewBarItem95.Name = "printPreviewBarItem95";
             superToolTip46.FixedTooltipWidth = true;
             toolTipTitleItem46.Text = "Export to Image";
             toolTipItem46.LeftIndent = 6;
@@ -1270,18 +1270,18 @@
             superToolTip46.Items.Add(toolTipTitleItem46);
             superToolTip46.Items.Add(toolTipItem46);
             superToolTip46.MaxWidth = 210;
-            this.printPreviewBarItem46.SuperTip = superToolTip46;
+            this.printPreviewBarItem95.SuperTip = superToolTip46;
             // 
-            // printPreviewBarItem47
+            // printPreviewBarItem96
             // 
-            this.printPreviewBarItem47.Caption = "Open";
-            this.printPreviewBarItem47.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Open;
-            this.printPreviewBarItem47.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem47.Enabled = false;
-            this.printPreviewBarItem47.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Open;
-            this.printPreviewBarItem47.Id = 47;
-            this.printPreviewBarItem47.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_OpenLarge;
-            this.printPreviewBarItem47.Name = "printPreviewBarItem47";
+            this.printPreviewBarItem96.Caption = "Open";
+            this.printPreviewBarItem96.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Open;
+            this.printPreviewBarItem96.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem96.Enabled = false;
+            this.printPreviewBarItem96.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Open;
+            this.printPreviewBarItem96.Id = 47;
+            this.printPreviewBarItem96.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_OpenLarge;
+            this.printPreviewBarItem96.Name = "printPreviewBarItem96";
             superToolTip47.FixedTooltipWidth = true;
             toolTipTitleItem47.Text = "Open (Ctrl + O)";
             toolTipItem47.LeftIndent = 6;
@@ -1289,18 +1289,18 @@
             superToolTip47.Items.Add(toolTipTitleItem47);
             superToolTip47.Items.Add(toolTipItem47);
             superToolTip47.MaxWidth = 210;
-            this.printPreviewBarItem47.SuperTip = superToolTip47;
+            this.printPreviewBarItem96.SuperTip = superToolTip47;
             // 
-            // printPreviewBarItem48
+            // printPreviewBarItem97
             // 
-            this.printPreviewBarItem48.Caption = "Save";
-            this.printPreviewBarItem48.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Save;
-            this.printPreviewBarItem48.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem48.Enabled = false;
-            this.printPreviewBarItem48.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Save;
-            this.printPreviewBarItem48.Id = 48;
-            this.printPreviewBarItem48.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SaveLarge;
-            this.printPreviewBarItem48.Name = "printPreviewBarItem48";
+            this.printPreviewBarItem97.Caption = "Save";
+            this.printPreviewBarItem97.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Save;
+            this.printPreviewBarItem97.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem97.Enabled = false;
+            this.printPreviewBarItem97.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Save;
+            this.printPreviewBarItem97.Id = 48;
+            this.printPreviewBarItem97.LargeGlyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_SaveLarge;
+            this.printPreviewBarItem97.Name = "printPreviewBarItem97";
             superToolTip48.FixedTooltipWidth = true;
             toolTipTitleItem48.Text = "Save (Ctrl + S)";
             toolTipItem48.LeftIndent = 6;
@@ -1308,144 +1308,144 @@
             superToolTip48.Items.Add(toolTipTitleItem48);
             superToolTip48.Items.Add(toolTipItem48);
             superToolTip48.MaxWidth = 210;
-            this.printPreviewBarItem48.SuperTip = superToolTip48;
+            this.printPreviewBarItem97.SuperTip = superToolTip48;
             // 
-            // printPreviewStaticItem1
+            // printPreviewStaticItem3
             // 
-            this.printPreviewStaticItem1.Caption = "Nothing";
-            this.printPreviewStaticItem1.Id = 49;
-            this.printPreviewStaticItem1.LeftIndent = 1;
-            this.printPreviewStaticItem1.Name = "printPreviewStaticItem1";
-            this.printPreviewStaticItem1.RightIndent = 1;
-            this.printPreviewStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
-            this.printPreviewStaticItem1.Type = "PageOfPages";
+            this.printPreviewStaticItem3.Caption = "Nothing";
+            this.printPreviewStaticItem3.Id = 49;
+            this.printPreviewStaticItem3.LeftIndent = 1;
+            this.printPreviewStaticItem3.Name = "printPreviewStaticItem3";
+            this.printPreviewStaticItem3.RightIndent = 1;
+            this.printPreviewStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.printPreviewStaticItem3.Type = "PageOfPages";
             // 
-            // barStaticItem1
+            // barStaticItem2
             // 
-            this.barStaticItem1.Id = 50;
-            this.barStaticItem1.Name = "barStaticItem1";
-            this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
-            this.barStaticItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+            this.barStaticItem2.Id = 50;
+            this.barStaticItem2.Name = "barStaticItem2";
+            this.barStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.barStaticItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
             // 
-            // repositoryItemProgressBar1
+            // repositoryItemProgressBar2
             // 
-            this.repositoryItemProgressBar1.Name = "repositoryItemProgressBar1";
+            this.repositoryItemProgressBar2.Name = "repositoryItemProgressBar2";
             // 
-            // progressBarEditItem1
+            // progressBarEditItem2
             // 
-            this.progressBarEditItem1.ContextSpecifier = this.documentViewerRibbonController1;
-            this.progressBarEditItem1.Edit = this.repositoryItemProgressBar1;
-            this.progressBarEditItem1.EditHeight = 12;
-            this.progressBarEditItem1.EditWidth = 150;
-            this.progressBarEditItem1.Id = 51;
-            this.progressBarEditItem1.Name = "progressBarEditItem1";
-            this.progressBarEditItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.progressBarEditItem2.ContextSpecifier = this.documentViewerRibbonController2;
+            this.progressBarEditItem2.Edit = this.repositoryItemProgressBar2;
+            this.progressBarEditItem2.EditHeight = 12;
+            this.progressBarEditItem2.EditWidth = 150;
+            this.progressBarEditItem2.Id = 51;
+            this.progressBarEditItem2.Name = "progressBarEditItem2";
+            this.progressBarEditItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
-            // printPreviewBarItem49
+            // printPreviewBarItem98
             // 
-            this.printPreviewBarItem49.Caption = "Stop";
-            this.printPreviewBarItem49.Command = DevExpress.XtraPrinting.PrintingSystemCommand.StopPageBuilding;
-            this.printPreviewBarItem49.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewBarItem49.Enabled = false;
-            this.printPreviewBarItem49.Hint = "Stop";
-            this.printPreviewBarItem49.Id = 52;
-            this.printPreviewBarItem49.Name = "printPreviewBarItem49";
-            this.printPreviewBarItem49.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.printPreviewBarItem98.Caption = "Stop";
+            this.printPreviewBarItem98.Command = DevExpress.XtraPrinting.PrintingSystemCommand.StopPageBuilding;
+            this.printPreviewBarItem98.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewBarItem98.Enabled = false;
+            this.printPreviewBarItem98.Hint = "Stop";
+            this.printPreviewBarItem98.Id = 52;
+            this.printPreviewBarItem98.Name = "printPreviewBarItem98";
+            this.printPreviewBarItem98.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
-            // barButtonItem1
+            // barButtonItem2
             // 
-            this.barButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
-            this.barButtonItem1.Enabled = false;
-            this.barButtonItem1.Id = 53;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+            this.barButtonItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
+            this.barButtonItem2.Enabled = false;
+            this.barButtonItem2.Id = 53;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
             // 
-            // printPreviewStaticItem2
+            // printPreviewStaticItem4
             // 
-            this.printPreviewStaticItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.printPreviewStaticItem2.AutoSize = DevExpress.XtraBars.BarStaticItemSize.None;
-            this.printPreviewStaticItem2.Caption = "100%";
-            this.printPreviewStaticItem2.Id = 54;
-            this.printPreviewStaticItem2.Name = "printPreviewStaticItem2";
-            this.printPreviewStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near;
-            this.printPreviewStaticItem2.Type = "ZoomFactorText";
+            this.printPreviewStaticItem4.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.printPreviewStaticItem4.AutoSize = DevExpress.XtraBars.BarStaticItemSize.None;
+            this.printPreviewStaticItem4.Caption = "100%";
+            this.printPreviewStaticItem4.Id = 54;
+            this.printPreviewStaticItem4.Name = "printPreviewStaticItem4";
+            this.printPreviewStaticItem4.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.printPreviewStaticItem4.Type = "ZoomFactorText";
             // 
-            // repositoryItemZoomTrackBar1
+            // repositoryItemZoomTrackBar2
             // 
-            this.repositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center;
-            this.repositoryItemZoomTrackBar1.AllowFocused = false;
-            this.repositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.repositoryItemZoomTrackBar1.Maximum = 180;
-            this.repositoryItemZoomTrackBar1.Name = "repositoryItemZoomTrackBar1";
-            this.repositoryItemZoomTrackBar1.ScrollThumbStyle = DevExpress.XtraEditors.Repository.ScrollThumbStyle.ArrowDownRight;
+            this.repositoryItemZoomTrackBar2.Alignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemZoomTrackBar2.AllowFocused = false;
+            this.repositoryItemZoomTrackBar2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.repositoryItemZoomTrackBar2.Maximum = 180;
+            this.repositoryItemZoomTrackBar2.Name = "repositoryItemZoomTrackBar2";
+            this.repositoryItemZoomTrackBar2.ScrollThumbStyle = DevExpress.XtraEditors.Repository.ScrollThumbStyle.ArrowDownRight;
             // 
-            // zoomTrackBarEditItem1
+            // zoomTrackBarEditItem2
             // 
-            this.zoomTrackBarEditItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.zoomTrackBarEditItem1.ContextSpecifier = this.documentViewerRibbonController1;
-            this.zoomTrackBarEditItem1.Edit = this.repositoryItemZoomTrackBar1;
-            this.zoomTrackBarEditItem1.EditValue = 90;
-            this.zoomTrackBarEditItem1.EditWidth = 140;
-            this.zoomTrackBarEditItem1.Enabled = false;
-            this.zoomTrackBarEditItem1.Id = 55;
-            this.zoomTrackBarEditItem1.Name = "zoomTrackBarEditItem1";
-            this.zoomTrackBarEditItem1.Range = new int[] {
+            this.zoomTrackBarEditItem2.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.zoomTrackBarEditItem2.ContextSpecifier = this.documentViewerRibbonController2;
+            this.zoomTrackBarEditItem2.Edit = this.repositoryItemZoomTrackBar2;
+            this.zoomTrackBarEditItem2.EditValue = 90;
+            this.zoomTrackBarEditItem2.EditWidth = 140;
+            this.zoomTrackBarEditItem2.Enabled = false;
+            this.zoomTrackBarEditItem2.Id = 55;
+            this.zoomTrackBarEditItem2.Name = "zoomTrackBarEditItem2";
+            this.zoomTrackBarEditItem2.Range = new int[] {
         10,
         500};
             // 
-            // ribbonPage1
+            // ribbonPage2
             // 
-            this.ribbonPage1.ContextSpecifier = this.documentViewerRibbonController1;
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.printPreviewRibbonPageGroup1,
-            this.printPreviewRibbonPageGroup2,
-            this.printPreviewRibbonPageGroup3,
-            this.printPreviewRibbonPageGroup4,
-            this.printPreviewRibbonPageGroup5,
-            this.printPreviewRibbonPageGroup6,
-            this.printPreviewRibbonPageGroup7,
-            this.printPreviewRibbonPageGroup8});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Print Preview";
+            this.ribbonPage2.ContextSpecifier = this.documentViewerRibbonController2;
+            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.printPreviewRibbonPageGroup9,
+            this.printPreviewRibbonPageGroup10,
+            this.printPreviewRibbonPageGroup11,
+            this.printPreviewRibbonPageGroup12,
+            this.printPreviewRibbonPageGroup13,
+            this.printPreviewRibbonPageGroup14,
+            this.printPreviewRibbonPageGroup15,
+            this.printPreviewRibbonPageGroup16});
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "Print Preview";
             // 
-            // printPreviewRibbonPageGroup1
+            // printPreviewRibbonPageGroup9
             // 
-            this.printPreviewRibbonPageGroup1.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup1.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup1.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Document;
-            this.printPreviewRibbonPageGroup1.ItemLinks.Add(this.printPreviewBarItem47);
-            this.printPreviewRibbonPageGroup1.ItemLinks.Add(this.printPreviewBarItem48);
-            this.printPreviewRibbonPageGroup1.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Document;
-            this.printPreviewRibbonPageGroup1.Name = "printPreviewRibbonPageGroup1";
-            this.printPreviewRibbonPageGroup1.ShowCaptionButton = false;
-            this.printPreviewRibbonPageGroup1.Text = "Document";
+            this.printPreviewRibbonPageGroup9.AllowTextClipping = false;
+            this.printPreviewRibbonPageGroup9.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewRibbonPageGroup9.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Document;
+            this.printPreviewRibbonPageGroup9.ItemLinks.Add(this.printPreviewBarItem96);
+            this.printPreviewRibbonPageGroup9.ItemLinks.Add(this.printPreviewBarItem97);
+            this.printPreviewRibbonPageGroup9.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Document;
+            this.printPreviewRibbonPageGroup9.Name = "printPreviewRibbonPageGroup9";
+            this.printPreviewRibbonPageGroup9.ShowCaptionButton = false;
+            this.printPreviewRibbonPageGroup9.Text = "Document";
             // 
-            // printPreviewRibbonPageGroup2
+            // printPreviewRibbonPageGroup10
             // 
-            this.printPreviewRibbonPageGroup2.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup2.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup2.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PrintDirect;
-            this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem6);
-            this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem7);
-            this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem5);
-            this.printPreviewRibbonPageGroup2.ItemLinks.Add(this.printPreviewBarItem2);
-            this.printPreviewRibbonPageGroup2.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Print;
-            this.printPreviewRibbonPageGroup2.Name = "printPreviewRibbonPageGroup2";
-            this.printPreviewRibbonPageGroup2.ShowCaptionButton = false;
-            this.printPreviewRibbonPageGroup2.Text = "Print";
+            this.printPreviewRibbonPageGroup10.AllowTextClipping = false;
+            this.printPreviewRibbonPageGroup10.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewRibbonPageGroup10.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PrintDirect;
+            this.printPreviewRibbonPageGroup10.ItemLinks.Add(this.printPreviewBarItem55);
+            this.printPreviewRibbonPageGroup10.ItemLinks.Add(this.printPreviewBarItem56);
+            this.printPreviewRibbonPageGroup10.ItemLinks.Add(this.printPreviewBarItem54);
+            this.printPreviewRibbonPageGroup10.ItemLinks.Add(this.printPreviewBarItem51);
+            this.printPreviewRibbonPageGroup10.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Print;
+            this.printPreviewRibbonPageGroup10.Name = "printPreviewRibbonPageGroup10";
+            this.printPreviewRibbonPageGroup10.ShowCaptionButton = false;
+            this.printPreviewRibbonPageGroup10.Text = "Print";
             // 
-            // printPreviewRibbonPageGroup3
+            // printPreviewRibbonPageGroup11
             // 
-            this.printPreviewRibbonPageGroup3.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup3.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup3.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageMargins;
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem9);
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem10);
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem29);
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem27);
-            this.printPreviewRibbonPageGroup3.ItemLinks.Add(this.printPreviewBarItem28);
-            this.printPreviewRibbonPageGroup3.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.PageSetup;
-            this.printPreviewRibbonPageGroup3.Name = "printPreviewRibbonPageGroup3";
+            this.printPreviewRibbonPageGroup11.AllowTextClipping = false;
+            this.printPreviewRibbonPageGroup11.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewRibbonPageGroup11.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_PageMargins;
+            this.printPreviewRibbonPageGroup11.ItemLinks.Add(this.printPreviewBarItem58);
+            this.printPreviewRibbonPageGroup11.ItemLinks.Add(this.printPreviewBarItem59);
+            this.printPreviewRibbonPageGroup11.ItemLinks.Add(this.printPreviewBarItem78);
+            this.printPreviewRibbonPageGroup11.ItemLinks.Add(this.printPreviewBarItem76);
+            this.printPreviewRibbonPageGroup11.ItemLinks.Add(this.printPreviewBarItem77);
+            this.printPreviewRibbonPageGroup11.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.PageSetup;
+            this.printPreviewRibbonPageGroup11.Name = "printPreviewRibbonPageGroup11";
             superToolTip49.FixedTooltipWidth = true;
             toolTipTitleItem49.Text = "Page Setup";
             toolTipItem49.LeftIndent = 6;
@@ -1453,93 +1453,89 @@
             superToolTip49.Items.Add(toolTipTitleItem49);
             superToolTip49.Items.Add(toolTipItem49);
             superToolTip49.MaxWidth = 210;
-            this.printPreviewRibbonPageGroup3.SuperTip = superToolTip49;
-            this.printPreviewRibbonPageGroup3.Text = "Page Setup";
+            this.printPreviewRibbonPageGroup11.SuperTip = superToolTip49;
+            this.printPreviewRibbonPageGroup11.Text = "Page Setup";
             // 
-            // printPreviewRibbonPageGroup4
+            // printPreviewRibbonPageGroup12
             // 
-            this.printPreviewRibbonPageGroup4.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup4.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup4.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Find;
-            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem3);
-            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem4);
-            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem1);
-            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem17, true);
-            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem18);
-            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem19);
-            this.printPreviewRibbonPageGroup4.ItemLinks.Add(this.printPreviewBarItem20);
-            this.printPreviewRibbonPageGroup4.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Navigation;
-            this.printPreviewRibbonPageGroup4.Name = "printPreviewRibbonPageGroup4";
-            this.printPreviewRibbonPageGroup4.ShowCaptionButton = false;
-            this.printPreviewRibbonPageGroup4.Text = "Navigation";
+            this.printPreviewRibbonPageGroup12.AllowTextClipping = false;
+            this.printPreviewRibbonPageGroup12.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewRibbonPageGroup12.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Find;
+            this.printPreviewRibbonPageGroup12.ItemLinks.Add(this.printPreviewBarItem52);
+            this.printPreviewRibbonPageGroup12.ItemLinks.Add(this.printPreviewBarItem53);
+            this.printPreviewRibbonPageGroup12.ItemLinks.Add(this.printPreviewBarItem50);
+            this.printPreviewRibbonPageGroup12.ItemLinks.Add(this.printPreviewBarItem66, true);
+            this.printPreviewRibbonPageGroup12.ItemLinks.Add(this.printPreviewBarItem67);
+            this.printPreviewRibbonPageGroup12.ItemLinks.Add(this.printPreviewBarItem68);
+            this.printPreviewRibbonPageGroup12.ItemLinks.Add(this.printPreviewBarItem69);
+            this.printPreviewRibbonPageGroup12.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Navigation;
+            this.printPreviewRibbonPageGroup12.Name = "printPreviewRibbonPageGroup12";
+            this.printPreviewRibbonPageGroup12.ShowCaptionButton = false;
+            this.printPreviewRibbonPageGroup12.Text = "Navigation";
             // 
-            // printPreviewRibbonPageGroup5
+            // printPreviewRibbonPageGroup13
             // 
-            this.printPreviewRibbonPageGroup5.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup5.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup5.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Zoom;
-            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem11);
-            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem12);
-            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem13);
-            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem21);
-            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem14);
-            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem16);
-            this.printPreviewRibbonPageGroup5.ItemLinks.Add(this.printPreviewBarItem15);
-            this.printPreviewRibbonPageGroup5.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Zoom;
-            this.printPreviewRibbonPageGroup5.Name = "printPreviewRibbonPageGroup5";
-            this.printPreviewRibbonPageGroup5.ShowCaptionButton = false;
-            this.printPreviewRibbonPageGroup5.Text = "Zoom";
+            this.printPreviewRibbonPageGroup13.AllowTextClipping = false;
+            this.printPreviewRibbonPageGroup13.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewRibbonPageGroup13.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Zoom;
+            this.printPreviewRibbonPageGroup13.ItemLinks.Add(this.printPreviewBarItem60);
+            this.printPreviewRibbonPageGroup13.ItemLinks.Add(this.printPreviewBarItem61);
+            this.printPreviewRibbonPageGroup13.ItemLinks.Add(this.printPreviewBarItem62);
+            this.printPreviewRibbonPageGroup13.ItemLinks.Add(this.printPreviewBarItem70);
+            this.printPreviewRibbonPageGroup13.ItemLinks.Add(this.printPreviewBarItem63);
+            this.printPreviewRibbonPageGroup13.ItemLinks.Add(this.printPreviewBarItem65);
+            this.printPreviewRibbonPageGroup13.ItemLinks.Add(this.printPreviewBarItem64);
+            this.printPreviewRibbonPageGroup13.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Zoom;
+            this.printPreviewRibbonPageGroup13.Name = "printPreviewRibbonPageGroup13";
+            this.printPreviewRibbonPageGroup13.ShowCaptionButton = false;
+            this.printPreviewRibbonPageGroup13.Text = "Zoom";
             // 
-            // printPreviewRibbonPageGroup6
+            // printPreviewRibbonPageGroup14
             // 
-            this.printPreviewRibbonPageGroup6.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup6.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup6.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Watermark;
-            this.printPreviewRibbonPageGroup6.ItemLinks.Add(this.printPreviewBarItem22);
-            this.printPreviewRibbonPageGroup6.ItemLinks.Add(this.printPreviewBarItem23);
-            this.printPreviewRibbonPageGroup6.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Background;
-            this.printPreviewRibbonPageGroup6.Name = "printPreviewRibbonPageGroup6";
-            this.printPreviewRibbonPageGroup6.ShowCaptionButton = false;
-            this.printPreviewRibbonPageGroup6.Text = "Page Background";
+            this.printPreviewRibbonPageGroup14.AllowTextClipping = false;
+            this.printPreviewRibbonPageGroup14.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewRibbonPageGroup14.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_Watermark;
+            this.printPreviewRibbonPageGroup14.ItemLinks.Add(this.printPreviewBarItem71);
+            this.printPreviewRibbonPageGroup14.ItemLinks.Add(this.printPreviewBarItem72);
+            this.printPreviewRibbonPageGroup14.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Background;
+            this.printPreviewRibbonPageGroup14.Name = "printPreviewRibbonPageGroup14";
+            this.printPreviewRibbonPageGroup14.ShowCaptionButton = false;
+            this.printPreviewRibbonPageGroup14.Text = "Page Background";
             // 
-            // printPreviewRibbonPageGroup7
+            // printPreviewRibbonPageGroup15
             // 
-            this.printPreviewRibbonPageGroup7.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup7.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup7.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportFile;
-            this.printPreviewRibbonPageGroup7.ItemLinks.Add(this.printPreviewBarItem24);
-            this.printPreviewRibbonPageGroup7.ItemLinks.Add(this.printPreviewBarItem25);
-            this.printPreviewRibbonPageGroup7.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Export;
-            this.printPreviewRibbonPageGroup7.Name = "printPreviewRibbonPageGroup7";
-            this.printPreviewRibbonPageGroup7.ShowCaptionButton = false;
-            this.printPreviewRibbonPageGroup7.Text = "Export";
+            this.printPreviewRibbonPageGroup15.AllowTextClipping = false;
+            this.printPreviewRibbonPageGroup15.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewRibbonPageGroup15.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ExportFile;
+            this.printPreviewRibbonPageGroup15.ItemLinks.Add(this.printPreviewBarItem73);
+            this.printPreviewRibbonPageGroup15.ItemLinks.Add(this.printPreviewBarItem74);
+            this.printPreviewRibbonPageGroup15.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Export;
+            this.printPreviewRibbonPageGroup15.Name = "printPreviewRibbonPageGroup15";
+            this.printPreviewRibbonPageGroup15.ShowCaptionButton = false;
+            this.printPreviewRibbonPageGroup15.Text = "Export";
             // 
-            // printPreviewRibbonPageGroup8
+            // printPreviewRibbonPageGroup16
             // 
-            this.printPreviewRibbonPageGroup8.AllowTextClipping = false;
-            this.printPreviewRibbonPageGroup8.ContextSpecifier = this.documentViewerRibbonController1;
-            this.printPreviewRibbonPageGroup8.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ClosePreview;
-            this.printPreviewRibbonPageGroup8.ItemLinks.Add(this.printPreviewBarItem26);
-            this.printPreviewRibbonPageGroup8.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Close;
-            this.printPreviewRibbonPageGroup8.Name = "printPreviewRibbonPageGroup8";
-            this.printPreviewRibbonPageGroup8.ShowCaptionButton = false;
-            this.printPreviewRibbonPageGroup8.Text = "Close";
+            this.printPreviewRibbonPageGroup16.AllowTextClipping = false;
+            this.printPreviewRibbonPageGroup16.ContextSpecifier = this.documentViewerRibbonController2;
+            this.printPreviewRibbonPageGroup16.Glyph = global::RestaurantSoftware.PrintRibbonControllerResources.RibbonPrintPreview_ClosePreview;
+            this.printPreviewRibbonPageGroup16.ItemLinks.Add(this.printPreviewBarItem75);
+            this.printPreviewRibbonPageGroup16.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Close;
+            this.printPreviewRibbonPageGroup16.Name = "printPreviewRibbonPageGroup16";
+            this.printPreviewRibbonPageGroup16.ShowCaptionButton = false;
+            this.printPreviewRibbonPageGroup16.Text = "Close";
             // 
             // Frm_InPhieuDatBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 459);
-            this.Controls.Add(this.documentViewer1);
-            this.Controls.Add(this.ribbonStatusBar1);
-            this.Controls.Add(this.ribbonControl1);
+            this.ClientSize = new System.Drawing.Size(683, 371);
+            this.Controls.Add(this.documentViewer2);
+            this.Controls.Add(this.ribbonStatusBar2);
+            this.Controls.Add(this.ribbonControl2);
             this.Name = "Frm_InPhieuDatBan";
-            this.Text = "Frm_InPhieuDatBan";
-            this.Load += new System.EventHandler(this.Frm_InPhieuDatBan_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1617,6 +1613,76 @@
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup7;
         private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+        private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer2;
+        private DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController documentViewerRibbonController2;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl2;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem50;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem51;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem52;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem53;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem54;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem55;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem56;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem57;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem58;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem59;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem60;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem61;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem62;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem63;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem64;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem65;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem66;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem67;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem68;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem69;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem70;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem71;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem72;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem73;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem74;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem75;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem76;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem77;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem78;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem79;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem80;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem81;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem82;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem83;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem84;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem85;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem86;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem87;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem88;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem89;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem90;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem91;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem92;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem93;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem94;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem95;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem96;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem97;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem printPreviewStaticItem3;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraPrinting.Preview.ProgressBarEditItem progressBarEditItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemProgressBar repositoryItemProgressBar2;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewBarItem printPreviewBarItem98;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem printPreviewStaticItem4;
+        private DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem zoomTrackBarEditItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar repositoryItemZoomTrackBar2;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage ribbonPage2;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup9;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup10;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup11;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup12;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup13;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup14;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup15;
+        private DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup printPreviewRibbonPageGroup16;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar2;
 
 
     }

@@ -205,6 +205,7 @@ namespace RestaurantSoftware.P_Layer
             txt_SDT.Text = "";
             txt_KhachDua.Text = "";
             txt_TraLai.Text = "";
+            btn_in.Enabled = true;
             txt_Tenkh.EditValue = Convert.ToInt32(gv_HoaDon.GetFocusedRowCellDisplayText(col_khachHang));
             txt_MaHoaDon.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_MaHoaDon);
             txt_SDT.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_sdt);
@@ -421,10 +422,10 @@ namespace RestaurantSoftware.P_Layer
                 string a = (txt_TongHoaDon.Text).Replace(",", "");
                 string b = (txt_KhachDua.Text).Replace(",", "");
                 string c = (txt_DaTra.Text).Replace(",", "");
-                if (int.Parse(a) < (int.Parse(b)+int.Parse(c)))
+                if (int.Parse(a) <= (int.Parse(b)+int.Parse(c)))
                 {
-                    //try
-                    //{
+                    try
+                    {
 
                         HoaDonThanhToan hd = new HoaDonThanhToan();
                         hd.id_hoadon = int.Parse(txt_MaHoaDon.Text);
@@ -459,12 +460,12 @@ namespace RestaurantSoftware.P_Layer
                         _banBll.CapNhatBanThanhToan(bn);
                         Notifications.Answers("Thanh toán thành công!");
                         LoadDataSource();
-                    //}
-                    //catch (Exception)
-                    //{
+                    }
+                    catch (Exception)
+                    {
 
-                    //    Notifications.Answers("Hóa đơn đã thanh toán rồi!");
-                    //}
+                        Notifications.Answers("Hóa đơn đã thanh toán rồi!");
+                    }
 
                 }
                 else
