@@ -253,6 +253,7 @@ namespace RestaurantSoftware.P_Layer
                 hd.id_nhanvien = ID_NHANVIEN;
                 hd.thoigian = today;
                 hd.trangthai = tthoadon[0];
+                hd.datra = 0;
                 phucvubll.ThemMoiHoaDon(hd);
                 MessageBox.Show("Đã nhận bàn");
                 ReLoadHoaDon();
@@ -317,7 +318,7 @@ namespace RestaurantSoftware.P_Layer
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            Frm_ThanhToan frmThanhtoan = new Frm_ThanhToan(ID_NHANVIEN);
+            Frm_ThanhToan frmThanhtoan = new Frm_ThanhToan(ID_NHANVIEN,idhoadonSelected);
             frmThanhtoan.MdiParent = FormMain.ActiveForm;
             frmThanhtoan.Show();
         }

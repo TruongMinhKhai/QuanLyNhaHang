@@ -36,7 +36,11 @@ namespace RestaurantSoftware.P_Layer
         }
         public Frm_ThanhToan(int idnv, int idhoadon)
         {
-            cmb_NhanVien.EditValue = idnv;
+            InitializeComponent();
+            cmb_NhanVien.Properties.DataSource = new RestaurantSoftware.DA_Layer.RestaurantDBDataContext().NhanViens;
+            ID_NHANVIEN = idnv;
+            cmb_NhanVien.EditValue = ID_NHANVIEN;
+            txt_Tenkh.Properties.DataSource = new RestaurantSoftware.DA_Layer.RestaurantDBDataContext().KhachHangs;
             _thanhToanBll.LayDsThamSo(txt_VAT, txt_KhuyenMai);
             dt_NgayLap.Text = DateTime.Now.ToShortDateString();
             try
