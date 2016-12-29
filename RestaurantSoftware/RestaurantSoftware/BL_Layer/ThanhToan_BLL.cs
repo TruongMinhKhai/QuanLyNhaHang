@@ -28,7 +28,7 @@ namespace RestaurantSoftware.BL_Layer
                             Tenban = bn.tenban,
                             Trangthai = bn.trangthai,
                             Tenloaiban = lb.tenloaiban,
-                            Datra = (int)db.datra
+                            Datra = (int)db.datra// Đã trả băt buộc phải có giá trị
 
                         };
             return query;
@@ -153,11 +153,10 @@ namespace RestaurantSoftware.BL_Layer
                     dt.Text = id.Datra.ToString();
 
             }
-            
-            
-            
+
         }
-     
+
+       
 
         public void ThanhToan(HoaDonThanhToan m)
         {

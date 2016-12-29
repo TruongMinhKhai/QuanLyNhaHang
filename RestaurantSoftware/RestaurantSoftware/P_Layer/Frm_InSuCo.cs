@@ -13,11 +13,11 @@ using RestaurantSoftware.P_Layer.Reports;
 
 namespace RestaurantSoftware.P_Layer
 {
-    public partial class PrintfSuCo : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_InSuCo : DevExpress.XtraEditors.XtraForm
     {
         RestaurantDBDataContext dbContext = new RestaurantDBDataContext();
         int idsuco = 0;
-        public PrintfSuCo(int idsucoselec)
+        public Frm_InSuCo(int idsucoselec)
         {
             InitializeComponent();
             idsuco = idsucoselec;

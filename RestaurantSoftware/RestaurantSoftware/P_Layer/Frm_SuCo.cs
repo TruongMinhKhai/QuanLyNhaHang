@@ -171,7 +171,7 @@ namespace RestaurantSoftware.P_Layer
         {
             try
             {
-                PrintfSuCo sc = new PrintfSuCo(int.Parse(txt_MaSuCo.Text));
+                Frm_InSuCo sc = new Frm_InSuCo(int.Parse(txt_MaSuCo.Text));
                 sc.Show();
             }
             catch (Exception)

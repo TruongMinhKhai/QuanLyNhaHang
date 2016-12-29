@@ -418,8 +418,7 @@ namespace RestaurantSoftware
             else
             {
                 P_Layer.Frm_ThayDoiThamSo ThamSo = new P_Layer.Frm_ThayDoiThamSo();
-                ThamSo.MdiParent = this;
-                ThamSo.Show();
+                ThamSo.ShowDialog();
             }
         }
 

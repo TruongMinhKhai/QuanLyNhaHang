@@ -13,7 +13,6 @@ D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\Rest
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThayDoiThamSo.resources
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_InPhieuDatBan.resources
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_ThongKeMon.resources
-D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.PrintfSuCo.resources
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.Chart_DoanhThuTheoNam.resources
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.DoanhThuTheoNam.resources
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.DoanhThuTheoThang.resources
@@ -47,3 +46,6 @@ D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\Rest
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe.licenses
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.exe
 D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.pdb
+D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_InQuyDinh.resources
+D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Reports.InQuyDinh.resources
+D:\OODNhaHang\QuanLyNhaHang\RestaurantSoftware\RestaurantSoftware\obj\Debug\RestaurantSoftware.P_Layer.Frm_InSuCo.resources

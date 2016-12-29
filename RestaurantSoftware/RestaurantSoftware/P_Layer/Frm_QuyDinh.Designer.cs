@@ -226,6 +226,7 @@
             this.btn_In.StyleController = this.layoutControl1;
             this.btn_In.TabIndex = 13;
             this.btn_In.Text = "In";
+            this.btn_In.Click += new System.EventHandler(this.btn_In_Click);
             // 
             // btn_Luu
             // 
@@ -247,6 +248,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dt_NgayLap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_NgayLap.Properties.ReadOnly = true;
             this.dt_NgayLap.Size = new System.Drawing.Size(234, 20);
             this.dt_NgayLap.StyleController = this.layoutControl1;
             this.dt_NgayLap.TabIndex = 9;
@@ -374,7 +376,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(581, 365);
-            this.layoutControlItem4.Text = "Nội dung";
+            this.layoutControlItem4.Text = "Nội dung*";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(71, 13);
             // 
             // layoutControlItem1
