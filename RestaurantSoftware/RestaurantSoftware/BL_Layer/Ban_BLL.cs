@@ -84,6 +84,13 @@ namespace RestaurantSoftware.BL_Layer
             return false;
         }
 
+        public bool KiemTraBan(Ban ban)
+        {
+            if (ban.tenban != null && ban.tenban.ToString() != "")
+                return true;
+            return false;
+        }
+
         public void XoaTam(int id_ban)
         {
             Ban _ban = dbContext.Bans.Single<Ban>(b => b.id_ban == id_ban);

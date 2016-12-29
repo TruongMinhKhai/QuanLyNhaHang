@@ -285,7 +285,7 @@
             this.col_LoaiMon.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_LoaiMon.AppearanceHeader.Options.UseTextOptions = true;
             this.col_LoaiMon.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_LoaiMon.Caption = "Loại Món";
+            this.col_LoaiMon.Caption = "Loại Món(*)";
             this.col_LoaiMon.ColumnEdit = this.lue_LoaiMon;
             this.col_LoaiMon.FieldName = "id_loaimon";
             this.col_LoaiMon.Name = "col_LoaiMon";

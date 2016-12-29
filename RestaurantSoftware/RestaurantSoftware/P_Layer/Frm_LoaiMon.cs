@@ -103,7 +103,7 @@ namespace RestaurantSoftware.P_Layer
 
         private bool KiemTraHang()
         {
-            if (gridView1.GetFocusedRowCellValue(col_TenLoaiMon) != null)
+            if (gridView1.GetFocusedRowCellValue(col_TenLoaiMon) != null && gridView1.GetFocusedRowCellValue(col_TenLoaiMon).ToString() != "")
                 return true;
             return false;
         }
@@ -112,28 +112,36 @@ namespace RestaurantSoftware.P_Layer
         {
             string error = "";
             bool isUpdate = false;
+            bool KiemTra = false;
             if (_listUpdate.Count > 0)
                 foreach (int id in _listUpdate)
                 {
                     LoaiMon loaimon = new LoaiMon();
                     loaimon.id_loaimon = int.Parse(gridView1.GetRowCellValue(id, "id_loaimon").ToString());
                     loaimon.tenloaimon = gridView1.GetRowCellValue(id, "tenloaimon").ToString();
-                    
-                    if (_loaimon_Bll.KiemTraLoaiMonTonTai(loaimon.tenloaimon,loaimon.id_loaimon) == 1)
+
+                    if (_loaimon_Bll.KiemTraLoaiMon(loaimon))
                     {
-                        _loaimon_Bll.CapNhatLoaiMon(loaimon);
-                        isUpdate = true;
-                    }
-                    else
-                    {
-                        if (error == "")
+                        if (_loaimon_Bll.KiemTraLoaiMonTonTai(loaimon.tenloaimon, loaimon.id_loaimon) == 1)
                         {
-                            error = loaimon.tenloaimon;
+                            _loaimon_Bll.CapNhatLoaiMon(loaimon);
+                            isUpdate = true;
                         }
                         else
                         {
-                            error += " | " + loaimon.tenloaimon;
+                            if (error == "")
+                            {
+                                error = loaimon.tenloaimon;
+                            }
+                            else
+                            {
+                                error += " | " + loaimon.tenloaimon;
+                            }
                         }
+                    }
+                    else
+                    {
+                        KiemTra = true;
                     }
                 }
             if (isUpdate == true)
@@ -146,6 +154,10 @@ namespace RestaurantSoftware.P_Layer
                 {
                     Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các loại món chưa được cập nhật (" + error + "). Lỗi: Tên loại món đã tồn tại.");
                 }
+            }
+            else if(KiemTra == true)
+            {
+                Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Dữ liệu không được rỗng.");
             }
             else
             {

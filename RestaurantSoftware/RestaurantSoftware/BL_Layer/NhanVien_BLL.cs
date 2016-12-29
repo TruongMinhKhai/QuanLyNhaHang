@@ -105,5 +105,12 @@ namespace RestaurantSoftware.BL_Layer
             }
             return false;
         }
+
+        public bool KiemTraNhanVien(NhanVien NV)
+        {
+            if (NV.tennhanvien != null && NV.tennhanvien.ToString() != "")
+                return true;
+            return false;
+        }
     }
 }
