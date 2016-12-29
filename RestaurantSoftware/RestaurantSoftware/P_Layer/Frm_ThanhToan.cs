@@ -205,6 +205,7 @@ namespace RestaurantSoftware.P_Layer
             txt_SDT.Text = "";
             txt_KhachDua.Text = "";
             txt_TraLai.Text = "";
+            btn_in.Enabled = true;
             txt_Tenkh.EditValue = Convert.ToInt32(gv_HoaDon.GetFocusedRowCellDisplayText(col_khachHang));
             txt_MaHoaDon.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_MaHoaDon);
             txt_SDT.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_sdt);

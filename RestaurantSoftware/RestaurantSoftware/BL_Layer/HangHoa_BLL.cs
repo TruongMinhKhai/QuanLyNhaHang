@@ -49,10 +49,18 @@ namespace RestaurantSoftware.BL_Layer
             _hanghoa.tenhanghoa = hh.tenhanghoa;
             _hanghoa.soluong = hh.soluong;
             _hanghoa.dongia = hh.dongia;
+            _hanghoa.id_donvi = hh.id_donvi;
+            _hanghoa.trangthai = hh.trangthai;
             dbContext.SubmitChanges();
         }
+        // lấy ID hàng hóa
+        public int LayIdHangHoa(string TenHangHoa)
+        {
+            IEnumerable<HangHoa> query = from m in dbContext.HangHoas where m.tenhanghoa == TenHangHoa select m;
+            return query.First().id_hanghoa;
+        }
         // hàm kiểm tra hàng hóa có tồn tại hay không
-        public bool KiemTraHangHoaTonTai(string _TenHangHoa, int id=-1)
+        public int KiemTraHangHoaTonTai(string _TenHangHoa, int id=-1)
         {
             IEnumerable<HangHoa> query = from hh in dbContext.HangHoas
                                          where hh.tenhanghoa == _TenHangHoa
@@ -64,14 +72,18 @@ namespace RestaurantSoftware.BL_Layer
                     query = query.Where(m => m.id_hanghoa == id);
                     if (query.Count() == 1)
                     {
-                        return false;
+                        return 1;
                     }
                 }
-                return true;
+                if (query.Where(y => y.trangthai.Equals("Xoa")).Count() > 0)
+                {
+                    return 0;
+                }
+                return -1;
             }
-            return false;
+            return 1;
         }
-        // hàm xóa hàng hóa
+        // hàm xóa hàng hóa khi xóa tạm
         public bool KiemTraThongTin(int _HangHoaID)
         {
             IEnumerable<Chitiet_HoaDonNhapHang> _KiemTraHangHoa = from db in dbContext.Chitiet_HoaDonNhapHangs
@@ -111,6 +123,13 @@ namespace RestaurantSoftware.BL_Layer
                                                 Toncuoi = (int)(hh.soluong + cthh.soluong)
                                             };
             return query;
+        }
+        // kiểm tra hàng hóa khi lưu
+        public bool KiemTraHangHoa(HangHoa hanghoa)
+        {
+            if (hanghoa.tenhanghoa != null && hanghoa.tenhanghoa != "")
+                return true;
+            return false;
         }
     }
 }

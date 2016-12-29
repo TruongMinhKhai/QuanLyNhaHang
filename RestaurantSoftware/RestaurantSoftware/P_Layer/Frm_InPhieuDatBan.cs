@@ -29,7 +29,7 @@ namespace RestaurantSoftware.P_Layer
                         select ct;
             PhieuDatBan report = new PhieuDatBan();
             report.DataSource = query;
-            documentViewer1.PrintingSystem = report.PrintingSystem;
+            documentViewer2.PrintingSystem = report.PrintingSystem;
             report.CreateDocument();
         }
 
