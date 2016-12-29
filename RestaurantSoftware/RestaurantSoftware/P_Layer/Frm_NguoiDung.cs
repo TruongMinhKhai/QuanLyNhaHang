@@ -258,5 +258,10 @@ namespace RestaurantSoftware.P_Layer
             if (e.PrevFocusedRowHandle == GridControl.NewItemRowHandle)
                 LoadDataSource();
         }
+
+        private void gridView1_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            gridView1.SetRowCellValue(e.RowHandle, "id_quyen", "2");
+        }
     }
 }

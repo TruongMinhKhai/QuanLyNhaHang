@@ -302,5 +302,12 @@ namespace RestaurantSoftware.P_Layer
             if (e.PrevFocusedRowHandle == GridControl.NewItemRowHandle)
                 LoadDataSource();
         }
+
+        private void gridView1_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            gridView1.SetRowCellValue(e.RowHandle, "trangthai", "Còn");
+            gridView1.SetRowCellValue(e.RowHandle, "id_donvi", "7");
+            gridView1.SetRowCellValue(e.RowHandle, "id_loaimon", "10");
+        }
     }
 }
