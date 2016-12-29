@@ -19,8 +19,6 @@ namespace RestaurantSoftware.P_Layer
         NhapHang_BLL _nhaphangBLL = null;
         List<string> trangthaiPhieuNhap = new List<string>();
         DataTable dt = null;
-        //bool chonPhieuNhap = false;
-        // kiểm tra cập nhật phiếu nhâp
         bool ktCapNhatPhieuNhap = false; 
         int ID_NHANVIEN = 0;
         string TEN_NHANVIEN = "";
@@ -48,7 +46,6 @@ namespace RestaurantSoftware.P_Layer
         private void Init()
         {
             _nhaphangBLL.LoadTrangThai(trangthaiPhieuNhap, "nhaphang");
-            //txtMaPhieuNhap.EditValue = ID_NHAPHANG;
             txtMaPhieuNhap.Text = _nhaphangBLL.HienThiID(ID_NHAPHANG);
             txtNhanVien.Text = TEN_NHANVIEN;
             dtNgayNhap.Text = DateTime.Now.ToShortDateString();
@@ -109,25 +106,48 @@ namespace RestaurantSoftware.P_Layer
             }
             return "";
         }
+        // load trạng thái đang theo dõi
+        public void LoadTrangThaiDangTheoDoi()
+        {
+            _nhaphangBLL.LayDsThamSo(txtThue);
+            btnTaoPhieu.Enabled = false;
+            btnNhapKho.Enabled = true;
+            btnSuaPhieu.Enabled = true;
+            btnThemNCC.Enabled = true;
+            cmbNhaCungCap.ReadOnly = false;
+            //btnLamMoi.Enabled = false;
+            txtGhiChu.ReadOnly = false;
+            btn_ThemHangHoa.Buttons[0].Enabled = true;
+            col_DonGia.OptionsColumn.ReadOnly = false;
+            col_SoLuong.OptionsColumn.ReadOnly = false;
+            btnThemHangHoa.Enabled = true;
+            btnSuaPhieu.Enabled = true;
+        }
+        // load trạng thái đã nhập kho
+        public void LoadTrangThaiDaNhapKho()
+        {
+            btnNhapKho.Enabled = false;
+            btnTaoPhieu.Enabled = false;
+            btnSuaPhieu.Enabled = false;
+            btnThemNCC.Enabled = false;
+            cmbNhaCungCap.ReadOnly = true;
+            //btnLamMoi.Enabled = false;
+            txtGhiChu.ReadOnly = true;
+            btn_ThemHangHoa.Buttons[0].Enabled = false;
+            col_DonGia.OptionsColumn.ReadOnly = true;
+            col_SoLuong.OptionsColumn.ReadOnly = true;
+            btnThemHangHoa.Enabled = false;
+        }
         // xử lý thêm tên hàng hóa vào danh sách chi tiết nhập hàng
         private void btn_ThemHangHoa_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if (txtMaPhieuNhap.Text != null && ID_NHAPHANG != 0)
             {
-
                 Chitiet_HoaDonNhapHang cthd = new Chitiet_HoaDonNhapHang();
                 cthd.id_nhaphang = ID_NHAPHANG;
                 cthd.id_hanghoa = int.Parse(grv_DsNguyenLieu.GetFocusedRowCellValue(col_MaHangHoa).ToString());
-
-                //if (gridView_ThucDon.EditingValue == null)
-                //{
-                //    cthd.soluong = 1;
-                //}
-                //else
-                //    cthd.soluong = int.Parse(gridView_ThucDon.EditingValue.ToString());
                 if(grv_DsChiTietPhieuNhap.EditingValue == null){
                     cthd.soluong = 1;
-                    //decimal dongia = decimal.Parse(grv_DsNguyenLieu.GetFocusedRowCellValue(col_GiaBanDau).ToString());
                     decimal dongia = decimal.Parse(grv_DsNguyenLieu.GetFocusedRowCellValue(col_GiaBanDau).ToString());
                     cthd.dongia = dongia;
                 }
@@ -135,29 +155,16 @@ namespace RestaurantSoftware.P_Layer
                     cthd.soluong = int.Parse(grv_DsChiTietPhieuNhap.EditingValue.ToString());
                     cthd.dongia = int.Parse(grv_DsChiTietPhieuNhap.EditingValue.ToString());
                 }
-                //cthd.dongia = decimal.Parse(grv_DsNguyenLieu.GetFocusedRowCellValue(col_GiaBanDau).ToString());
-                cthd.thanhtien = cthd.dongia * cthd.dongia;
+                cthd.thanhtien = cthd.soluong * cthd.dongia;
                 if (_nhaphangBLL.KiemTraHangHoaDaCoChua(cthd.id_nhaphang, cthd.id_hanghoa) > 0)
                 {
                     _nhaphangBLL.CapNhatChiTietNhapHang(cthd);
                     MessageBox.Show("Thêm nguyên liệu thành công");
-                    //DialogResult result = MessageBox.Show("Thêm nguyên liệu thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    //if (result == DialogResult.Yes)
-                    //{
-                    //    LoadTinhToan();
-                    //    LoadChiTietPhieuNhap();
-                    //}
                 }
                 else
                 {
                     _nhaphangBLL.ThemChiTiet(cthd);
                    MessageBox.Show("Thêm nguyên liệu thành công");
-                    //DialogResult result = MessageBox.Show("Thêm nguyên liệu thành công", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    //if (result == DialogResult.Yes)
-                    //{
-                    //    LoadTinhToan();
-                    //    LoadChiTietPhieuNhap();
-                    //}
                 }
                 LoadChiTietPhieuNhap();
                 LoadTinhToan();
@@ -167,14 +174,24 @@ namespace RestaurantSoftware.P_Layer
         // xử lý xóa phiếu
         private void btnXoaPhieu_Click(object sender, EventArgs e)
         {
-            if (txtMaPhieuNhap.Text != null)
+            if (txtMaPhieuNhap.Text != null && ID_NHAPHANG != 0)
             {
                 DialogResult result = MessageBox.Show("Chắc chắn muốn xóa phiếu không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    int id = int.Parse(grv_DsPhieuNhap.GetFocusedRowCellValue(col_MaPhieuNhap).ToString());
-                    _nhaphangBLL.XoaHoaDonNhapHang(id);
-                    MessageBox.Show("Xóa phiếu thành công");
+                    if (_nhaphangBLL.KiemTraThongTin(ID_NHAPHANG))
+                    {
+                        _nhaphangBLL.XoaTam(ID_NHAPHANG);
+                        MessageBox.Show("Xóa tạm thành công");
+                    }
+                    else
+                    {
+                        _nhaphangBLL.XoaHoaDonNhapHang(ID_NHAPHANG);
+                        MessageBox.Show("Xóa phiếu thành công");
+                    }
+                    LoadDsPhieuNhap();
+                    LoadChiTietPhieuNhap();
+                    LoadTinhToan();
                     LoadDsPhieuNhap();
                     LoadChiTietPhieuNhap();
                     LoadTinhToan();
@@ -194,11 +211,12 @@ namespace RestaurantSoftware.P_Layer
                 MessageBox.Show("Vui lòng chọn tên nhà cung cấp");
                 return;
             }
-            else if(txtNhanVien.Text == null){
+            else if (txtNhanVien.Text == null)
+            {
                 MessageBox.Show("Vui lòng chọn tên nhân viên");
                 return;
             }
-            hd.id_nhacungcap =(int)cmbNhaCungCap.EditValue;
+            hd.id_nhacungcap = (int)cmbNhaCungCap.EditValue;
             hd.thoigian = dtNgayNhap.DateTime.Date;
             hd.id_nhanvien = ID_NHANVIEN;
             hd.trangthai = trangthaiPhieuNhap[0]; // 0: Đang theo dõi , 1: Đã nhập vào kho
@@ -245,34 +263,11 @@ namespace RestaurantSoftware.P_Layer
             btnXoaPhieu.Enabled = true;
             if (grv_DsPhieuNhap.GetFocusedRowCellDisplayText(col_TrangThai) == "Đang theo dõi")
             {
-                _nhaphangBLL.LayDsThamSo(txtThue);
-                btnTaoPhieu.Enabled = false;
-                btnNhapKho.Enabled = true;
-                btnSuaPhieu.Enabled = true;
-                btnThemNCC.Enabled = true;
-                cmbNhaCungCap.ReadOnly = false;
-                //btnLamMoi.Enabled = false;
-                txtGhiChu.ReadOnly = false;
-                btn_ThemHangHoa.Buttons[0].Enabled = true;
-                col_DonGia.OptionsColumn.ReadOnly = false;
-                col_SoLuong.OptionsColumn.ReadOnly = false;
-                btnThemHangHoa.Enabled = true;
-                btnSuaPhieu.Enabled = true;
+                LoadTrangThaiDangTheoDoi();
             }
             else if (grv_DsPhieuNhap.GetFocusedRowCellDisplayText(col_TrangThai) == "Đã nhập vào kho")
             {
-                //txtThue.Text = grv_DsPhieuNhap.GetRowCellValue(e.RowHandle,"thue").ToString();
-                btnNhapKho.Enabled = false;
-                btnTaoPhieu.Enabled = false;
-                btnSuaPhieu.Enabled = false;
-                btnThemNCC.Enabled = false;
-                cmbNhaCungCap.ReadOnly = true;
-                //btnLamMoi.Enabled = false;
-                txtGhiChu.ReadOnly = true;
-                btn_ThemHangHoa.Buttons[0].Enabled = false;
-                col_DonGia.OptionsColumn.ReadOnly = true;
-                col_SoLuong.OptionsColumn.ReadOnly = true;
-                btnThemHangHoa.Enabled = false;
+                LoadTrangThaiDaNhapKho();
             }
             LoadChiTietPhieuNhap();
             LoadTinhToan();
@@ -283,7 +278,6 @@ namespace RestaurantSoftware.P_Layer
             try
             {
                 int tongtien = Convert.ToInt32(grv_DsChiTietPhieuNhap.Columns["thanhtien"].SummaryItem.SummaryValue);
-                //txtTongTien.Text = tongtien.ToString();
                 txtTongTien.EditValue = (tongtien != 0) ? tongtien : 0;
             }
             catch (Exception)
@@ -299,7 +293,6 @@ namespace RestaurantSoftware.P_Layer
                 int tongtien = Convert.ToInt32(grv_DsChiTietPhieuNhap.Columns["thanhtien"].SummaryItem.SummaryValue);
                 var tongthanhtoan = tongtien + (tongtien * int.Parse(txtThue.Text)) * 0.01;
                 txtTongThanhToan.EditValue = (tongthanhtoan != 0) ? tongthanhtoan : 0;
-                //txtTongThanhToan.Text = tongthanhtoan.ToString();
             }
             catch (Exception)
             {
@@ -350,19 +343,14 @@ namespace RestaurantSoftware.P_Layer
                 return temp;
             }
         }
+        // xử lý nút thêm nhà cung cấp
         private void btnThemNCC_Click(object sender, EventArgs e)
         {
             Frm_NhaCungCap ncc = new Frm_NhaCungCap();
             ncc.MdiParent = FormMain.ActiveForm;
             ncc.Show();
         }
-
-        private void btnThemNV_Click(object sender, EventArgs e)
-        {
-            Frm_NguoiDung nv = new Frm_NguoiDung();
-            nv.MdiParent = FormMain.ActiveForm;
-            nv.Show();
-        }
+        // cập nhật phiếu nhập
         public void CapNhatPhieuNhap()
         {
             HoaDonNhapHang hd = new HoaDonNhapHang();
@@ -377,6 +365,7 @@ namespace RestaurantSoftware.P_Layer
             _nhaphangBLL.SuaPhieuNhap(hd);
             ktCapNhatPhieuNhap = true;
         }
+        // xử lý nút cập nhật
         private void btnSuaPhieu_Click(object sender, EventArgs e)
         {
             try
@@ -393,7 +382,6 @@ namespace RestaurantSoftware.P_Layer
                     {
                         MessageBox.Show("Sửa phiếu nhập không thành công");
                     }
-                    
                 }
                 else
                 {
@@ -406,7 +394,7 @@ namespace RestaurantSoftware.P_Layer
                 MessageBox.Show(ex.Message);
             }
         }
-
+        // xử lý nút xóa trên gridcontrol
         private void xoachitiet_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             if(grv_DsChiTietPhieuNhap.GetFocusedRowCellValue(col_MaNhapHang)!= null 
@@ -423,37 +411,34 @@ namespace RestaurantSoftware.P_Layer
                     }
             }
         }
+        // xử lý nút làm mới 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             btnTaoPhieu.Enabled = true;
             btnThemHangHoa.Enabled = true;
-           // _nhaphangBLL.LoadTrangThai(trangthaiPhieuNhap, "nhaphang");
             ID_NHAPHANG = _nhaphangBLL.LayID() + 1;
             txtMaPhieuNhap.Text = _nhaphangBLL.HienThiID(ID_NHAPHANG);
             dtNgayNhap.Text = DateTime.Now.ToShortDateString();
             cmbNhaCungCap.EditValue = null;
-            //cmbNhanVien.EditValue = null;
             btnThemNCC.Enabled = true;
-            //btnThemNV.Enabled = true;
             txtGhiChu.ReadOnly = false;
             txtGhiChu.Text = "";
             txtThue.EditValue = 10;
             txtTongTien.EditValue = 0;
             txtTongThanhToan.EditValue = 0;
 
-            //
             cmbNhaCungCap.ReadOnly = false;
             LoadChiTietPhieuNhap();
             LoadDsPhieuNhap();
         }
-
+        // xử lý nút thêm mới hàng hóa
         private void btnThemHangHoa_Click(object sender, EventArgs e)
         {
             Frm_NguyenLieu hh = new Frm_NguyenLieu();
             hh.MdiParent = FormMain.ActiveForm;
             hh.Show();
         }
-
+        // xử lý khi thay đổi dữ liệu trên grid
         private void grv_DsChiTietPhieuNhap_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             try
@@ -475,18 +460,17 @@ namespace RestaurantSoftware.P_Layer
             catch (Exception)
             {
 
-                MessageBox.Show("Error!");
+                MessageBox.Show("Lỗi!");
             }
             LoadChiTietPhieuNhap();
             LoadTinhToan();
-           
         }
-
+        // xử lý nút nhập kho
         private void btnNhapKho_Click(object sender, EventArgs e)
         {
             try
             {
-                if (grv_DsPhieuNhap.GetRowCellValue(grv_DsPhieuNhap.FocusedRowHandle, "id_nhaphang") != null)
+                if (txtMaPhieuNhap.Text != null && ID_NHAPHANG != 0)
                 {
                     if (grv_DsChiTietPhieuNhap.GetFocusedRowCellValue(col_MaNhapHang) != null
                     && grv_DsChiTietPhieuNhap.GetFocusedRowCellValue(col_MaHang) != null)
@@ -504,20 +488,24 @@ namespace RestaurantSoftware.P_Layer
                             MessageBox.Show("Đơn giá phải lớn hơn không");
                             return;
                         }
-                        //
                         int idhd = int.Parse(grv_DsChiTietPhieuNhap.GetFocusedRowCellValue(col_MaNhapHang).ToString());
-                        int idhh = int.Parse(grv_DsChiTietPhieuNhap.GetFocusedRowCellValue(col_MaHang).ToString());
                         DialogResult result = MessageBox.Show("Chắc chắn muốn nhập vào kho?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (DialogResult.Yes == result)
                         {
-                            //_nhaphangBLL.CapNhatNguyenLieuTon(idhd, idhh);
+                            _nhaphangBLL.CapNhatNguyenLieuTon(idhd);// cập nhật toàn bộ hàng hóa
+                            CapNhatPhieuNhap();
+                            if (ktCapNhatPhieuNhap)
+                            {
+                                _nhaphangBLL.CapNhatTrangThai(idhd, GetTrangThaiPhieuNhap(1));
+                            }
                             MessageBox.Show("Nhập kho thành công");
-                            _nhaphangBLL.CapNhatTrangThai(idhd, GetTrangThaiPhieuNhap(1));
-                            //GetTrangThaiPhieuNhap(1);
-                            //_nhaphangBLL.LoadTrangThai(trangthaiPhieuNhap, "nhaphang");
                         }
                         LoadDsPhieuNhap();
                         LoadDsNguyenLieu();
+                        LoadTrangThaiDaNhapKho(); // load lại trạng thái đã nhập kho
+                    }
+                    else {
+                        MessageBox.Show("Bạn chưa nhập hàng hóa");
                     }
                 }
                 else
@@ -528,7 +516,22 @@ namespace RestaurantSoftware.P_Layer
             catch (Exception)
             {
 
-                MessageBox.Show("Error");
+                MessageBox.Show("Lỗi mã phiếu nhập");
+            }
+        }
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+            Frm_InPhieuNhapHang pnh = new Frm_InPhieuNhapHang(ID_NHAPHANG);
+            //MessageBox.Show("ID " + ID_NHAPHANG);
+            pnh.Show();
+        }
+
+        private void repositoryItemTextEdit1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '-')
+            {
+                e.Handled = true;
             }
         }
     }

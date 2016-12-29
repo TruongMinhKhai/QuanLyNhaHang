@@ -91,16 +91,39 @@ namespace RestaurantSoftware.P_Layer
             {
                 if (txt_TenSuCo.Text != "")
                 {
-                    SuCo qd = new SuCo();
-                    qd.tensuco = txt_TenSuCo.Text;
-                    qd.id_nhanvien = (int)cmb_NhanVienLap.EditValue;
-                    qd.ngaylap = dt_NgayLap.DateTime;
-                    qd.noidung = rxt_NoiDung.Text;
-                    qd.id_khachhang = (int)cmb_TenKhachHang.EditValue;
-                    _sucoBLL.ThemSuCo(qd);
-                    Notifications.Answers("Thêm thành công!");
-                    ReLoadSuCo();
-                    LoadDataSource();
+                    if (txt_MaSuCo.Text =="")
+                    {
+                        SuCo qd = new SuCo();
+                        qd.tensuco = txt_TenSuCo.Text;
+                        qd.id_nhanvien = (int)cmb_NhanVienLap.EditValue;
+                        qd.ngaylap = dt_NgayLap.DateTime;
+                        qd.noidung = rxt_NoiDung.Text;
+                        qd.id_khachhang = (int)cmb_TenKhachHang.EditValue;
+                        _sucoBLL.ThemSuCo(qd);
+                        Notifications.Answers("Thêm thành công!");
+                        ReLoadSuCo();
+                        LoadDataSource();
+                    }
+                    else
+                    {
+                        if (txt_TenSuCo.Text != "")
+                        {
+                            SuCo qd1 = new SuCo();
+                            qd1.id_suco = int.Parse(txt_MaSuCo.Text);
+                            qd1.tensuco = txt_TenSuCo.Text;
+                            qd1.id_nhanvien = (int)cmb_NhanVienLap.EditValue;
+                            qd1.ngaylap = dt_NgayLap.DateTime;
+                            qd1.noidung = rxt_NoiDung.Text;
+                            qd1.id_khachhang = (int)cmb_TenKhachHang.EditValue;
+                            _sucoBLL.CapNhatSuCo(qd1);
+                            Notifications.Answers("Sửa thành công!");
+                            LoadDataSource();
+
+                        }
+                        else
+                            Notifications.Answers("Bạn chưa nhập tên sự cố.");
+                    }
+                    
                 }
                 else
                     Notifications.Answers("Bạn chưa nhập tên sự cố.");
@@ -180,6 +203,13 @@ namespace RestaurantSoftware.P_Layer
                 Notifications.Answers(" Bạn chưa chọn sự cố để in");
             }
            
+        }
+
+        private void btn_ThemKhachHang_Click(object sender, EventArgs e)
+        {
+            Frm_KhachHang frmKH = new Frm_KhachHang();
+            frmKH.MdiParent = FormMain.ActiveForm;
+            frmKH.Show();
         }
     }
 }

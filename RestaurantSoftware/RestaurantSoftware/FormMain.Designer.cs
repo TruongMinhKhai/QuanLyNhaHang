@@ -89,6 +89,7 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btn_BaoCaoTonKho = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -129,9 +130,10 @@
             this.btn_LoaiSuCo,
             this.btn_DonVi,
             this.btn_HoaDon,
-            this.btn_ThayDoiThamSo});
+            this.btn_ThayDoiThamSo,
+            this.btn_BaoCaoTonKho});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 37;
+            this.ribbonControl1.MaxItemId = 38;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.hethong,
@@ -536,6 +538,7 @@
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_DoanhThuThang);
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_DoanhThuNam);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_BaoCaoTonKho);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Báo cáo";
             // 
@@ -612,6 +615,15 @@
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageAndTabControlHeader;
             this.xtraTabbedMdiManager1.FloatOnDrag = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // btn_BaoCaoTonKho
+            // 
+            this.btn_BaoCaoTonKho.Caption = "Tồn kho";
+            this.btn_BaoCaoTonKho.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_BaoCaoTonKho.Glyph")));
+            this.btn_BaoCaoTonKho.Id = 37;
+            this.btn_BaoCaoTonKho.Name = "btn_BaoCaoTonKho";
+            this.btn_BaoCaoTonKho.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btn_BaoCaoTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_BaoCaoTonKho_ItemClick);
             // 
             // FormMain
             // 
@@ -698,6 +710,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_HoaDon;
         private DevExpress.XtraBars.BarButtonItem btn_ThayDoiThamSo;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup15;
+        private DevExpress.XtraBars.BarButtonItem btn_BaoCaoTonKho;
     }
 }
 

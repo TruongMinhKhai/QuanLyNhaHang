@@ -223,7 +223,7 @@
             // xrLabel9
             // 
             this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 13F);
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(418.75F, 78.60415F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(418.7499F, 78.60416F);
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel9.SizeF = new System.Drawing.SizeF(121.2499F, 23F);
