@@ -107,7 +107,22 @@ namespace RestaurantSoftware.P_Layer
                 }
                 else
                 {
-                    Notifications.Answers("Tên quy định không được trùng");
+                    if (txt_MaQuyDinh.Text != "")
+                    {
+                        QuyDinh qd1 = new QuyDinh();
+                        qd1.id_quydinh = int.Parse(txt_MaQuyDinh.Text);
+                        qd1.tenquydinh = txt_TenQuyDinh.Text;
+                        qd1.id_nhanvien = (int)cmb_NhanVienLap.EditValue;
+                        qd1.ngaylap = dt_NgayLap.DateTime;
+                        qd1.noidung = rxt_NoiDung.Text;
+                        _quydinhBLL.CapNhatQuyDinh(qd1);
+                        Notifications.Answers("Sửa thành công!");
+                        LoadDataSource();
+                    }
+                    else
+                        Notifications.Answers("Quy định đã có trong danh sách!");
+
+                   
 
                 }
                 
@@ -159,5 +174,8 @@ namespace RestaurantSoftware.P_Layer
                 Notifications.Answers(" Bạn chưa chọn sự cố để in");
             }
         }
+
+     
+
     }
 }

@@ -421,10 +421,10 @@ namespace RestaurantSoftware.P_Layer
                 string a = (txt_TongHoaDon.Text).Replace(",", "");
                 string b = (txt_KhachDua.Text).Replace(",", "");
                 string c = (txt_DaTra.Text).Replace(",", "");
-                if (int.Parse(a) < (int.Parse(b)+int.Parse(c)))
+                if (int.Parse(a) <= (int.Parse(b)+int.Parse(c)))
                 {
-                    //try
-                    //{
+                    try
+                    {
 
                         HoaDonThanhToan hd = new HoaDonThanhToan();
                         hd.id_hoadon = int.Parse(txt_MaHoaDon.Text);
@@ -459,12 +459,12 @@ namespace RestaurantSoftware.P_Layer
                         _banBll.CapNhatBanThanhToan(bn);
                         Notifications.Answers("Thanh toán thành công!");
                         LoadDataSource();
-                    //}
-                    //catch (Exception)
-                    //{
+                    }
+                    catch (Exception)
+                    {
 
-                    //    Notifications.Answers("Hóa đơn đã thanh toán rồi!");
-                    //}
+                        Notifications.Answers("Hóa đơn đã thanh toán rồi!");
+                    }
 
                 }
                 else
