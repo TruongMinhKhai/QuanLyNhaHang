@@ -242,6 +242,7 @@
             // 
             // NgayThongKe
             // 
+            this.NgayThongKe.Description = "Ngày Thống kê:";
             this.NgayThongKe.Name = "NgayThongKe";
             this.NgayThongKe.Type = typeof(System.DateTime);
             // 
@@ -472,6 +473,7 @@
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.xrControlStyle1});
             this.Version = "15.2";
+            this.ParametersRequestBeforeShow += new System.EventHandler<DevExpress.XtraReports.Parameters.ParametersRequestEventArgs>(this.ThongKeMon_ParametersRequestBeforeShow);
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();

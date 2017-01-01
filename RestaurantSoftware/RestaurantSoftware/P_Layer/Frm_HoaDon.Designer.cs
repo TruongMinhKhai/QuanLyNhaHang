@@ -198,7 +198,7 @@
             this.gv_HoaDon.OptionsBehavior.AutoExpandAllGroups = true;
             this.gv_HoaDon.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gv_HoaDon.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_ThoiGian, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_ThoiGian, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gv_HoaDon.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gv_HoaDon_RowCellClick);
             // 
             // col_MaHoaDon

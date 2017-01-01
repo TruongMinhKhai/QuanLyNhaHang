@@ -445,7 +445,7 @@
             // 
             // printPreviewBarItem6
             // 
-            this.printPreviewBarItem6.Caption = "Print";
+            this.printPreviewBarItem6.Caption = "In";
             this.printPreviewBarItem6.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Print;
             this.printPreviewBarItem6.ContextSpecifier = this.documentViewerRibbonController1;
             this.printPreviewBarItem6.Enabled = false;
@@ -1535,7 +1535,7 @@
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "Frm_ThongKeMon";
-            this.Text = "THỐNG KÊ MÓN THEO THÁNG";
+            this.Text = "THỐNG KÊ MÓN THEO NGÀY";
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();

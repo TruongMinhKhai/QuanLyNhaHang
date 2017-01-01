@@ -117,6 +117,13 @@ namespace RestaurantSoftware.P_Layer
                 HoaDon_Bll.CapNhatHoaDon(qd);
                 Notifications.Answers("Hủy thành công!");
                 Frm_HoaDon_Load(sender, e);
+                _thanhToanBll.LoadChiTietHoaDon(0, grd_DanhSachMon);
+                txt_TenKH.Text = "";
+                txt_SDT.Text = "";
+                txt_MaHoaDon.Text = "";
+                txt_TongTien.Text = "0";
+                txt_TongHoaDon.Text = "0";
+                txt_Ban.Text = "";
             }
             else
                 Notifications.Answers("Hủy không thành công!");

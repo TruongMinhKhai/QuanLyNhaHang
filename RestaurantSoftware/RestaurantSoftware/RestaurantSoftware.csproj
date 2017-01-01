@@ -472,6 +472,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\ThongKeMon.resx">
       <DependentUpon>ThongKeMon.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="P_Layer\Reports\ThongKeMonTheoNgay.resx">
       <DependentUpon>ThongKeMonTheoNgay.cs</DependentUpon>
