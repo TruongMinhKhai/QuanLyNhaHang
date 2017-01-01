@@ -445,7 +445,7 @@
             // 
             // printPreviewBarItem6
             // 
-            this.printPreviewBarItem6.Caption = "Print";
+            this.printPreviewBarItem6.Caption = "In";
             this.printPreviewBarItem6.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Print;
             this.printPreviewBarItem6.ContextSpecifier = this.documentViewerRibbonController1;
             this.printPreviewBarItem6.Enabled = false;

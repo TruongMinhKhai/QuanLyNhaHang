@@ -134,7 +134,7 @@
        on ("HoaDonThanhToan"."id_hoadon" = "Chitiet_HoaDonThanhToan"."id_hoadon"))
   inner join "dbo"."DonVi" "DonVi"
        on ("DonVi"."id_donvi" = "Mon"."id_donvi"))
-WHERE CONVERT(varchar(11),"HoaDonThanhToan"."thoigian",103) = CONVERT(varchar(11),@NgayThongKe ,103)
+WHERE CONVERT(VARCHAR(10),"HoaDonThanhToan"."thoigian", 103) = CONVERT(VARCHAR(10),@NgayThongKe, 103) and "HoaDonThanhToan"."trangthai" != N'Chưa thanh toán'
 Group by "Mon"."tenmon","Mon"."gia","HoaDonThanhToan"."thoigian", "DonVi"."tendonvi"
 ORDER BY soluong DESC;</value>
   </data>

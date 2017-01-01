@@ -36,14 +36,12 @@
             DevExpress.XtraCharts.SeriesPoint seriesPoint2 = new DevExpress.XtraCharts.SeriesPoint("1", new object[] {
             ((object)(7249529D))});
             DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SeriesPoint seriesPoint3 = new DevExpress.XtraCharts.SeriesPoint("1", new object[] {
-            ((object)(31950000D))});
-            DevExpress.XtraCharts.SeriesPoint seriesPoint4 = new DevExpress.XtraCharts.SeriesPoint("1", new object[] {
-            ((object)(31950000D))});
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chart_DoanhThuTheoNam));
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrChart1 = new DevExpress.XtraReports.UI.XRChart();
@@ -84,7 +82,7 @@
             // 
             this.xrChart1.BorderColor = System.Drawing.Color.Black;
             this.xrChart1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrChart1.DataMember = "Query";
+            this.xrChart1.DataMember = "HoaDonNhapHang";
             this.xrChart1.DataSource = this.sqlDataSource1;
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
@@ -95,19 +93,15 @@
             this.xrChart1.Diagram = xyDiagram1;
             this.xrChart1.LocationFloat = new DevExpress.Utils.PointFloat(158.3333F, 93.75F);
             this.xrChart1.Name = "xrChart1";
-            series1.ArgumentDataMember = "thang";
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False;
             series1.Name = "Tiền chi";
             series1.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
             seriesPoint1,
             seriesPoint2});
-            series1.ValueDataMembersSerializable = "tienchi";
-            series2.ArgumentDataMember = "thang";
+            series2.ArgumentDataMember = "TienThu";
             series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
             series2.Name = "Tiền Thu";
-            series2.Points.AddRange(new DevExpress.XtraCharts.SeriesPoint[] {
-            seriesPoint3,
-            seriesPoint4});
             series2.ValueDataMembersSerializable = "tienthu";
             sideBySideBarSeriesView1.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Gradient;
             series2.View = sideBySideBarSeriesView1;
@@ -120,14 +114,21 @@
             // 
             this.sqlDataSource1.ConnectionName = "nhahang_dbConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            customSqlQuery1.Name = "Query";
+            customSqlQuery1.Name = "HoaDonThanhToan";
             queryParameter1.Name = "NamBaoCao";
             queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
             queryParameter1.Value = new DevExpress.DataAccess.Expression("[Parameters.NamBaoCao]", typeof(string));
             customSqlQuery1.Parameters.Add(queryParameter1);
             customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
+            customSqlQuery2.Name = "HoaDonNhapHang";
+            queryParameter2.Name = "NamBaoCao";
+            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter2.Value = new DevExpress.DataAccess.Expression("[Parameters.NamBaoCao]", typeof(string));
+            customSqlQuery2.Parameters.Add(queryParameter2);
+            customSqlQuery2.Sql = resources.GetString("customSqlQuery2.Sql");
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery1});
+            customSqlQuery1,
+            customSqlQuery2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // xrLabel2

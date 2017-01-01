@@ -121,20 +121,23 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select MONTH("HoaDonThanhToan"."thoigian") as thang,
-      Sum("HoaDonThanhToan"."tongtien") as tienthu,
-	Sum("HoaDonNhapHang"."tongtien") as tienchi
-  from (("dbo"."NhanVien" "NhanVien"
-  inner join "dbo"."HoaDonThanhToan"
-       "HoaDonThanhToan"
-       on ("HoaDonThanhToan"."id_nhanvien" = "NhanVien"."id_nhanvien"))
-  inner join "dbo"."HoaDonNhapHang"
-       "HoaDonNhapHang"
-       on ("HoaDonNhapHang"."id_nhanvien" = "NhanVien"."id_nhanvien"))
-WHERE YEAR("HoaDonThanhToan"."thoigian") = @NamBaoCao AND "HoaDonThanhToan"."trangthai" = N'Đã thanh toán'
-GROUP BY MONTH("HoaDonThanhToan"."thoigian")</value>
+    <value>select Month("HoaDonThanhToan"."thoigian") as Thang,
+SUM("HoaDonThanhToan"."tongtien") as TienThu
+ from "dbo"."HoaDonThanhToan" "HoaDonThanhToan"
+ WHERE YEAR("HoaDonThanhToan"."thoigian") = @NamBaoCao and "HoaDonThanhToan"."tongtien" is not null
+Group by Month("HoaDonThanhToan"."thoigian")
+ORDER BY Month("HoaDonThanhToan"."thoigian") DESC;</value>
+  </data>
+  <data name="customSqlQuery2.Sql" xml:space="preserve">
+    <value>select Month("HoaDonThanhToan"."thoigian") as Thang,
+SUM("HoaDonThanhToan"."tongtien") as TienThu
+ from "dbo"."HoaDonThanhToan" "HoaDonThanhToan"
+ WHERE YEAR("HoaDonThanhToan"."thoigian") = @NamBaoCao and "HoaDonThanhToan"."tongtien" is not null
+Group by Month("HoaDonThanhToan"."thoigian")
+ORDER BY Month("HoaDonThanhToan"."thoigian") DESC;
+</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0idGhhbmciIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJ0aWVudGh1IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJ0aWVuY2hpIiBUeXBlPSJEZWNpbWFsIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkhvYURvbk5oYXBIYW5nIj48RmllbGQgTmFtZT0iVGhhbmciIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUaWVuVGh1IiBUeXBlPSJEZWNpbWFsIiAvPjwvVmlldz48VmlldyBOYW1lPSJIb2FEb25UaGFuaFRvYW4iPjxGaWVsZCBOYW1lPSJUaGFuZyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRpZW5UaHUiIFR5cGU9IkRlY2ltYWwiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
 </root>
