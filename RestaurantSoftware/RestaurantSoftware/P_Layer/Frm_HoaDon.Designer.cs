@@ -311,6 +311,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tennhanvien", "Tên nhân viên")});
             this.cmb_NhanVien.Properties.DisplayMember = "tennhanvien";
             this.cmb_NhanVien.Properties.NullText = "Chọn nhân viên";
+            this.cmb_NhanVien.Properties.ReadOnly = true;
             this.cmb_NhanVien.Properties.ValueMember = "id_nhanvien";
             this.cmb_NhanVien.Size = new System.Drawing.Size(181, 20);
             this.cmb_NhanVien.StyleController = this.layoutControl1;
@@ -420,6 +421,7 @@
             this.gv_DanhSachMon.GridControl = this.grd_DanhSachMon;
             this.gv_DanhSachMon.Name = "gv_DanhSachMon";
             this.gv_DanhSachMon.OptionsBehavior.ReadOnly = true;
+            this.gv_DanhSachMon.OptionsView.ShowGroupPanel = false;
             // 
             // col_TenMon
             // 
