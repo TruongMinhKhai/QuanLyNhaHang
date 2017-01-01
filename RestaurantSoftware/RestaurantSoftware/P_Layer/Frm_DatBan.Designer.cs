@@ -272,7 +272,7 @@
             this.gridView_DsDatBan.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView_DsDatBan.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridView_DsDatBan.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.thoigian, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.thoigian, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridView_DsDatBan.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView_DsDatBan_RowCellClick);
             // 
             // tenban
