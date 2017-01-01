@@ -175,6 +175,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐĂNG NHẬP";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_DangNhap_FormClosing);
+            this.Load += new System.EventHandler(this.Frm_DangNhap_Load);
             this.Enter += new System.EventHandler(this.Frm_DangNhap_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

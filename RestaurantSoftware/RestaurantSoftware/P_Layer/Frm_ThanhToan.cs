@@ -82,6 +82,7 @@ namespace RestaurantSoftware.P_Layer
         {
             LoadDsBan();
             _thanhToanBll.LoadHoaDon(grv_HoaDon);
+            gv_HoaDon.Columns["thoigian"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
         }
         public void LoadDsKhachHang()
         {
@@ -141,7 +142,7 @@ namespace RestaurantSoftware.P_Layer
                 txt_TraLai.Text = "";
                 cmb_NhanVien.EditValue = ID_NHANVIEN;
                 txt_Ban.Text = lvDsBan.SelectedItems[0].Text;
-                _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "Chưa thanh toán", txt_MaHoaDon,txt_DaTra);
+                _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "Chưa thanh toán", txt_MaHoaDon,txt_DaTra,txt_Tenkh);
                 _thanhToanBll.LayDsThamSo(txt_VAT, txt_KhuyenMai);
                 LoadChiTietHoaDon();
                 //chuyenvetiente(txt_KhachDua);

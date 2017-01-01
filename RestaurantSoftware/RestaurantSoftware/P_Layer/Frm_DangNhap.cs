@@ -82,5 +82,10 @@ namespace RestaurantSoftware.P_Layer
         {
             btn_DangNhap_Click(sender, e);
         }
+
+        private void Frm_DangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
