@@ -226,6 +226,8 @@ namespace RestaurantSoftware.BL_Layer
         public double LoadTienCoc(int iddatban)
         {
             DatBan ts = dbContext.DatBans.Single(p => p.id_datban == iddatban);
+            if (ts.tiencoc == null)
+                ts.tiencoc = 0;
             return (double)ts.tiencoc;
         }
 

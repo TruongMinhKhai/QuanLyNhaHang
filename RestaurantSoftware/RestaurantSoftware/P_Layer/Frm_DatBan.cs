@@ -159,6 +159,10 @@ namespace RestaurantSoftware.P_Layer
                     LoadChiTietDatBan();
                     
                 }
+                else
+                {
+                    MessageBox.Show("Chọn phiếu đặt bàn");
+                }
 
             }
             catch (Exception ex)
@@ -208,45 +212,52 @@ namespace RestaurantSoftware.P_Layer
 
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
-            if(cbxKhachHang.EditValue == null)
+            try
             {
-                MessageBox.Show("Xin chọn khách hàng");
-                return;
+                if (cbxKhachHang.EditValue == null)
+                {
+                    MessageBox.Show("Xin chọn khách hàng");
+                    return;
+                }
+                if (DateTime.Compare(dtNgayDat.DateTime, DateTime.Today) < 0)
+                {
+                    MessageBox.Show("Ngày đặt bàn không nhỏ hơn ngày hiện tại");
+                    return;
+                }
+                DatBan db = new DatBan();
+
+
+                if (lvDsBan.SelectedItems.Count > 0)
+                {
+                    db.id_ban = Convert.ToInt16(lvDsBan.SelectedItems[0].Name);
+                }
+                else
+                {
+                    MessageBox.Show("Xin chọn Bàn");
+                    return;
+                }
+
+                db.id_khachhang = (int)cbxKhachHang.EditValue;
+                db.id_nhanvien = ID_NHANVIEN;
+                db.thoigian = dtNgayDat.DateTime.Date;
+                db.trangthai = ttdatban[0]; //0.chờ  1.nhận  2.hủy
+                db.tiencoc = 0;
+                datban_bll.ThemMoiPhieuDatBan(db);
+                IQueryable<DatBan> query = datban_bll.LoadPhieuDatBan(db.id_ban, db.thoigian);
+                foreach (var i in query)
+                {
+                    iddatbanSelected = i.id_datban;
+                }
+                MessageBox.Show("Thêm phiếu đặt thành công");
+                LoadDsBan();
+                LoadDsDatBan();
+                LoadChiTietDatBan();
+                txtDatCoc.EditValue = 0;
             }
-            if (DateTime.Compare(dtNgayDat.DateTime, DateTime.Today) < 0) 
+            catch (Exception)
             {
-                MessageBox.Show("Ngày đặt bàn không nhỏ hơn ngày hiện tại");
-                return;
             }
-            DatBan db = new DatBan();
             
-
-            if (lvDsBan.SelectedItems.Count > 0)
-            {
-                db.id_ban = Convert.ToInt16(lvDsBan.SelectedItems[0].Name);
-            }
-            else
-            {
-                MessageBox.Show("Xin chọn Bàn");
-                return;
-            }
-
-            db.id_khachhang = (int)cbxKhachHang.EditValue;
-            db.id_nhanvien = ID_NHANVIEN;
-            db.thoigian = dtNgayDat.DateTime.Date;
-            db.trangthai = ttdatban[0]; //0.chờ  1.nhận  2.hủy
-            db.tiencoc = 0;
-            datban_bll.ThemMoiPhieuDatBan(db);
-            IQueryable<DatBan> query = datban_bll.LoadPhieuDatBan(db.id_ban, db.thoigian);
-            foreach(var i in query)
-            {
-                iddatbanSelected = i.id_datban;
-            }
-            MessageBox.Show("Thêm phiếu đặt thành công");
-            LoadDsBan();
-            LoadDsDatBan();
-            LoadChiTietDatBan();
-            txtDatCoc.EditValue = 0;
         }
 
         private void gridView_DsDatBan_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
@@ -300,6 +311,7 @@ namespace RestaurantSoftware.P_Layer
                         datban_bll.XoaChiTiet(iddb, idm);
                         MessageBox.Show("Xóa thành công");
                         LoadChiTietDatBan();
+                        
                     }
                 }
                 
@@ -317,7 +329,7 @@ namespace RestaurantSoftware.P_Layer
                 if (iddatbanSelected != 0)
                 {
                     DatBan db = new DatBan();
-                    db.id_datban = int.Parse(gridView_DsDatBan.GetFocusedRowCellValue(id_datban).ToString());
+                    db.id_datban = iddatbanSelected;
                     db.id_khachhang = (int)cbxKhachHang.EditValue;
                     db.id_ban = idbanSelected;
                     db.thoigian = dtNgayDat.DateTime;
@@ -342,17 +354,19 @@ namespace RestaurantSoftware.P_Layer
 
         private void btnXoaPhieu_Click(object sender, EventArgs e)
         {
-            if (gridView_DsDatBan.GetFocusedRowCellValue(id_datban) != null)
+            if (iddatbanSelected != 0)
             {
                 DialogResult result = MessageBox.Show("Chắc chắn muốn xóa phiếu không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(result == DialogResult.Yes)
                 {
-                    int id = int.Parse(gridView_DsDatBan.GetFocusedRowCellValue(id_datban).ToString());
-                    datban_bll.XoaPhieuDatBan(id);
+                    datban_bll.XoaPhieuDatBan(iddatbanSelected);
                     MessageBox.Show("Xóa phiếu thành công");
                     LoadDsBan();
                     LoadDsDatBan();
                     LoadChiTietDatBan();
+                    idbanSelected = 0;
+                    iddatbanSelected = 0;
+                    txtBan.Text = "";
                 }
                 
             }
@@ -387,6 +401,7 @@ namespace RestaurantSoftware.P_Layer
                 }
                 gridView_ChiTietDatBan.SetFocusedRowCellValue("thanhtien", thanhtien);
                 datban_bll.UpdateDatabase();
+                LoadChiTietDatBan();
                 MessageBox.Show("Đã thay đổi");
             }
             catch (Exception ex)
@@ -397,6 +412,11 @@ namespace RestaurantSoftware.P_Layer
 
         private void btnInPhieu_Click(object sender, EventArgs e)
         {
+            if(iddatbanSelected == 0)
+            {
+                MessageBox.Show("Chọn phiếu đặt bàn muốn in");
+                return;
+            }
             Frm_InPhieuDatBan pdb = new Frm_InPhieuDatBan(iddatbanSelected);
             pdb.Show();
         }
