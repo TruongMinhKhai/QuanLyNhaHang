@@ -252,7 +252,8 @@ namespace RestaurantSoftware.P_Layer
 
         private void gridView1_InitNewRow(object sender, InitNewRowEventArgs e)
         {
-            gridView1.SetRowCellValue(e.RowHandle, "tendonvi", "kg");
+            gridView1.SetRowCellValue(e.RowHandle, "id_loaihang", "1");
+            gridView1.SetRowCellValue(e.RowHandle, "id_donvi", "1");
             gridView1.SetRowCellValue(e.RowHandle, "soluong", "0");
             gridView1.SetRowCellValue(e.RowHandle, "dongia", "0");
             gridView1.SetRowCellValue(e.RowHandle,"trangthai", "Còn");
