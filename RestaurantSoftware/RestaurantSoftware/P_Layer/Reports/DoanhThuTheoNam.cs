@@ -13,5 +13,10 @@ namespace RestaurantSoftware.P_Layer.Reports
             InitializeComponent();
         }
 
+        private void DoanhThuTheoNam_ParametersRequestBeforeShow(object sender, DevExpress.XtraReports.Parameters.ParametersRequestEventArgs e)
+        {
+            this.NamBaoCao.Value = DateTime.Now.Year;
+        }
+
     }
 }

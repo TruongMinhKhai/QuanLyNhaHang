@@ -1,6 +1,6 @@
 ﻿namespace RestaurantSoftware.P_Layer
 {
-    partial class Frm_ThongKeMon
+    partial class Frm_BaoCaoTonKho
     {
         /// <summary>
         /// Required designer variable.
@@ -98,7 +98,7 @@
             DevExpress.Utils.SuperToolTip superToolTip23 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem23 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem23 = new DevExpress.Utils.ToolTipItem();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ThongKeMon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_BaoCaoTonKho));
             DevExpress.Utils.SuperToolTip superToolTip24 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem24 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipItem toolTipItem24 = new DevExpress.Utils.ToolTipItem();
@@ -256,11 +256,11 @@
             // documentViewer1
             // 
             this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.documentViewer1.DocumentSource = typeof(RestaurantSoftware.P_Layer.Reports.ThongKeMon);
+            this.documentViewer1.DocumentSource = typeof(RestaurantSoftware.P_Layer.Reports.TonKho);
             this.documentViewer1.IsMetric = false;
             this.documentViewer1.Location = new System.Drawing.Point(0, 141);
             this.documentViewer1.Name = "documentViewer1";
-            this.documentViewer1.Size = new System.Drawing.Size(787, 243);
+            this.documentViewer1.Size = new System.Drawing.Size(682, 184);
             this.documentViewer1.TabIndex = 0;
             // 
             // documentViewerRibbonController1
@@ -331,14 +331,14 @@
             this.printPreviewStaticItem2,
             this.zoomTrackBarEditItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 57;
+            this.ribbonControl1.MaxItemId = 56;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemProgressBar1,
             this.repositoryItemZoomTrackBar1});
-            this.ribbonControl1.Size = new System.Drawing.Size(787, 141);
+            this.ribbonControl1.Size = new System.Drawing.Size(682, 141);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.TransparentEditors = true;
             // 
@@ -445,7 +445,7 @@
             // 
             // printPreviewBarItem6
             // 
-            this.printPreviewBarItem6.Caption = "In";
+            this.printPreviewBarItem6.Caption = "Print";
             this.printPreviewBarItem6.Command = DevExpress.XtraPrinting.PrintingSystemCommand.Print;
             this.printPreviewBarItem6.ContextSpecifier = this.documentViewerRibbonController1;
             this.printPreviewBarItem6.Enabled = false;
@@ -1521,21 +1521,21 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.printPreviewStaticItem2);
             this.ribbonStatusBar1.ItemLinks.Add(this.zoomTrackBarEditItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 384);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 325);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(787, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(682, 27);
             // 
-            // Frm_ThongKeMon
+            // Frm_InTonKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 411);
+            this.ClientSize = new System.Drawing.Size(682, 352);
             this.Controls.Add(this.documentViewer1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
-            this.Name = "Frm_ThongKeMon";
-            this.Text = "THỐNG KÊ MÓN THEO NGÀY";
+            this.Name = "Frm_InTonKho";
+            this.Text = "Báo Cáo Tồn Kho";
             ((System.ComponentModel.ISupportInitialize)(this.documentViewerRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemProgressBar1)).EndInit();

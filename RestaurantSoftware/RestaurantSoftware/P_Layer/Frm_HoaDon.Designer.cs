@@ -198,7 +198,7 @@
             this.gv_HoaDon.OptionsBehavior.AutoExpandAllGroups = true;
             this.gv_HoaDon.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gv_HoaDon.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_ThoiGian, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.col_ThoiGian, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gv_HoaDon.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gv_HoaDon_RowCellClick);
             // 
             // col_MaHoaDon
@@ -311,6 +311,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("tennhanvien", "Tên nhân viên")});
             this.cmb_NhanVien.Properties.DisplayMember = "tennhanvien";
             this.cmb_NhanVien.Properties.NullText = "Chọn nhân viên";
+            this.cmb_NhanVien.Properties.ReadOnly = true;
             this.cmb_NhanVien.Properties.ValueMember = "id_nhanvien";
             this.cmb_NhanVien.Size = new System.Drawing.Size(181, 20);
             this.cmb_NhanVien.StyleController = this.layoutControl1;
@@ -420,6 +421,7 @@
             this.gv_DanhSachMon.GridControl = this.grd_DanhSachMon;
             this.gv_DanhSachMon.Name = "gv_DanhSachMon";
             this.gv_DanhSachMon.OptionsBehavior.ReadOnly = true;
+            this.gv_DanhSachMon.OptionsView.ShowGroupPanel = false;
             // 
             // col_TenMon
             // 

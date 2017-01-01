@@ -64,6 +64,7 @@ namespace RestaurantSoftware.BL_Layer
         public IEnumerable<NhaCungCap> LoadDsNhaCungCap()
         {
             var query = from ncc in dbContext.NhaCungCaps
+                        where ncc.trangthai != "Ngừng cung cấp"
                         select ncc;
             return query;
         }
@@ -81,6 +82,27 @@ namespace RestaurantSoftware.BL_Layer
         public void ThemHoaDonNhapHang(HoaDonNhapHang hd)
         {
             dbContext.HoaDonNhapHangs.InsertOnSubmit(hd);
+            dbContext.SubmitChanges();
+        }
+        // kiểm tra thông tin hàng hóa có tồn tại hay không
+        public bool KiemTraThongTin(int id)
+        {
+            IEnumerable<Chitiet_HoaDonNhapHang> _KiemTraHoaDon = from hd in dbContext.Chitiet_HoaDonNhapHangs
+                                                                 where hd.id_nhaphang == id
+                                                                 select hd;
+            if (_KiemTraHoaDon.Count() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        // xóa tạm
+        public void XoaTam(int id)
+        {
+            //Mon _mon = dbContext.Mons.Single<Mon>(x => x.id_mon == id_mon);
+            HoaDonNhapHang hd = dbContext.HoaDonNhapHangs.Single<HoaDonNhapHang>(x => x.id_nhaphang == id);
+            hd.trangthai = "Xoa";
+            // update 
             dbContext.SubmitChanges();
         }
         //Xóa hóa đơn nhập hàng
@@ -297,10 +319,10 @@ namespace RestaurantSoftware.BL_Layer
             dbContext.SubmitChanges();
         }
         // hàm cập nhật hàng tồn
-        public void CapNhatNguyenLieuTon(int idnhaphang, int idhh)
+        public void CapNhatNguyenLieuTon(int idnhaphang)
         {
             var query = from cthd in dbContext.Chitiet_HoaDonNhapHangs
-                        where cthd.id_nhaphang == idnhaphang && cthd.id_hanghoa == idhh
+                        where cthd.id_nhaphang == idnhaphang
                         select cthd;
             foreach(var row in query){
                 row.HangHoa.soluong += row.soluong;

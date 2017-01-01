@@ -121,22 +121,24 @@
     <value>17, 17</value>
   </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select Month("HoaDonThanhToan"."thoigian") as Thang,
-SUM("HoaDonThanhToan"."tongtien") as TienThu
- from "dbo"."HoaDonThanhToan" "HoaDonThanhToan"
- WHERE YEAR("HoaDonThanhToan"."thoigian") = @NamBaoCao and "HoaDonThanhToan"."tongtien" is not null
-Group by Month("HoaDonThanhToan"."thoigian")
-ORDER BY Month("HoaDonThanhToan"."thoigian") DESC;</value>
-  </data>
-  <data name="customSqlQuery2.Sql" xml:space="preserve">
-    <value>select Month("HoaDonNhapHang"."thoigian") as Thang,
-	Sum("HoaDonNhapHang"."tongtien") as TienChi
-  from "dbo"."HoaDonNhapHang" "HoaDonNhapHang"
-WHERE YEAR("HoaDonNhapHang"."thoigian") = @NamBaoCao and "HoaDonNhapHang"."tongtien" is not null
-Group by Month("HoaDonNhapHang"."thoigian")
-ORDER BY Month("HoaDonNhapHang"."thoigian") DESC;</value>
+    <value>select "HangHoa"."tenhanghoa",
+	sum("Chitiet_HoaDonNhapHang"."soluong") as NhapHang_soluong,
+       "HoaDonNhapHang"."thoigian",
+      sum( "HangHoa"."soluong") as HangHoa_soluong,
+       "DonVi"."tendonvi"
+  from ((("dbo"."Chitiet_HoaDonNhapHang"
+       "Chitiet_HoaDonNhapHang"
+  inner join "dbo"."HoaDonNhapHang"
+       "HoaDonNhapHang"
+       on ("HoaDonNhapHang"."id_nhaphang" = "Chitiet_HoaDonNhapHang"."id_nhaphang"))
+  inner join "dbo"."HangHoa" "HangHoa"
+       on ("HangHoa"."id_hanghoa" = "Chitiet_HoaDonNhapHang"."id_hanghoa"))
+  inner join "dbo"."DonVi" "DonVi"
+       on ("DonVi"."id_donvi" = "HangHoa"."id_donvi"))
+where convert(date,"HoaDonNhapHang"."thoigian",103) = convert(date,@NgayBaoCao,103)  
+Group by "HangHoa"."tenhanghoa" , "HoaDonNhapHang"."thoigian", "DonVi"."tendonvi"</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkhvYURvbk5oYXBIYW5nIj48RmllbGQgTmFtZT0iVGhhbmciIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUaWVuQ2hpIiBUeXBlPSJEZWNpbWFsIiAvPjwvVmlldz48VmlldyBOYW1lPSJIb2FEb25UaGFuaFRvYW4iPjxGaWVsZCBOYW1lPSJUaGFuZyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlRpZW5UaHUiIFR5cGU9IkRlY2ltYWwiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5XzEiPjxGaWVsZCBOYW1lPSJ0ZW5oYW5naG9hIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik5oYXBIYW5nX3NvbHVvbmciIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJ0aG9pZ2lhbiIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IkhhbmdIb2Ffc29sdW9uZyIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9InRlbmRvbnZpIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
   </data>
 </root>

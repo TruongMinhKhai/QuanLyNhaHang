@@ -58,7 +58,7 @@ namespace RestaurantSoftware.BL_Layer
         }
         public IEnumerable<KhachHang> LayDsKhachHang()
         {
-            var query = from kh in dbContext.KhachHangs select kh;
+            var query = from kh in dbContext.KhachHangs where kh.trangthai != false select kh;
             return query;
         }
         public void LayDsThamSo(TextEdit Vat, TextEdit km)
@@ -136,24 +136,50 @@ namespace RestaurantSoftware.BL_Layer
             }
             
         }
-        public void loadid(int idban, string trangthai, TextEdit idhoadon, TextEdit dt)
+        public void loadid(int idban, string trangthai, TextEdit idhoadon, TextEdit dt, LookUpEdit kh)
         {
-            var query = (from db in dbContext.HoaDonThanhToans
-                        where db.id_ban == idban && db.trangthai==trangthai
-                        select new
-                        {
-                            Idhoadon = db.id_hoadon,
-                            Datra = db.datra
-                            
-                        }).ToList();
-          
-            foreach (var id in query)
+            try
             {
+                var query = (from db in dbContext.HoaDonThanhToans
+                             where db.id_ban == idban && db.trangthai == trangthai
+                             select new
+                             {
+                                 Idhoadon = db.id_hoadon,
+                                 Datra = db.datra,
+                                 Idkh = db.id_khachhang
+
+                             }).ToList();
+
+                foreach (var id in query)
+                {
+                    idhoadon.EditValue = id.Idhoadon;
+                    dt.Text = id.Datra.ToString();
+                    kh.EditValue = id.Idkh;
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                var query = (from db in dbContext.HoaDonThanhToans
+                             where db.id_ban == idban && db.trangthai == trangthai
+                             select new
+                             {
+                                 Idhoadon = db.id_hoadon,
+                                 Datra = db.datra
+
+                             }).ToList();
+
+                foreach (var id in query)
+                {
                     idhoadon.EditValue = id.Idhoadon;
                     dt.Text = id.Datra.ToString();
 
+                }
+                Notifications.Answers("Hóa đơn chưa có khách hàng!");
             }
-
+          
         }
 
         public int loadTenBan(int idhoadon, TextEdit ban, TextEdit dt)

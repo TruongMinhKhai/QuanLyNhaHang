@@ -201,6 +201,7 @@
             this.ClientSize = new System.Drawing.Size(393, 195);
             this.Controls.Add(this.layoutControl1);
             this.Name = "Frm_ThayDoiThamSo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thay đổi tham số";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

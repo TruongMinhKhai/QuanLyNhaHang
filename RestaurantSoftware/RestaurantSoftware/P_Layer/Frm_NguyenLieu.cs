@@ -7,9 +7,9 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RestaurantSoftware.DA_Layer;
 using DevExpress.XtraEditors;
 using RestaurantSoftware.BL_Layer;
-using RestaurantSoftware.DA_Layer;
 using DevExpress.XtraGrid;
 using RestaurantSoftware.Utils;
 using DevExpress.XtraGrid.Views.Grid;
@@ -30,10 +30,7 @@ namespace RestaurantSoftware.P_Layer
             _hanghoaBLL = new HangHoa_BLL();
             _listUpdate = new List<int>();
             RestaurantDBDataContext db = new RestaurantDBDataContext();
-            // load dữ liệu loại hàng hóa
             lue_LoaiHang.DataSource = new RestaurantSoftware.DA_Layer.RestaurantDBDataContext().LoaiHangHoas;
-            // load dữ liệu đơn vị
-            //lue_DonVi.DataSource = new RestaurantSoftware.DA_Layer.RestaurantDBDataContext().DonVis;
             lue_TrangThai.DataSource = db.TrangThais.Where(TrangThai => TrangThai.lienket == "hanghoa");
             lue_DonVi.DataSource = db.DonVis.Where(DonVi => DonVi.lienket == "hanghoa");
         }
@@ -52,12 +49,12 @@ namespace RestaurantSoftware.P_Layer
         {
             this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
             gridView1.SelectRow(gridView1.FocusedRowHandle);
-            gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            gridView1.FocusedColumn = gridView1.VisibleColumns[1];
             gridView1.ShowEditor();
             gridView1.PostEditor();
             if (KiemTraHang())
             {
-                if (!_hanghoaBLL.KiemTraHangHoaTonTai(gridView1.GetFocusedRowCellValue(col_TenHangHoa).ToString()))
+                if (_hanghoaBLL.KiemTraHangHoaTonTai(gridView1.GetFocusedRowCellValue(col_TenHangHoa).ToString()) != -1)
                 {
                     try
                     {
@@ -67,9 +64,20 @@ namespace RestaurantSoftware.P_Layer
                         hh.soluong = int.Parse(gridView1.GetFocusedRowCellValue(col_SoLuong).ToString());
                         hh.dongia = decimal.Parse(gridView1.GetFocusedRowCellValue(col_DonGia).ToString());
                         hh.id_donvi = int.Parse(gridView1.GetFocusedRowCellValue(col_DonVi).ToString());
-                        _hanghoaBLL.ThemHangHoaMoi(hh);
-                        Notifications.Success("Thêm hàng hoá thành công");
+                        hh.trangthai = gridView1.GetFocusedRowCellValue(col_TrangThai).ToString();
+                        if (_hanghoaBLL.KiemTraHangHoaTonTai(gridView1.GetFocusedRowCellValue(col_TenHangHoa).ToString()) == 1)
+                        {
+                            _hanghoaBLL.ThemHangHoaMoi(hh);
+                            Notifications.Success("Thêm hàng hóa mới thành công!");
+                        }
+                        else
+                        {
+                            hh.id_hanghoa = _hanghoaBLL.LayIdHangHoa(gridView1.GetFocusedRowCellValue(col_TenHangHoa).ToString());
+                            _hanghoaBLL.CapNhatHangHoa(hh);
+                        }
                         LoadHangHoa();
+                        btn_Luu.Enabled = false;
+                        _listUpdate.Clear();
                     }
                     catch (Exception)
                     {
@@ -90,12 +98,19 @@ namespace RestaurantSoftware.P_Layer
         //hàm kiểm tra một hàng trong gridview
         private bool KiemTraHang()
         {
-            if (gridView1.GetFocusedRowCellValue(col_TenHangHoa) != null || gridView1.GetFocusedRowCellValue(col_LoaiHang) != null
-                || int.Parse(gridView1.GetFocusedRowCellValue(col_SoLuong).ToString()) >= 0 || int.Parse(gridView1.GetFocusedRowCellValue(col_DonGia).ToString()) >=0)
+            if (gridView1.GetFocusedRowCellValue(col_TenHangHoa) != null && gridView1.GetFocusedRowCellValue(col_TenHangHoa).ToString() != "" 
+                && gridView1.GetFocusedRowCellValue(col_LoaiHang) != null && gridView1.GetFocusedRowCellValue(col_LoaiHang).ToString() != ""
+                && gridView1.GetFocusedRowCellValue(col_SoLuong) != null && gridView1.GetFocusedRowCellValue(col_SoLuong).ToString() != ""
+                && gridView1.GetFocusedRowCellValue(col_DonGia) != null && gridView1.GetFocusedRowCellValue(col_DonGia).ToString() != ""
+                && gridView1.GetFocusedRowCellValue(col_DonVi) != null && gridView1.GetFocusedRowCellValue(col_DonVi).ToString() != ""
+                && gridView1.GetFocusedRowCellValue(col_TrangThai) != null && gridView1.GetFocusedRowCellValue(col_TrangThai).ToString() != "")
             {
                 return true;
             }
-            return false;
+            else {
+                return false;
+            }
+           
         }
         // hàm xoá hàng hoá
         private void btn_Xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -122,34 +137,44 @@ namespace RestaurantSoftware.P_Layer
         // hàm lưu hàng hoá
         private void btn_Luu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-             string error = "";
+            string error = "";
             bool isUpdate = false;
+            bool KiemTra = false;
             if (_listUpdate.Count > 0)
             {
                 foreach (int id in _listUpdate)
                 {
-                    HangHoa hh =new HangHoa();
-                    hh.id_hanghoa = int.Parse(gridView1.GetRowCellValue(id,"id_hanghoa").ToString());
-                    hh.tenhanghoa =gridView1.GetRowCellValue(id,"tenhanghoa").ToString();
-                    hh.id_loaihang =int.Parse(gridView1.GetRowCellValue(id,"id_loaihang").ToString());
-                    hh.soluong =int.Parse(gridView1.GetRowCellValue(id,"soluong").ToString());
-                    hh.dongia = decimal.Parse(gridView1.GetRowCellValue(id,"dongia").ToString());
-                    hh.id_donvi =int.Parse(gridView1.GetRowCellValue(id,"id_donvi").ToString());
-                    if (!_hanghoaBLL.KiemTraHangHoaTonTai(hh.tenhanghoa, hh.id_hanghoa))
+                    HangHoa hh = new HangHoa();
+                    hh.id_hanghoa = int.Parse(gridView1.GetRowCellValue(id, "id_hanghoa").ToString());
+                    hh.tenhanghoa = gridView1.GetRowCellValue(id, "tenhanghoa").ToString();
+                    hh.id_loaihang = int.Parse(gridView1.GetRowCellValue(id, "id_loaihang").ToString());
+                    hh.soluong = int.Parse(gridView1.GetRowCellValue(id, "soluong").ToString());
+                    hh.dongia = decimal.Parse(gridView1.GetRowCellValue(id, "dongia").ToString());
+                    hh.id_donvi = int.Parse(gridView1.GetRowCellValue(id, "id_donvi").ToString());
+                    hh.trangthai = gridView1.GetRowCellValue(id,"trangthai").ToString();
+                    if(_hanghoaBLL.KiemTraHangHoa(hh))
                     {
-                        _hanghoaBLL.CapNhatHangHoa(hh);
-                        isUpdate = true;
+                         if (_hanghoaBLL.KiemTraHangHoaTonTai(hh.tenhanghoa, hh.id_hanghoa) == 1)
+                         {
+                             _hanghoaBLL.CapNhatHangHoa(hh);
+                              isUpdate = true;
+                              btn_Luu.Enabled = false;
+                         }
+                        else
+                        {
+                            if (error == "")
+                            {
+                                error = hh.tenhanghoa;
+                            }
+                            else
+                            {
+                                error += "|" + hh.tenhanghoa;
+                            }
+                        }
                     }
                     else
                     {
-                        if (error == "")
-                        {
-                            error = hh.tenhanghoa;
-                        }
-                        else
-                        {
-                            error += "|" + hh.tenhanghoa;
-                        }
+                        KiemTra = true;
                     }
                 }
             }
@@ -164,11 +189,14 @@ namespace RestaurantSoftware.P_Layer
                     Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Các hàng hoá chưa được cập nhật (" + error + "). Lỗi: Tên hàng hoá đã tồn tại.");
                 }
             }
+            else if (KiemTra == true)
+            {
+                Notifications.Error("Lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Dữ liệu không được rỗng.");
+            }
             else
             {
-                Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên hàng hoá đã tồn tại.");
+                Notifications.Error("Có lỗi xảy ra khi cập nhật dữ liệu. Lỗi: Tên hàng hóa đã tồn tại.");
             }
-            btn_Luu.Enabled = false;
             LoadHangHoa();
         }
         // xử lý làm mới 
@@ -177,7 +205,7 @@ namespace RestaurantSoftware.P_Layer
              LoadHangHoa();
             this.gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
             gridView1.SelectRow(gridView1.FocusedRowHandle);
-            gridView1.FocusedColumn = gridView1.VisibleColumns[0];
+            gridView1.FocusedColumn = gridView1.VisibleColumns[1];
             gridView1.ShowEditor();
         }
         // xử lý in
@@ -197,27 +225,6 @@ namespace RestaurantSoftware.P_Layer
             }
         }
 
-        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
-        {
-            if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
-            {
-                btn_Luu.Enabled = true;
-                _listUpdate.Add(e.RowHandle);
-            }
-            else
-            {
-                btn_Luu.Enabled = false;
-            }
-        }
-        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-            btn_Xoa.Enabled = false;
-            if (gridView1.SelectedRowsCount > 0 && this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
-            {
-                btn_Xoa.Enabled = true;
-            }
-        }
-
         private void gridView1_MouseDown(object sender, MouseEventArgs e)
         {
             GridView view = sender as GridView;
@@ -228,7 +235,6 @@ namespace RestaurantSoftware.P_Layer
                 LoadHangHoa();
             }
         }
-
         private void gridControl1_ProcessGridKey(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && this.gridView1.FocusedRowHandle == GridControl.NewItemRowHandle
@@ -242,8 +248,45 @@ namespace RestaurantSoftware.P_Layer
                 gridView1.SelectRow(gridView1.FocusedRowHandle);
                 gridView1.FocusedColumn = gridView1.VisibleColumns[0];
             }
-
         }
 
+        private void gridView1_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            gridView1.SetRowCellValue(e.RowHandle, "id_loaihang", "1");
+            gridView1.SetRowCellValue(e.RowHandle, "id_donvi", "1");
+            gridView1.SetRowCellValue(e.RowHandle, "soluong", "0");
+            gridView1.SetRowCellValue(e.RowHandle, "dongia", "0");
+            gridView1.SetRowCellValue(e.RowHandle,"trangthai", "Còn");
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "col_STT" && e.RowHandle != GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (e.RowHandle + 1).ToString();
+            }
+            if (e.Column.Name == "col_STT" && e.RowHandle == GridControl.NewItemRowHandle)
+            {
+                e.DisplayText = (gridView1.RowCount + 1).ToString();
+            }
+        }
+        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (view.IsNewItemRow(e.RowHandle))
+                view.CancelUpdateCurrentRow();
+        }
+        private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            if (this.gridView1.FocusedRowHandle != GridControl.NewItemRowHandle)
+            {
+                btn_Luu.Enabled = true;
+                _listUpdate.Add(e.RowHandle);
+            }
+            else
+            {
+                btn_Luu.Enabled = false;
+            }
+        }
     }
 }

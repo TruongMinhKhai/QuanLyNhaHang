@@ -49,17 +49,28 @@
             this.col_STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TenNhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_SoDienThoai = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.col_DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col_GhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col_TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lue_TrangThai = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.col_GhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col_NhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lue_Status = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.txtNCC = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.repositoryItemTextEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.repositoryItemTextEdit6 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grc_NhaCungCap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_TrangThai)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_Status)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNCC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit6)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -152,28 +163,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(716, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1061, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 261);
-            this.barDockControlBottom.Size = new System.Drawing.Size(716, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 437);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1061, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 237);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 413);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(716, 24);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 237);
+            this.barDockControlRight.Location = new System.Drawing.Point(1061, 24);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 413);
             // 
             // barEditItem1
             // 
@@ -207,8 +218,13 @@
             this.grc_NhaCungCap.Name = "grc_NhaCungCap";
             this.grc_NhaCungCap.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.lue_Status,
-            this.lue_TrangThai});
-            this.grc_NhaCungCap.Size = new System.Drawing.Size(716, 237);
+            this.lue_TrangThai,
+            this.repositoryItemTextEdit2,
+            this.repositoryItemTextEdit3,
+            this.txtNCC,
+            this.repositoryItemTextEdit5,
+            this.repositoryItemTextEdit6});
+            this.grc_NhaCungCap.Size = new System.Drawing.Size(1061, 413);
             this.grc_NhaCungCap.TabIndex = 4;
             this.grc_NhaCungCap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -221,27 +237,29 @@
             this.col_TenNhaCungCap,
             this.col_SoDienThoai,
             this.col_DiaChi,
+            this.col_TrangThai,
             this.col_GhiChu,
-            this.col_TrangThai});
+            this.col_NhaCungCap});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.grc_NhaCungCap;
             this.gridView1.Name = "gridView1";
             this.gridView1.NewItemRowText = "Thêm dòng mới tại đây...";
+            this.gridView1.OptionsBehavior.ImmediateUpdateRowPosition = false;
             this.gridView1.OptionsCustomization.AllowFilter = false;
             this.gridView1.OptionsCustomization.AllowSort = false;
             this.gridView1.OptionsEditForm.ShowOnEnterKey = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView1.OptionsFilter.AllowColumnMRUFilterList = false;
             this.gridView1.OptionsMenu.EnableColumnMenu = false;
             this.gridView1.OptionsMenu.EnableFooterMenu = false;
             this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
-            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
             this.gridView1.OptionsNavigation.EnterMoveNextColumn = true;
             this.gridView1.OptionsPrint.ExpandAllDetails = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.SynchronizeClones = false;
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
+            this.gridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
+            this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
             this.gridView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gridView1_MouseDown);
             // 
@@ -253,7 +271,12 @@
             this.col_STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_STT.Caption = "STT";
             this.col_STT.Name = "col_STT";
-            this.col_STT.OptionsColumn.ReadOnly = true;
+            this.col_STT.OptionsColumn.AllowEdit = false;
+            this.col_STT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.col_STT.OptionsColumn.TabStop = false;
+            this.col_STT.OptionsEditForm.StartNewRow = true;
+            this.col_STT.Visible = true;
+            this.col_STT.VisibleIndex = 0;
             // 
             // col_TenNhaCungCap
             // 
@@ -266,7 +289,7 @@
             this.col_TenNhaCungCap.Name = "col_TenNhaCungCap";
             this.col_TenNhaCungCap.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_TenNhaCungCap.Visible = true;
-            this.col_TenNhaCungCap.VisibleIndex = 0;
+            this.col_TenNhaCungCap.VisibleIndex = 1;
             // 
             // col_SoDienThoai
             // 
@@ -275,11 +298,19 @@
             this.col_SoDienThoai.AppearanceHeader.Options.UseTextOptions = true;
             this.col_SoDienThoai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.col_SoDienThoai.Caption = "Số điện thoại(*)";
+            this.col_SoDienThoai.ColumnEdit = this.repositoryItemTextEdit3;
             this.col_SoDienThoai.FieldName = "sdt";
             this.col_SoDienThoai.Name = "col_SoDienThoai";
             this.col_SoDienThoai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_SoDienThoai.Visible = true;
-            this.col_SoDienThoai.VisibleIndex = 1;
+            this.col_SoDienThoai.VisibleIndex = 2;
+            // 
+            // repositoryItemTextEdit3
+            // 
+            this.repositoryItemTextEdit3.AutoHeight = false;
+            this.repositoryItemTextEdit3.Mask.EditMask = "\\d+";
+            this.repositoryItemTextEdit3.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
             // 
             // col_DiaChi
             // 
@@ -292,20 +323,7 @@
             this.col_DiaChi.Name = "col_DiaChi";
             this.col_DiaChi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.col_DiaChi.Visible = true;
-            this.col_DiaChi.VisibleIndex = 2;
-            // 
-            // col_GhiChu
-            // 
-            this.col_GhiChu.AppearanceCell.Options.UseTextOptions = true;
-            this.col_GhiChu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_GhiChu.AppearanceHeader.Options.UseTextOptions = true;
-            this.col_GhiChu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.col_GhiChu.Caption = "Ghi chú";
-            this.col_GhiChu.FieldName = "ghichu";
-            this.col_GhiChu.Name = "col_GhiChu";
-            this.col_GhiChu.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.col_GhiChu.Visible = true;
-            this.col_GhiChu.VisibleIndex = 3;
+            this.col_DiaChi.VisibleIndex = 3;
             // 
             // col_TrangThai
             // 
@@ -318,6 +336,8 @@
             this.col_TrangThai.FieldName = "trangthai";
             this.col_TrangThai.Name = "col_TrangThai";
             this.col_TrangThai.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col_TrangThai.Visible = true;
+            this.col_TrangThai.VisibleIndex = 4;
             // 
             // lue_TrangThai
             // 
@@ -330,6 +350,25 @@
             this.lue_TrangThai.Name = "lue_TrangThai";
             this.lue_TrangThai.NullText = "Xin chọn trạng thái ở đây...";
             this.lue_TrangThai.ValueMember = "tentrangthai";
+            // 
+            // col_GhiChu
+            // 
+            this.col_GhiChu.AppearanceCell.Options.UseTextOptions = true;
+            this.col_GhiChu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_GhiChu.AppearanceHeader.Options.UseTextOptions = true;
+            this.col_GhiChu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.col_GhiChu.Caption = "Ghi chú";
+            this.col_GhiChu.FieldName = "ghichu";
+            this.col_GhiChu.Name = "col_GhiChu";
+            this.col_GhiChu.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.col_GhiChu.Visible = true;
+            this.col_GhiChu.VisibleIndex = 5;
+            // 
+            // col_NhaCungCap
+            // 
+            this.col_NhaCungCap.Caption = "gridColumn1";
+            this.col_NhaCungCap.FieldName = "id_nhacungcap";
+            this.col_NhaCungCap.Name = "col_NhaCungCap";
             // 
             // lue_Status
             // 
@@ -344,11 +383,33 @@
             this.lue_Status.ShowHeader = false;
             this.lue_Status.ValueMember = "tentrangthai";
             // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            this.repositoryItemTextEdit2.NullValuePromptShowForEmptyValue = true;
+            this.repositoryItemTextEdit2.ShowNullValuePromptWhenFocused = true;
+            // 
+            // txtNCC
+            // 
+            this.txtNCC.AutoHeight = false;
+            this.txtNCC.Name = "txtNCC";
+            // 
+            // repositoryItemTextEdit5
+            // 
+            this.repositoryItemTextEdit5.AutoHeight = false;
+            this.repositoryItemTextEdit5.Name = "repositoryItemTextEdit5";
+            // 
+            // repositoryItemTextEdit6
+            // 
+            this.repositoryItemTextEdit6.AutoHeight = false;
+            this.repositoryItemTextEdit6.Name = "repositoryItemTextEdit6";
+            // 
             // Frm_NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 261);
+            this.ClientSize = new System.Drawing.Size(1061, 437);
             this.Controls.Add(this.grc_NhaCungCap);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -361,8 +422,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grc_NhaCungCap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_TrangThai)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_Status)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNCC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,5 +460,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn col_TrangThai;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lue_TrangThai;
         private DevExpress.XtraGrid.Columns.GridColumn col_STT;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit txtNCC;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit6;
+        private DevExpress.XtraGrid.Columns.GridColumn col_NhaCungCap;
     }
 }

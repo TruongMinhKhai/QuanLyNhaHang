@@ -44,7 +44,7 @@ namespace RestaurantSoftware
         void dangnhap_LoginEvent(string username, string pass)
         {
             var query = from a in dbContext.NhanViens
-                        where a.tendangnhap == username && a.matkhau == pass
+                        where a.tendangnhap == username && a.matkhau == pass && a.trangthai == true
                         select a;
             foreach(var i in query)
             {
@@ -426,6 +426,21 @@ namespace RestaurantSoftware
         {
             P_Layer.Frm_DoiMatKhau doimatkhau = new P_Layer.Frm_DoiMatKhau(idnv,matkhau);
             doimatkhau.Show();
+        }
+
+        private void btn_BaoCaoTonKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.ExistForm(typeof(P_Layer.Frm_BaoCaoTonKho));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                P_Layer.Frm_BaoCaoTonKho TonKho = new P_Layer.Frm_BaoCaoTonKho();
+                TonKho.MdiParent = this;
+                TonKho.Show();
+            }
         }
     }
 }

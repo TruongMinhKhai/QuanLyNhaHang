@@ -82,6 +82,7 @@ namespace RestaurantSoftware.P_Layer
         {
             LoadDsBan();
             _thanhToanBll.LoadHoaDon(grv_HoaDon);
+            gv_HoaDon.Columns["thoigian"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
         }
         public void LoadDsKhachHang()
         {
@@ -141,7 +142,7 @@ namespace RestaurantSoftware.P_Layer
                 txt_TraLai.Text = "";
                 cmb_NhanVien.EditValue = ID_NHANVIEN;
                 txt_Ban.Text = lvDsBan.SelectedItems[0].Text;
-                _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "Chưa thanh toán", txt_MaHoaDon,txt_DaTra);
+                _thanhToanBll.loadid(int.Parse(lvDsBan.SelectedItems[0].Name), "Chưa thanh toán", txt_MaHoaDon,txt_DaTra,txt_Tenkh);
                 _thanhToanBll.LayDsThamSo(txt_VAT, txt_KhuyenMai);
                 LoadChiTietHoaDon();
                 //chuyenvetiente(txt_KhachDua);
@@ -205,6 +206,7 @@ namespace RestaurantSoftware.P_Layer
             txt_SDT.Text = "";
             txt_KhachDua.Text = "";
             txt_TraLai.Text = "";
+            btn_in.Enabled = true;
             txt_Tenkh.EditValue = Convert.ToInt32(gv_HoaDon.GetFocusedRowCellDisplayText(col_khachHang));
             txt_MaHoaDon.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_MaHoaDon);
             txt_SDT.Text = gv_HoaDon.GetFocusedRowCellDisplayText(col_sdt);
@@ -421,10 +423,10 @@ namespace RestaurantSoftware.P_Layer
                 string a = (txt_TongHoaDon.Text).Replace(",", "");
                 string b = (txt_KhachDua.Text).Replace(",", "");
                 string c = (txt_DaTra.Text).Replace(",", "");
-                if (int.Parse(a) < (int.Parse(b)+int.Parse(c)))
+                if (int.Parse(a) <= (int.Parse(b)+int.Parse(c)))
                 {
-                    //try
-                    //{
+                    try
+                    {
 
                         HoaDonThanhToan hd = new HoaDonThanhToan();
                         hd.id_hoadon = int.Parse(txt_MaHoaDon.Text);
@@ -459,12 +461,12 @@ namespace RestaurantSoftware.P_Layer
                         _banBll.CapNhatBanThanhToan(bn);
                         Notifications.Answers("Thanh toán thành công!");
                         LoadDataSource();
-                    //}
-                    //catch (Exception)
-                    //{
+                    }
+                    catch (Exception)
+                    {
 
-                    //    Notifications.Answers("Hóa đơn đã thanh toán rồi!");
-                    //}
+                        Notifications.Answers("Hóa đơn đã thanh toán rồi!");
+                    }
 
                 }
                 else

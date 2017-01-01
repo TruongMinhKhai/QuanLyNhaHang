@@ -198,6 +198,25 @@ namespace RestaurantSoftware.BL_Layer
                          select cthd).Count();
             return query;
         }
+
+        //public int Layidkhachhang(int iddatban)
+        //{
+        //    int idkh = 0;
+        //    var query = from hd in dbContext.DatBans
+        //                where hd.id_datban == iddatban
+        //                select hd;
+        //    foreach (var i in query)
+        //    {
+        //        i.id_khachhang = idkh;
+        //    }
+        //    return idkh;
+        //}
+        //public void ChuyenKhachHang(int iddatban, HoaDonThanhToan m)
+        //{
+        //    int idkh = Layidkhachhang(iddatban);
+        //}
+
+
         public void ChuyenChiTietDatBan(int idban,DateTime today,int idhoadon, List<string> ttdatban)
         {
             int? iddatban = 0;
@@ -229,6 +248,7 @@ namespace RestaurantSoftware.BL_Layer
             HoaDonThanhToan hdtt = dbContext.HoaDonThanhToans.Single<HoaDonThanhToan>(hd => hd.id_hoadon == idhoadon);
             DatBan db = dbContext.DatBans.Single<DatBan>(d => d.id_datban == iddatban);
             hdtt.datra = db.tiencoc;
+            hdtt.id_khachhang = db.id_khachhang;
  
             // update 
             dbContext.SubmitChanges();
