@@ -12,6 +12,5 @@ namespace RestaurantSoftware.P_Layer.Reports
         {
             InitializeComponent();
         }
-
     }
 }

@@ -64,6 +64,7 @@ namespace RestaurantSoftware.BL_Layer
         public IEnumerable<NhaCungCap> LoadDsNhaCungCap()
         {
             var query = from ncc in dbContext.NhaCungCaps
+                        where ncc.trangthai != "Ngừng cung cấp"
                         select ncc;
             return query;
         }
