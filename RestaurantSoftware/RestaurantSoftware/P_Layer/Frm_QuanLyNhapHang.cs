@@ -127,6 +127,7 @@ namespace RestaurantSoftware.P_Layer
         public void LoadTrangThaiDaNhapKho()
         {
             btnNhapKho.Enabled = false;
+            btnXoaPhieu.Enabled = false; // xóa phiếu
             btnTaoPhieu.Enabled = false;
             btnSuaPhieu.Enabled = false;
             btnThemNCC.Enabled = false;
@@ -169,7 +170,6 @@ namespace RestaurantSoftware.P_Layer
                 LoadChiTietPhieuNhap();
                 LoadTinhToan();
             }
-            
         }
         // xử lý xóa phiếu
         private void btnXoaPhieu_Click(object sender, EventArgs e)
@@ -179,16 +179,8 @@ namespace RestaurantSoftware.P_Layer
                 DialogResult result = MessageBox.Show("Chắc chắn muốn xóa phiếu không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (_nhaphangBLL.KiemTraThongTin(ID_NHAPHANG))
-                    {
-                        _nhaphangBLL.XoaTam(ID_NHAPHANG);
-                        MessageBox.Show("Xóa tạm thành công");
-                    }
-                    else
-                    {
-                        _nhaphangBLL.XoaHoaDonNhapHang(ID_NHAPHANG);
+                     _nhaphangBLL.XoaHoaDonNhapHang(ID_NHAPHANG);
                         MessageBox.Show("Xóa phiếu thành công");
-                    }
                     LoadDsPhieuNhap();
                     LoadChiTietPhieuNhap();
                     LoadTinhToan();
