@@ -44,7 +44,7 @@ namespace RestaurantSoftware
         void dangnhap_LoginEvent(string username, string pass)
         {
             var query = from a in dbContext.NhanViens
-                        where a.tendangnhap == username && a.matkhau == pass
+                        where a.tendangnhap == username && a.matkhau == pass && a.trangthai == true
                         select a;
             foreach(var i in query)
             {

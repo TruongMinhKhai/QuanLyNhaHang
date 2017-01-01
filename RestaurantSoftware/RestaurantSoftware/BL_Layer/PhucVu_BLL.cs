@@ -248,6 +248,7 @@ namespace RestaurantSoftware.BL_Layer
             HoaDonThanhToan hdtt = dbContext.HoaDonThanhToans.Single<HoaDonThanhToan>(hd => hd.id_hoadon == idhoadon);
             DatBan db = dbContext.DatBans.Single<DatBan>(d => d.id_datban == iddatban);
             hdtt.datra = db.tiencoc;
+            hdtt.id_khachhang = db.id_khachhang;
  
             // update 
             dbContext.SubmitChanges();
