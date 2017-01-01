@@ -58,7 +58,7 @@ namespace RestaurantSoftware.BL_Layer
         }
         public IEnumerable<KhachHang> LayDsKhachHang()
         {
-            var query = from kh in dbContext.KhachHangs select kh;
+            var query = from kh in dbContext.KhachHangs where kh.trangthai != false select kh;
             return query;
         }
         public void LayDsThamSo(TextEdit Vat, TextEdit km)
