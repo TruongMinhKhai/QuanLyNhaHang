@@ -32,6 +32,8 @@ namespace RestaurantSoftware.P_Layer
             HoaDon_Bll.LoadHoaDon(grv_HoaDon);
             btn_Xoa.Enabled = false;
             btn_in.Enabled = false;
+            gv_HoaDon.Columns["thoigian"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+
 
         }
          private void Frm_HoaDon_Load(object sender, EventArgs e)
@@ -117,6 +119,14 @@ namespace RestaurantSoftware.P_Layer
                 HoaDon_Bll.CapNhatHoaDon(qd);
                 Notifications.Answers("Hủy thành công!");
                 Frm_HoaDon_Load(sender, e);
+                _thanhToanBll.LoadChiTietHoaDon(0, grd_DanhSachMon);
+                txt_TenKH.Text = "";
+                txt_SDT.Text = "";
+                txt_MaHoaDon.Text = "";
+                txt_TongTien.Text = "0";
+                txt_TongHoaDon.Text = "0";
+                txt_Ban.Text = "";
+
             }
             else
                 Notifications.Answers("Hủy không thành công!");
